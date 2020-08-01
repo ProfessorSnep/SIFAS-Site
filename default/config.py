@@ -1,7 +1,7 @@
 
 
 class Config(object):
-    API_ENDPOINT = 'https://api-dot-sifas-site.appspot.com'
+    API_ENDPOINT = 'https://sifas.snep.pw/api/'
 
 
 class DevelopmentConfig(Config):

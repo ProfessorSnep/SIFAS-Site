@@ -19,12 +19,12 @@ def json_data(*loc):
     return json.loads(blob.download_as_string())
 
 
-@app.route('/')
+@app.route('/api/')
 def home():
     return jsonify(["Hello World!", app.env, app.config['USE_LOCAL_DATA']])
 
 
-@app.route('/test/')
+@app.route('/api/test/')
 def test():
     return jsonify(json_data('testing', 'test'))
 
