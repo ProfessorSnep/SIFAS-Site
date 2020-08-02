@@ -41,6 +41,11 @@ def test():
     return render_template('pages/test.html')
 
 
+@app.route('/card/<card_id>/')
+def card_view(card_id):
+    return render_template('pages/card_view.html', card_id=card_id)
+
+
 def template_tex_url(path):
     image_map = request_api('images')
     if path in image_map:
@@ -48,7 +53,36 @@ def template_tex_url(path):
     return ''
 
 
+def template_ui_url(resource):
+    icon_map = request_api('icons')
+    if resource in icon_map:
+        return content_endpoint(icon_map[resource])
+    return ''
+
+
+def template_member_icon_url(member_id):
+    return content_endpoint(f'm/{member_id}.png')
+
+
+def template_attrib_info():
+    return request_api('attributes')
+
+
+def template_card_info(card_id):
+    return request_api(f'cards/{card_id}')
+
+
+def template_card_list(platform='jp'):
+    card_list = request_api('cards/list')
+    return card_list[platform]
+
+
 app.jinja_env.globals.update(tex=template_tex_url)
+app.jinja_env.globals.update(icon=template_ui_url)
+app.jinja_env.globals.update(attributes=template_attrib_info)
+app.jinja_env.globals.update(card_info=template_card_info)
+app.jinja_env.globals.update(cards=template_card_list)
+app.jinja_env.globals.update(member_icon=template_member_icon_url)
 
 
 if __name__ == "__main__":
