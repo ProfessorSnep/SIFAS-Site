@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+{% set navigation_bar = [
+    ('/', 'home', 'Home'),
+    ('/test', 'test', 'Test')
+] -%}
+
+{% set active_page = active_page|default('') -%}
+{% set title = title|default("Home") %}
+{% set description = description|default("") %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>sifas - {{title}}</title>
+    {% block meta %}
+    <meta property="og:title" content="sifas - {{title}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{request.url}}" />
+    <meta property="og:description" content="{{description}}" />
+    {% endblock %}
+
+    {% block styles %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/base.css')}}?v=1.0.0" />
+    {% endblock %}
+</head>
+
+<body>
+    {% block navbar %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">sifas</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain"
+            aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav mr-auto">
+                {% for href, id, title in navigation_bar %}
+                <li class="nav-item {% if id == active_page %}active{% endif %}">
+                    <a class="nav-link" href="{{href}}">{{title}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </nav>
+    {% endblock %}
+    {% block content %}{% endblock %}
+
+    {% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+    {% endblock scripts %}
+</body>
+
+</html>
