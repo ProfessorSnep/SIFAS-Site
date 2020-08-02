@@ -30,7 +30,7 @@ def home():
     return jsonify(["Hello World!", app.env, app.config['USE_LOCAL_DATA']])
 
 
-@app.route('/api/card/<card_id>/')
+@app.route('/api/cards/<card_id>/')
 def card_info(card_id):
     return jsonify(json_data('cards', card_id))
 

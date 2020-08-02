@@ -1,0 +1,137 @@
+{% macro expanded_card_view(card_id) %}
+{% set card = card_info(card_id) %}
+<div class="card-info">
+    <div class="row justify-content-center">
+        <div class="col d-flex align-items-end justify-content-end">
+            <h4 class="mb-0">Card No. {{card['no']}}</h5>
+        </div>
+        <div class="col d-flex align-items-end justify-content-start">
+            <img height="32" class="px-1" src="{{member_icon(card['member_id'])}}" />
+            <img height="40" class="px-1" src="{{icon(card['rarity'])}}" />
+            <img height="32" class="px-1" src="{{icon(card['attribute'])}}" />
+            <img height="32" class="px-1" src="{{icon(card['role'])}}" />
+        </div>
+    </div>
+    <a style="text-decoration: none; color: inherit;" href="/card/{{card_id}}">
+        <div class="row">
+            <div class="col-6 text-center py-1">
+                {% set appearance = card['appearance']['unidolized'] %}
+                <img class="w-100" src="{{tex(appearance['full_image_asset'])}}" />
+                <caption>{{appearance['name_jp']}}</caption>
+                {% if appearance['name_en'] %}
+                <caption>/ {{appearance['name_en']}}</caption>
+                {% endif %}
+            </div>
+            <div class="col-6 text-center py-1">
+                {% set appearance = card['appearance']['idolized'] %}
+                <img class="w-100" src="{{tex(appearance['full_image_asset'])}}" />
+                <caption>{{appearance['name_jp']}}</caption>
+                {% if appearance['name_en'] %}
+                <caption>/ {{appearance['name_en']}}</caption>
+                {% endif %}
+            </div>
+        </div>
+    </a>
+    <div class="row justify-content-center py-2">
+        <div class="col-6">
+            <div class="row justify-content-end">
+                <div class="col-8">
+                    <table class="table table-sm text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col"><img height="32" src="{{icon('appeal')}}" /></th>
+                                <th scope="col"><img height="32" src="{{icon('stamina')}}" /></th>
+                                <th scope="col"><img height="32" src="{{icon('technique')}}" />
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    {% for j in range(5) %}
+                                    <img width="16" src="{{icon('lb_empty')}}" />
+                                    {% endfor %}
+                                </th>
+                                {% set stats = card['stats']['stat_summary']['0'] %}
+                                <td>{{stats['appeal']}}</td>
+                                <td>{{stats['stamina']}}</td>
+                                <td>{{stats['technique']}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    {% for j in range(5) %}
+                                    <img width="16" src="{{icon('lb_full')}}" />
+                                    {% endfor %}
+                                </th>
+                                {% set stats = card['stats']['stat_summary']['5'] %}
+                                <td>{{stats['appeal']}}</td>
+                                <td>{{stats['stamina']}}</td>
+                                <td>{{stats['technique']}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <!--
+            <div class="row py-1">
+                {% for passive_skill in card['skills']['passives'] %}
+                <div class="col-12 py-1 text-left">
+                    <img height="32" src="{{tex(passive_skill['thumb'])}}" />
+                    {{passive_skill['name']}} ({{passive_skill['value_range_short']}})
+                </div>
+                {% endfor %}
+                {% set active_skill = card['skills']['active'] %}
+                <div class="col-12 py-1 text-left">
+                    <img height="32" src="{{tex(active_skill['thumb'])}}" />
+                    {{active_skill['description_short']}}
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>
+{% endmacro %}
+
+{% macro thumb_card_view(card_id) %}
+{% set card = card_info(card_id) %}
+<div class="card-info text-left" style="width: 210px">
+    <div class="row justify-content-between">
+        <div class="col-7 px-0">
+            <h4>No. {{card['no']}}</h4>
+        </div>
+        <div class="col-5 px-0">
+            <img height="32" class="float-right" src="{{member_icon(card['member_id'])}}" />
+            <img height="32" class="float-right px-1" src="{{icon(card['rarity'])}}" />
+        </div>
+    </div>
+    <div class="row justify-content-between">
+        <div class="col-6 p-0 text-left">
+            <img class="img-fluid" src="{{tex(card['appearance']['unidolized']['thumbnail_image_asset'])}}" />
+        </div>
+        <div class="col-6 p-0 text-right">
+            <img class="img-fluid" src="{{tex(card['appearance']['idolized']['thumbnail_image_asset'])}}" />
+        </div>
+    </div>
+    <div class="row py-1 justify-content-between">
+        <div class="col-6 px-0">
+            {% for suit in card['outfits'] %}
+            <img height="32" src="{{tex(suit['thumbnail_image_asset'])}}" />
+            {% endfor %}
+        </div>
+        <div class="col-6 px-0" style="font-size: 10px;">
+            <!--
+            <div class="float-left">
+                <img title="{{card['skills']['active']['description_short']}}" height="32"
+                    src="{{tex(card['skills']['active']['thumb'])}}" />
+            </div>
+            <div class="float-right">
+                {% for passive_skill in card['skills']['passives'] %}
+                <img height="32" title="{{passive_skill['name']}}" src="{{tex(passive_skill['thumb'])}}" />
+                {% endfor %}
+            </div>-->
+        </div>
+    </div>
+</div>
+{% endmacro %}
