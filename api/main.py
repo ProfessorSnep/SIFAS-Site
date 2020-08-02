@@ -51,7 +51,7 @@ def image_map():
 
 
 @app.errorhandler(404)
-def not_found():
+def not_found(*args):
     return jsonify({'error': "The endpoint you are requesting is not implemented"})
 
 
