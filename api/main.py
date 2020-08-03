@@ -35,6 +35,24 @@ def card_info(card_id):
     return jsonify(json_data('cards', card_id))
 
 
+@app.route('/api/cardrequest/')
+@app.route('/api/cardrequest/<use_all>/')
+def card_request(use_all=None):
+    if use_all == 'jp' or use_all == 'ww':
+        card_list = json_data('cards', 'list')[use_all]
+    else:
+        card_list = request.args.get('cards').split(',')
+    ret_obj = {}
+    for c in card_list:
+        ret_obj[c] = json_data('cards', str(c))
+    return jsonify(ret_obj)
+
+
+@app.route('/api/skills/<skill_id>/')
+def skill_info(skill_id):
+    return jsonify(json_data('skills', skill_id))
+
+
 @app.route('/api/attributes/')
 def attribute_info():
     return jsonify(json_data('attributes'))

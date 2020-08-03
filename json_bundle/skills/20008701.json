@@ -1,0 +1,42 @@
+[
+    {
+        "skill_id": 20008701,
+        "name_jp": "特技発動率UP :作戦切替時/全員",
+        "name_en": "Skill Activation % Up :On Strategy Switch/All",
+        "description_jp": "10ノーツの間特技発動率が8%上昇\n条件:作戦変更時 確率:30%\n対象:全員",
+        "description_en": "Increase Skill Activation % by 8% for 10 Notes.\nCondition: On Strategy Switch, 30% chance\nAffects: Everyone",
+        "thumbnail_image_asset": "7079",
+        "effects": [
+            {
+                "trigger": {
+                    "on": "strategy_swap",
+                    "value": null,
+                    "display": "On Strategy swap",
+                    "formatting": "On Strategy swap",
+                    "display_short": "Strategy Swap",
+                    "trigger_chance": 0.3
+                },
+                "target": {
+                    "display": "All",
+                    "check": "all",
+                    "value": null
+                },
+                "effect": {
+                    "type": "increase_skill_activation",
+                    "value": 0.08,
+                    "display": "Increase Skill activation chance by 8%",
+                    "formatting": "Increase Skill activation chance by {effect}",
+                    "display_short": "Skill % Up",
+                    "until": {
+                        "type": "note_count",
+                        "display": "For 10 notes",
+                        "formatting": "For {until} notes",
+                        "display_short": "# Notes",
+                        "value": 10
+                    }
+                }
+            }
+        ]
+    },
+    "py"
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "skill_id": 20043501,
+        "name_jp": "ボルテージUP :ダメージ時/同学年",
+        "name_en": "Voltage Up :When Damaged/Same Year",
+        "description_jp": "2ノーツの間獲得ボルテージが7%増加\n条件:200ダメージ以上受けた時 確率:5%\n対象:同学年",
+        "description_en": "Increase Voltage gain by 7% for 2 Notes.\nCondition: Take 200 or more damage, 5% chance\nAffects: Same School Year",
+        "thumbnail_image_asset": "7e2e",
+        "effects": [
+            {
+                "trigger": {
+                    "on": "take_damage",
+                    "value": 200,
+                    "display": "When taking 200 or more damage",
+                    "formatting": "When taking {trigger} or more damage",
+                    "display_short": "Damage",
+                    "trigger_chance": 0.05
+                },
+                "target": {
+                    "display": "Same Year",
+                    "check": "year",
+                    "value": "owner"
+                },
+                "effect": {
+                    "type": "increase_voltage_gain_percent",
+                    "value": 0.07,
+                    "display": "Increase Voltage gain by 7%",
+                    "formatting": "Increase Voltage gain by {effect}",
+                    "display_short": "Voltage Gain Up",
+                    "until": {
+                        "type": "note_count",
+                        "display": "For 2 notes",
+                        "formatting": "For {until} notes",
+                        "display_short": "# Notes",
+                        "value": 2
+                    }
+                }
+            }
+        ]
+    },
+    "~."
+]

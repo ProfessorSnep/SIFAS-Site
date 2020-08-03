@@ -1,0 +1,42 @@
+[
+    {
+        "skill_id": 20040501,
+        "name_jp": "SPゲージ獲得UP :AC成功時/全員",
+        "name_en": "SP Gauge Gain Up :On AC Success/All",
+        "description_jp": "10ノーツの間SPゲージ獲得量が8%上昇\n条件:アピールチャンス(AC)成功時 確率:30%\n対象:全員",
+        "description_en": "Increase SP Gauge Gain by 8% for 10 Notes.\nCondition: On Appeal Chance success, 30% chance\nAffects: Everyone",
+        "thumbnail_image_asset": "5f5d",
+        "effects": [
+            {
+                "trigger": {
+                    "on": "ac_success",
+                    "value": null,
+                    "display": "On AC success",
+                    "formatting": "On AC success",
+                    "display_short": "AC Success",
+                    "trigger_chance": 0.3
+                },
+                "target": {
+                    "display": "All",
+                    "check": "all",
+                    "value": null
+                },
+                "effect": {
+                    "type": "increase_sp_gain",
+                    "value": 0.08,
+                    "display": "Increase SP gain by 8%",
+                    "formatting": "Increase SP gain by {effect}",
+                    "display_short": "SP Gain Up",
+                    "until": {
+                        "type": "note_count",
+                        "display": "For 10 notes",
+                        "formatting": "For {until} notes",
+                        "display_short": "# Notes",
+                        "value": 10
+                    }
+                }
+            }
+        ]
+    },
+    "_]"
+]

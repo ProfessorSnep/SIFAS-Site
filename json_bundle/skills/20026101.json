@@ -1,0 +1,42 @@
+[
+    {
+        "skill_id": 20026101,
+        "name_jp": "クリティカルUP :AC時/タイプ",
+        "name_en": "Critical Up :During AC/Type",
+        "description_jp": "アピールチャンス終了までクリティカル率が5%上昇\n条件:アピールチャンス(AC)開始時 確率:20%\n対象:同タイプ",
+        "description_en": "Increase Critical % by 5% until Appeal Chance ends.\nCondition: On Appeal Chance start, 20% chance\nAffects: Same Type",
+        "thumbnail_image_asset": "2234",
+        "effects": [
+            {
+                "trigger": {
+                    "on": "ac_start",
+                    "value": null,
+                    "display": "On AC start",
+                    "formatting": "On AC start",
+                    "display_short": "AC Start",
+                    "trigger_chance": 0.2
+                },
+                "target": {
+                    "display": "Same Type",
+                    "check": "role",
+                    "value": "owner"
+                },
+                "effect": {
+                    "type": "increase_crit_chance",
+                    "value": 0.05,
+                    "display": "Increase Crit chance by 5%",
+                    "formatting": "Increase Crit chance by {effect}",
+                    "display_short": "Crit Chance Up",
+                    "until": {
+                        "type": "ac_end",
+                        "display": "Until AC ends",
+                        "formatting": "Until AC ends",
+                        "display_short": "AC End",
+                        "value": 0
+                    }
+                }
+            }
+        ]
+    },
+    "\"4"
+]

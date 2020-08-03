@@ -2,6 +2,10 @@
 
 {% set card = card_info(card_id) %}
 
+{% set active_page = '' -%}
+{% set title = "Card View" %}
+{% set description = 'Card #' + card['no']|string + ' : ' + card['appearance']['idolized']['name_jp'] %}
+
 {% block content %}
 <div class="container">
     <div class="row">
@@ -40,27 +44,39 @@
         </div>
         <div class="col-4 py-5">
             <h4>Active Skill</h4>
-            <!-- <div class="row justify-content-start">
-                <div class="col-3">
-                    <img height="72" src="{{tex(card['skills']['active']['thumb'])}}" />
-                </div>
-                <div class="col text-left">
-                    <h6><strong>{{card['skills']['active']['name']}}</strong></h6>
-                    <p>{{card['skills']['active']['description_long']}}</p>
-                </div>
-            </div> -->
-            <h4>Passive Skills</h4>
-            <!-- {% for passive in card['skills']['passives'] %}
+            {% for skill in card['skills']['active'] %}
             <div class="row justify-content-start">
                 <div class="col-3">
-                    <img height="72" src="{{tex(passive['thumb'])}}" />
+                    <img height="72" src="{{tex(skill['thumbnail_image_asset'])}}" />
                 </div>
                 <div class="col text-left">
-                    <h6><strong>{{passive['name']}}</strong></h6>
-                    <p>{{passive['description_long']}}</p>
+                    <h6><strong>{{skill['name_jp']}} {% if skill['name_en'] %}({{skill['name_en']}}){% endif %}</strong>
+                    </h6>
+                    {% set skill_effects = skill|skill %}
+                    {% for skill_info in skill_effects %}
+                    <p>{{skill_info['effect']}}</p>
+                    <p>{% if skill_info['trigger'] %}On: {{skill_info['trigger']}}{% endif %}
+                        {% if skill_info['target'] %}Target: {{skill_info['target']}}{% endif %}</p>
+                    {% endfor %}
                 </div>
             </div>
-            {% endfor %} -->
+            {% endfor %}
+            <h4>Passive Skills</h4>
+            {% for skill in card['skills']['passive'] %}
+            <div class="row justify-content-start">
+                <div class="col-3">
+                    <img height="72" src="{{tex(skill['thumbnail_image_asset'])}}" />
+                </div>
+                <div class="col text-left">
+                    {% set skill_effects = skill|skill %}
+                    {% for skill_info in skill_effects %}
+                    <p>{{skill_info['effect']}}</p>
+                    <p>{% if skill_info['trigger'] %}Trigger: <strong>{{skill_info['trigger']}}</strong>{% endif %}
+                        {% if skill_info['target'] %}Target: <strong>{{skill_info['target']}}</strong>{% endif %}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
             <div class="row">
                 <div class="col">
                     <table class="table text-center">
