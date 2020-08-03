@@ -16,7 +16,7 @@
         <div class="col-5 py-5">
             {% for i in range(3) %}
             <div class="row py-1">
-                {% for j in range(9) %}
+                {% for j in range(9 if i != 2 else 10) %}
                 <div class="col px-0">
                     <div class="fake-link member-filter" member-id="{{i * 100 + j + 1}}"><img width="36"
                             src="{{member_icon(i * 100 + j + 1)}}" /></div>
@@ -26,15 +26,46 @@
             {% endfor %}
         </div>
         <div class="col-1">
-            <div class="fake-link rarity-filter" rarity="r"><img width="48" src="{{icon('r')}}" /></div>
-            <div class="fake-link rarity-filter" rarity="sr"><img width="48" src="{{icon('sr')}}" /></div>
-            <div class="fake-link rarity-filter" rarity="ur"><img width="48" src="{{icon('ur')}}" /></div>
+            <div class="fake-link rarity-filter py-1" rarity="r"><img width="48" src="{{icon('r')}}" /></div>
+            <div class="fake-link rarity-filter py-1" rarity="sr"><img width="48" src="{{icon('sr')}}" /></div>
+            <div class="fake-link rarity-filter py-1" rarity="ur"><img width="48" src="{{icon('ur')}}" /></div>
+        </div>
+        <div class="col-1">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <div class="fake-link attribute-filter py-1" attribute="smile"><img width="36"
+                            src="{{icon('smile')}}" /></div>
+                    <div class="fake-link attribute-filter py-1" attribute="pure"><img width="36"
+                            src="{{icon('pure')}}" /></div>
+                    <div class="fake-link attribute-filter py-1" attribute="cool"><img width="36"
+                            src="{{icon('cool')}}" /></div>
+                </div>
+                <div class="col-6">
+                    <div class="fake-link attribute-filter py-1" attribute="active"><img width="36"
+                            src="{{icon('active')}}" /></div>
+                    <div class="fake-link attribute-filter py-1" attribute="natural"><img width="36"
+                            src="{{icon('natural')}}" /></div>
+                    <div class="fake-link attribute-filter py-1" attribute="elegant"><img width="36"
+                            src="{{icon('elegant')}}" /></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="fake-link role-filter py-1" role="vo"><img width="36" src="{{icon('vo')}}" />
+            </div>
+            <div class="fake-link role-filter py-1" role="sp"><img width="36" src="{{icon('sp')}}" />
+            </div>
+            <div class="fake-link role-filter py-1" role="gd"><img width="36" src="{{icon('gd')}}" />
+            </div>
+            <div class="fake-link role-filter py-1" role="sk"><img width="36" src="{{icon('sk')}}" />
+            </div>
         </div>
     </div>
     <div class="row align-items-center py-3">
         {% for cid in cards() %}
         {% set card = card_info(cid) %}
-        <div class="col-3 py-3 filtered-card card-member-{{card['member_id']}} card-rarity-{{card['rarity']}}">
+        <div
+            class="col-3 py-3 filtered-card card-member-{{card['member_id']}} card-rarity-{{card['rarity']}} card-attribute-{{card['attribute']}} card-role-{{card['role']}}">
             <a href="/card/{{cid}}" style="text-decoration: inherit; color: inherit;">
                 {{cm.thumb_card_view(cid)}}
             </a>
