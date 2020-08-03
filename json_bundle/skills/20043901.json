@@ -1,0 +1,27 @@
+{
+    "skill_id": 20043901,
+    "name_jp": "ボルテージ獲得 :ダメージ時",
+    "name_en": "Voltage Gained :When Damaged",
+    "description_jp": "自身のスタミナの10%ボルテージを獲得\n条件:350ダメージ以上受けた時 確率:5%",
+    "description_en": "Gain Voltage equal to 10% of own Stamina.\nCondition: Take 350 or more damage, 5% chance",
+    "thumbnail_image_asset": "4954",
+    "effects": [
+        {
+            "trigger": {
+                "on": "take_damage",
+                "value": 350,
+                "display": "When taking 350 or more damage",
+                "formatting": "When taking {trigger} or more damage",
+                "trigger_chance": 0.05
+            },
+            "target": null,
+            "effect": {
+                "type": "gain_voltage_stamina",
+                "value": 0.1,
+                "display": "Gain 10% of Stamina as Voltage",
+                "formatting": "Gain {effect} of Stamina as Voltage",
+                "until": null
+            }
+        }
+    ]
+}

@@ -35,6 +35,11 @@ def card_info(card_id):
     return jsonify(json_data('cards', card_id))
 
 
+@app.route('/api/skills/<skill_id>/')
+def skill_info(skill_id):
+    return jsonify(json_data('skills', skill_id))
+
+
 @app.route('/api/attributes/')
 def attribute_info():
     return jsonify(json_data('attributes'))

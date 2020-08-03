@@ -1,0 +1,32 @@
+{
+    "skill_id": 10006702,
+    "name_jp": "この空はつながってるよ！",
+    "name_en": "The Sky's Connected!",
+    "description_jp": "5ノーツの間特技発動率が3.4%上昇\n対象:同属性",
+    "description_en": "Increase Skill Activation % by 3.4% for 5 Notes.\nAffects: Same Attribute",
+    "thumbnail_image_asset": "7079",
+    "effects": [
+        {
+            "trigger": null,
+            "target": {
+                "display": "Same Attribute",
+                "check": [
+                    "attribute"
+                ],
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_skill_activation",
+                "value": 0.034,
+                "display": "Increase Skill activation chance by 3.4%",
+                "formatting": "Increase Skill activation chance by {effect}",
+                "until": {
+                    "type": "note_count",
+                    "display": "For 5 notes",
+                    "formatting": "For {until} notes",
+                    "value": 5
+                }
+            }
+        }
+    ]
+}

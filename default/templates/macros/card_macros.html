@@ -98,12 +98,14 @@
 {% set card = card_info(card_id) %}
 <div class="card-info text-left" style="width: 210px">
     <div class="row justify-content-between">
-        <div class="col-7 px-0">
-            <h4>No. {{card['no']}}</h4>
+        <div class="col-4 px-0">
+            <h4>#{{card['no']}}</h4>
         </div>
-        <div class="col-5 px-0">
-            <img height="32" class="float-right" src="{{member_icon(card['member_id'])}}" />
-            <img height="32" class="float-right px-1" src="{{icon(card['rarity'])}}" />
+        <div class="col-8 px-0">
+            <img height="28" class="float-right px-1" src="{{icon(card['role'])}}" />
+            <img height="28" class="float-right px-1" src="{{icon(card['attribute'])}}" />
+            <img height="28" class="float-right px-1" src="{{icon(card['rarity'])}}" />
+            <img height="28" class="float-right px-1" src="{{member_icon(card['member_id'])}}" />
         </div>
     </div>
     <div class="row justify-content-between">
@@ -121,16 +123,16 @@
             {% endfor %}
         </div>
         <div class="col-6 px-0" style="font-size: 10px;">
-            <!--
             <div class="float-left">
-                <img title="{{card['skills']['active']['description_short']}}" height="32"
-                    src="{{tex(card['skills']['active']['thumb'])}}" />
+                {% for skill in card['skills']['active'] %}
+                <img height="32" src="{{tex(skill['thumbnail_image_asset'])}}" />
+                {% endfor %}
             </div>
             <div class="float-right">
-                {% for passive_skill in card['skills']['passives'] %}
-                <img height="32" title="{{passive_skill['name']}}" src="{{tex(passive_skill['thumb'])}}" />
+                {% for skill in card['skills']['passive'] %}
+                <img height="32" src="{{tex(skill['thumbnail_image_asset'])}}" />
                 {% endfor %}
-            </div>-->
+            </div>
         </div>
     </div>
 </div>

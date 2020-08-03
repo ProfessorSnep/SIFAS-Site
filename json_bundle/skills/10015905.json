@@ -1,0 +1,30 @@
+{
+    "skill_id": 10015905,
+    "name_jp": "ビターなお誘い",
+    "name_en": "A Bitter Invitation",
+    "description_jp": "5ノーツの間獲得ボルテージが5%増加\n対象:同作戦",
+    "description_en": "Increase Voltage gain by 5% for 5 Notes.\nAffects: Same Strategy",
+    "thumbnail_image_asset": "7e2e",
+    "effects": [
+        {
+            "trigger": null,
+            "target": {
+                "display": "Same Strategy",
+                "check": "party",
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_voltage_gain_percent",
+                "value": 0.05,
+                "display": "Increase Voltage gain by 5%",
+                "formatting": "Increase Voltage gain by {effect}",
+                "until": {
+                    "type": "note_count",
+                    "display": "For 5 notes",
+                    "formatting": "For {until} notes",
+                    "value": 5
+                }
+            }
+        }
+    ]
+}

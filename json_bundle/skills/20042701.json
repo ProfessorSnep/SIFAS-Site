@@ -1,0 +1,38 @@
+{
+    "skill_id": 20042701,
+    "name_jp": "特技発動率UP :クリティカル時/同属性",
+    "name_en": "Skill Activation % Up :On Critical/Same Attribute",
+    "description_jp": "2ノーツの間特技発動率が25%上昇\n条件:自身のクリティカル時 確率:50%\n対象:同属性",
+    "description_en": "Increase Skill Activation % by 25% for 2 Notes.\nCondition: On Own Critical\nChance: 50%\nAffects: Same Attribute",
+    "thumbnail_image_asset": "7079",
+    "effects": [
+        {
+            "trigger": {
+                "on": "self_crit",
+                "value": null,
+                "display": "When Self crits",
+                "formatting": "When Self crits",
+                "trigger_chance": 0.5
+            },
+            "target": {
+                "display": "Same Attribute",
+                "check": [
+                    "attribute"
+                ],
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_skill_activation",
+                "value": 0.25,
+                "display": "Increase Skill activation chance by 25%",
+                "formatting": "Increase Skill activation chance by {effect}",
+                "until": {
+                    "type": "note_count",
+                    "display": "For 2 notes",
+                    "formatting": "For {until} notes",
+                    "value": 2
+                }
+            }
+        }
+    ]
+}

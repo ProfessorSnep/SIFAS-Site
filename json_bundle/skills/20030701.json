@@ -1,0 +1,36 @@
+{
+    "skill_id": 20030701,
+    "name_jp": "アピール＋ :曲開始時/全員",
+    "name_en": "Appeal+ :On Song Start/All",
+    "description_jp": "ゲーム終了まで基本アピールが5%増加\n条件:楽曲開始時 確率:30%\n対象:全員",
+    "description_en": "Increase base Appeal by 5% until the Live Show ends.\nCondition: On song start, 30% chance\nAffects: Everyone",
+    "thumbnail_image_asset": "4b39",
+    "effects": [
+        {
+            "trigger": {
+                "on": "song_start",
+                "value": null,
+                "display": "On song start",
+                "formatting": "On song start",
+                "trigger_chance": 0.3
+            },
+            "target": {
+                "display": "All",
+                "check": "all",
+                "value": null
+            },
+            "effect": {
+                "type": "increase_base_appeal",
+                "value": 0.05,
+                "display": "Increase base Appeal by 5%",
+                "formatting": "Increase base Appeal by {effect}",
+                "until": {
+                    "type": "live_end",
+                    "display": "Until Live ends",
+                    "formatting": "Until Live ends",
+                    "value": 0
+                }
+            }
+        }
+    ]
+}

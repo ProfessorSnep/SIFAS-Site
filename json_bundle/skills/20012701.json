@@ -1,0 +1,32 @@
+{
+    "skill_id": 20012701,
+    "name_jp": "ダメージ軽減 :曲開始時",
+    "name_en": "Lower Damage :Song Start",
+    "description_jp": "ゲーム終了までスタミナダメージを1.2%軽減\n条件:楽曲開始時 確率:30%",
+    "description_en": "Reduce stamina damage by 1.2% until the Live Show ends.\nCondition: On song start, 30% chance",
+    "thumbnail_image_asset": "4565",
+    "effects": [
+        {
+            "trigger": {
+                "on": "song_start",
+                "value": null,
+                "display": "On song start",
+                "formatting": "On song start",
+                "trigger_chance": 0.3
+            },
+            "target": null,
+            "effect": {
+                "type": "reduce_damage",
+                "value": 0.012,
+                "display": "Reduces Stamina damage by 1.2%",
+                "formatting": "Reduces Stamina damage by {effect}",
+                "until": {
+                    "type": "live_end",
+                    "display": "Until Live ends",
+                    "formatting": "Until Live ends",
+                    "value": 0
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "skill_id": 20040101,
+    "name_jp": "ダメージ軽減 :AC時",
+    "name_en": "Lower Damage :AC Start",
+    "description_jp": "アピールチャンス終了までスタミナダメージを4%軽減\n条件:アピールチャンス(AC)開始時 確率:30%",
+    "description_en": "Reduce Stamina damage by 4% until Appeal Chance ends.\nCondition: On Appeal Chance start, 30% chance",
+    "thumbnail_image_asset": "4565",
+    "effects": [
+        {
+            "trigger": {
+                "on": "ac_start",
+                "value": null,
+                "display": "On AC start",
+                "formatting": "On AC start",
+                "trigger_chance": 0.3
+            },
+            "target": null,
+            "effect": {
+                "type": "reduce_damage",
+                "value": 0.04,
+                "display": "Reduces Stamina damage by 4%",
+                "formatting": "Reduces Stamina damage by {effect}",
+                "until": {
+                    "type": "ac_end",
+                    "display": "Until AC ends",
+                    "formatting": "Until AC ends",
+                    "value": 0
+                }
+            }
+        }
+    ]
+}

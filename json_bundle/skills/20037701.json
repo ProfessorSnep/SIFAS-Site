@@ -1,0 +1,36 @@
+{
+    "skill_id": 20037701,
+    "name_jp": "ボルテージUP :AC成功時/全員",
+    "name_en": "Voltage Up :On AC Success/All",
+    "description_jp": "ゲーム終了まで獲得ボルテージが2%増加\n条件:アピールチャンス(AC)成功時1回だけ発動 確率:20%\n対象:全員",
+    "description_en": "Increase Voltage gain by 2% until the Live Show ends.\nCondition: Once on Appeal Chance success, 20% chance\nAffects: Everyone",
+    "thumbnail_image_asset": "7e2e",
+    "effects": [
+        {
+            "trigger": {
+                "on": "ac_success",
+                "value": null,
+                "display": "On AC success",
+                "formatting": "On AC success",
+                "trigger_chance": 0.2
+            },
+            "target": {
+                "display": "All",
+                "check": "all",
+                "value": null
+            },
+            "effect": {
+                "type": "increase_voltage_gain_percent",
+                "value": 0.02,
+                "display": "Increase Voltage gain by 2%",
+                "formatting": "Increase Voltage gain by {effect}",
+                "until": {
+                    "type": "live_end",
+                    "display": "Until Live ends",
+                    "formatting": "Until Live ends",
+                    "value": 0
+                }
+            }
+        }
+    ]
+}

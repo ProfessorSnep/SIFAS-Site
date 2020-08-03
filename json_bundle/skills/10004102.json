@@ -1,0 +1,30 @@
+{
+    "skill_id": 10004102,
+    "name_jp": "新しい私",
+    "name_en": "A New Me",
+    "description_jp": "5ノーツの間特技発動率が2.4%上昇\n対象:同作戦",
+    "description_en": "Increase Skill Activation % by 2.4% for 5 Notes.\nAffects: Same Strategy",
+    "thumbnail_image_asset": "7079",
+    "effects": [
+        {
+            "trigger": null,
+            "target": {
+                "display": "Same Strategy",
+                "check": "party",
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_skill_activation",
+                "value": 0.024,
+                "display": "Increase Skill activation chance by 2.4%",
+                "formatting": "Increase Skill activation chance by {effect}",
+                "until": {
+                    "type": "note_count",
+                    "display": "For 5 notes",
+                    "formatting": "For {until} notes",
+                    "value": 5
+                }
+            }
+        }
+    ]
+}

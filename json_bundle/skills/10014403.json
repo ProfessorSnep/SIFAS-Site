@@ -1,0 +1,32 @@
+{
+    "skill_id": 10014403,
+    "name_jp": "みんなには内緒だよ",
+    "name_en": "Keep it a Secret",
+    "description_jp": "10ノーツの間SPゲージ獲得量が18%上昇\n対象:同属性",
+    "description_en": "SP Gauge gain increases by 18% for 10 Notes.\nAffects: Same Attribute",
+    "thumbnail_image_asset": "5f5d",
+    "effects": [
+        {
+            "trigger": null,
+            "target": {
+                "display": "Same Attribute",
+                "check": [
+                    "attribute"
+                ],
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_sp_gain",
+                "value": 0.18,
+                "display": "Increase SP gain by 18%",
+                "formatting": "Increase SP gain by {effect}",
+                "until": {
+                    "type": "note_count",
+                    "display": "For 10 notes",
+                    "formatting": "For {until} notes",
+                    "value": 10
+                }
+            }
+        }
+    ]
+}

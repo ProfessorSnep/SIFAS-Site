@@ -1,0 +1,32 @@
+{
+    "skill_id": 10016101,
+    "name_jp": "こっちにおいでよ♪",
+    "name_en": "Come Over Here!",
+    "description_jp": "3ノーツの間クリティカル率が8%上昇\n対象:同属性",
+    "description_en": "Increase Critical % by 8% for 3 Notes.\nAffects: Same Attribute",
+    "thumbnail_image_asset": "2234",
+    "effects": [
+        {
+            "trigger": null,
+            "target": {
+                "display": "Same Attribute",
+                "check": [
+                    "attribute"
+                ],
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_crit_chance",
+                "value": 0.08,
+                "display": "Increase Crit chance by 8%",
+                "formatting": "Increase Crit chance by {effect}",
+                "until": {
+                    "type": "note_count",
+                    "display": "For 3 notes",
+                    "formatting": "For {until} notes",
+                    "value": 3
+                }
+            }
+        }
+    ]
+}

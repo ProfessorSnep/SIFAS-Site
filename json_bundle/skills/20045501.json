@@ -1,0 +1,36 @@
+{
+    "skill_id": 20045501,
+    "name_jp": "特技発動率UP :AC成功時/同作戦",
+    "name_en": "Skill Activation % Up :On AC Success/Same Strategy",
+    "description_jp": "5ノーツの間特技発動率が14%上昇\n条件:アピールチャンス(AC)成功時 確率:50%\n対象:同作戦",
+    "description_en": "Increase Skill Activation % by 14% for 5 Notes.\nCondition: On Appeal Chance success, 50% chance\nAffects: Same Strategy Member",
+    "thumbnail_image_asset": "7079",
+    "effects": [
+        {
+            "trigger": {
+                "on": "ac_success",
+                "value": null,
+                "display": "On AC success",
+                "formatting": "On AC success",
+                "trigger_chance": 0.5
+            },
+            "target": {
+                "display": "Same Strategy",
+                "check": "party",
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_skill_activation",
+                "value": 0.14,
+                "display": "Increase Skill activation chance by 14%",
+                "formatting": "Increase Skill activation chance by {effect}",
+                "until": {
+                    "type": "note_count",
+                    "display": "For 5 notes",
+                    "formatting": "For {until} notes",
+                    "value": 5
+                }
+            }
+        }
+    ]
+}

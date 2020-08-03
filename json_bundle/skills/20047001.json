@@ -1,0 +1,36 @@
+{
+    "skill_id": 20047001,
+    "name_jp": "SPゲージ獲得UP :クリティカル時/全員",
+    "name_en": "SP Gauge Gain Up :クリティカル時/全員",
+    "description_jp": "3ノーツの間SPゲージ獲得量が8%上昇\n条件:自身のクリティカル時 確率:20%\n対象:全員",
+    "description_en": "Increase SP Gauge Gain by 8% for 3 Notes.\nCondition: On Own Critical\nChance: 20%\nAffects: Everyone",
+    "thumbnail_image_asset": "5f5d",
+    "effects": [
+        {
+            "trigger": {
+                "on": "self_crit",
+                "value": null,
+                "display": "When Self crits",
+                "formatting": "When Self crits",
+                "trigger_chance": 0.2
+            },
+            "target": {
+                "display": "All",
+                "check": "all",
+                "value": null
+            },
+            "effect": {
+                "type": "increase_sp_gain",
+                "value": 0.08,
+                "display": "Increase SP gain by 8%",
+                "formatting": "Increase SP gain by {effect}",
+                "until": {
+                    "type": "note_count",
+                    "display": "For 3 notes",
+                    "formatting": "For {until} notes",
+                    "value": 3
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "skill_id": 10005305,
+    "name_jp": "おはヨーソロー",
+    "name_en": "Aye Aye to a New Day!",
+    "description_jp": "5ノーツの間獲得ボルテージが120増加\n対象:同作戦",
+    "description_en": "Increase Voltage gain by 120 for 5 Notes.\nAffects: Same Strategy",
+    "thumbnail_image_asset": "7e2e",
+    "effects": [
+        {
+            "trigger": null,
+            "target": {
+                "display": "Same Strategy",
+                "check": "party",
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_voltage_gain_flat",
+                "value": 120,
+                "display": "Increase Voltage gain by 120",
+                "formatting": "Increase Voltage gain by {effect}",
+                "until": {
+                    "type": "note_count",
+                    "display": "For 5 notes",
+                    "formatting": "For {until} notes",
+                    "value": 5
+                }
+            }
+        }
+    ]
+}

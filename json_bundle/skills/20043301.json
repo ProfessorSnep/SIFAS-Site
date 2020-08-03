@@ -1,0 +1,36 @@
+{
+    "skill_id": 20043301,
+    "name_jp": "アピール＋ :AC成功時/全員",
+    "name_en": "Appeal+ :On AC Success/All",
+    "description_jp": "ゲーム終了まで基本アピールが3%増加\n条件:アピールチャンス(AC)成功時1回だけ発動 確率:30%\n対象:全員",
+    "description_en": "Increase base Appeal by 3% until the Live Show ends.\nCondition: Once on Appeal Chance success, 30% chance\nAffects: Everyone",
+    "thumbnail_image_asset": "4b39",
+    "effects": [
+        {
+            "trigger": {
+                "on": "ac_success",
+                "value": null,
+                "display": "On AC success",
+                "formatting": "On AC success",
+                "trigger_chance": 0.3
+            },
+            "target": {
+                "display": "All",
+                "check": "all",
+                "value": null
+            },
+            "effect": {
+                "type": "increase_base_appeal",
+                "value": 0.03,
+                "display": "Increase base Appeal by 3%",
+                "formatting": "Increase base Appeal by {effect}",
+                "until": {
+                    "type": "live_end",
+                    "display": "Until Live ends",
+                    "formatting": "Until Live ends",
+                    "value": 0
+                }
+            }
+        }
+    ]
+}

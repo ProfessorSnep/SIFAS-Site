@@ -1,0 +1,36 @@
+{
+    "skill_id": 20014501,
+    "name_jp": "特技発動率UP :AC時/全員",
+    "name_en": "Skill Activation % Up :During AC/All",
+    "description_jp": "10ノーツの間特技発動率が10%上昇\n条件:アピールチャンス(AC)開始時 確率:30%\n対象:全員",
+    "description_en": "Increase Skill Activation % by 10% for 10 Notes.\nCondition: On Appeal Chance start, 30% chance\nAffects: Everyone",
+    "thumbnail_image_asset": "7079",
+    "effects": [
+        {
+            "trigger": {
+                "on": "ac_start",
+                "value": null,
+                "display": "On AC start",
+                "formatting": "On AC start",
+                "trigger_chance": 0.3
+            },
+            "target": {
+                "display": "All",
+                "check": "all",
+                "value": null
+            },
+            "effect": {
+                "type": "increase_skill_activation",
+                "value": 0.1,
+                "display": "Increase Skill activation chance by 10%",
+                "formatting": "Increase Skill activation chance by {effect}",
+                "until": {
+                    "type": "note_count",
+                    "display": "For 10 notes",
+                    "formatting": "For {until} notes",
+                    "value": 10
+                }
+            }
+        }
+    ]
+}
