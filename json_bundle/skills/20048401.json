@@ -1,38 +1,44 @@
-{
-    "skill_id": 20048401,
-    "name_jp": "アピールUP :クリティカル時/同属性",
-    "name_en": "Appeal Up :On Critical/Same Attribute",
-    "description_jp": "2ノーツの間アピールが9.5%増加\n条件:自身のクリティカル時 確率:30%\n対象:同属性",
-    "description_en": "Increase Appeal by 9.5% for 2 Notes.\nCondition: On Own Critical\nChance: 30%\nAffects: Same Attribute",
-    "thumbnail_image_asset": "4b39",
-    "effects": [
-        {
-            "trigger": {
-                "on": "self_crit",
-                "value": null,
-                "display": "When Self crits",
-                "formatting": "When Self crits",
-                "trigger_chance": 0.3
-            },
-            "target": {
-                "display": "Same Attribute",
-                "check": [
-                    "attribute"
-                ],
-                "value": "owner"
-            },
-            "effect": {
-                "type": "increase_appeal_percent",
-                "value": 0.095,
-                "display": "Increase Appeal by 9.5%",
-                "formatting": "Increase Appeal by {effect}",
-                "until": {
-                    "type": "note_count",
-                    "display": "For 2 notes",
-                    "formatting": "For {until} notes",
-                    "value": 2
+[
+    {
+        "skill_id": 20048401,
+        "name_jp": "アピールUP :クリティカル時/同属性",
+        "name_en": "Appeal Up :On Critical/Same Attribute",
+        "description_jp": "2ノーツの間アピールが9.5%増加\n条件:自身のクリティカル時 確率:30%\n対象:同属性",
+        "description_en": "Increase Appeal by 9.5% for 2 Notes.\nCondition: On Own Critical\nChance: 30%\nAffects: Same Attribute",
+        "thumbnail_image_asset": "4b39",
+        "effects": [
+            {
+                "trigger": {
+                    "on": "self_crit",
+                    "value": null,
+                    "display": "When Self crits",
+                    "formatting": "When Self crits",
+                    "display_short": "Crit",
+                    "trigger_chance": 0.3
+                },
+                "target": {
+                    "display": "Same Attribute",
+                    "check": [
+                        "attribute"
+                    ],
+                    "value": "owner"
+                },
+                "effect": {
+                    "type": "increase_appeal_percent",
+                    "value": 0.095,
+                    "display": "Increase Appeal by 9.5%",
+                    "formatting": "Increase Appeal by {effect}",
+                    "display_short": "Appeal Up",
+                    "until": {
+                        "type": "note_count",
+                        "display": "For 2 notes",
+                        "formatting": "For {until} notes",
+                        "display_short": "# Notes",
+                        "value": 2
+                    }
                 }
             }
-        }
-    ]
-}
+        ]
+    },
+    "K9"
+]

@@ -1,36 +1,42 @@
-{
-    "skill_id": 20050201,
-    "name_jp": "SPゲージ獲得UP :作戦切替時/タイプ",
-    "name_en": "SP Gauge Gain Up :作戦切替時/タイプ",
-    "description_jp": "30ノーツの間SPゲージ獲得量が8%上昇\n条件:作戦変更時に1回だけ発動 確率:100%\n対象:同タイプ",
-    "description_en": "Increase SP Gauge Gain by 8% for 30 Notes.\n条件:作戦変更時に1回だけ発動 確率:100%\nAffects: Same Type",
-    "thumbnail_image_asset": "5f5d",
-    "effects": [
-        {
-            "trigger": {
-                "on": "strategy_swap",
-                "value": null,
-                "display": "On Strategy swap",
-                "formatting": "On Strategy swap",
-                "trigger_chance": 1.0
-            },
-            "target": {
-                "display": "Same Type",
-                "check": "role",
-                "value": "owner"
-            },
-            "effect": {
-                "type": "increase_sp_gain",
-                "value": 0.08,
-                "display": "Increase SP gain by 8%",
-                "formatting": "Increase SP gain by {effect}",
-                "until": {
-                    "type": "note_count",
-                    "display": "For 30 notes",
-                    "formatting": "For {until} notes",
-                    "value": 30
+[
+    {
+        "skill_id": 20050201,
+        "name_jp": "SPゲージ獲得UP :作戦切替時/タイプ",
+        "name_en": "SP Gauge Gain Up :作戦切替時/タイプ",
+        "description_jp": "30ノーツの間SPゲージ獲得量が8%上昇\n条件:作戦変更時に1回だけ発動 確率:100%\n対象:同タイプ",
+        "description_en": "Increase SP Gauge Gain by 8% for 30 Notes.\n条件:作戦変更時に1回だけ発動 確率:100%\nAffects: Same Type",
+        "thumbnail_image_asset": "5f5d",
+        "effects": [
+            {
+                "trigger": {
+                    "on": "strategy_swap",
+                    "value": null,
+                    "display": "On Strategy swap",
+                    "formatting": "On Strategy swap",
+                    "display_short": "Strategy Swap",
+                    "trigger_chance": 1.0
+                },
+                "target": {
+                    "display": "Same Type",
+                    "check": "role",
+                    "value": "owner"
+                },
+                "effect": {
+                    "type": "increase_sp_gain",
+                    "value": 0.08,
+                    "display": "Increase SP gain by 8%",
+                    "formatting": "Increase SP gain by {effect}",
+                    "display_short": "SP Gain Up",
+                    "until": {
+                        "type": "note_count",
+                        "display": "For 30 notes",
+                        "formatting": "For {until} notes",
+                        "display_short": "# Notes",
+                        "value": 30
+                    }
                 }
             }
-        }
-    ]
-}
+        ]
+    },
+    "_]"
+]

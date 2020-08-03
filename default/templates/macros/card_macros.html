@@ -75,20 +75,20 @@
             </div>
         </div>
         <div class="col-6">
-            <!--
             <div class="row py-1">
-                {% for passive_skill in card['skills']['passives'] %}
+                {% for skill in card['skills']['passive'] %}
                 <div class="col-12 py-1 text-left">
-                    <img height="32" src="{{tex(passive_skill['thumb'])}}" />
-                    {{passive_skill['name']}} ({{passive_skill['value_range_short']}})
+                    <img height="32" src="{{tex(skill['thumbnail_image_asset'])}}" />
+                    {{skill|skill_short}}
                 </div>
                 {% endfor %}
-                {% set active_skill = card['skills']['active'] %}
+                {% for skill in card['skills']['active'] %}
                 <div class="col-12 py-1 text-left">
-                    <img height="32" src="{{tex(active_skill['thumb'])}}" />
-                    {{active_skill['description_short']}}
+                    <img height="32" src="{{tex(skill['thumbnail_image_asset'])}}" />
+                    {{skill|skill_short}}
                 </div>
-            </div>-->
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>
@@ -125,12 +125,12 @@
         <div class="col-6 px-0" style="font-size: 10px;">
             <div class="float-left">
                 {% for skill in card['skills']['active'] %}
-                <img height="32" src="{{tex(skill['thumbnail_image_asset'])}}" />
+                <img title="{{skill|skill_short}}" height="32" src="{{tex(skill['thumbnail_image_asset'])}}" />
                 {% endfor %}
             </div>
             <div class="float-right">
                 {% for skill in card['skills']['passive'] %}
-                <img height="32" src="{{tex(skill['thumbnail_image_asset'])}}" />
+                <img title="{{skill|skill_short}}" height="32" src="{{tex(skill['thumbnail_image_asset'])}}" />
                 {% endfor %}
             </div>
         </div>

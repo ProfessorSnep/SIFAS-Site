@@ -46,6 +46,11 @@ def card_view(card_id):
     return render_template('pages/card_view.html', card_id=card_id)
 
 
+@app.route('/cards/')
+def card_list():
+    return render_template('pages/card_list.html')
+
+
 def template_tex_url(path):
     image_map = request_api('images')
     if path in image_map:
@@ -69,12 +74,80 @@ def template_attrib_info():
 
 
 def template_card_info(card_id):
-    return request_api(f'cards/{card_id}')
+    return request_api('cardrequest/jp')[card_id]
 
 
 def template_card_list(platform='jp'):
-    card_list = request_api('cards/list')
-    return card_list[platform]
+    card_list = request_api(f'cardrequest/{platform}')
+    key_list = list(card_list.keys())
+    key_list.sort(key=lambda x: card_list[x]['no'])
+    return key_list
+
+
+@app.template_filter('skill_short')
+def filter_skill_short(skill):
+    efs = []
+    for effect in skill['effects']:
+        efs.append(effect['short_display'])
+    return ' / '.join(efs)
+
+
+@app.template_filter('skill')
+def filter_skill(skill):
+    efs = []
+    for effect in skill['effects']:
+        effect_format = effect['effect_format']
+
+        def format_val(val):
+            if type(val) == float:
+                return '{0:.5g}%'.format(val*100)
+            else:
+                return str(val)
+
+        def filter_vals(l):
+            s = set()
+            sa = s.add
+            l2 = [x for x in l if not (x in s or sa(x))]
+            return l if len(l2) > 1 else l2
+
+        s_effect_vals = filter_vals(effect['effect_values'])
+        s_until_vals = filter_vals(effect['until_values'])
+
+        s_trigger_vals = filter_vals(effect['trigger_values'])
+        s_trigger_chances = filter_vals(effect['trigger_chances'])
+
+        effect_vals = '/'.join(map(format_val, s_effect_vals))
+        until_vals = '/'.join(map(format_val, s_until_vals))
+
+        if len(s_effect_vals) > 1:
+            effect_vals = '[%s]' % effect_vals
+        if len(s_until_vals) > 1:
+            until_vals = '[%s]' % until_vals
+
+        effect_str = effect_format.format(
+            effect=effect_vals, until=until_vals)
+
+        trigger_format = effect['trigger_format']
+        if trigger_format:
+            trigger_vals = '/'.join(map(format_val, s_trigger_vals))
+            trigger_chances = '/'.join(map(format_val, s_trigger_chances))
+
+            if len(s_trigger_vals) > 1:
+                trigger_vals = '[%s]' % trigger_vals
+            if len(s_trigger_chances) > 1:
+                trigger_chances = '[%s]' % trigger_chances
+
+            trigger_str = trigger_format.format(
+                trigger=trigger_vals, trigger_chance=trigger_chances)
+        else:
+            trigger_str = None
+
+        efs.append({
+            'effect': effect_str,
+            'trigger': trigger_str,
+            'target': effect['target']
+        })
+    return efs
 
 
 app.jinja_env.globals.update(tex=template_tex_url)

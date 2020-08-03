@@ -1,36 +1,42 @@
-{
-    "skill_id": 20042501,
-    "name_jp": "アピールUP :AC成功時/全員",
-    "name_en": "Appeal Up :On AC Success/All",
-    "description_jp": "10ノーツの間アピールが4%増加\n条件:アピールチャンス(AC)成功時 確率:50%\n対象:全員",
-    "description_en": "Increase Appeal by 4% for 10 Notes.\nCondition: On Appeal Chance success, 50% chance\nAffects: Everyone",
-    "thumbnail_image_asset": "4b39",
-    "effects": [
-        {
-            "trigger": {
-                "on": "ac_success",
-                "value": null,
-                "display": "On AC success",
-                "formatting": "On AC success",
-                "trigger_chance": 0.5
-            },
-            "target": {
-                "display": "All",
-                "check": "all",
-                "value": null
-            },
-            "effect": {
-                "type": "increase_appeal_percent",
-                "value": 0.04,
-                "display": "Increase Appeal by 4%",
-                "formatting": "Increase Appeal by {effect}",
-                "until": {
-                    "type": "note_count",
-                    "display": "For 10 notes",
-                    "formatting": "For {until} notes",
-                    "value": 10
+[
+    {
+        "skill_id": 20042501,
+        "name_jp": "アピールUP :AC成功時/全員",
+        "name_en": "Appeal Up :On AC Success/All",
+        "description_jp": "10ノーツの間アピールが4%増加\n条件:アピールチャンス(AC)成功時 確率:50%\n対象:全員",
+        "description_en": "Increase Appeal by 4% for 10 Notes.\nCondition: On Appeal Chance success, 50% chance\nAffects: Everyone",
+        "thumbnail_image_asset": "4b39",
+        "effects": [
+            {
+                "trigger": {
+                    "on": "ac_success",
+                    "value": null,
+                    "display": "On AC success",
+                    "formatting": "On AC success",
+                    "display_short": "AC Success",
+                    "trigger_chance": 0.5
+                },
+                "target": {
+                    "display": "All",
+                    "check": "all",
+                    "value": null
+                },
+                "effect": {
+                    "type": "increase_appeal_percent",
+                    "value": 0.04,
+                    "display": "Increase Appeal by 4%",
+                    "formatting": "Increase Appeal by {effect}",
+                    "display_short": "Appeal Up",
+                    "until": {
+                        "type": "note_count",
+                        "display": "For 10 notes",
+                        "formatting": "For {until} notes",
+                        "display_short": "# Notes",
+                        "value": 10
+                    }
                 }
             }
-        }
-    ]
-}
+        ]
+    },
+    "K9"
+]

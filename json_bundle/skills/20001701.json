@@ -1,36 +1,42 @@
-{
-    "skill_id": 20001701,
-    "name_jp": "アピールUP :SP特技発動時/全員",
-    "name_en": "Appeal Up :On SP Skill Activation/All",
-    "description_jp": "15ノーツの間アピールが10%増加\n条件:SP特技発動時 確率:50%\n対象:全員",
-    "description_en": "Increase Appeal by 10% for 15 Notes.\nCondition: SP Skill activation, 50% chance\nAffects: Everyone",
-    "thumbnail_image_asset": "4b39",
-    "effects": [
-        {
-            "trigger": {
-                "on": "sp_activate",
-                "value": null,
-                "display": "On SP Skill activate",
-                "formatting": "On SP Skill activate",
-                "trigger_chance": 0.5
-            },
-            "target": {
-                "display": "All",
-                "check": "all",
-                "value": null
-            },
-            "effect": {
-                "type": "increase_appeal_percent",
-                "value": 0.1,
-                "display": "Increase Appeal by 10%",
-                "formatting": "Increase Appeal by {effect}",
-                "until": {
-                    "type": "note_count",
-                    "display": "For 15 notes",
-                    "formatting": "For {until} notes",
-                    "value": 15
+[
+    {
+        "skill_id": 20001701,
+        "name_jp": "アピールUP :SP特技発動時/全員",
+        "name_en": "Appeal Up :On SP Skill Activation/All",
+        "description_jp": "15ノーツの間アピールが10%増加\n条件:SP特技発動時 確率:50%\n対象:全員",
+        "description_en": "Increase Appeal by 10% for 15 Notes.\nCondition: SP Skill activation, 50% chance\nAffects: Everyone",
+        "thumbnail_image_asset": "4b39",
+        "effects": [
+            {
+                "trigger": {
+                    "on": "sp_activate",
+                    "value": null,
+                    "display": "On SP Skill activate",
+                    "formatting": "On SP Skill activate",
+                    "display_short": "SP Activate",
+                    "trigger_chance": 0.5
+                },
+                "target": {
+                    "display": "All",
+                    "check": "all",
+                    "value": null
+                },
+                "effect": {
+                    "type": "increase_appeal_percent",
+                    "value": 0.1,
+                    "display": "Increase Appeal by 10%",
+                    "formatting": "Increase Appeal by {effect}",
+                    "display_short": "Appeal Up",
+                    "until": {
+                        "type": "note_count",
+                        "display": "For 15 notes",
+                        "formatting": "For {until} notes",
+                        "display_short": "# Notes",
+                        "value": 15
+                    }
                 }
             }
-        }
-    ]
-}
+        ]
+    },
+    "K9"
+]
