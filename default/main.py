@@ -74,11 +74,11 @@ def template_attrib_info():
 
 
 def template_card_info(card_id):
-    return request_api('cardrequest/jp')[card_id]
+    return request_api('cards/all')[card_id]
 
 
-def template_card_list(platform='jp'):
-    card_list = request_api(f'cardrequest/{platform}')
+def template_card_list():
+    card_list = request_api('cards/all')
     key_list = list(card_list.keys())
     key_list.sort(key=lambda x: card_list[x]['no'])
     return key_list
@@ -98,8 +98,9 @@ def filter_skill(skill):
     for effect in skill['effects']:
         effect_format = effect['effect_format']
 
+        format_type = None
         def format_val(val):
-            if type(val) == float:
+            if format_type == 'percent':
                 return '{0:.5g}%'.format(val*100)
             else:
                 return str(val)
@@ -116,7 +117,9 @@ def filter_skill(skill):
         s_trigger_vals = filter_vals(effect['trigger_values'])
         s_trigger_chances = filter_vals(effect['trigger_chances'])
 
+        format_type = effect['effect_value_type']
         effect_vals = '/'.join(map(format_val, s_effect_vals))
+        format_type = effect['until_value_type']
         until_vals = '/'.join(map(format_val, s_until_vals))
 
         if len(s_effect_vals) > 1:
@@ -129,7 +132,9 @@ def filter_skill(skill):
 
         trigger_format = effect['trigger_format']
         if trigger_format:
+            format_type = effect['trigger_value_type']
             trigger_vals = '/'.join(map(format_val, s_trigger_vals))
+            format_type = 'percent'
             trigger_chances = '/'.join(map(format_val, s_trigger_chances))
 
             if len(s_trigger_vals) > 1:
