@@ -1,15 +1,19 @@
 {% macro expanded_card_view(card_id) %}
 {% set card = card_info(card_id) %}
+{% set member = member_info(card['member_id']) %}
 <div class="card-info">
     <div class="row justify-content-center">
         <div class="col d-flex align-items-end justify-content-end">
             <h4 class="mb-0">Card No. {{card['no']}}</h5>
         </div>
         <div class="col d-flex align-items-end justify-content-start">
-            <img height="32" class="px-1" src="{{member_icon(card['member_id'])}}" />
+            <img height="32" class="px-1" src="{{tex(member['icon_image_asset'])}}" />
             <img height="40" class="px-1" src="{{icon(card['rarity'])}}" />
             <img height="32" class="px-1" src="{{icon(card['attribute'])}}" />
             <img height="32" class="px-1" src="{{icon(card['role'])}}" />
+            {% if card['is_fes'] %}
+            <img height="28" class="px-1" src="{{icon('fes')}}" />
+            {% endif %}
         </div>
     </div>
     <a style="text-decoration: none; color: inherit;" href="/card/{{card_id}}">
@@ -118,9 +122,16 @@
     </div>
     <div class="row py-1 justify-content-between">
         <div class="col-6 px-0">
-            {% for suit in card['outfits'] %}
-            <img title="{{suit['name_jp']}}" height="32" src="{{tex(suit['thumbnail_image_asset'])}}" />
-            {% endfor %}
+            <div class="float-left">
+                {% for suit in card['outfits'] %}
+                <img title="{{suit['name_jp']}}" height="32" src="{{tex(suit['thumbnail_image_asset'])}}" />
+                {% endfor %}
+            </div>
+            <div class="float-right">
+                {% if card['is_fes'] %}
+                <img title="FES Card / 4 Inspiration Slots" width="48" src="{{icon('fes')}}" />
+                {% endif %}
+            </div>
         </div>
         <div class="col-6 px-0" style="font-size: 10px;">
             <div class="float-left">

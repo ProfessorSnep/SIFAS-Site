@@ -65,6 +65,11 @@ def template_ui_url(resource):
     return ''
 
 
+def template_member_info(member_id):
+    member_info = request_api('members/all')
+    return member_info[str(member_id)]
+
+
 def template_member_icon_url(member_id):
     return content_endpoint(f'm/{member_id}.png')
 
@@ -99,6 +104,7 @@ def filter_skill(skill):
         effect_format = effect['effect_format']
 
         format_type = None
+
         def format_val(val):
             if format_type == 'percent':
                 return '{0:.5g}%'.format(val*100)
@@ -160,6 +166,7 @@ app.jinja_env.globals.update(icon=template_ui_url)
 app.jinja_env.globals.update(attributes=template_attrib_info)
 app.jinja_env.globals.update(card_info=template_card_info)
 app.jinja_env.globals.update(cards=template_card_list)
+app.jinja_env.globals.update(member_info=template_member_info)
 app.jinja_env.globals.update(member_icon=template_member_icon_url)
 
 
