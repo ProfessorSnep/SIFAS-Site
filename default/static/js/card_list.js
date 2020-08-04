@@ -2,14 +2,16 @@ window.memberFilterSelector = null;
 window.rarityFilterSelector = null;
 window.attributeFilterSelector = null;
 window.roleFilterSelector = null;
+window.fesFilterSelector = null;
 
 function updateFilter() {
     var mf = window.memberFilterSelector || '';
     var rf = window.rarityFilterSelector || '';
     var af = window.attributeFilterSelector || '';
     var tf = window.roleFilterSelector || '';
+    var ff = window.fesFilterSelector || '';
 
-    var select = '' + mf + rf + af + tf;
+    var select = '' + mf + rf + af + tf + ff;
 
     if (select.length > 0) {
         $('.filtered-card').hide();
@@ -75,6 +77,20 @@ $('.role-filter').click(function(e) {
         $(this).addClass('img-hl');
     } else {
         window.roleFilterSelector = null;
+    }
+    updateFilter();
+});
+
+$('.fes-filter').click(function(e) {
+    e.preventDefault();
+    var fs = '.card-fes';
+
+    $('.fes-filter.img-hl').removeClass('img-hl');
+    if (window.fesFilterSelector !== fs) {
+        window.fesFilterSelector = fs;
+        $(this).addClass('img-hl');
+    } else {
+        window.fesFilterSelector = null;
     }
     updateFilter();
 });

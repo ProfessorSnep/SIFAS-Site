@@ -58,6 +58,11 @@ def attribute_info():
     return jsonify(json_data('attributes'))
 
 
+@app.route('/api/members/<member_id>/')
+def member_info(member_id):
+    return jsonify(json_data('members', member_id))
+
+
 @app.route('/api/icons/')
 def icon_info():
     return jsonify(json_data('icons'))
