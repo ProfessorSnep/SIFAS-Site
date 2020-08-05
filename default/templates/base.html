@@ -11,16 +11,18 @@
 {% set active_page = active_page|default('') -%}
 {% set title = title|default("Home") %}
 {% set description = description|default("") %}
+{% set embed_image = embed_image|default("") %}
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <title>sifas - {{title}}</title>
     {% block meta %}
     <meta property="og:title" content="sifas - {{title}}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{request.url}}" />
+    <meta property="og:image" content="{{embed_image}}" />
     <meta property="og:description" content="{{description}}" />
     {% endblock %}
 

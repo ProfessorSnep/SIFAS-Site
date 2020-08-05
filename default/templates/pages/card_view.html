@@ -5,8 +5,8 @@
 
 {% set active_page = '' -%}
 {% set title = "Card View" %}
-{% set description = 'Card #%d, %s - %s' %}
-{% set description = 'Card #' + card['no']|string + ' : ' + card['appearance']['idolized']['name_jp'] %}
+{% set description = 'Card #%d: %s - %s' % (card['no'], member|loc_name, card['appearance']['idolized']|loc_name) %}
+{% set embed_image = tex(card['appearance']['idolized']['thumbnail_image_asset']) %}
 
 {% block content %}
 <div class="container">
