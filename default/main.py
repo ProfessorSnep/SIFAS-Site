@@ -79,7 +79,7 @@ def template_attrib_info():
 
 
 def template_card_info(card_id):
-    return request_api('cards/all')[card_id]
+    return request_api('cards/all')[str(card_id)]
 
 
 def template_card_list():
@@ -87,6 +87,10 @@ def template_card_list():
     key_list = list(card_list.keys())
     key_list.sort(key=lambda x: card_list[x]['no'])
     return key_list
+
+
+def template_card_latest():
+    return request_api('cards/latest')
 
 
 @app.template_filter('skill_short')
@@ -161,11 +165,25 @@ def filter_skill(skill):
     return efs
 
 
+@app.template_filter('loc_name')
+def filter_loc_name(obj, name='name', preferred='en'):
+    vals = {'jp': '%s_jp' % name, 'en': '%s_en' % name}
+    if preferred in vals.keys():
+        v = vals[preferred]
+        if v in obj and obj[v]:
+            return obj[v]
+    for _, v in vals.items():
+        if v in obj and obj[v]:
+            return obj[v]
+    return None
+
+
 app.jinja_env.globals.update(tex=template_tex_url)
 app.jinja_env.globals.update(icon=template_ui_url)
 app.jinja_env.globals.update(attributes=template_attrib_info)
 app.jinja_env.globals.update(card_info=template_card_info)
 app.jinja_env.globals.update(cards=template_card_list)
+app.jinja_env.globals.update(latest_cards=template_card_latest)
 app.jinja_env.globals.update(member_info=template_member_info)
 app.jinja_env.globals.update(member_icon=template_member_icon_url)
 

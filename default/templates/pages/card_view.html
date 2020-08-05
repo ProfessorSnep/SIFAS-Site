@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% set card = card_info(card_id) %}
+{% set member = member_info(card['member_id']) %}
 
 {% set active_page = '' -%}
 {% set title = "Card View" %}
+{% set description = 'Card #%d, %s - %s' %}
 {% set description = 'Card #' + card['no']|string + ' : ' + card['appearance']['idolized']['name_jp'] %}
 
 {% block content %}
