@@ -61,7 +61,7 @@
                     {% for skill_info in skill_effects %}
                     <p>{{skill_info['effect']}}</p>
                     <p>{% if skill_info['trigger'] %}On: {{skill_info['trigger']}}{% endif %}
-                        {% if skill_info['target'] %}Target: {{skill_info['target']}}{% endif %}</p>
+                        {% if skill_info['target'] %}Target: <strong>{{skill_info['target']}}</strong>{% endif %}</p>
                     {% endfor %}
                 </div>
             </div>
@@ -76,8 +76,8 @@
                     {% set skill_effects = skill|skill %}
                     {% for skill_info in skill_effects %}
                     <p>{{skill_info['effect']}}</p>
-                    <p>{% if skill_info['trigger'] %}Trigger: <strong>{{skill_info['trigger']}}</strong>{% endif %}
-                        {% if skill_info['target'] %}Target: <strong>{{skill_info['target']}}</strong>{% endif %}</p>
+                    {% if skill_info['trigger'] %}<p>Trigger: <strong>{{skill_info['trigger']}}</strong></p>{% endif %}
+                    {% if skill_info['target'] %}<p>Target: <strong>{{skill_info['target']}}</strong></p>{% endif %}
                     {% endfor %}
                 </div>
             </div>
