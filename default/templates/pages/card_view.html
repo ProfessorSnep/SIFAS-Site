@@ -2,6 +2,8 @@
 
 {% set card = card_info(card_id) %}
 {% set member = member_info(card['member_id']) %}
+{% set attribute = attributes()[card['attribute']] %}
+{% set attrib_bg = tex(attribute['background_image_asset']) %}
 
 {% set active_page = '' -%}
 {% set title = "Card View" %}
@@ -29,7 +31,8 @@
             <div class="row">
                 <div class="col-12 text-center py-1">
                     {% set appearance = card['appearance']['unidolized'] %}
-                    <img class="w-100" src="{{tex(appearance['full_image_asset'])}}" />
+                    <img style="background-image: url({{attrib_bg}}); background-size: contain;" class="w-100"
+                        src="{{tex(appearance['full_image_asset'])}}" />
                     <caption>{{appearance['name_jp']}}</caption>
                     {% if appearance['name_en'] %}
                     <caption>/ {{appearance['name_en']}}</caption>
@@ -39,7 +42,8 @@
             <div class="row">
                 <div class="col-12 text-center py-1">
                     {% set appearance = card['appearance']['idolized'] %}
-                    <img class="w-100" src="{{tex(appearance['full_image_asset'])}}" />
+                    <img style="background-image: url({{attrib_bg}}); background-size: contain;" class="w-100"
+                        src="{{tex(appearance['full_image_asset'])}}" />
                     <caption>{{appearance['name_jp']}}</caption>
                     {% if appearance['name_en'] %}
                     <caption>/ {{appearance['name_en']}}</caption>
