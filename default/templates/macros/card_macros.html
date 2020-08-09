@@ -1,5 +1,7 @@
 {% macro expanded_card_view(card_id) %}
 {% set card = card_info(card_id) %}
+{% set attribute = attributes()[card['attribute']] %}
+{% set attrib_bg = tex(attribute['background_image_asset']) %}
 <div class="card-info">
     <div class="row justify-content-center">
         <div class="col d-flex align-items-end justify-content-end">
@@ -19,7 +21,8 @@
         <div class="row">
             <div class="col-6 text-center py-1">
                 {% set appearance = card['appearance']['unidolized'] %}
-                <img class="w-100" src="{{tex(appearance['full_image_asset'])}}" />
+                <img style="background-image: url({{attrib_bg}}); background-size: contain;" class="w-100"
+                    src="{{tex(appearance['full_image_asset'])}}" />
                 <caption>{{appearance['name_jp']}}</caption>
                 {% if appearance['name_en'] %}
                 <caption>/ {{appearance['name_en']}}</caption>
@@ -27,7 +30,8 @@
             </div>
             <div class="col-6 text-center py-1">
                 {% set appearance = card['appearance']['idolized'] %}
-                <img class="w-100" src="{{tex(appearance['full_image_asset'])}}" />
+                <img style="background-image: url({{attrib_bg}}); background-size: contain;" class="w-100"
+                    src="{{tex(appearance['full_image_asset'])}}" />
                 <caption>{{appearance['name_jp']}}</caption>
                 {% if appearance['name_en'] %}
                 <caption>/ {{appearance['name_en']}}</caption>
