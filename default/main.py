@@ -51,6 +51,11 @@ def card_list():
     return render_template('pages/card_list.html')
 
 
+@app.route('/events/')
+def event_list():
+    return render_template('pages/event_list.html')
+
+
 def template_tex_url(path):
     image_map = request_api('images')
     if path in image_map:
@@ -74,6 +79,10 @@ def template_member_icon_url(member_id):
     return content_endpoint(f'm/{member_id}.png')
 
 
+def template_event_banner_url(event_banner_loc):
+    return content_endpoint(f'eb/{event_banner_loc}')
+
+
 def template_attrib_info():
     return request_api('attributes')
 
@@ -87,6 +96,14 @@ def template_card_list():
     key_list = list(card_list.keys())
     key_list.sort(key=lambda x: card_list[x]['no'])
     return key_list
+
+
+def template_event_list(include_minis=False):
+    event_list = request_api('events')
+    if not include_minis:
+        event_list = list(
+            filter(lambda e: e['type'] in ['pickup_gacha', 'fes_gacha', 'token_event', 'point_event'], event_list))
+    return event_list
 
 
 def template_card_latest():
@@ -180,9 +197,11 @@ def filter_loc_name(obj, name='name', preferred='en'):
 
 app.jinja_env.globals.update(tex=template_tex_url)
 app.jinja_env.globals.update(icon=template_ui_url)
+app.jinja_env.globals.update(banner=template_event_banner_url)
 app.jinja_env.globals.update(attributes=template_attrib_info)
 app.jinja_env.globals.update(card_info=template_card_info)
 app.jinja_env.globals.update(cards=template_card_list)
+app.jinja_env.globals.update(events=template_event_list)
 app.jinja_env.globals.update(latest_cards=template_card_latest)
 app.jinja_env.globals.update(member_info=template_member_info)
 app.jinja_env.globals.update(member_icon=template_member_icon_url)
