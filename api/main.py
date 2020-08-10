@@ -73,6 +73,11 @@ def image_map():
     return jsonify(json_data('image_map'))
 
 
+@app.route('/api/events/')
+def event_info():
+    return jsonify(json_data('events'))
+
+
 @app.errorhandler(404)
 def not_found(*args):
     return jsonify({'error': "The endpoint you are requesting is not implemented"})

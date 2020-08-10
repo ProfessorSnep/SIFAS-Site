@@ -1,45 +1,42 @@
-[
-    {
-        "skill_id": 20004101,
-        "name_jp": "特技発動率＋ :AC時/全員",
-        "name_en": "Skill Activation %+ :During AC/All",
-        "description_jp": "ゲーム終了まで基本特技発動率が1.7%上昇\n条件:アピールチャンス(AC)開始時1回だけ発動 確率:30%\n対象:全員",
-        "description_en": "Increase base skill activation by 1.7% until the Live Show ends.\nCondition: Once on Appeal Chance start, 30% chance\nAffects: Everyone",
-        "thumbnail_image_asset": "7079",
-        "effects": [
-            {
-                "trigger": {
-                    "on": "ac_start",
-                    "value": null,
-                    "value_type": null,
-                    "display": "On AC start",
-                    "formatting": "On AC start",
-                    "display_short": "AC Start",
-                    "trigger_chance": 0.3
-                },
-                "target": {
-                    "display": "All",
-                    "check": "all",
-                    "value": null
-                },
-                "effect": {
-                    "type": "increase_base_skill_activation",
-                    "value": 0.017,
-                    "value_type": "percent",
-                    "display": "Increase base Skill activation chance by 1.7%",
-                    "formatting": "Increase base Skill activation chance by {effect}",
-                    "display_short": "Skill %+",
-                    "until": {
-                        "type": "live_end",
-                        "display": "Until Live ends",
-                        "formatting": "Until Live ends",
-                        "display_short": "Live end",
-                        "value": 0,
-                        "value_type": null
-                    }
+{
+    "skill_id": 20004101,
+    "name_jp": "特技発動率＋ :AC時/全員",
+    "name_en": "Skill Activation %+ :During AC/All",
+    "description_jp": "ゲーム終了まで基本特技発動率が1.7%上昇\n条件:アピールチャンス(AC)開始時1回だけ発動 確率:30%\n対象:全員",
+    "description_en": "Increase base skill activation by 1.7% until the Live Show ends.\nCondition: Once on Appeal Chance start, 30% chance\nAffects: Everyone",
+    "thumbnail_image_asset": "7079",
+    "effects": [
+        {
+            "trigger": {
+                "on": "ac_start",
+                "value": null,
+                "value_type": null,
+                "display": "On AC start",
+                "formatting": "On AC start",
+                "display_short": "AC Start",
+                "trigger_chance": 0.3
+            },
+            "target": {
+                "display": "All",
+                "check": "all",
+                "value": null
+            },
+            "effect": {
+                "type": "increase_base_skill_activation",
+                "value": 0.017,
+                "value_type": "percent",
+                "display": "Increase base Skill activation chance by 1.7%",
+                "formatting": "Increase base Skill activation chance by {effect}",
+                "display_short": "Skill Activation+",
+                "until": {
+                    "type": "live_end",
+                    "display": "Until Live ends",
+                    "formatting": "Until Live ends",
+                    "display_short": "Live end",
+                    "value": 0,
+                    "value_type": null
                 }
             }
-        ]
-    },
-    "py"
-]
+        }
+    ]
+}

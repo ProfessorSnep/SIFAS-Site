@@ -13,18 +13,21 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-8">
+        <div class="col-xl-8 col-12">
             <div class="row justify-content-center py-2">
-                <div class="col d-flex align-items-end justify-content-end">
+                <div class="col-auto d-flex align-items-end justify-content-xl-end justify-content-md-center">
                     <h2 class="mb-0">Card No. {{card['no']}}</h5>
                 </div>
-                <div class="col d-flex align-items-end justify-content-start">
+                <div class="col-auto d-flex align-items-end justify-content-xl-start justify-content-md-center">
                     <img height="32" class="px-1" src="{{member_icon(card['member_id'])}}" />
                     <img height="40" class="px-1" src="{{icon(card['rarity'])}}" />
                     <img height="32" class="px-1" src="{{icon(card['attribute'])}}" />
                     <img height="32" class="px-1" src="{{icon(card['role'])}}" />
                     {% if card['is_fes'] %}
                     <img height="40" class="px-1" src="{{icon('fes')}}" />
+                    {% endif %}
+                    {% if card['card_type'] == 'event_reward' %}
+                    <span class="mx-2 badge badge-primary">Event Reward</span>
                     {% endif %}
                 </div>
             </div>
@@ -51,7 +54,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4 py-5">
+        <div class="col-xl-4 col-12 py-5">
             <h4>Active Skill</h4>
             {% for skill in card['skills']['active'] %}
             <div class="row justify-content-start">
