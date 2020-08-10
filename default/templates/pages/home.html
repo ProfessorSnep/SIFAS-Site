@@ -9,7 +9,15 @@
     <div class="row align-items-center py-3">
         <div class="col py-3">
             <h1>SIFAS Content</h1>
-            <h4>Maybe I'll put something else here, but for now this will do</h4>
+        </div>
+    </div>
+    <div class="row align-items-center text-center">
+        <div class="col-12 py-3">
+            <h2>Latest Event</h2>
+        </div>
+        <div class="col-12">
+            {% set event = (events()|reverse)|first %}
+            {{cm.event_cards_list(event)}}
         </div>
     </div>
     <div class="row align-items-center text-center">
