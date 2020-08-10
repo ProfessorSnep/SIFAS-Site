@@ -115,7 +115,7 @@ def filter_skill_short(skill):
     efs = []
     for effect in skill['effects']:
         efs.append(effect['short_display'])
-    return ' / '.join(efs)
+    return '\n\n'.join(efs)
 
 
 @app.template_filter('skill')
