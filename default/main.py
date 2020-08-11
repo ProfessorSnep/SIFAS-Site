@@ -36,11 +36,6 @@ def home():
     return render_template('pages/home.html')
 
 
-@app.route('/test/')
-def test():
-    return render_template('pages/test.html')
-
-
 @app.route('/card/<card_id>/')
 def card_view(card_id):
     return render_template('pages/card_view.html', card_id=card_id)
