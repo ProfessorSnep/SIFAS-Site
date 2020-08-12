@@ -1,0 +1,673 @@
+{
+    "name_jp": "Step! ZERO to ONE",
+    "name_en": "Step! ZERO to ONE",
+    "artist_jp": "Aqours",
+    "artist_en": "Aqours",
+    "group": "aqours",
+    "subunit": null,
+    "is_2d": false,
+    "jacket_image_asset": "6667",
+    "difficulties": {
+        "easy": {
+            "attribute": "active",
+            "voltage_requirements": {
+                "s": 668000,
+                "a": 491000,
+                "b": 314000,
+                "c": 136000
+            },
+            "recommended_power": 2150,
+            "recommended_stamina": 16200,
+            "lp_needed": 10,
+            "completion_exp": 8,
+            "completion_bond": 12,
+            "sp_gauge": 3600,
+            "damage_per_note": 100,
+            "max_appeal": 50000,
+            "gimmick_effects": [
+                {
+                    "trigger": {
+                        "on": "song_start",
+                        "value": null,
+                        "value_type": null,
+                        "display": "On song start",
+                        "formatting": "On song start",
+                        "display_short": "Song Start",
+                        "trigger_chance": 1.0
+                    },
+                    "target": {
+                        "display": "Non-Active cards",
+                        "check": "attribute",
+                        "value": "smile,pure,cool,natural,elegant"
+                    },
+                    "effect": {
+                        "type": "decrease_base_appeal",
+                        "value": 0.05,
+                        "value_type": "percent",
+                        "display": "Decrease base Appeal by 5%",
+                        "formatting": "Decrease base Appeal by {effect}",
+                        "display_short": "Appeal-",
+                        "until": {
+                            "type": "live_end",
+                            "display": "until Live ends",
+                            "formatting": "until Live ends",
+                            "display_short": "Live end",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    }
+                }
+            ],
+            "hint_jp": "【攻略ヒント】スタミナダメージを与えるギミックノーツは、ガードタイプの作戦効果などでダメージを減らそう。3つ目のアピールチャンスは、GDタイプのスクールアイドルで揃えた作戦で挑んでみよう",
+            "hint_en": "[Hint] Use Guard-type strategy effects to reduce the effects of Trick Notes that deal stamina damage. You'll want to take on the third Appeal Chance by using a strategy with Guard-type school idols.",
+            "note_gimmicks": [
+                {
+                    "icon_image_asset": "6066",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "gain_sp_percent",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Gain 50% of SP capacity as SP Gauge",
+                                "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                                "display_short": "SP %Fill",
+                                "until": null
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "6525",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "damage",
+                                "value": 400,
+                                "value_type": "value",
+                                "display": "Take 400 damage",
+                                "formatting": "Take {effect} damage",
+                                "display_short": "Damage",
+                                "until": null
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "6458",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": {
+                                "display": "Gd cards",
+                                "check": "role",
+                                "value": "gd"
+                            },
+                            "effect": {
+                                "type": "increase_skill_activation",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Increase Skill activation chance by 50%",
+                                "formatting": "Increase Skill activation chance by {effect}",
+                                "display_short": "Skill Activation Up",
+                                "until": {
+                                    "type": "note_count",
+                                    "display": "for 10 notes",
+                                    "formatting": "for {until} notes",
+                                    "display_short": "# Notes",
+                                    "value": 10,
+                                    "value_type": "value"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "appeal_chances": [
+                {
+                    "name_jp": "合計17,000ボルテージを獲得する",
+                    "name_en": "Gain a total of 17,000 Voltage.",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": {
+                                "display": "Non-Vo cards",
+                                "check": "role",
+                                "value": "sp,gd,sk"
+                            },
+                            "effect": {
+                                "type": "decrease_base_appeal",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Decrease base Appeal by 50%",
+                                "formatting": "Decrease base Appeal by {effect}",
+                                "display_short": "Appeal-",
+                                "until": {
+                                    "type": "ac_end",
+                                    "display": "until AC ends",
+                                    "formatting": "until AC ends",
+                                    "display_short": "AC End",
+                                    "value": 0,
+                                    "value_type": null
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name_jp": "SP特技で合計10,000ボルテージを獲得する",
+                    "name_en": "Gain a total of 10,000 Voltage with SP Skills.",
+                    "effects": null
+                },
+                {
+                    "name_jp": "合計18,000ボルテージを獲得する",
+                    "name_en": "Gain a total of 18,000 Voltage.",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": {
+                                "display": "Non-Gd cards",
+                                "check": "role",
+                                "value": "vo,sp,sk"
+                            },
+                            "effect": {
+                                "type": "decrease_base_appeal",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Decrease base Appeal by 50%",
+                                "formatting": "Decrease base Appeal by {effect}",
+                                "display_short": "Appeal-",
+                                "until": {
+                                    "type": "ac_end",
+                                    "display": "until AC ends",
+                                    "formatting": "until AC ends",
+                                    "display_short": "AC End",
+                                    "value": 0,
+                                    "value_type": null
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "normal": {
+            "attribute": "active",
+            "voltage_requirements": {
+                "s": 1805000,
+                "a": 1414000,
+                "b": 1022000,
+                "c": 630000
+            },
+            "recommended_power": 5050,
+            "recommended_stamina": 38700,
+            "lp_needed": 12,
+            "completion_exp": 13,
+            "completion_bond": 16,
+            "sp_gauge": 4800,
+            "damage_per_note": 213,
+            "max_appeal": 50000,
+            "gimmick_effects": [
+                {
+                    "trigger": {
+                        "on": "song_start",
+                        "value": null,
+                        "value_type": null,
+                        "display": "On song start",
+                        "formatting": "On song start",
+                        "display_short": "Song Start",
+                        "trigger_chance": 1.0
+                    },
+                    "target": {
+                        "display": "Non-Active cards",
+                        "check": "attribute",
+                        "value": "smile,pure,cool,natural,elegant"
+                    },
+                    "effect": {
+                        "type": "decrease_base_appeal",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Decrease base Appeal by 10%",
+                        "formatting": "Decrease base Appeal by {effect}",
+                        "display_short": "Appeal-",
+                        "until": {
+                            "type": "live_end",
+                            "display": "until Live ends",
+                            "formatting": "until Live ends",
+                            "display_short": "Live end",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    }
+                }
+            ],
+            "hint_jp": "【攻略ヒント】スタミナダメージを与えるギミックノーツは、ガードタイプの作戦効果などでダメージを減らそう。4つ目のアピールチャンスはSP特技を複数回発動させてクリアを目指そう",
+            "hint_en": "[Hint] Use Guard-type strategy effects to reduce the effects of Trick Notes that deal stamina damage. Try clearing the fourth Appeal Chance with multiple SP Skill uses.",
+            "note_gimmicks": [
+                {
+                    "icon_image_asset": "6525",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "damage",
+                                "value": 2000,
+                                "value_type": "value",
+                                "display": "Take 2000 damage",
+                                "formatting": "Take {effect} damage",
+                                "display_short": "Damage",
+                                "until": null
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "6458",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": {
+                                "display": "Gd cards",
+                                "check": "role",
+                                "value": "gd"
+                            },
+                            "effect": {
+                                "type": "increase_skill_activation",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Increase Skill activation chance by 50%",
+                                "formatting": "Increase Skill activation chance by {effect}",
+                                "display_short": "Skill Activation Up",
+                                "until": {
+                                    "type": "note_count",
+                                    "display": "for 20 notes",
+                                    "formatting": "for {until} notes",
+                                    "display_short": "# Notes",
+                                    "value": 20,
+                                    "value_type": "value"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "6066",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "gain_sp_percent",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Gain 50% of SP capacity as SP Gauge",
+                                "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                                "display_short": "SP %Fill",
+                                "until": null
+                            }
+                        }
+                    ]
+                }
+            ],
+            "appeal_chances": [
+                {
+                    "name_jp": "合計24,000ボルテージを獲得する",
+                    "name_en": "Gain a total of 24,000 Voltage.",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": {
+                                "display": "Non-Vo cards",
+                                "check": "role",
+                                "value": "sp,gd,sk"
+                            },
+                            "effect": {
+                                "type": "decrease_base_appeal",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Decrease base Appeal by 50%",
+                                "formatting": "Decrease base Appeal by {effect}",
+                                "display_short": "Appeal-",
+                                "until": {
+                                    "type": "ac_end",
+                                    "display": "until AC ends",
+                                    "formatting": "until AC ends",
+                                    "display_short": "AC End",
+                                    "value": 0,
+                                    "value_type": null
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name_jp": "SP特技で合計20,000ボルテージを獲得する",
+                    "name_en": "Gain a total of 20,000 Voltage with SP Skills.",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "gain_sp",
+                                "value": 1500,
+                                "value_type": "value",
+                                "display": "Gain 1500 SP Gauge",
+                                "formatting": "Gain {effect} SP Gauge",
+                                "display_short": "SP Gauge Flat Fill",
+                                "until": null
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name_jp": "合計60,000ボルテージを獲得する",
+                    "name_en": "Gain a total of 60,000 Voltage.",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": {
+                                "display": "Non-Gd cards",
+                                "check": "role",
+                                "value": "vo,sp,sk"
+                            },
+                            "effect": {
+                                "type": "decrease_base_appeal",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Decrease base Appeal by 50%",
+                                "formatting": "Decrease base Appeal by {effect}",
+                                "display_short": "Appeal-",
+                                "until": {
+                                    "type": "ac_end",
+                                    "display": "until AC ends",
+                                    "formatting": "until AC ends",
+                                    "display_short": "AC End",
+                                    "value": 0,
+                                    "value_type": null
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name_jp": "SP特技で合計40,000ボルテージを獲得する",
+                    "name_en": "Gain a total of 40,000 Voltage with SP Skills.",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": {
+                                "display": "Sp cards",
+                                "check": "role",
+                                "value": "sp"
+                            },
+                            "effect": {
+                                "type": "increase_base_sp_gain",
+                                "value": 0.3,
+                                "value_type": "percent",
+                                "display": "Increase base SP gain by 30%",
+                                "formatting": "Increase base SP gain by {effect}",
+                                "display_short": "SP Gain Up",
+                                "until": {
+                                    "type": "ac_end",
+                                    "display": "until AC ends",
+                                    "formatting": "until AC ends",
+                                    "display_short": "AC End",
+                                    "value": 0,
+                                    "value_type": null
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "advanced": {
+            "attribute": "active",
+            "voltage_requirements": {
+                "s": 6500000,
+                "a": 5000000,
+                "b": 3500000,
+                "c": 2000000
+            },
+            "recommended_power": 9050,
+            "recommended_stamina": 69300,
+            "lp_needed": 15,
+            "completion_exp": 21,
+            "completion_bond": 24,
+            "sp_gauge": 6000,
+            "damage_per_note": 301,
+            "max_appeal": 50000,
+            "gimmick_effects": [
+                {
+                    "trigger": {
+                        "on": "song_start",
+                        "value": null,
+                        "value_type": null,
+                        "display": "On song start",
+                        "formatting": "On song start",
+                        "display_short": "Song Start",
+                        "trigger_chance": 1.0
+                    },
+                    "target": {
+                        "display": "Non-Active cards",
+                        "check": "attribute",
+                        "value": "smile,pure,cool,natural,elegant"
+                    },
+                    "effect": {
+                        "type": "decrease_base_appeal",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Decrease base Appeal by 20%",
+                        "formatting": "Decrease base Appeal by {effect}",
+                        "display_short": "Appeal-",
+                        "until": {
+                            "type": "live_end",
+                            "display": "until Live ends",
+                            "formatting": "until Live ends",
+                            "display_short": "Live end",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    }
+                }
+            ],
+            "hint_jp": "【攻略ヒント】スタミナダメージを与えるギミックノーツは、ガードタイプの作戦効果などでダメージを減らそう。5つ目のアピールチャンスはSP特技を複数回発動させてクリアを目指そう",
+            "hint_en": "[Hint] Try lowering the stamina damage from Trick Notes by using Guard-type strategies. Also, try activating your SP Skill multiple times during the fifth Appeal Chance to clear it.",
+            "note_gimmicks": [
+                {
+                    "icon_image_asset": "6525",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "damage",
+                                "value": 10000,
+                                "value_type": "value",
+                                "display": "Take 10000 damage",
+                                "formatting": "Take {effect} damage",
+                                "display_short": "Damage",
+                                "until": null
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "6458",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": {
+                                "display": "Gd cards",
+                                "check": "role",
+                                "value": "gd"
+                            },
+                            "effect": {
+                                "type": "increase_skill_activation",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Increase Skill activation chance by 50%",
+                                "formatting": "Increase Skill activation chance by {effect}",
+                                "display_short": "Skill Activation Up",
+                                "until": {
+                                    "type": "note_count",
+                                    "display": "for 20 notes",
+                                    "formatting": "for {until} notes",
+                                    "display_short": "# Notes",
+                                    "value": 20,
+                                    "value_type": "value"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "appeal_chances": [
+                {
+                    "name_jp": "合計185,000ボルテージを獲得する",
+                    "name_en": "Gain a total of 185,000 Voltage.",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": {
+                                "display": "Non-Vo cards",
+                                "check": "role",
+                                "value": "sp,gd,sk"
+                            },
+                            "effect": {
+                                "type": "decrease_base_appeal",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Decrease base Appeal by 50%",
+                                "formatting": "Decrease base Appeal by {effect}",
+                                "display_short": "Appeal-",
+                                "until": {
+                                    "type": "ac_end",
+                                    "display": "until AC ends",
+                                    "formatting": "until AC ends",
+                                    "display_short": "AC End",
+                                    "value": 0,
+                                    "value_type": null
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name_jp": "7人のスクールアイドルでアピールする",
+                    "name_en": "Appeal with 7 school idols.",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": {
+                                "display": "Gd cards",
+                                "check": "role",
+                                "value": "gd"
+                            },
+                            "effect": {
+                                "type": "increase_base_skill_activation",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Increase base Skill activation chance by 50%",
+                                "formatting": "Increase base Skill activation chance by {effect}",
+                                "display_short": "Skill Activation+",
+                                "until": {
+                                    "type": "ac_end",
+                                    "display": "until AC ends",
+                                    "formatting": "until AC ends",
+                                    "display_short": "AC End",
+                                    "value": 0,
+                                    "value_type": null
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name_jp": "SP特技で合計40,000ボルテージを獲得する",
+                    "name_en": "Gain a total of 40,000 Voltage with SP Skills.",
+                    "effects": null
+                },
+                {
+                    "name_jp": "合計130,000ボルテージを獲得する",
+                    "name_en": "Gain a total of 130,000 Voltage.",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": {
+                                "display": "Non-Gd cards",
+                                "check": "role",
+                                "value": "vo,sp,sk"
+                            },
+                            "effect": {
+                                "type": "decrease_base_appeal",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Decrease base Appeal by 50%",
+                                "formatting": "Decrease base Appeal by {effect}",
+                                "display_short": "Appeal-",
+                                "until": {
+                                    "type": "ac_end",
+                                    "display": "until AC ends",
+                                    "formatting": "until AC ends",
+                                    "display_short": "AC End",
+                                    "value": 0,
+                                    "value_type": null
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name_jp": "SP特技で合計81,000ボルテージを獲得する",
+                    "name_en": "Gain a total of 81,000 Voltage with SP Skills.",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": {
+                                "display": "Sp cards",
+                                "check": "role",
+                                "value": "sp"
+                            },
+                            "effect": {
+                                "type": "increase_base_sp_gain",
+                                "value": 0.2,
+                                "value_type": "percent",
+                                "display": "Increase base SP gain by 20%",
+                                "formatting": "Increase base SP gain by {effect}",
+                                "display_short": "SP Gain Up",
+                                "until": {
+                                    "type": "ac_end",
+                                    "display": "until AC ends",
+                                    "formatting": "until AC ends",
+                                    "display_short": "AC End",
+                                    "value": 0,
+                                    "value_type": null
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "member_order": [
+        107,
+        109,
+        106,
+        105,
+        101,
+        102,
+        103,
+        104,
+        108
+    ],
+    "member_centers": [
+        101
+    ]
+}

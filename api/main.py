@@ -27,12 +27,17 @@ def json_data(*loc):
 
 @app.route('/api/')
 def home():
-    return jsonify(["Hello World!", app.env, app.config['USE_LOCAL_DATA']])
+    return jsonify("Hello World! Documentation soon(tm)")
 
 
 @app.route('/api/cards/<card_id>/')
 def card_info(card_id):
     return jsonify(json_data('cards', card_id))
+
+
+@app.route('/api/lives/<live_id>/')
+def live_info(live_id):
+    return jsonify(json_data('lives', live_id))
 
 
 @app.route('/api/cardrequest/')
@@ -48,9 +53,9 @@ def card_request(use_all=None):
     return jsonify(ret_obj)
 
 
-@app.route('/api/skills/<skill_id>/')
-def skill_info(skill_id):
-    return jsonify(json_data('skills', skill_id))
+# @app.route('/api/skills/<skill_id>/')
+# def skill_info(skill_id):
+#     return jsonify(json_data('skills', skill_id))
 
 
 @app.route('/api/attributes/')

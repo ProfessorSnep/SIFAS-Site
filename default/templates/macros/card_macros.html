@@ -3,11 +3,11 @@
 {% set attribute = attributes()[card['attribute']] %}
 {% set attrib_bg = tex(attribute['background_image_asset']) %}
 <div class="card-info">
-    <div class="row justify-content-center">
-        <div class="col d-flex align-items-end justify-content-end">
-            <h4 class="mb-0">Card No. {{card['no']}}</h5>
+    <div class="row justify-content-center py-2">
+        <div class="col-auto d-flex align-items-end justify-content-xl-end justify-content-md-center">
+            <h4 class="mb-0">Card No. {{card['no']}}</h4>
         </div>
-        <div class="col d-flex align-items-end justify-content-start">
+        <div class="col-auto d-flex align-items-end justify-content-xl-start justify-content-md-center">
             <img height="32" class="px-1" src="{{member_icon(card['member_id'])}}" />
             <img height="40" class="px-1" src="{{icon(card['rarity'])}}" />
             <img height="32" class="px-1" src="{{icon(card['attribute'])}}" />
@@ -19,7 +19,7 @@
     </div>
     <a style="text-decoration: none; color: inherit;" href="/card/{{card_id}}">
         <div class="row">
-            <div class="col-6 text-center py-1">
+            <div class="col-md-6 text-center py-1">
                 {% set appearance = card['appearance']['unidolized'] %}
                 <img style="background-image: url({{attrib_bg}}); background-size: contain;" class="w-100"
                     src="{{tex(appearance['full_image_asset'])}}" />
@@ -28,7 +28,7 @@
                 <caption>/ {{appearance['name_en']}}</caption>
                 {% endif %}
             </div>
-            <div class="col-6 text-center py-1">
+            <div class="col-md-6 text-center py-1">
                 {% set appearance = card['appearance']['idolized'] %}
                 <img style="background-image: url({{attrib_bg}}); background-size: contain;" class="w-100"
                     src="{{tex(appearance['full_image_asset'])}}" />
@@ -39,10 +39,10 @@
             </div>
         </div>
     </a>
-    <div class="row justify-content-center py-2">
-        <div class="col-6">
-            <div class="row justify-content-end">
-                <div class="col-8">
+    <div class="row justify-content-center py-4">
+        <div class="col-md-6">
+            <div class="row justify-content-xl-end">
+                <div class="col-xl-8">
                     <table class="table table-sm text-center">
                         <thead>
                             <tr>
@@ -81,7 +81,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-md-6">
             <div class="row">
                 <div class="col-12 row pb-2">
                     {% for skill in card['skills']['active'] %}
@@ -157,56 +157,58 @@
 {% endmacro %}
 
 {% macro event_cards_list(event) %}
-<div class="col-12">
-    <div class="w-100">
-        <img class="img-fluid" style="max-height: 150px;" src="{{banner(event['banner'])}}">
-    </div>
-    {% if event['name_jp'] %}
-    <caption>{{event['name_jp']}}</caption>
-    {% if event['name_en'] %}
-    <caption> / {{event['name_en']}}</caption>
-    {% endif %}
-    {% endif %}
-</div>
-<div class="col-12 py-2">
-    {% if event['cards'] %}
-    <div class="row justify-content-center">
-        {% for card in event['cards'] %}
-        <div class="col-auto px-5 py-3">
-            <a href="/card/{{card}}" style="text-decoration: inherit; color: inherit;">
-                {{thumb_card_view(card)}}
-            </a>
+<div class="row py-4">
+    <div class="col-12">
+        <div class="w-100">
+            <img class="img-fluid" style="max-height: 150px;" src="{{banner(event['banner'])}}">
         </div>
-        {% endfor %}
+        {% if event['name_jp'] %}
+        <caption>{{event['name_jp']}}</caption>
+        {% if event['name_en'] %}
+        <caption> / {{event['name_en']}}</caption>
+        {% endif %}
+        {% endif %}
     </div>
-    {% endif %}
-    {% if event['gacha_cards'] %}
-    <div class="row text-center py-2">
-        <h3 class="mx-auto">Gacha Cards</h4>
-    </div>
-    <div class="row justify-content-center">
-        {% for card in event['gacha_cards'] %}
-        <div class="col-auto px-5 py-3">
-            <a href="/card/{{card}}" style="text-decoration: inherit; color: inherit;">
-                {{thumb_card_view(card)}}
-            </a>
+    <div class="col-12 py-2">
+        {% if event['cards'] %}
+        <div class="row justify-content-center">
+            {% for card in event['cards'] %}
+            <div class="col-auto px-5 py-3">
+                <a href="/card/{{card}}" style="text-decoration: inherit; color: inherit;">
+                    {{thumb_card_view(card)}}
+                </a>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
-    {% endif %}
-    {% if event['reward_cards'] %}
-    <div class="row text-center py-2">
-        <h3 class="mx-auto">Reward Cards</h4>
-    </div>
-    <div class="row justify-content-center">
-        {% for card in event['reward_cards'] %}
-        <div class="col-auto px-5 py-3">
-            <a href="/card/{{card}}" style="text-decoration: inherit; color: inherit;">
-                {{thumb_card_view(card)}}
-            </a>
+        {% endif %}
+        {% if event['gacha_cards'] %}
+        <div class="row text-center py-2">
+            <h3 class="mx-auto">Gacha Cards</h4>
         </div>
-        {% endfor %}
+        <div class="row justify-content-center">
+            {% for card in event['gacha_cards'] %}
+            <div class="col-auto px-5 py-3">
+                <a href="/card/{{card}}" style="text-decoration: inherit; color: inherit;">
+                    {{thumb_card_view(card)}}
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if event['reward_cards'] %}
+        <div class="row text-center py-2">
+            <h3 class="mx-auto">Reward Cards</h4>
+        </div>
+        <div class="row justify-content-center">
+            {% for card in event['reward_cards'] %}
+            <div class="col-auto px-5 py-3">
+                <a href="/card/{{card}}" style="text-decoration: inherit; color: inherit;">
+                    {{thumb_card_view(card)}}
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
     </div>
-    {% endif %}
 </div>
 {% endmacro %}

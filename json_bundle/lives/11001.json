@@ -1,0 +1,356 @@
+{
+    "name_jp": "君のこころは輝いてるかい？",
+    "name_en": "Kimino Kokorowa Kagayaiterukai?",
+    "artist_jp": "Aqours",
+    "artist_en": "Aqours",
+    "group": "aqours",
+    "subunit": null,
+    "is_2d": false,
+    "jacket_image_asset": "445d",
+    "difficulties": {
+        "easy": {
+            "attribute": "natural",
+            "voltage_requirements": {
+                "s": 239700,
+                "a": 177400,
+                "b": 115100,
+                "c": 52800
+            },
+            "recommended_power": 950,
+            "recommended_stamina": 7200,
+            "lp_needed": 10,
+            "completion_exp": 8,
+            "completion_bond": 12,
+            "sp_gauge": 3600,
+            "damage_per_note": 117,
+            "max_appeal": 50000,
+            "gimmick_effects": null,
+            "hint_jp": "【攻略ヒント】アピールチャンス前にアピール上昇効果を持つギミックノーツがあるので、タイミングよく処\n理してアピールチャンスをクリアしよう",
+            "hint_en": "[Hint] There are Trick Notes that increase Appeal before the Appeal Chance, so deal with them with well-timed taps and clear the Appeal Chance.",
+            "note_gimmicks": [
+                {
+                    "icon_image_asset": "6f3c",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": {
+                                "display": "Natural cards",
+                                "check": "attribute",
+                                "value": "natural"
+                            },
+                            "effect": {
+                                "type": "increase_appeal_percent",
+                                "value": 0.1,
+                                "value_type": "percent",
+                                "display": "Increase Appeal by 10%",
+                                "formatting": "Increase Appeal by {effect}",
+                                "display_short": "Appeal Up",
+                                "until": {
+                                    "type": "note_count",
+                                    "display": "for 10 notes",
+                                    "formatting": "for {until} notes",
+                                    "display_short": "# Notes",
+                                    "value": 10,
+                                    "value_type": "value"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "6066",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "gain_sp_percent",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Gain 50% of SP capacity as SP Gauge",
+                                "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                                "display_short": "SP %Fill",
+                                "until": null
+                            }
+                        }
+                    ]
+                }
+            ],
+            "appeal_chances": [
+                {
+                    "name_jp": "合計9,300ボルテージを獲得する",
+                    "name_en": "Gain a total of 9,300 Voltage.",
+                    "effects": null
+                },
+                {
+                    "name_jp": "合計10,300ボルテージを獲得する",
+                    "name_en": "Gain a total of 10,300 Voltage.",
+                    "effects": null
+                },
+                {
+                    "name_jp": "合計8,500ボルテージを獲得する",
+                    "name_en": "Gain a total of 8,500 Voltage.",
+                    "effects": null
+                }
+            ]
+        },
+        "normal": {
+            "attribute": "natural",
+            "voltage_requirements": {
+                "s": 1443600,
+                "a": 1137100,
+                "b": 830800,
+                "c": 524500
+            },
+            "recommended_power": 4600,
+            "recommended_stamina": 35100,
+            "lp_needed": 12,
+            "completion_exp": 13,
+            "completion_bond": 16,
+            "sp_gauge": 4800,
+            "damage_per_note": 320,
+            "max_appeal": 50000,
+            "gimmick_effects": [
+                {
+                    "trigger": {
+                        "on": "song_start",
+                        "value": null,
+                        "value_type": null,
+                        "display": "On song start",
+                        "formatting": "On song start",
+                        "display_short": "Song Start",
+                        "trigger_chance": 1.0
+                    },
+                    "target": {
+                        "display": "Non-Natural cards",
+                        "check": "attribute",
+                        "value": "smile,pure,cool,active,elegant"
+                    },
+                    "effect": {
+                        "type": "decrease_appeal",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Decrease Appeal by 10%",
+                        "formatting": "Decrease Appeal by {effect}",
+                        "display_short": "Appeal Down",
+                        "until": {
+                            "type": "live_end",
+                            "display": "until Live ends",
+                            "formatting": "until Live ends",
+                            "display_short": "Live end",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    }
+                }
+            ],
+            "hint_jp": "【攻略ヒント】1回目のアピールチャンスクリアに向けて、SP特技を発動できるようにしよう。ライブ最初\nに登場する特技発動率上昇のギミックノーツを処理しても、SPゲージをためておくだけにとどめよう",
+            "hint_en": "[Hint] Charge your gauge so that you can activate your SP Skill during the first Appeal Chance. Even if you tap the Trick Notes that boost your skill activation rate, focus on building your SP Gauge.",
+            "note_gimmicks": [
+                {
+                    "icon_image_asset": "6458",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": {
+                                "display": "Natural cards",
+                                "check": "attribute",
+                                "value": "natural"
+                            },
+                            "effect": {
+                                "type": "increase_skill_activation",
+                                "value": 0.2,
+                                "value_type": "percent",
+                                "display": "Increase Skill activation chance by 20%",
+                                "formatting": "Increase Skill activation chance by {effect}",
+                                "display_short": "Skill Activation Up",
+                                "until": {
+                                    "type": "note_count",
+                                    "display": "for 10 notes",
+                                    "formatting": "for {until} notes",
+                                    "display_short": "# Notes",
+                                    "value": 10,
+                                    "value_type": "value"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "appeal_chances": [
+                {
+                    "name_jp": "合計82,900ボルテージを獲得する",
+                    "name_en": "Gain a total of 82,900 Voltage.",
+                    "effects": null
+                },
+                {
+                    "name_jp": "合計82,900ボルテージを獲得する",
+                    "name_en": "Gain a total of 82,900 Voltage.",
+                    "effects": null
+                },
+                {
+                    "name_jp": "合計92,400ボルテージを獲得する",
+                    "name_en": "Gain a total of 92,400 Voltage.",
+                    "effects": null
+                }
+            ]
+        },
+        "advanced": {
+            "attribute": "natural",
+            "voltage_requirements": {
+                "s": 3009600,
+                "a": 2413500,
+                "b": 1817400,
+                "c": 1221300
+            },
+            "recommended_power": 7150,
+            "recommended_stamina": 54900,
+            "lp_needed": 15,
+            "completion_exp": 21,
+            "completion_bond": 24,
+            "sp_gauge": 6000,
+            "damage_per_note": 367,
+            "max_appeal": 50000,
+            "gimmick_effects": [
+                {
+                    "trigger": {
+                        "on": "song_start",
+                        "value": null,
+                        "value_type": null,
+                        "display": "On song start",
+                        "formatting": "On song start",
+                        "display_short": "Song Start",
+                        "trigger_chance": 1.0
+                    },
+                    "target": {
+                        "display": "Non-Natural cards",
+                        "check": "attribute",
+                        "value": "smile,pure,cool,active,elegant"
+                    },
+                    "effect": {
+                        "type": "decrease_appeal",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Decrease Appeal by 10%",
+                        "formatting": "Decrease Appeal by {effect}",
+                        "display_short": "Appeal Down",
+                        "until": {
+                            "type": "live_end",
+                            "display": "until Live ends",
+                            "formatting": "until Live ends",
+                            "display_short": "Live end",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    }
+                }
+            ],
+            "hint_jp": "【攻略ヒント】アピール上昇効果を持つギミックノーツや、ミスすると上昇効果が解除されるギミックノーツ\nがたくさん登場するよ。タイミングよく処理して、ボルテージを獲得しよう",
+            "hint_en": "[Hint] There are many Trick Notes that increase your Appeal, as well as those that dispel buffs if you miss them. Make your taps well-timed and get that Voltage.",
+            "note_gimmicks": [
+                {
+                    "icon_image_asset": "6f3c",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": {
+                                "display": "Natural cards",
+                                "check": "attribute",
+                                "value": "natural"
+                            },
+                            "effect": {
+                                "type": "increase_appeal_percent",
+                                "value": 0.1,
+                                "value_type": "percent",
+                                "display": "Increase Appeal by 10%",
+                                "formatting": "Increase Appeal by {effect}",
+                                "display_short": "Appeal Up",
+                                "until": {
+                                    "type": "note_count",
+                                    "display": "for 20 notes",
+                                    "formatting": "for {until} notes",
+                                    "display_short": "# Notes",
+                                    "value": 20,
+                                    "value_type": "value"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "6066",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "gain_sp_percent",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Gain 50% of SP capacity as SP Gauge",
+                                "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                                "display_short": "SP %Fill",
+                                "until": null
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "4844",
+                    "effects": [
+                        {
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "cleanse_buffs",
+                                "value": 0,
+                                "value_type": null,
+                                "display": "Remove any buffs",
+                                "formatting": "Remove any buffs",
+                                "display_short": "Remove buffs",
+                                "until": null
+                            }
+                        }
+                    ]
+                }
+            ],
+            "appeal_chances": [
+                {
+                    "name_jp": "合計154,200ボルテージを獲得する",
+                    "name_en": "Gain a total of 154,200 Voltage.",
+                    "effects": null
+                },
+                {
+                    "name_jp": "合計137,900ボルテージを獲得する",
+                    "name_en": "Gain a total of 137,900 Voltage.",
+                    "effects": null
+                },
+                {
+                    "name_jp": "合計162,300ボルテージを獲得する",
+                    "name_en": "Gain a total of 162,300 Voltage.",
+                    "effects": null
+                },
+                {
+                    "name_jp": "合計194,900ボルテージを獲得する",
+                    "name_en": "Gain a total of 194,900 Voltage.",
+                    "effects": null
+                }
+            ]
+        }
+    },
+    "member_order": [
+        104,
+        105,
+        106,
+        102,
+        101,
+        108,
+        109,
+        107,
+        103
+    ],
+    "member_centers": [
+        101,
+        102
+    ]
+}
