@@ -41,13 +41,23 @@ def card_view(card_id):
     return render_template('pages/card_view.html', card_id=card_id)
 
 
+@app.route('/live/<live_id>/')
+def live_view(live_id):
+    return render_template('pages/live_view.html', live_id=live_id)
+
+
 @app.route('/cards/')
 def card_list():
     return render_template('pages/card_list.html')
 
 
-@app.route('/events/')
+@app.route('/lives/')
 def event_list():
+    return render_template('pages/live_list.html')
+
+
+@app.route('/events/')
+def live_list():
     return render_template('pages/event_list.html')
 
 
@@ -86,6 +96,10 @@ def template_card_info(card_id):
     return request_api('cards/all')[str(card_id)]
 
 
+def template_live_info(live_id):
+    return request_api('lives/all')[str(live_id)]
+
+
 def template_card_list():
     card_list = request_api('cards/all')
     key_list = list(card_list.keys())
@@ -101,6 +115,12 @@ def template_event_list(include_minis=False):
     return event_list
 
 
+def template_live_list():
+    live_list = request_api('lives/all')
+    key_list = list(live_list.keys())
+    return key_list
+
+
 def template_card_latest():
     return request_api('cards/latest')
 
@@ -114,9 +134,9 @@ def filter_skill_short(skill):
 
 
 @app.template_filter('skill')
-def filter_skill(skill):
+def filter_skill(skill, path='effects'):
     efs = []
-    for effect in skill['effects']:
+    for effect in skill[path]:
         effect_format = effect['effect_format']
 
         format_type = None
@@ -195,7 +215,9 @@ app.jinja_env.globals.update(icon=template_ui_url)
 app.jinja_env.globals.update(banner=template_event_banner_url)
 app.jinja_env.globals.update(attributes=template_attrib_info)
 app.jinja_env.globals.update(card_info=template_card_info)
+app.jinja_env.globals.update(live_info=template_live_info)
 app.jinja_env.globals.update(cards=template_card_list)
+app.jinja_env.globals.update(lives=template_live_list)
 app.jinja_env.globals.update(events=template_event_list)
 app.jinja_env.globals.update(latest_cards=template_card_latest)
 app.jinja_env.globals.update(member_info=template_member_info)
