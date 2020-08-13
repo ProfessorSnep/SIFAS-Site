@@ -87,7 +87,7 @@
                     {% for skill in card['skills']['active'] %}
                     <div class="col-12 py-1 text-left">
                         <img height="32" src="{{tex(skill['thumbnail_image_asset'])}}" />
-                        {{skill|skill_short}}
+                        {{skill|skill_short(split=", ")}}
                     </div>
                     {% endfor %}
                 </div>
@@ -95,7 +95,7 @@
                     {% for skill in card['skills']['passive'] %}
                     <div class="col-12 py-1 text-left">
                         <img height="32" src="{{tex(skill['thumbnail_image_asset'])}}" />
-                        {{skill|skill_short}}
+                        {{skill|skill_short(split=", ")}}
                     </div>
                     {% endfor %}
                 </div>
