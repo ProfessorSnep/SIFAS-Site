@@ -126,11 +126,11 @@ def template_card_latest():
 
 
 @app.template_filter('skill_short')
-def filter_skill_short(skill):
+def filter_skill_short(skill, split="\n\n"):
     efs = []
     for effect in skill['effects']:
         efs.append(effect['short_display'])
-    return '\n\n'.join(efs)
+    return split.join(efs)
 
 
 @app.template_filter('skill')
