@@ -1,0 +1,1 @@
+gsutil -m rsync -r img_bundle gs://sifas-content.snep.pw & gsutil -m rsync -r json_bundle gs://sifas-site.appspot.com
