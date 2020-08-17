@@ -47,7 +47,8 @@
                         ],
                         "until_value_type": "value",
                         "target": "Same Year",
-                        "short_display": "Appeal Up : Same Year / # Notes"
+                        "short_display": "Appeal Up : Same Year / # Notes",
+                        "trigger_limit": 0
                     }
                 ]
             }
@@ -82,7 +83,8 @@
                         "until_values": [],
                         "until_value_type": null,
                         "target": "All",
-                        "short_display": "Appeal+ : All"
+                        "short_display": "Appeal+ : All",
+                        "trigger_limit": 0
                     }
                 ]
             },
@@ -96,13 +98,13 @@
                 "effects": [
                     {
                         "effect_format": "Increase base Appeal by {effect} until Live ends",
-                        "trigger_format": "On AC start, {trigger_chance} chance",
+                        "trigger_format": "On AC start, {trigger_chance} chance, once per live",
                         "effect_values": [
                             0.05
                         ],
                         "effect_value_type": "percent",
                         "trigger_values": [
-                            null
+                            1
                         ],
                         "trigger_value_type": null,
                         "trigger_chances": [
@@ -113,7 +115,8 @@
                         ],
                         "until_value_type": null,
                         "target": "All",
-                        "short_display": "Appeal+ : All / Live end (AC Start)"
+                        "short_display": "Appeal+ : All / Live end (AC Start)",
+                        "trigger_limit": 1
                     }
                 ]
             }
