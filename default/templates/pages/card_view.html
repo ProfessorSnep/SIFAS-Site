@@ -53,6 +53,29 @@
                     {% endif %}
                 </div>
             </div>
+            {% if card['event_introduced'] %}
+            <div class="row">
+                <div class="col text-center py-2">
+                    <h5>Introduced:</h5>
+                    {% set event = event_info(card['event_introduced']) %}
+                    <div class="w-100">
+                        <img class="img-fluid" style="max-height: 150px;" src="{{banner(event['banner'])}}">
+                    </div>
+                    {% if event['name_jp'] %}
+                    <caption>{{event['name_jp']}}</caption>
+                    {% if event['name_en'] %}
+                    <caption> / {{event['name_en']}}</caption>
+                    {% endif %}
+                    {% endif %}
+                    {% if card['card_type'] == 'event_reward' %}
+                        <h4>Event Reward</h4>
+                    {% endif %}
+                    {% if card['card_type'] == 'event_gacha' %}
+                        <h4>Event Gacha</h4>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
         </div>
         <div class="col-xl-4 col-12 py-5">
             <h4>Active Skill</h4>

@@ -53,8 +53,8 @@
             <div class="row py-1">
                 <div class="col text-center">
                     <p>Select Difficulty:</p>
-                    <div id="difficulty-selector" class="btn-group btn-group-lg btn-group-toggle" style="flex-wrap: wrap;"
-                        data-toggle="buttons">
+                    <div id="difficulty-selector" class="btn-group btn-group-lg btn-group-toggle"
+                        style="flex-wrap: wrap;" data-toggle="buttons">
                         {% for diff_id, diff_name, diff_style in difficulty_vals %}
                         {% if live['difficulties'][diff_id] %}
                         <label class="btn btn-{{diff_style}}">
@@ -176,6 +176,8 @@
                             <br />
                             <span>Target: <strong>{{effect['target']['display']}}</strong></span>
                             {% endif %}
+                            <br />
+                            <span>Applies: <strong>{{effect['note_apply']['display']}}</strong></span>
                             {% endfor %}
                         </div>
                     </div>
@@ -201,6 +203,8 @@
                             <br />
                             <span>Target: <strong>{{effect['target']['display']}}</strong></span>
                             {% endif %}
+                            <br />
+                            <span>Applies: <strong>{{effect['ac_apply']['display']}}</strong></span>
                             {% endfor %}
                             {% else %}
                             <p>No effect.</p>
