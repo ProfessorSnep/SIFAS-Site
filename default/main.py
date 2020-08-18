@@ -84,6 +84,19 @@ def template_member_icon_url(member_id):
     return content_endpoint(f'm/{member_id}.png')
 
 
+def template_school_icon_url(school_id):
+    simg = {
+        '1': 'muse',
+        '2': 'aqours',
+        '3': 'niji',
+        'muse': 'muse',
+        'aqours': 'aqours',
+        'niji': 'niji',
+        'nijigasaki': 'niji'
+    }[str(school_id)]
+    return content_endpoint(f'm/{simg}.png')
+
+
 def template_event_banner_url(event_banner_loc):
     return content_endpoint(f'eb/{event_banner_loc}')
 
@@ -100,11 +113,30 @@ def template_live_info(live_id):
     return request_api('lives/all')[str(live_id)]
 
 
+def template_event_info(event_id):
+    event_list = request_api('events')
+    return next(e for e in event_list if e['event_id'] == event_id)
+
+
 def template_card_list():
     card_list = request_api('cards/all')
     key_list = list(card_list.keys())
     key_list.sort(key=lambda x: card_list[x]['no'])
     return key_list
+
+
+def template_set_list():
+    set_list = request_api('cards/sets')
+    return set_list
+
+
+def template_get_card_set(cid):
+    set_list = request_api('cards/sets')
+    for s in set_list:
+        for e in s['entries']:
+            if e['card'] == str(cid):
+                return s
+    return None
 
 
 def template_event_list(include_minis=False):
@@ -210,18 +242,24 @@ def filter_loc_name(obj, name='name', preferred='en'):
     return None
 
 
-app.jinja_env.globals.update(tex=template_tex_url)
-app.jinja_env.globals.update(icon=template_ui_url)
-app.jinja_env.globals.update(banner=template_event_banner_url)
-app.jinja_env.globals.update(attributes=template_attrib_info)
-app.jinja_env.globals.update(card_info=template_card_info)
-app.jinja_env.globals.update(live_info=template_live_info)
-app.jinja_env.globals.update(cards=template_card_list)
-app.jinja_env.globals.update(lives=template_live_list)
-app.jinja_env.globals.update(events=template_event_list)
-app.jinja_env.globals.update(latest_cards=template_card_latest)
-app.jinja_env.globals.update(member_info=template_member_info)
-app.jinja_env.globals.update(member_icon=template_member_icon_url)
+app.jinja_env.globals.update({
+    'tex': template_tex_url,
+    'icon': template_ui_url,
+    'banner': template_event_banner_url,
+    'attributes': template_attrib_info,
+    'card_info': template_card_info,
+    'live_info': template_live_info,
+    'event_info': template_event_info,
+    'cards': template_card_list,
+    'lives': template_live_list,
+    'events': template_event_list,
+    'sets': template_set_list,
+    'get_card_set': template_get_card_set,
+    'latest_cards': template_card_latest,
+    'member_info': template_member_info,
+    'member_icon': template_member_icon_url,
+    'school_icon': template_school_icon_url
+})
 
 
 if __name__ == "__main__":

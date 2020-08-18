@@ -2,16 +2,16 @@ window.memberFilterSelector = null;
 window.rarityFilterSelector = null;
 window.attributeFilterSelector = null;
 window.roleFilterSelector = null;
-window.fesFilterSelector = null;
+window.setFilterSelector = null;
 
 function updateFilter() {
     var mf = window.memberFilterSelector || '';
     var rf = window.rarityFilterSelector || '';
     var af = window.attributeFilterSelector || '';
     var tf = window.roleFilterSelector || '';
-    var ff = window.fesFilterSelector || '';
+    var sf = window.setFilterSelector || '';
 
-    var select = '' + mf + rf + af + tf + ff;
+    var select = '' + mf + rf + af + tf + sf;
 
     if (select.length > 0) {
         $('.filtered-card').hide();
@@ -27,6 +27,23 @@ $('.member-filter').click(function(e) {
     var ms = '.card-member-' + memberId;
 
     $('.member-filter.img-hl').removeClass('img-hl');
+    $('.school-filter.img-hl').removeClass('img-hl');
+    if (window.memberFilterSelector !== ms) {
+        window.memberFilterSelector = ms;
+        $(this).addClass('img-hl');
+    } else {
+        window.memberFilterSelector = null;
+    }
+    updateFilter();
+});
+
+$('.school-filter').click(function(e) {
+    e.preventDefault();
+    var memberId = $(this).attr('school-id');
+    var ms = '.card-school-' + memberId;
+
+    $('.member-filter.img-hl').removeClass('img-hl');
+    $('.school-filter.img-hl').removeClass('img-hl');
     if (window.memberFilterSelector !== ms) {
         window.memberFilterSelector = ms;
         $(this).addClass('img-hl');
@@ -41,6 +58,7 @@ $('.rarity-filter').click(function(e) {
     var rarity = $(this).attr('rarity');
     var rs = '.card-rarity-' + rarity;
 
+    $('.fes-filter.img-hl').removeClass('img-hl');
     $('.rarity-filter.img-hl').removeClass('img-hl');
     if (window.rarityFilterSelector !== rs) {
         window.rarityFilterSelector = rs;
@@ -86,11 +104,27 @@ $('.fes-filter').click(function(e) {
     var fs = '.card-fes';
 
     $('.fes-filter.img-hl').removeClass('img-hl');
-    if (window.fesFilterSelector !== fs) {
-        window.fesFilterSelector = fs;
+    $('.rarity-filter.img-hl').removeClass('img-hl');
+    if (window.rarityFilterSelector !== fs) {
+        window.rarityFilterSelector = fs;
         $(this).addClass('img-hl');
     } else {
-        window.fesFilterSelector = null;
+        window.rarityFilterSelector = null;
     }
     updateFilter();
+});
+
+$('#set-sort').change(function(e) {
+    if (this.value.length > 0) {
+        var ss = '.card-set-' + this.value;
+        window.setFilterSelector = ss;
+    } else {
+        window.setFilterSelector = null;
+    }
+    updateFilter();
+});
+
+$(document).ready(function() {
+    $('.show-on-load').show();
+    $('.hide-on-load').hide();
 });
