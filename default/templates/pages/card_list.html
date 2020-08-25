@@ -21,26 +21,26 @@
         <!-- START OF SORTER BAR -->
         <div class="col">
             <!-- START OF MEMBER SORT ROW -->
-            <div class="row align-items-center justify-content-center py-3 mx-1">
+            <div class="row align-items-center justify-content-center py-3">
                 <div class="col-auto">
                     {% for i in range(3) %}
                     <div class="row my-3 justify-content-center">
                         {% for j in range(9 if i != 2 else 10) %}
                         {% set mid = i * 100 + j + 1 %}
-                        <div class="col px-1">
+                        <div class="col px-1 py-1">
                             <div class="fake-link member-filter" member-id="{{mid}}"><img height="36"
-                                    src="{{member_icon(mid)}}" /></div>
+                                    src="{{member_icon(mid)}}" alt="" /></div>
                         </div>
                         {% endfor %}
                     </div>
                     {% endfor %}
                 </div>
-                <div class="col-2">
-                    <div class="row">
+                <div class="col-md-2 col-12">
+                    <div class="row justify-content-center">
                         {% for school in [1, 2, 3] %}
                         <div class="col-xl-12 col-4 my-2">
                             <div class="fake-link school-filter" school-id="{{school}}"><img height="36"
-                                    src="{{school_icon(school)}}" /></div>
+                                    src="{{school_icon(school)}}" alt="" /></div>
                         </div>
                         {% endfor %}
                     </div>
@@ -53,19 +53,19 @@
                 <div class="col-auto mx-2">
                     <div class="row justify-content-center">
                         <div class="col-auto px-1 py-1">
-                            <span class="fake-link rarity-filter py-1" rarity="r"><img width="48"
-                                    src="{{icon('r')}}" /></span>
+                            <span class="fake-link rarity-filter py-1" rarity-id="r"><img height="40"
+                                    src="{{icon('r')}}" alt="R" /></span>
                         </div>
                         <div class="col-auto px-1 py-1">
-                            <span class="fake-link rarity-filter py-1" rarity="sr"><img width="48"
-                                    src="{{icon('sr')}}" /></span>
+                            <span class="fake-link rarity-filter py-1" rarity-id="sr"><img height="40"
+                                    src="{{icon('sr')}}" alt="SR" /></span>
                         </div>
                         <div class="col-auto px-1 py-1">
-                            <span class="fake-link rarity-filter py-1" rarity="ur"><img width="48"
-                                    src="{{icon('ur')}}" /></span>
+                            <span class="fake-link rarity-filter py-1" rarity-id="ur"><img height="40"
+                                    src="{{icon('ur')}}" alt="UR" /></span>
                         </div>
                         <div class="col-auto px-1 py-1">
-                            <div class="fake-link fes-filter"><img width="52" src="{{icon('fes')}}" /></div>
+                            <div class="fake-link fes-filter"><img height="40" src="{{icon('fes')}}" alt="FES" /></div>
                         </div>
                     </div>
                 </div>
@@ -73,28 +73,28 @@
                 <div class="col-auto mx-2">
                     <div class="row justify-content-center">
                         <div class="col-auto px-1 py-1">
-                            <span class="fake-link attribute-filter" attribute="smile"><img width="36"
-                                    src="{{icon('smile')}}" /></span>
+                            <span class="fake-link attribute-filter" attribute-id="smile"><img width="36"
+                                    src="{{icon('smile')}}" alt="Smile" /></span>
                         </div>
                         <div class="col-auto px-1 py-1">
-                            <span class="fake-link attribute-filter" attribute="pure"><img width="36"
-                                    src="{{icon('pure')}}" /></span>
+                            <span class="fake-link attribute-filter" attribute-id="pure"><img width="36"
+                                    src="{{icon('pure')}}" alt="Pure" /></span>
                         </div>
                         <div class="col-auto px-1 py-1">
-                            <span class="fake-link attribute-filter" attribute="cool"><img width="36"
-                                    src="{{icon('cool')}}" /></span>
+                            <span class="fake-link attribute-filter" attribute-id="cool"><img width="36"
+                                    src="{{icon('cool')}}" alt="Cool" /></span>
                         </div>
                         <div class="col-auto px-1 py-1">
-                            <span class="fake-link attribute-filter" attribute="active"><img width="36"
-                                    src="{{icon('active')}}" /></span>
+                            <span class="fake-link attribute-filter" attribute-id="active"><img width="36"
+                                    src="{{icon('active')}}" alt="Active" /></span>
                         </div>
                         <div class="col-auto px-1 py-1">
-                            <span class="fake-link attribute-filter" attribute="natural"><img width="36"
-                                    src="{{icon('natural')}}" /></span>
+                            <span class="fake-link attribute-filter" attribute-id="natural"><img width="36"
+                                    src="{{icon('natural')}}" alt="Natural" /></span>
                         </div>
                         <div class="col-auto px-1 py-1">
-                            <span class="fake-link attribute-filter" attribute="elegant"><img width="36"
-                                    src="{{icon('elegant')}}" /></span>
+                            <span class="fake-link attribute-filter" attribute-id="elegant"><img width="36"
+                                    src="{{icon('elegant')}}" alt="Elegant" /></span>
                         </div>
                     </div>
                 </div>
@@ -102,19 +102,23 @@
                 <div class="col-auto mx-2">
                     <div class="row justify-content-center">
                         <div class="col-auto px-1 py-1">
-                            <span class="fake-link role-filter py-1" role="vo"><img width="36" src="{{icon('vo')}}" />
+                            <span class="fake-link role-filter py-1" role-id="vo"><img width="36" src="{{icon('vo')}}"
+                                    alt="Vo" />
                             </span>
                         </div>
                         <div class="col-auto px-1 py-1">
-                            <span class="fake-link role-filter py-1" role="sp"><img width="36" src="{{icon('sp')}}" />
+                            <span class="fake-link role-filter py-1" role-id="sp"><img width="36" src="{{icon('sp')}}"
+                                    alt="Sp" />
                             </span>
                         </div>
                         <div class="col-auto px-1 py-1">
-                            <span class="fake-link role-filter py-1" role="gd"><img width="36" src="{{icon('gd')}}" />
+                            <span class="fake-link role-filter py-1" role-id="gd"><img width="36" src="{{icon('gd')}}"
+                                    alt="Gd" />
                             </span>
                         </div>
                         <div class="col-auto px-1 py-1">
-                            <span class="fake-link role-filter py-1" role="sk"><img width="36" src="{{icon('sk')}}" />
+                            <span class="fake-link role-filter py-1" role-id="sk"><img width="36" src="{{icon('sk')}}"
+                                    alt="Sk" />
                             </span>
                         </div>
                     </div>
@@ -139,8 +143,7 @@
         {% for cid in cards() %}
         {% set card = card_info(cid) %}
         {% set card_set = get_card_set(cid) %}
-        <div
-            class="col-xl-3 col-md-auto px-5 py-3 filtered-card 
+        <div class="col-xl-3 col-md-auto px-5 py-3 filtered-card 
                 card-member-{{card['member_id']}} card-rarity-{{card['rarity']}} card-attribute-{{card['attribute']}}
                 card-role-{{card['role']}} {{'card-fes' if card['is_fes'] else ''}} {{'card-set-' + card_set['id'] if card_set else ''}}
                 card-school-{{(card['member_id'] / 100 + 1)|int}}">

@@ -55,7 +55,7 @@ $('.school-filter').click(function(e) {
 
 $('.rarity-filter').click(function(e) {
     e.preventDefault();
-    var rarity = $(this).attr('rarity');
+    var rarity = $(this).attr('rarity-id');
     var rs = '.card-rarity-' + rarity;
 
     $('.fes-filter.img-hl').removeClass('img-hl');
@@ -71,7 +71,7 @@ $('.rarity-filter').click(function(e) {
 
 $('.attribute-filter').click(function(e) {
     e.preventDefault();
-    var attrib = $(this).attr('attribute');
+    var attrib = $(this).attr('attribute-id');
     var as = '.card-attribute-' + attrib;
 
     $('.attribute-filter.img-hl').removeClass('img-hl');
@@ -86,7 +86,7 @@ $('.attribute-filter').click(function(e) {
 
 $('.role-filter').click(function(e) {
     e.preventDefault();
-    var attrib = $(this).attr('role');
+    var attrib = $(this).attr('role-id');
     var ts = '.card-role-' + attrib;
 
     $('.role-filter.img-hl').removeClass('img-hl');

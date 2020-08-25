@@ -8,7 +8,7 @@
 <script src="{{url_for('.static', filename='js/live_view.js')}}?v=1.0.0"></script>
 {% endblock scripts %}
 
-{% set difficulty_vals = [('easy', "Easy", 'primary'), ('normal', "Normal", 'success'), ('advanced', "Advanced", 'warning'), ('advanced_plus', "Advanced+", 'danger')] %}
+{% set difficulty_vals = [('easy', "Easy", 'easy'), ('normal', "Normal", 'normal'), ('advanced', "Advanced", 'adv'), ('advanced_plus', "Advanced+", 'advplus')] %}
 
 {% set active_page = '' -%}
 {% set title = "Live View" %}
@@ -19,14 +19,14 @@
 <div class="container">
     <div class="row py-3 text-center">
         <div class="col-lg-4">
-            <img class="img-fluid" src="{{tex(live['jacket_image_asset'])}}" />
+            <img class="img-fluid" src="{{tex(live['jacket_image_asset'])}}" alt="" />
         </div>
         <div class="col-lg-8">
             <div class="row">
                 <div class="col">
-                    <h1>{{live['name_jp']}}</h1>
+                    <div style="font-size: 2rem;"><strong>{{live['name_jp']}}</strong></div>
                     {% if live['name_en'] %}
-                    <h3>{{live['name_en']}}</h3>
+                    <div style="font-size: 1.5rem;">{{live['name_en']}}</div>
                     {% endif %}
                     <div>by {{live|loc_name(name="artist")}}</div>
                 </div>
@@ -37,7 +37,7 @@
                 <div class="col px-1 text-center" style="max-width: fit-content;">
                     <div class="row">
                         <div class="col">
-                            <img class="img-fluid" src="{{tex(member['thumbnail_asset_path'])}}" />
+                            <img class="img-fluid" src="{{tex(member['thumbnail_asset_path'])}}" alt="" />
                         </div>
                     </div>
                     <div class="row">
@@ -57,10 +57,10 @@
                         style="flex-wrap: wrap;" data-toggle="buttons">
                         {% for diff_id, diff_name, diff_style in difficulty_vals %}
                         {% if live['difficulties'][diff_id] %}
-                        <label class="btn btn-{{diff_style}}">
+                        <label class="btn button-{{diff_style}}">
                             <input type="radio" name="difficulties" id="{{diff_id}}" autocomplete="off">
-                            <img width="32" src="{{icon(live['difficulties'][diff_id]['attribute'])}}" />
-                            {{diff_name}}
+                            <img width="32" src="{{icon(live['difficulties'][diff_id]['attribute'])}}" alt="" />
+                            <span>{{diff_name}}</span>
                         </label>
                         {% endif %}
                         {% endfor %}
@@ -107,7 +107,7 @@
             </div>
             <div class="row text-center justify-content-center py-2">
                 <div class="col-xl-6 col-12">
-                    <table class="table">
+                    <table class="table" style="color: #fff;">
                         <thead>
                             <tr>
                                 <th>S Rank</th>
@@ -165,8 +165,8 @@
                     <div class="row my-2 skill-bg">
                         <div class="col">
                             <div class="my-1">
-                                <img height="32" style="background-color: #ccc; border-radius: 5px;"
-                                    src="{{tex(note['icon_image_asset'])}}" />
+                                <img height="32" width="32" style="background-color: #ccc; border-radius: 5px;"
+                                    src="{{tex(note['icon_image_asset'])}}" alt="" />
                             </div>
                             {% for effect in note['effects'] %}
                             <span>{{effect['effect']['display']}}{% if effect['effect']['until'] %}
