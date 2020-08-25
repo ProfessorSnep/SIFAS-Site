@@ -19,12 +19,12 @@
                     <h2 class="mb-0">Card No. {{card['no']}}</h5>
                 </div>
                 <div class="col-auto d-flex align-items-end justify-content-xl-start justify-content-md-center">
-                    <img height="32" class="px-1" src="{{member_icon(card['member_id'])}}" />
-                    <img height="40" class="px-1" src="{{icon(card['rarity'])}}" />
-                    <img height="32" class="px-1" src="{{icon(card['attribute'])}}" />
-                    <img height="32" class="px-1" src="{{icon(card['role'])}}" />
+                    <img height="32" class="px-1" src="{{member_icon(card['member_id'])}}" alt="" />
+                    <img height="40" class="px-1" src="{{icon(card['rarity'])}}" alt="" />
+                    <img height="32" class="px-1" src="{{icon(card['attribute'])}}" alt="" />
+                    <img height="32" class="px-1" src="{{icon(card['role'])}}" alt="" />
                     {% if card['is_fes'] %}
-                    <img height="40" class="px-1" src="{{icon('fes')}}" />
+                    <img height="40" class="px-1" src="{{icon('fes')}}" alt="FES Card" />
                     {% endif %}
                     {% if card['card_type'] == 'event_reward' %}
                     <span class="mx-2 badge badge-primary">Event Reward</span>
@@ -35,7 +35,7 @@
                 <div class="col-12 text-center py-1">
                     {% set appearance = card['appearance']['unidolized'] %}
                     <img style="background-image: url({{attrib_bg}}); background-size: contain;" class="w-100"
-                        src="{{tex(appearance['full_image_asset'])}}" />
+                        src="{{tex(appearance['full_image_asset'])}}" alt="" />
                     <caption>{{appearance['name_jp']}}</caption>
                     {% if appearance['name_en'] %}
                     <caption>/ {{appearance['name_en']}}</caption>
@@ -46,7 +46,7 @@
                 <div class="col-12 text-center py-1">
                     {% set appearance = card['appearance']['idolized'] %}
                     <img style="background-image: url({{attrib_bg}}); background-size: contain;" class="w-100"
-                        src="{{tex(appearance['full_image_asset'])}}" />
+                        src="{{tex(appearance['full_image_asset'])}}" alt="" />
                     <caption>{{appearance['name_jp']}}</caption>
                     {% if appearance['name_en'] %}
                     <caption>/ {{appearance['name_en']}}</caption>
@@ -56,10 +56,11 @@
             {% if card['event_introduced'] %}
             <div class="row">
                 <div class="col text-center py-2">
-                    <h5>Introduced:</h5>
+                    <span style="font-size: 1.5rem;">Introduced:</span>
                     {% set event = event_info(card['event_introduced']) %}
                     <div class="w-100">
-                        <img class="img-fluid" style="max-height: 150px;" src="{{banner(event['banner'])}}">
+                        <img class="img-fluid" style="max-height: 150px;" src="{{banner(event['banner'])}}"
+                            alt="Event Banner">
                     </div>
                     {% if event['name_jp'] %}
                     <caption>{{event['name_jp']}}</caption>
@@ -68,25 +69,26 @@
                     {% endif %}
                     {% endif %}
                     {% if card['card_type'] == 'event_reward' %}
-                        <h4>Event Reward</h4>
+                    <div style="font-size: 1.2rem; font-weight: bold;">Event Reward</div>
                     {% endif %}
                     {% if card['card_type'] == 'event_gacha' %}
-                        <h4>Event Gacha</h4>
+                    <div style="font-size: 1.2rem; font-weight: bold;">Event Gacha</div>
                     {% endif %}
                 </div>
             </div>
             {% endif %}
         </div>
         <div class="col-xl-4 col-12 py-5">
-            <h4>Active Skill</h4>
+            <span style="font-size: 1.5rem;">Active Skill</span>
             {% for skill in card['skills']['active'] %}
             <div class="row justify-content-start skill-bg my-1">
                 <div class="col-3">
-                    <img height="72" src="{{tex(skill['thumbnail_image_asset'])}}" />
+                    <img height="72" src="{{tex(skill['thumbnail_image_asset'])}}" alt="" />
                 </div>
                 <div class="col text-left">
-                    <h6><strong>{{skill['name_jp']}} {% if skill['name_en'] %}({{skill['name_en']}}){% endif %}</strong>
-                    </h6>
+                    <span><strong>{{skill['name_jp']}}
+                            {% if skill['name_en'] %}({{skill['name_en']}}){% endif %}</strong>
+                    </span>
                     {% set skill_effects = skill|skill %}
                     {% for skill_info in skill_effects %}
                     <div>{{skill_info['effect']}}</div>
@@ -97,11 +99,11 @@
                 </div>
             </div>
             {% endfor %}
-            <h4>Passive Skills</h4>
+            <span style="font-size: 1.5rem;">Passive Skills</span>
             {% for skill in card['skills']['passive'] %}
             <div class="row justify-content-start skill-bg my-1">
                 <div class="col-3">
-                    <img height="72" src="{{tex(skill['thumbnail_image_asset'])}}" />
+                    <img height="72" src="{{tex(skill['thumbnail_image_asset'])}}" alt="" />
                 </div>
                 <div class="col text-left">
                     {% set skill_effects = skill|skill %}
@@ -117,13 +119,13 @@
             {% endfor %}
             <div class="row">
                 <div class="col">
-                    <table class="table text-center">
+                    <table class="table text-center" style="color: #fff;">
                         <thead>
                             <tr>
                                 <th scope="col"></th>
-                                <th scope="col"><img height="32" src="{{icon('appeal')}}" /></th>
-                                <th scope="col"><img height="32" src="{{icon('stamina')}}" /></th>
-                                <th scope="col"><img height="32" src="{{icon('technique')}}" />
+                                <th scope="col"><img height="32" src="{{icon('appeal')}}" alt="Appeal" /></th>
+                                <th scope="col"><img height="32" src="{{icon('stamina')}}" alt="Stamina" /></th>
+                                <th scope="col"><img height="32" src="{{icon('technique')}}" alt="Technique" />
                                 </th>
                             </tr>
                         </thead>
@@ -133,10 +135,10 @@
                             <tr>
                                 <th scope="row" class="align-middle" style="font-size: 0;">
                                     {% for j in range(i) %}
-                                    <img width="16" src="{{icon('lb_full')}}" />
+                                    <img width="16" src="{{icon('lb_full')}}" alt="" />
                                     {% endfor %}
                                     {% for j in range(5 - i) %}
-                                    <img width="16" src="{{icon('lb_empty')}}" />
+                                    <img width="16" src="{{icon('lb_empty')}}" alt="" />
                                     {% endfor %}
                                 </th>
                                 <td>{{stats['appeal']}}</td>
@@ -149,12 +151,12 @@
                 </div>
             </div>
             {% if card['outfits']|length > 0 %}
-            <h4>Outfit</h4>
+            <span style="font-size: 1.5rem;">Outfit</span>
             <div class="row py-3">
                 {% for suit in card['outfits'] %}
                 <div class="col-6">
                     <div>
-                        <img src="{{tex(suit['thumbnail_image_asset'])}}" />
+                        <img src="{{tex(suit['thumbnail_image_asset'])}}" alt="" />
                         <p class="py-1">
                             {{suit['name_jp']}}
                             {% if suit['name_en'] %}
