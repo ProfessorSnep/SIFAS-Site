@@ -143,7 +143,7 @@ def template_event_list(include_minis=False):
     event_list = request_api('events')
     if not include_minis:
         event_list = list(
-            filter(lambda e: e['type'] in ['pickup_gacha', 'fes_gacha', 'token_event', 'point_event'], event_list))
+            filter(lambda e: e['type'] in ['pickup_gacha', 'fes_gacha', 'marathon', 'mining'], event_list))
     return event_list
 
 
