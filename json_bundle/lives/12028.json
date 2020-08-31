@@ -1,29 +1,29 @@
 {
-    "name_jp": "ユメノトビラ",
-    "name_en": "Yume no Tobira",
-    "artist_jp": "μ's",
-    "artist_en": "μ's",
-    "group": "muse",
+    "name_jp": "哀温ノ詩",
+    "name_en": null,
+    "artist_jp": "エマ・ヴェルデ",
+    "artist_en": "Emma Verde",
+    "group": "nijigasaki",
     "subunit": null,
-    "is_2d": false,
-    "jacket_image_asset": "5c61",
+    "is_2d": true,
+    "jacket_image_asset": "623553",
     "difficulties": {
         "easy": {
-            "difficulty_id": 10062101,
+            "difficulty_id": 12028101,
             "attribute": "pure",
             "voltage_requirements": {
-                "s": 701600,
-                "a": 527700,
-                "b": 353900,
-                "c": 180100
+                "s": 638000,
+                "a": 483000,
+                "b": 327000,
+                "c": 172000
             },
-            "recommended_power": 2350,
-            "recommended_stamina": 18000,
+            "recommended_power": 2950,
+            "recommended_stamina": 22500,
             "lp_needed": 10,
             "completion_exp": 8,
             "completion_bond": 12,
             "sp_gauge": 3600,
-            "damage_per_note": 113,
+            "damage_per_note": 413,
             "max_appeal": 50000,
             "gimmick_effects": [
                 {
@@ -43,12 +43,12 @@
                         "value": "smile,cool,active,natural,elegant"
                     },
                     "effect": {
-                        "type": "decrease_appeal",
+                        "type": "decrease_base_appeal",
                         "value": 0.05,
                         "value_type": "percent",
-                        "display": "Decrease Appeal by 5%",
-                        "formatting": "Decrease Appeal by {effect}",
-                        "display_short": "Appeal Down",
+                        "display": "Decrease base Appeal by 5%",
+                        "formatting": "Decrease base Appeal by {effect}",
+                        "display_short": "Appeal-",
                         "until": {
                             "type": "live_end",
                             "display": "until Live ends",
@@ -60,44 +60,11 @@
                     }
                 }
             ],
-            "hint_jp": "【攻略ヒント】アピールチャンス中にSPタイプ以外のアピール値が減少する特殊効果があるので、編成はSPタイプのスクールアイドルを中心にしよう",
-            "hint_en": "[Hint] The Appeal of non-SP type members will be reduced during Appeal Chances, so try to base your formation around SP-types.",
+            "hint_jp": "【攻略ヒント】アピールチャンス中、スキルタイプが有利になるギミックがあるよ。編成はスキルタイプを中心にしよう",
+            "hint_en": null,
             "note_gimmicks": [
                 {
-                    "icon_image_asset": "6731",
-                    "effects": [
-                        {
-                            "note_apply": {
-                                "apply_id": "always",
-                                "display": "Always"
-                            },
-                            "trigger": null,
-                            "target": {
-                                "display": "All",
-                                "check": "all",
-                                "value": null
-                            },
-                            "effect": {
-                                "type": "decrease_appeal",
-                                "value": 0.1,
-                                "value_type": "percent",
-                                "display": "Decrease Appeal by 10%",
-                                "formatting": "Decrease Appeal by {effect}",
-                                "display_short": "Appeal Down",
-                                "until": {
-                                    "type": "strategy_swap",
-                                    "display": "until you swap Strategies",
-                                    "formatting": "until you swap Strategies",
-                                    "display_short": "Strategy Swap",
-                                    "value": 1,
-                                    "value_type": null
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "icon_image_asset": "7e5e61",
+                    "icon_image_asset": "6458",
                     "effects": [
                         {
                             "note_apply": {
@@ -106,23 +73,78 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Sp cards",
+                                "display": "Sk cards",
                                 "check": "role",
-                                "value": "sp"
+                                "value": "sk"
                             },
                             "effect": {
-                                "type": "increase_sp_gain",
-                                "value": 0.5,
+                                "type": "increase_skill_chance_sk_types",
+                                "value": 0.1,
                                 "value_type": "percent",
-                                "display": "Increase SP gain by 50%",
-                                "formatting": "Increase SP gain by {effect}",
-                                "display_short": "SP Gain Up",
+                                "display": "Increase Skill Activation chance by 10% for each Sk type in Team",
+                                "formatting": "Increase Skill Activation chance by {effect} for each Sk type in Team",
+                                "display_short": "Skill Activation Up #Sk types",
                                 "until": {
                                     "type": "note_count",
-                                    "display": "for 3 notes",
+                                    "display": "for 10 notes",
                                     "formatting": "for {until} notes",
                                     "display_short": "# Notes",
-                                    "value": 3,
+                                    "value": 10,
+                                    "value_type": "value"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "7e40",
+                    "effects": [
+                        {
+                            "note_apply": {
+                                "apply_id": "always",
+                                "display": "Always"
+                            },
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "gain_stamina_sk_types",
+                                "value": 3000,
+                                "value_type": "value",
+                                "display": "Restore 3000 Stamina for each Sk type in Team",
+                                "formatting": "Restore {effect} Stamina for each Sk type in Team",
+                                "display_short": "Stamina Restore #Sk types",
+                                "until": null
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "6f3c",
+                    "effects": [
+                        {
+                            "note_apply": {
+                                "apply_id": "success",
+                                "display": "On Note Hit"
+                            },
+                            "trigger": null,
+                            "target": {
+                                "display": "Pure cards",
+                                "check": "attribute",
+                                "value": "pure"
+                            },
+                            "effect": {
+                                "type": "increase_appeal_percent",
+                                "value": 0.2,
+                                "value_type": "percent",
+                                "display": "Increase Appeal by 20%",
+                                "formatting": "Increase Appeal by {effect}",
+                                "display_short": "Appeal Up",
+                                "until": {
+                                    "type": "note_count",
+                                    "display": "for 10 notes",
+                                    "formatting": "for {until} notes",
+                                    "display_short": "# Notes",
+                                    "value": 10,
                                     "value_type": "value"
                                 }
                             }
@@ -132,8 +154,8 @@
             ],
             "appeal_chances": [
                 {
-                    "name_jp": "合計9,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 9,000 Voltage.",
+                    "name_jp": "特技を4回発動する",
+                    "name_en": null,
                     "effects": [
                         {
                             "ac_apply": {
@@ -142,17 +164,17 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Non-Sp cards",
+                                "display": "Sk cards",
                                 "check": "role",
-                                "value": "vo,gd,sk"
+                                "value": "sk"
                             },
                             "effect": {
-                                "type": "decrease_base_appeal",
-                                "value": 0.1,
+                                "type": "increase_base_skill_activation",
+                                "value": 0.2,
                                 "value_type": "percent",
-                                "display": "Decrease base Appeal by 10%",
-                                "formatting": "Decrease base Appeal by {effect}",
-                                "display_short": "Appeal-",
+                                "display": "Increase base Skill activation chance by 20%",
+                                "formatting": "Increase base Skill activation chance by {effect}",
+                                "display_short": "Skill Activation+",
                                 "until": {
                                     "type": "ac_end",
                                     "display": "until AC ends",
@@ -166,8 +188,8 @@
                     ]
                 },
                 {
-                    "name_jp": "合計21,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 21,000 Voltage.",
+                    "name_jp": "合計69,000ボルテージを獲得する",
+                    "name_en": null,
                     "effects": [
                         {
                             "ac_apply": {
@@ -176,17 +198,17 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Non-Sp cards",
-                                "check": "role",
-                                "value": "vo,gd,sk"
+                                "display": "Pure cards",
+                                "check": "attribute",
+                                "value": "pure"
                             },
                             "effect": {
-                                "type": "decrease_base_appeal",
-                                "value": 0.1,
+                                "type": "increase_base_appeal",
+                                "value": 0.2,
                                 "value_type": "percent",
-                                "display": "Decrease base Appeal by 10%",
-                                "formatting": "Decrease base Appeal by {effect}",
-                                "display_short": "Appeal-",
+                                "display": "Increase base Appeal by 20%",
+                                "formatting": "Increase base Appeal by {effect}",
+                                "display_short": "Appeal+",
                                 "until": {
                                     "type": "ac_end",
                                     "display": "until AC ends",
@@ -202,21 +224,21 @@
             ]
         },
         "normal": {
-            "difficulty_id": 10062201,
+            "difficulty_id": 12028201,
             "attribute": "pure",
             "voltage_requirements": {
-                "s": 1916200,
-                "a": 1497400,
-                "b": 1078600,
-                "c": 659800
+                "s": 1648000,
+                "a": 1295000,
+                "b": 942000,
+                "c": 590000
             },
-            "recommended_power": 5300,
-            "recommended_stamina": 40500,
+            "recommended_power": 6250,
+            "recommended_stamina": 47700,
             "lp_needed": 12,
             "completion_exp": 13,
             "completion_bond": 16,
             "sp_gauge": 4800,
-            "damage_per_note": 347,
+            "damage_per_note": 694,
             "max_appeal": 50000,
             "gimmick_effects": [
                 {
@@ -236,12 +258,12 @@
                         "value": "smile,cool,active,natural,elegant"
                     },
                     "effect": {
-                        "type": "decrease_appeal",
+                        "type": "decrease_base_appeal",
                         "value": 0.1,
                         "value_type": "percent",
-                        "display": "Decrease Appeal by 10%",
-                        "formatting": "Decrease Appeal by {effect}",
-                        "display_short": "Appeal Down",
+                        "display": "Decrease base Appeal by 10%",
+                        "formatting": "Decrease base Appeal by {effect}",
+                        "display_short": "Appeal-",
                         "until": {
                             "type": "live_end",
                             "display": "until Live ends",
@@ -253,44 +275,11 @@
                     }
                 }
             ],
-            "hint_jp": "【攻略ヒント】アピールチャンス中にSPタイプ以外のアピール値が減少する特殊効果があるので、編成はSPタイプのスクールアイドルを中心にしよう",
-            "hint_en": "[Hint] The Appeal of non-SP type members will be reduced during Appeal Chances, so try to base your formation around SP-types.",
+            "hint_jp": "【攻略ヒント】アピールチャンス中、スキルタイプが有利になるギミックがあるよ。編成はスキルタイプを中心にしよう",
+            "hint_en": null,
             "note_gimmicks": [
                 {
-                    "icon_image_asset": "6731",
-                    "effects": [
-                        {
-                            "note_apply": {
-                                "apply_id": "always",
-                                "display": "Always"
-                            },
-                            "trigger": null,
-                            "target": {
-                                "display": "All",
-                                "check": "all",
-                                "value": null
-                            },
-                            "effect": {
-                                "type": "decrease_appeal",
-                                "value": 0.2,
-                                "value_type": "percent",
-                                "display": "Decrease Appeal by 20%",
-                                "formatting": "Decrease Appeal by {effect}",
-                                "display_short": "Appeal Down",
-                                "until": {
-                                    "type": "strategy_swap",
-                                    "display": "until you swap Strategies",
-                                    "formatting": "until you swap Strategies",
-                                    "display_short": "Strategy Swap",
-                                    "value": 1,
-                                    "value_type": null
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "icon_image_asset": "7e5e61",
+                    "icon_image_asset": "6f3c",
                     "effects": [
                         {
                             "note_apply": {
@@ -299,23 +288,78 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Sp cards",
-                                "check": "role",
-                                "value": "sp"
+                                "display": "Pure cards",
+                                "check": "attribute",
+                                "value": "pure"
                             },
                             "effect": {
-                                "type": "increase_sp_gain",
-                                "value": 0.5,
+                                "type": "increase_appeal_percent",
+                                "value": 0.2,
                                 "value_type": "percent",
-                                "display": "Increase SP gain by 50%",
-                                "formatting": "Increase SP gain by {effect}",
-                                "display_short": "SP Gain Up",
+                                "display": "Increase Appeal by 20%",
+                                "formatting": "Increase Appeal by {effect}",
+                                "display_short": "Appeal Up",
                                 "until": {
                                     "type": "note_count",
-                                    "display": "for 3 notes",
+                                    "display": "for 10 notes",
                                     "formatting": "for {until} notes",
                                     "display_short": "# Notes",
-                                    "value": 3,
+                                    "value": 10,
+                                    "value_type": "value"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "7e40",
+                    "effects": [
+                        {
+                            "note_apply": {
+                                "apply_id": "always",
+                                "display": "Always"
+                            },
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "gain_stamina_sk_types",
+                                "value": 3000,
+                                "value_type": "value",
+                                "display": "Restore 3000 Stamina for each Sk type in Team",
+                                "formatting": "Restore {effect} Stamina for each Sk type in Team",
+                                "display_short": "Stamina Restore #Sk types",
+                                "until": null
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "6458",
+                    "effects": [
+                        {
+                            "note_apply": {
+                                "apply_id": "success",
+                                "display": "On Note Hit"
+                            },
+                            "trigger": null,
+                            "target": {
+                                "display": "Sk cards",
+                                "check": "role",
+                                "value": "sk"
+                            },
+                            "effect": {
+                                "type": "increase_skill_chance_sk_types",
+                                "value": 0.1,
+                                "value_type": "percent",
+                                "display": "Increase Skill Activation chance by 10% for each Sk type in Team",
+                                "formatting": "Increase Skill Activation chance by {effect} for each Sk type in Team",
+                                "display_short": "Skill Activation Up #Sk types",
+                                "until": {
+                                    "type": "note_count",
+                                    "display": "for 10 notes",
+                                    "formatting": "for {until} notes",
+                                    "display_short": "# Notes",
+                                    "value": 10,
                                     "value_type": "value"
                                 }
                             }
@@ -325,8 +369,8 @@
             ],
             "appeal_chances": [
                 {
-                    "name_jp": "合計33,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 33,000 Voltage.",
+                    "name_jp": "合計89,000ボルテージを獲得する",
+                    "name_en": null,
                     "effects": [
                         {
                             "ac_apply": {
@@ -335,17 +379,17 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Non-Sp cards",
-                                "check": "role",
-                                "value": "vo,gd,sk"
+                                "display": "Pure cards",
+                                "check": "attribute",
+                                "value": "pure"
                             },
                             "effect": {
-                                "type": "decrease_base_appeal",
+                                "type": "increase_base_appeal",
                                 "value": 0.2,
                                 "value_type": "percent",
-                                "display": "Decrease base Appeal by 20%",
-                                "formatting": "Decrease base Appeal by {effect}",
-                                "display_short": "Appeal-",
+                                "display": "Increase base Appeal by 20%",
+                                "formatting": "Increase base Appeal by {effect}",
+                                "display_short": "Appeal+",
                                 "until": {
                                     "type": "ac_end",
                                     "display": "until AC ends",
@@ -359,8 +403,8 @@
                     ]
                 },
                 {
-                    "name_jp": "SP特技で合計20,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 20,000 Voltage with SP Skills.",
+                    "name_jp": "特技を5回発動する",
+                    "name_en": null,
                     "effects": [
                         {
                             "ac_apply": {
@@ -369,17 +413,17 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Sp cards",
+                                "display": "Sk cards",
                                 "check": "role",
-                                "value": "sp"
+                                "value": "sk"
                             },
                             "effect": {
-                                "type": "increase_base_sp_gain",
+                                "type": "increase_base_skill_activation",
                                 "value": 0.2,
                                 "value_type": "percent",
-                                "display": "Increase base SP gain by 20%",
-                                "formatting": "Increase base SP gain by {effect}",
-                                "display_short": "SP Gain Up",
+                                "display": "Increase base Skill activation chance by 20%",
+                                "formatting": "Increase base Skill activation chance by {effect}",
+                                "display_short": "Skill Activation+",
                                 "until": {
                                     "type": "ac_end",
                                     "display": "until AC ends",
@@ -393,8 +437,8 @@
                     ]
                 },
                 {
-                    "name_jp": "合計48,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 48,000 Voltage.",
+                    "name_jp": "合計179,000ボルテージを獲得する",
+                    "name_en": null,
                     "effects": [
                         {
                             "ac_apply": {
@@ -403,17 +447,17 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Non-Sp cards",
-                                "check": "role",
-                                "value": "vo,gd,sk"
+                                "display": "Pure cards",
+                                "check": "attribute",
+                                "value": "pure"
                             },
                             "effect": {
-                                "type": "decrease_base_appeal",
+                                "type": "increase_base_appeal",
                                 "value": 0.2,
                                 "value_type": "percent",
-                                "display": "Decrease base Appeal by 20%",
-                                "formatting": "Decrease base Appeal by {effect}",
-                                "display_short": "Appeal-",
+                                "display": "Increase base Appeal by 20%",
+                                "formatting": "Increase base Appeal by {effect}",
+                                "display_short": "Appeal+",
                                 "until": {
                                     "type": "ac_end",
                                     "display": "until AC ends",
@@ -429,21 +473,21 @@
             ]
         },
         "advanced": {
-            "difficulty_id": 10062301,
+            "difficulty_id": 12028301,
             "attribute": "pure",
             "voltage_requirements": {
-                "s": 6251800,
-                "a": 4835100,
-                "b": 3418600,
-                "c": 2002100
+                "s": 5217000,
+                "a": 4056000,
+                "b": 2896000,
+                "c": 1735000
             },
-            "recommended_power": 9500,
-            "recommended_stamina": 72900,
+            "recommended_power": 11000,
+            "recommended_stamina": 81000,
             "lp_needed": 15,
             "completion_exp": 21,
             "completion_bond": 24,
             "sp_gauge": 6000,
-            "damage_per_note": 424,
+            "damage_per_note": 842,
             "max_appeal": 50000,
             "gimmick_effects": [
                 {
@@ -463,12 +507,12 @@
                         "value": "smile,cool,active,natural,elegant"
                     },
                     "effect": {
-                        "type": "decrease_appeal",
+                        "type": "decrease_base_appeal",
                         "value": 0.2,
                         "value_type": "percent",
-                        "display": "Decrease Appeal by 20%",
-                        "formatting": "Decrease Appeal by {effect}",
-                        "display_short": "Appeal Down",
+                        "display": "Decrease base Appeal by 20%",
+                        "formatting": "Decrease base Appeal by {effect}",
+                        "display_short": "Appeal-",
                         "until": {
                             "type": "live_end",
                             "display": "until Live ends",
@@ -480,44 +524,11 @@
                     }
                 }
             ],
-            "hint_jp": "【攻略ヒント】アピールチャンス中にSPタイプ以外のアピール値が減少する特殊効果があるので、編成はSPタイプのスクールアイドルを中心にしよう",
-            "hint_en": "[Hint] The Appeal of non-SP type members will be reduced during Appeal Chances, so try to base your formation around SP-types.",
+            "hint_jp": "【攻略ヒント】アピールチャンス中、スキルタイプが有利になるギミックがあるよ。編成はスキルタイプを中心にしよう",
+            "hint_en": null,
             "note_gimmicks": [
                 {
-                    "icon_image_asset": "6731",
-                    "effects": [
-                        {
-                            "note_apply": {
-                                "apply_id": "always",
-                                "display": "Always"
-                            },
-                            "trigger": null,
-                            "target": {
-                                "display": "All",
-                                "check": "all",
-                                "value": null
-                            },
-                            "effect": {
-                                "type": "decrease_appeal",
-                                "value": 0.5,
-                                "value_type": "percent",
-                                "display": "Decrease Appeal by 50%",
-                                "formatting": "Decrease Appeal by {effect}",
-                                "display_short": "Appeal Down",
-                                "until": {
-                                    "type": "strategy_swap",
-                                    "display": "until you swap Strategies",
-                                    "formatting": "until you swap Strategies",
-                                    "display_short": "Strategy Swap",
-                                    "value": 1,
-                                    "value_type": null
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "icon_image_asset": "7e5e61",
+                    "icon_image_asset": "6f3c",
                     "effects": [
                         {
                             "note_apply": {
@@ -526,23 +537,111 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Sp cards",
-                                "check": "role",
-                                "value": "sp"
+                                "display": "Pure cards",
+                                "check": "attribute",
+                                "value": "pure"
                             },
                             "effect": {
-                                "type": "increase_sp_gain",
-                                "value": 0.5,
+                                "type": "increase_appeal_percent",
+                                "value": 0.2,
                                 "value_type": "percent",
-                                "display": "Increase SP gain by 50%",
-                                "formatting": "Increase SP gain by {effect}",
-                                "display_short": "SP Gain Up",
+                                "display": "Increase Appeal by 20%",
+                                "formatting": "Increase Appeal by {effect}",
+                                "display_short": "Appeal Up",
                                 "until": {
                                     "type": "note_count",
-                                    "display": "for 3 notes",
+                                    "display": "for 10 notes",
                                     "formatting": "for {until} notes",
                                     "display_short": "# Notes",
-                                    "value": 3,
+                                    "value": 10,
+                                    "value_type": "value"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "6f3c",
+                    "effects": [
+                        {
+                            "note_apply": {
+                                "apply_id": "success",
+                                "display": "On Note Hit"
+                            },
+                            "trigger": null,
+                            "target": {
+                                "display": "Sk cards",
+                                "check": "role",
+                                "value": "sk"
+                            },
+                            "effect": {
+                                "type": "increase_appeal_percent",
+                                "value": 0.2,
+                                "value_type": "percent",
+                                "display": "Increase Appeal by 20%",
+                                "formatting": "Increase Appeal by {effect}",
+                                "display_short": "Appeal Up",
+                                "until": {
+                                    "type": "note_count",
+                                    "display": "for 10 notes",
+                                    "formatting": "for {until} notes",
+                                    "display_short": "# Notes",
+                                    "value": 10,
+                                    "value_type": "value"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "7e40",
+                    "effects": [
+                        {
+                            "note_apply": {
+                                "apply_id": "always",
+                                "display": "Always"
+                            },
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "gain_stamina_sk_types",
+                                "value": 3000,
+                                "value_type": "value",
+                                "display": "Restore 3000 Stamina for each Sk type in Team",
+                                "formatting": "Restore {effect} Stamina for each Sk type in Team",
+                                "display_short": "Stamina Restore #Sk types",
+                                "until": null
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "6458",
+                    "effects": [
+                        {
+                            "note_apply": {
+                                "apply_id": "success",
+                                "display": "On Note Hit"
+                            },
+                            "trigger": null,
+                            "target": {
+                                "display": "Sk cards",
+                                "check": "role",
+                                "value": "sk"
+                            },
+                            "effect": {
+                                "type": "increase_skill_chance_sk_types",
+                                "value": 0.1,
+                                "value_type": "percent",
+                                "display": "Increase Skill Activation chance by 10% for each Sk type in Team",
+                                "formatting": "Increase Skill Activation chance by {effect} for each Sk type in Team",
+                                "display_short": "Skill Activation Up #Sk types",
+                                "until": {
+                                    "type": "note_count",
+                                    "display": "for 10 notes",
+                                    "formatting": "for {until} notes",
+                                    "display_short": "# Notes",
+                                    "value": 10,
                                     "value_type": "value"
                                 }
                             }
@@ -552,8 +651,8 @@
             ],
             "appeal_chances": [
                 {
-                    "name_jp": "7人のスクールアイドルでアピールする",
-                    "name_en": "Appeal with 7 school idols.",
+                    "name_jp": "合計249,000ボルテージを獲得する",
+                    "name_en": null,
                     "effects": [
                         {
                             "ac_apply": {
@@ -562,85 +661,17 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Non-Sp cards",
-                                "check": "role",
-                                "value": "vo,gd,sk"
+                                "display": "Pure cards",
+                                "check": "attribute",
+                                "value": "pure"
                             },
                             "effect": {
-                                "type": "decrease_base_appeal",
-                                "value": 0.5,
-                                "value_type": "percent",
-                                "display": "Decrease base Appeal by 50%",
-                                "formatting": "Decrease base Appeal by {effect}",
-                                "display_short": "Appeal-",
-                                "until": {
-                                    "type": "ac_end",
-                                    "display": "until AC ends",
-                                    "formatting": "until AC ends",
-                                    "display_short": "AC End",
-                                    "value": 0,
-                                    "value_type": null
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name_jp": "合計87,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 87,000 Voltage.",
-                    "effects": [
-                        {
-                            "ac_apply": {
-                                "apply_id": "begin",
-                                "display": "Start of Appeal Chance"
-                            },
-                            "trigger": null,
-                            "target": {
-                                "display": "Non-Sp cards",
-                                "check": "role",
-                                "value": "vo,gd,sk"
-                            },
-                            "effect": {
-                                "type": "decrease_base_appeal",
-                                "value": 0.5,
-                                "value_type": "percent",
-                                "display": "Decrease base Appeal by 50%",
-                                "formatting": "Decrease base Appeal by {effect}",
-                                "display_short": "Appeal-",
-                                "until": {
-                                    "type": "ac_end",
-                                    "display": "until AC ends",
-                                    "formatting": "until AC ends",
-                                    "display_short": "AC End",
-                                    "value": 0,
-                                    "value_type": null
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name_jp": "SP特技で合計37,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 37,000 Voltage with SP Skills.",
-                    "effects": [
-                        {
-                            "ac_apply": {
-                                "apply_id": "begin",
-                                "display": "Start of Appeal Chance"
-                            },
-                            "trigger": null,
-                            "target": {
-                                "display": "Sp cards",
-                                "check": "role",
-                                "value": "sp"
-                            },
-                            "effect": {
-                                "type": "increase_base_sp_gain",
+                                "type": "increase_base_appeal",
                                 "value": 0.2,
                                 "value_type": "percent",
-                                "display": "Increase base SP gain by 20%",
-                                "formatting": "Increase base SP gain by {effect}",
-                                "display_short": "SP Gain Up",
+                                "display": "Increase base Appeal by 20%",
+                                "formatting": "Increase base Appeal by {effect}",
+                                "display_short": "Appeal+",
                                 "until": {
                                     "type": "ac_end",
                                     "display": "until AC ends",
@@ -654,8 +685,8 @@
                     ]
                 },
                 {
-                    "name_jp": "合計115,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 115,000 Voltage.",
+                    "name_jp": "特技を10回発動する",
+                    "name_en": null,
                     "effects": [
                         {
                             "ac_apply": {
@@ -664,17 +695,85 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Non-Sp cards",
+                                "display": "Sk cards",
                                 "check": "role",
-                                "value": "vo,gd,sk"
+                                "value": "sk"
                             },
                             "effect": {
-                                "type": "decrease_base_appeal",
-                                "value": 0.5,
+                                "type": "increase_base_skill_activation",
+                                "value": 0.2,
                                 "value_type": "percent",
-                                "display": "Decrease base Appeal by 50%",
-                                "formatting": "Decrease base Appeal by {effect}",
-                                "display_short": "Appeal-",
+                                "display": "Increase base Skill activation chance by 20%",
+                                "formatting": "Increase base Skill activation chance by {effect}",
+                                "display_short": "Skill Activation+",
+                                "until": {
+                                    "type": "ac_end",
+                                    "display": "until AC ends",
+                                    "formatting": "until AC ends",
+                                    "display_short": "AC End",
+                                    "value": 0,
+                                    "value_type": null
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name_jp": "合計493,000ボルテージを獲得する",
+                    "name_en": null,
+                    "effects": [
+                        {
+                            "ac_apply": {
+                                "apply_id": "begin",
+                                "display": "Start of Appeal Chance"
+                            },
+                            "trigger": null,
+                            "target": {
+                                "display": "Pure cards",
+                                "check": "attribute",
+                                "value": "pure"
+                            },
+                            "effect": {
+                                "type": "increase_base_appeal",
+                                "value": 0.2,
+                                "value_type": "percent",
+                                "display": "Increase base Appeal by 20%",
+                                "formatting": "Increase base Appeal by {effect}",
+                                "display_short": "Appeal+",
+                                "until": {
+                                    "type": "ac_end",
+                                    "display": "until AC ends",
+                                    "formatting": "until AC ends",
+                                    "display_short": "AC End",
+                                    "value": 0,
+                                    "value_type": null
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name_jp": "特技を4回発動する",
+                    "name_en": null,
+                    "effects": [
+                        {
+                            "ac_apply": {
+                                "apply_id": "begin",
+                                "display": "Start of Appeal Chance"
+                            },
+                            "trigger": null,
+                            "target": {
+                                "display": "Sk cards",
+                                "check": "role",
+                                "value": "sk"
+                            },
+                            "effect": {
+                                "type": "increase_base_skill_activation",
+                                "value": 0.2,
+                                "value_type": "percent",
+                                "display": "Increase base Skill activation chance by 20%",
+                                "formatting": "Increase base Skill activation chance by {effect}",
+                                "display_short": "Skill Activation+",
                                 "until": {
                                     "type": "ac_end",
                                     "display": "until AC ends",
@@ -691,17 +790,9 @@
         }
     },
     "member_order": [
-        5,
-        4,
-        7,
-        3,
-        1,
-        8,
-        9,
-        2,
-        6
+        208
     ],
     "member_centers": [
-        1
+        208
     ]
 }
