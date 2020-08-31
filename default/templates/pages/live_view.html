@@ -11,8 +11,8 @@
 {% set difficulty_vals = [('easy', "Easy", 'easy'), ('normal', "Normal", 'normal'), ('advanced', "Advanced", 'adv'), ('advanced_plus', "Advanced+", 'advplus')] %}
 
 {% set active_page = '' -%}
-{% set title = "Live View" %}
-{% set description = 'Live - %s by %s' % (live|loc_name, live|loc_name(name="artist")) %}
+{% set title = 'Live - %s' % (live|loc_name) %}
+{% set description = 'Song by %s' % (live|loc_name(name="artist")) %}
 {% set embed_image = tex(live['jacket_image_asset']) %}
 
 {% block content %}
@@ -76,7 +76,7 @@
         <div class="col">
             <div class="row text-center justify-content-center">
                 <div class="col-12">
-                    <h3>{{diff_name}}</h3>
+                    <h3><img height="32" src="{{icon(live['difficulties'][diff_id]['attribute'])}}" alt="" /> {{diff_name}}</h3>
                 </div>
                 <div class="col-auto px-3">
                     <p>Recommended Power: {{diff['recommended_power']}}</p>

@@ -5,10 +5,23 @@
 {% set attribute = attributes()[card['attribute']] %}
 {% set attrib_bg = tex(attribute['background_image_asset']) %}
 
+{% set rarity_display = card['rarity']|upper %}
+{% set role_display = card['role'][0]|upper + card['role'][1:] %}
+{% set attrib_display = card['attribute'][0]|upper + card['attribute'][1:] %}
+
 {% set active_page = '' -%}
-{% set title = "Card View" %}
-{% set description = 'Card #%d: %s - %s' % (card['no'], member|loc_name, card['appearance']['idolized']|loc_name) %}
+{% set title = "Card - %s %s" % (card['appearance']['idolized']|loc_name, member|loc_name) %}
+{% set description = 'Card #%d (%s) - %s Type, %s.' % (card['no'], rarity_display, role_display, attrib_display) %}
 {% set embed_image = tex(card['appearance']['idolized']['thumbnail_image_asset']) %}
+
+{% set desc = {'val':description} %}
+{% for skill in card['skills']['active'] %}
+{% if desc.update({'val': desc['val'] + '\nSkill: ' + skill|skill_short}) %}{% endif %}
+{% endfor %}
+{% for skill in card['skills']['passive'] %}
+{% if desc.update({'val': desc['val'] + '\n' + ('Abilities:\n   ' if loop.first else '   ') + skill|skill_short(split=" & ")}) %}{% endif %}
+{% endfor %}
+{% set description = desc['val'] %}
 
 {% block content %}
 <div class="container">
@@ -79,7 +92,7 @@
             {% endif %}
         </div>
         <div class="col-xl-4 col-12 py-5">
-            <span style="font-size: 1.5rem;">Active Skill</span>
+            <span style="font-size: 1.5rem;">Skill</span>
             {% for skill in card['skills']['active'] %}
             <div class="row justify-content-start skill-bg my-1">
                 <div class="col-3">
@@ -99,7 +112,7 @@
                 </div>
             </div>
             {% endfor %}
-            <span style="font-size: 1.5rem;">Passive Skills</span>
+            <span style="font-size: 1.5rem;">Abilities</span>
             {% for skill in card['skills']['passive'] %}
             <div class="row justify-content-start skill-bg my-1">
                 <div class="col-3">

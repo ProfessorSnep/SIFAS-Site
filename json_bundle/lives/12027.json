@@ -1,29 +1,29 @@
 {
-    "name_jp": "Brightest Melody",
-    "name_en": "Brightest Melody",
-    "artist_jp": "Aqours",
-    "artist_en": "Aqours",
-    "group": "aqours",
+    "name_jp": "LIKE IT! LOVE IT!",
+    "name_en": null,
+    "artist_jp": "優木 せつ菜",
+    "artist_en": "Setsuna Yuki",
+    "group": "nijigasaki",
     "subunit": null,
-    "is_2d": false,
-    "jacket_image_asset": "4552",
+    "is_2d": true,
+    "jacket_image_asset": "4f5349",
     "difficulties": {
         "easy": {
-            "difficulty_id": 11015101,
-            "attribute": "smile",
+            "difficulty_id": 12027101,
+            "attribute": "cool",
             "voltage_requirements": {
-                "s": 743000,
-                "a": 555000,
-                "b": 367000,
-                "c": 180000
+                "s": 644000,
+                "a": 499000,
+                "b": 354000,
+                "c": 210000
             },
-            "recommended_power": 2350,
-            "recommended_stamina": 18000,
+            "recommended_power": 2950,
+            "recommended_stamina": 22500,
             "lp_needed": 10,
             "completion_exp": 8,
             "completion_bond": 12,
             "sp_gauge": 3600,
-            "damage_per_note": 113,
+            "damage_per_note": 309,
             "max_appeal": 50000,
             "gimmick_effects": [
                 {
@@ -38,9 +38,9 @@
                         "limit": 0
                     },
                     "target": {
-                        "display": "Non-Smile cards",
-                        "check": "attribute",
-                        "value": "pure,cool,active,natural,elegant"
+                        "display": "Vo/Gd cards",
+                        "check": "role",
+                        "value": "vo,gd"
                     },
                     "effect": {
                         "type": "decrease_appeal",
@@ -60,9 +60,42 @@
                     }
                 }
             ],
-            "hint_jp": "【攻略ヒント】アピールチャンス中は、Aqoursのスクールアイドルのみ有利な特殊効果があるよ。編成はAqoursのスクールアイドルを中心にしよう",
-            "hint_en": "[Hint] During Appeal Chances, there will be a special effect which gives Aqours school idols an advantage. Try to base your formation around Aqours members!",
+            "hint_jp": "【攻略ヒント】SPタイプとスキルタイプが有利になるギミックがあるよ。編成はSPタイプとスキルタイプのスクールアイドルを中心にしよう",
+            "hint_en": null,
             "note_gimmicks": [
+                {
+                    "icon_image_asset": "6f3c",
+                    "effects": [
+                        {
+                            "note_apply": {
+                                "apply_id": "success",
+                                "display": "On Note Hit"
+                            },
+                            "trigger": null,
+                            "target": {
+                                "display": "Sk cards",
+                                "check": "role",
+                                "value": "sk"
+                            },
+                            "effect": {
+                                "type": "increase_appeal_percent",
+                                "value": 0.2,
+                                "value_type": "percent",
+                                "display": "Increase Appeal by 20%",
+                                "formatting": "Increase Appeal by {effect}",
+                                "display_short": "Appeal Up",
+                                "until": {
+                                    "type": "note_count",
+                                    "display": "for 10 notes",
+                                    "formatting": "for {until} notes",
+                                    "display_short": "# Notes",
+                                    "value": 10,
+                                    "value_type": "value"
+                                }
+                            }
+                        }
+                    ]
+                },
                 {
                     "icon_image_asset": "7e5e61",
                     "effects": [
@@ -79,11 +112,66 @@
                             },
                             "effect": {
                                 "type": "increase_sp_gain",
-                                "value": 0.2,
+                                "value": 0.5,
                                 "value_type": "percent",
-                                "display": "Increase SP gain by 20%",
+                                "display": "Increase SP gain by 50%",
                                 "formatting": "Increase SP gain by {effect}",
                                 "display_short": "SP Gain Up",
+                                "until": {
+                                    "type": "note_count",
+                                    "display": "for 10 notes",
+                                    "formatting": "for {until} notes",
+                                    "display_short": "# Notes",
+                                    "value": 10,
+                                    "value_type": "value"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "6066",
+                    "effects": [
+                        {
+                            "note_apply": {
+                                "apply_id": "success",
+                                "display": "On Note Hit"
+                            },
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "gain_sp_percent",
+                                "value": 0.1,
+                                "value_type": "percent",
+                                "display": "Gain 10% of SP capacity as SP Gauge",
+                                "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                                "display_short": "SP %Fill",
+                                "until": null
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "5370",
+                    "effects": [
+                        {
+                            "note_apply": {
+                                "apply_id": "success",
+                                "display": "On Note Hit"
+                            },
+                            "trigger": null,
+                            "target": {
+                                "display": "Sk cards",
+                                "check": "role",
+                                "value": "sk"
+                            },
+                            "effect": {
+                                "type": "increase_crit_chance",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Increase Crit chance by 50%",
+                                "formatting": "Increase Crit chance by {effect}",
+                                "display_short": "Crit Chance Up",
                                 "until": {
                                     "type": "note_count",
                                     "display": "for 10 notes",
@@ -117,45 +205,12 @@
                             }
                         }
                     ]
-                },
-                {
-                    "icon_image_asset": "6f3c",
-                    "effects": [
-                        {
-                            "note_apply": {
-                                "apply_id": "success",
-                                "display": "On Note Hit"
-                            },
-                            "trigger": null,
-                            "target": {
-                                "display": "Smile cards",
-                                "check": "attribute",
-                                "value": "smile"
-                            },
-                            "effect": {
-                                "type": "increase_appeal_percent",
-                                "value": 0.1,
-                                "value_type": "percent",
-                                "display": "Increase Appeal by 10%",
-                                "formatting": "Increase Appeal by {effect}",
-                                "display_short": "Appeal Up",
-                                "until": {
-                                    "type": "note_count",
-                                    "display": "for 10 notes",
-                                    "formatting": "for {until} notes",
-                                    "display_short": "# Notes",
-                                    "value": 10,
-                                    "value_type": "value"
-                                }
-                            }
-                        }
-                    ]
                 }
             ],
             "appeal_chances": [
                 {
-                    "name_jp": "合計15,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 15,000 Voltage.",
+                    "name_jp": "合計18,000ボルテージを獲得する",
+                    "name_en": null,
                     "effects": [
                         {
                             "ac_apply": {
@@ -164,17 +219,17 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Uranohoshi members",
-                                "check": "school",
-                                "value": "uranohoshi"
+                                "display": "Non-Sk cards",
+                                "check": "role",
+                                "value": "vo,sp,gd"
                             },
                             "effect": {
-                                "type": "increase_base_appeal",
-                                "value": 0.1,
+                                "type": "decrease_base_appeal",
+                                "value": 0.05,
                                 "value_type": "percent",
-                                "display": "Increase base Appeal by 10%",
-                                "formatting": "Increase base Appeal by {effect}",
-                                "display_short": "Appeal+",
+                                "display": "Decrease base Appeal by 5%",
+                                "formatting": "Decrease base Appeal by {effect}",
+                                "display_short": "Appeal-",
                                 "until": {
                                     "type": "ac_end",
                                     "display": "until AC ends",
@@ -189,7 +244,60 @@
                 },
                 {
                     "name_jp": "SP特技で合計23,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 23,000 Voltage with SP Skills.",
+                    "name_en": null,
+                    "effects": [
+                        {
+                            "ac_apply": {
+                                "apply_id": "begin",
+                                "display": "Start of Appeal Chance"
+                            },
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "sp_bonus_sk_types",
+                                "value": 0.1,
+                                "value_type": "percent",
+                                "display": "Gain 10% extra Voltage on next SP skill for each Sk type in Team",
+                                "formatting": "Gain {effect} extra Voltage on next SP skill for each Sk type in Team",
+                                "display_short": "Next SP+ #Sk types",
+                                "until": {
+                                    "type": "ac_end",
+                                    "display": "until AC ends",
+                                    "formatting": "until AC ends",
+                                    "display_short": "AC End",
+                                    "value": 0,
+                                    "value_type": null
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name_jp": "クリティカル判定を4回出す",
+                    "name_en": null,
+                    "effects": [
+                        {
+                            "ac_apply": {
+                                "apply_id": "complete",
+                                "display": "Upon AC success"
+                            },
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "gain_stamina_sk_types",
+                                "value": 2000,
+                                "value_type": "value",
+                                "display": "Restore 2000 Stamina for each Sk type in Team",
+                                "formatting": "Restore {effect} Stamina for each Sk type in Team",
+                                "display_short": "Stamina Restore #Sk types",
+                                "until": null
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name_jp": "SP特技で合計38,000ボルテージを獲得する",
+                    "name_en": null,
                     "effects": [
                         {
                             "ac_apply": {
@@ -198,9 +306,9 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Uranohoshi members",
-                                "check": "school",
-                                "value": "uranohoshi"
+                                "display": "Sp cards",
+                                "check": "role",
+                                "value": "sp"
                             },
                             "effect": {
                                 "type": "increase_base_sp_gain",
@@ -220,59 +328,25 @@
                             }
                         }
                     ]
-                },
-                {
-                    "name_jp": "合計18,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 18,000 Voltage.",
-                    "effects": [
-                        {
-                            "ac_apply": {
-                                "apply_id": "begin",
-                                "display": "Start of Appeal Chance"
-                            },
-                            "trigger": null,
-                            "target": {
-                                "display": "Uranohoshi members",
-                                "check": "school",
-                                "value": "uranohoshi"
-                            },
-                            "effect": {
-                                "type": "increase_base_appeal",
-                                "value": 0.1,
-                                "value_type": "percent",
-                                "display": "Increase base Appeal by 10%",
-                                "formatting": "Increase base Appeal by {effect}",
-                                "display_short": "Appeal+",
-                                "until": {
-                                    "type": "ac_end",
-                                    "display": "until AC ends",
-                                    "formatting": "until AC ends",
-                                    "display_short": "AC End",
-                                    "value": 0,
-                                    "value_type": null
-                                }
-                            }
-                        }
-                    ]
                 }
             ]
         },
         "normal": {
-            "difficulty_id": 11015201,
-            "attribute": "smile",
+            "difficulty_id": 12027201,
+            "attribute": "cool",
             "voltage_requirements": {
-                "s": 1941000,
-                "a": 1510000,
-                "b": 1079000,
-                "c": 648000
+                "s": 2020000,
+                "a": 1602000,
+                "b": 1185000,
+                "c": 768000
             },
-            "recommended_power": 5300,
-            "recommended_stamina": 40500,
+            "recommended_power": 6250,
+            "recommended_stamina": 47700,
             "lp_needed": 12,
             "completion_exp": 13,
             "completion_bond": 16,
             "sp_gauge": 4800,
-            "damage_per_note": 353,
+            "damage_per_note": 426,
             "max_appeal": 50000,
             "gimmick_effects": [
                 {
@@ -287,9 +361,9 @@
                         "limit": 0
                     },
                     "target": {
-                        "display": "Non-Smile cards",
-                        "check": "attribute",
-                        "value": "pure,cool,active,natural,elegant"
+                        "display": "Vo/Gd cards",
+                        "check": "role",
+                        "value": "vo,gd"
                     },
                     "effect": {
                         "type": "decrease_appeal",
@@ -309,9 +383,42 @@
                     }
                 }
             ],
-            "hint_jp": "【攻略ヒント】アピールチャンス中は、Aqoursのスクールアイドルのみ有利な特殊効果があるよ。編成はAqoursのスクールアイドルを中心にしよう",
-            "hint_en": "[Hint] During Appeal Chances, there will be a special effect which gives Aqours school idols an advantage. Try to base your formation around Aqours members!",
+            "hint_jp": "【攻略ヒント】SPタイプとスキルタイプが有利になるギミックがあるよ。編成はSPタイプとスキルタイプのスクールアイドルを中心にしよう",
+            "hint_en": null,
             "note_gimmicks": [
+                {
+                    "icon_image_asset": "6f3c",
+                    "effects": [
+                        {
+                            "note_apply": {
+                                "apply_id": "success",
+                                "display": "On Note Hit"
+                            },
+                            "trigger": null,
+                            "target": {
+                                "display": "Sk cards",
+                                "check": "role",
+                                "value": "sk"
+                            },
+                            "effect": {
+                                "type": "increase_appeal_percent",
+                                "value": 0.2,
+                                "value_type": "percent",
+                                "display": "Increase Appeal by 20%",
+                                "formatting": "Increase Appeal by {effect}",
+                                "display_short": "Appeal Up",
+                                "until": {
+                                    "type": "note_count",
+                                    "display": "for 10 notes",
+                                    "formatting": "for {until} notes",
+                                    "display_short": "# Notes",
+                                    "value": 10,
+                                    "value_type": "value"
+                                }
+                            }
+                        }
+                    ]
+                },
                 {
                     "icon_image_asset": "7e5e61",
                     "effects": [
@@ -328,66 +435,11 @@
                             },
                             "effect": {
                                 "type": "increase_sp_gain",
-                                "value": 0.2,
+                                "value": 0.5,
                                 "value_type": "percent",
-                                "display": "Increase SP gain by 20%",
+                                "display": "Increase SP gain by 50%",
                                 "formatting": "Increase SP gain by {effect}",
                                 "display_short": "SP Gain Up",
-                                "until": {
-                                    "type": "note_count",
-                                    "display": "for 10 notes",
-                                    "formatting": "for {until} notes",
-                                    "display_short": "# Notes",
-                                    "value": 10,
-                                    "value_type": "value"
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "icon_image_asset": "6066",
-                    "effects": [
-                        {
-                            "note_apply": {
-                                "apply_id": "success",
-                                "display": "On Note Hit"
-                            },
-                            "trigger": null,
-                            "target": null,
-                            "effect": {
-                                "type": "gain_sp_percent",
-                                "value": 0.25,
-                                "value_type": "percent",
-                                "display": "Gain 25% of SP capacity as SP Gauge",
-                                "formatting": "Gain {effect} of SP capacity as SP Gauge",
-                                "display_short": "SP %Fill",
-                                "until": null
-                            }
-                        }
-                    ]
-                },
-                {
-                    "icon_image_asset": "6458",
-                    "effects": [
-                        {
-                            "note_apply": {
-                                "apply_id": "success",
-                                "display": "On Note Hit"
-                            },
-                            "trigger": null,
-                            "target": {
-                                "display": "Gd cards",
-                                "check": "role",
-                                "value": "gd"
-                            },
-                            "effect": {
-                                "type": "increase_skill_activation",
-                                "value": 0.2,
-                                "value_type": "percent",
-                                "display": "Increase Skill activation chance by 20%",
-                                "formatting": "Increase Skill activation chance by {effect}",
-                                "display_short": "Skill Activation Up",
                                 "until": {
                                     "type": "note_count",
                                     "display": "for 10 notes",
@@ -410,17 +462,83 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Smile cards",
-                                "check": "attribute",
-                                "value": "smile"
+                                "display": "Sp cards",
+                                "check": "role",
+                                "value": "sp"
                             },
                             "effect": {
                                 "type": "increase_appeal_percent",
-                                "value": 0.1,
+                                "value": 0.2,
                                 "value_type": "percent",
-                                "display": "Increase Appeal by 10%",
+                                "display": "Increase Appeal by 20%",
                                 "formatting": "Increase Appeal by {effect}",
                                 "display_short": "Appeal Up",
+                                "until": {
+                                    "type": "note_count",
+                                    "display": "for 10 notes",
+                                    "formatting": "for {until} notes",
+                                    "display_short": "# Notes",
+                                    "value": 10,
+                                    "value_type": "value"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "5370",
+                    "effects": [
+                        {
+                            "note_apply": {
+                                "apply_id": "success",
+                                "display": "On Note Hit"
+                            },
+                            "trigger": null,
+                            "target": {
+                                "display": "Sk cards",
+                                "check": "role",
+                                "value": "sk"
+                            },
+                            "effect": {
+                                "type": "increase_crit_chance",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Increase Crit chance by 50%",
+                                "formatting": "Increase Crit chance by {effect}",
+                                "display_short": "Crit Chance Up",
+                                "until": {
+                                    "type": "note_count",
+                                    "display": "for 10 notes",
+                                    "formatting": "for {until} notes",
+                                    "display_short": "# Notes",
+                                    "value": 10,
+                                    "value_type": "value"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon_image_asset": "7e5e61",
+                    "effects": [
+                        {
+                            "note_apply": {
+                                "apply_id": "success",
+                                "display": "On Note Hit"
+                            },
+                            "trigger": null,
+                            "target": {
+                                "display": "Sp cards",
+                                "check": "role",
+                                "value": "sp"
+                            },
+                            "effect": {
+                                "type": "increase_sp_gain",
+                                "value": 0.1,
+                                "value_type": "percent",
+                                "display": "Increase SP gain by 10%",
+                                "formatting": "Increase SP gain by {effect}",
+                                "display_short": "SP Gain Up",
                                 "until": {
                                     "type": "note_count",
                                     "display": "for 20 notes",
@@ -436,8 +554,8 @@
             ],
             "appeal_chances": [
                 {
-                    "name_jp": "合計33,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 33,000 Voltage.",
+                    "name_jp": "合計54,000ボルテージを獲得する",
+                    "name_en": null,
                     "effects": [
                         {
                             "ac_apply": {
@@ -446,17 +564,17 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Uranohoshi members",
-                                "check": "school",
-                                "value": "uranohoshi"
+                                "display": "Non-Sk cards",
+                                "check": "role",
+                                "value": "vo,sp,gd"
                             },
                             "effect": {
-                                "type": "increase_base_appeal",
-                                "value": 0.1,
+                                "type": "decrease_base_appeal",
+                                "value": 0.15,
                                 "value_type": "percent",
-                                "display": "Increase base Appeal by 10%",
-                                "formatting": "Increase base Appeal by {effect}",
-                                "display_short": "Appeal+",
+                                "display": "Decrease base Appeal by 15%",
+                                "formatting": "Decrease base Appeal by {effect}",
+                                "display_short": "Appeal-",
                                 "until": {
                                     "type": "ac_end",
                                     "display": "until AC ends",
@@ -470,8 +588,38 @@
                     ]
                 },
                 {
-                    "name_jp": "SP特技で合計44,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 44,000 Voltage with SP Skills.",
+                    "name_jp": "SP特技で合計69,000ボルテージを獲得する",
+                    "name_en": null,
+                    "effects": [
+                        {
+                            "ac_apply": {
+                                "apply_id": "begin",
+                                "display": "Start of Appeal Chance"
+                            },
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "sp_bonus_sk_types",
+                                "value": 0.1,
+                                "value_type": "percent",
+                                "display": "Gain 10% extra Voltage on next SP skill for each Sk type in Team",
+                                "formatting": "Gain {effect} extra Voltage on next SP skill for each Sk type in Team",
+                                "display_short": "Next SP+ #Sk types",
+                                "until": {
+                                    "type": "ac_end",
+                                    "display": "until AC ends",
+                                    "formatting": "until AC ends",
+                                    "display_short": "AC End",
+                                    "value": 0,
+                                    "value_type": null
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name_jp": "合計56,000ボルテージを獲得する",
+                    "name_en": null,
                     "effects": [
                         {
                             "ac_apply": {
@@ -480,9 +628,66 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Uranohoshi members",
-                                "check": "school",
-                                "value": "uranohoshi"
+                                "display": "Non-Sp cards",
+                                "check": "role",
+                                "value": "vo,gd,sk"
+                            },
+                            "effect": {
+                                "type": "decrease_base_appeal",
+                                "value": 0.15,
+                                "value_type": "percent",
+                                "display": "Decrease base Appeal by 15%",
+                                "formatting": "Decrease base Appeal by {effect}",
+                                "display_short": "Appeal-",
+                                "until": {
+                                    "type": "ac_end",
+                                    "display": "until AC ends",
+                                    "formatting": "until AC ends",
+                                    "display_short": "AC End",
+                                    "value": 0,
+                                    "value_type": null
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name_jp": "クリティカル判定を5回出す",
+                    "name_en": null,
+                    "effects": [
+                        {
+                            "ac_apply": {
+                                "apply_id": "complete",
+                                "display": "Upon AC success"
+                            },
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "gain_stamina_sk_types",
+                                "value": 4000,
+                                "value_type": "value",
+                                "display": "Restore 4000 Stamina for each Sk type in Team",
+                                "formatting": "Restore {effect} Stamina for each Sk type in Team",
+                                "display_short": "Stamina Restore #Sk types",
+                                "until": null
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name_jp": "SP特技で合計90,000ボルテージを獲得する",
+                    "name_en": null,
+                    "effects": [
+                        {
+                            "ac_apply": {
+                                "apply_id": "begin",
+                                "display": "Start of Appeal Chance"
+                            },
+                            "trigger": null,
+                            "target": {
+                                "display": "Sp cards",
+                                "check": "role",
+                                "value": "sp"
                             },
                             "effect": {
                                 "type": "increase_base_sp_gain",
@@ -502,93 +707,25 @@
                             }
                         }
                     ]
-                },
-                {
-                    "name_jp": "合計33,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 33,000 Voltage.",
-                    "effects": [
-                        {
-                            "ac_apply": {
-                                "apply_id": "begin",
-                                "display": "Start of Appeal Chance"
-                            },
-                            "trigger": null,
-                            "target": {
-                                "display": "Uranohoshi members",
-                                "check": "school",
-                                "value": "uranohoshi"
-                            },
-                            "effect": {
-                                "type": "increase_base_skill_activation",
-                                "value": 0.1,
-                                "value_type": "percent",
-                                "display": "Increase base Skill activation chance by 10%",
-                                "formatting": "Increase base Skill activation chance by {effect}",
-                                "display_short": "Skill Activation+",
-                                "until": {
-                                    "type": "ac_end",
-                                    "display": "until AC ends",
-                                    "formatting": "until AC ends",
-                                    "display_short": "AC End",
-                                    "value": 0,
-                                    "value_type": null
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name_jp": "合計92,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 92,000 Voltage.",
-                    "effects": [
-                        {
-                            "ac_apply": {
-                                "apply_id": "begin",
-                                "display": "Start of Appeal Chance"
-                            },
-                            "trigger": null,
-                            "target": {
-                                "display": "Uranohoshi members",
-                                "check": "school",
-                                "value": "uranohoshi"
-                            },
-                            "effect": {
-                                "type": "increase_base_appeal",
-                                "value": 0.1,
-                                "value_type": "percent",
-                                "display": "Increase base Appeal by 10%",
-                                "formatting": "Increase base Appeal by {effect}",
-                                "display_short": "Appeal+",
-                                "until": {
-                                    "type": "ac_end",
-                                    "display": "until AC ends",
-                                    "formatting": "until AC ends",
-                                    "display_short": "AC End",
-                                    "value": 0,
-                                    "value_type": null
-                                }
-                            }
-                        }
-                    ]
                 }
             ]
         },
         "advanced": {
-            "difficulty_id": 11015301,
-            "attribute": "smile",
+            "difficulty_id": 12027301,
+            "attribute": "cool",
             "voltage_requirements": {
-                "s": 7785000,
-                "a": 5861000,
-                "b": 3937000,
-                "c": 2013000
+                "s": 10960000,
+                "a": 8134000,
+                "b": 5308000,
+                "c": 2482000
             },
-            "recommended_power": 9500,
-            "recommended_stamina": 72900,
+            "recommended_power": 11000,
+            "recommended_stamina": 81000,
             "lp_needed": 15,
             "completion_exp": 21,
             "completion_bond": 24,
             "sp_gauge": 6000,
-            "damage_per_note": 464,
+            "damage_per_note": 436,
             "max_appeal": 50000,
             "gimmick_effects": [
                 {
@@ -603,9 +740,9 @@
                         "limit": 0
                     },
                     "target": {
-                        "display": "Non-Smile cards",
-                        "check": "attribute",
-                        "value": "pure,cool,active,natural,elegant"
+                        "display": "Vo/Gd cards",
+                        "check": "role",
+                        "value": "vo,gd"
                     },
                     "effect": {
                         "type": "decrease_appeal",
@@ -625,9 +762,42 @@
                     }
                 }
             ],
-            "hint_jp": "【攻略ヒント】アピールチャンス中は、Aqoursのスクールアイドルのみ有利な特殊効果があるよ。編成はAqoursのスクールアイドルを中心にしよう",
-            "hint_en": "[Hint] During Appeal Chances, there will be a special effect which gives Aqours school idols an advantage. Try to base your formation around Aqours members!",
+            "hint_jp": "【攻略ヒント】SPタイプとスキルタイプが有利になるギミックがあるよ。編成はSPタイプとスキルタイプのスクールアイドルを中心にしよう",
+            "hint_en": null,
             "note_gimmicks": [
+                {
+                    "icon_image_asset": "6f3c",
+                    "effects": [
+                        {
+                            "note_apply": {
+                                "apply_id": "sk_type",
+                                "display": "On Note Hit with Sk type"
+                            },
+                            "trigger": null,
+                            "target": {
+                                "display": "Sk cards",
+                                "check": "role",
+                                "value": "sk"
+                            },
+                            "effect": {
+                                "type": "increase_appeal_percent",
+                                "value": 0.1,
+                                "value_type": "percent",
+                                "display": "Increase Appeal by 10%",
+                                "formatting": "Increase Appeal by {effect}",
+                                "display_short": "Appeal Up",
+                                "until": {
+                                    "type": "note_count",
+                                    "display": "for 10 notes",
+                                    "formatting": "for {until} notes",
+                                    "display_short": "# Notes",
+                                    "value": 10,
+                                    "value_type": "value"
+                                }
+                            }
+                        }
+                    ]
+                },
                 {
                     "icon_image_asset": "7e5e61",
                     "effects": [
@@ -644,17 +814,17 @@
                             },
                             "effect": {
                                 "type": "increase_sp_gain",
-                                "value": 0.2,
+                                "value": 0.1,
                                 "value_type": "percent",
-                                "display": "Increase SP gain by 20%",
+                                "display": "Increase SP gain by 10%",
                                 "formatting": "Increase SP gain by {effect}",
                                 "display_short": "SP Gain Up",
                                 "until": {
                                     "type": "note_count",
-                                    "display": "for 10 notes",
+                                    "display": "for 20 notes",
                                     "formatting": "for {until} notes",
                                     "display_short": "# Notes",
-                                    "value": 10,
+                                    "value": 20,
                                     "value_type": "value"
                                 }
                             }
@@ -662,7 +832,7 @@
                     ]
                 },
                 {
-                    "icon_image_asset": "6458",
+                    "icon_image_asset": "5370",
                     "effects": [
                         {
                             "note_apply": {
@@ -671,17 +841,17 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Gd cards",
+                                "display": "Sk cards",
                                 "check": "role",
-                                "value": "gd"
+                                "value": "sk"
                             },
                             "effect": {
-                                "type": "increase_skill_activation",
-                                "value": 0.2,
+                                "type": "increase_crit_chance",
+                                "value": 0.5,
                                 "value_type": "percent",
-                                "display": "Increase Skill activation chance by 20%",
-                                "formatting": "Increase Skill activation chance by {effect}",
-                                "display_short": "Skill Activation Up",
+                                "display": "Increase Crit chance by 50%",
+                                "formatting": "Increase Crit chance by {effect}",
+                                "display_short": "Crit Chance Up",
                                 "until": {
                                     "type": "note_count",
                                     "display": "for 20 notes",
@@ -704,9 +874,9 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Smile cards",
-                                "check": "attribute",
-                                "value": "smile"
+                                "display": "Sp cards",
+                                "check": "role",
+                                "value": "sp"
                             },
                             "effect": {
                                 "type": "increase_appeal_percent",
@@ -726,12 +896,45 @@
                             }
                         }
                     ]
+                },
+                {
+                    "icon_image_asset": "6458",
+                    "effects": [
+                        {
+                            "note_apply": {
+                                "apply_id": "success",
+                                "display": "On Note Hit"
+                            },
+                            "trigger": null,
+                            "target": {
+                                "display": "Sk cards",
+                                "check": "role",
+                                "value": "sk"
+                            },
+                            "effect": {
+                                "type": "increase_skill_activation",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Increase Skill activation chance by 50%",
+                                "formatting": "Increase Skill activation chance by {effect}",
+                                "display_short": "Skill Activation Up",
+                                "until": {
+                                    "type": "note_count",
+                                    "display": "for 20 notes",
+                                    "formatting": "for {until} notes",
+                                    "display_short": "# Notes",
+                                    "value": 20,
+                                    "value_type": "value"
+                                }
+                            }
+                        }
+                    ]
                 }
             ],
             "appeal_chances": [
                 {
-                    "name_jp": "合計97,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 97,000 Voltage.",
+                    "name_jp": "合計117,000ボルテージを獲得する",
+                    "name_en": null,
                     "effects": [
                         {
                             "ac_apply": {
@@ -740,17 +943,17 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Uranohoshi members",
-                                "check": "school",
-                                "value": "uranohoshi"
+                                "display": "Non-Sk cards",
+                                "check": "role",
+                                "value": "vo,sp,gd"
                             },
                             "effect": {
-                                "type": "increase_base_appeal",
-                                "value": 0.1,
+                                "type": "decrease_base_appeal",
+                                "value": 0.5,
                                 "value_type": "percent",
-                                "display": "Increase base Appeal by 10%",
-                                "formatting": "Increase base Appeal by {effect}",
-                                "display_short": "Appeal+",
+                                "display": "Decrease base Appeal by 50%",
+                                "formatting": "Decrease base Appeal by {effect}",
+                                "display_short": "Appeal-",
                                 "until": {
                                     "type": "ac_end",
                                     "display": "until AC ends",
@@ -764,8 +967,8 @@
                     ]
                 },
                 {
-                    "name_jp": "SP特技で合計100,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 100,000 Voltage with SP Skills.",
+                    "name_jp": "SP特技で合計142,000ボルテージを獲得する",
+                    "name_en": null,
                     "effects": [
                         {
                             "ac_apply": {
@@ -774,9 +977,9 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Uranohoshi members",
-                                "check": "school",
-                                "value": "uranohoshi"
+                                "display": "Sp cards",
+                                "check": "role",
+                                "value": "sp"
                             },
                             "effect": {
                                 "type": "increase_base_sp_gain",
@@ -798,8 +1001,31 @@
                     ]
                 },
                 {
-                    "name_jp": "合計151,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 151,000 Voltage.",
+                    "name_jp": "クリティカル判定を6回出す",
+                    "name_en": null,
+                    "effects": [
+                        {
+                            "ac_apply": {
+                                "apply_id": "complete",
+                                "display": "Upon AC success"
+                            },
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "gain_stamina_sk_types",
+                                "value": 4000,
+                                "value_type": "value",
+                                "display": "Restore 4000 Stamina for each Sk type in Team",
+                                "formatting": "Restore {effect} Stamina for each Sk type in Team",
+                                "display_short": "Stamina Restore #Sk types",
+                                "until": null
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name_jp": "SP特技で合計99,000ボルテージを獲得する",
+                    "name_en": null,
                     "effects": [
                         {
                             "ac_apply": {
@@ -807,18 +1033,14 @@
                                 "display": "Start of Appeal Chance"
                             },
                             "trigger": null,
-                            "target": {
-                                "display": "Uranohoshi members",
-                                "check": "school",
-                                "value": "uranohoshi"
-                            },
+                            "target": null,
                             "effect": {
-                                "type": "increase_base_skill_activation",
+                                "type": "sp_bonus_sk_types",
                                 "value": 0.1,
                                 "value_type": "percent",
-                                "display": "Increase base Skill activation chance by 10%",
-                                "formatting": "Increase base Skill activation chance by {effect}",
-                                "display_short": "Skill Activation+",
+                                "display": "Gain 10% extra Voltage on next SP skill for each Sk type in Team",
+                                "formatting": "Gain {effect} extra Voltage on next SP skill for each Sk type in Team",
+                                "display_short": "Next SP+ #Sk types",
                                 "until": {
                                     "type": "ac_end",
                                     "display": "until AC ends",
@@ -832,8 +1054,8 @@
                     ]
                 },
                 {
-                    "name_jp": "合計184,000ボルテージを獲得する",
-                    "name_en": "Gain a total of 184,000 Voltage.",
+                    "name_jp": "合計233,000ボルテージを獲得する",
+                    "name_en": null,
                     "effects": [
                         {
                             "ac_apply": {
@@ -842,17 +1064,74 @@
                             },
                             "trigger": null,
                             "target": {
-                                "display": "Uranohoshi members",
-                                "check": "school",
-                                "value": "uranohoshi"
+                                "display": "Non-Sp cards",
+                                "check": "role",
+                                "value": "vo,gd,sk"
                             },
                             "effect": {
-                                "type": "increase_base_appeal",
-                                "value": 0.1,
+                                "type": "decrease_base_appeal",
+                                "value": 0.5,
                                 "value_type": "percent",
-                                "display": "Increase base Appeal by 10%",
-                                "formatting": "Increase base Appeal by {effect}",
-                                "display_short": "Appeal+",
+                                "display": "Decrease base Appeal by 50%",
+                                "formatting": "Decrease base Appeal by {effect}",
+                                "display_short": "Appeal-",
+                                "until": {
+                                    "type": "ac_end",
+                                    "display": "until AC ends",
+                                    "formatting": "until AC ends",
+                                    "display_short": "AC End",
+                                    "value": 0,
+                                    "value_type": null
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name_jp": "特技を6回発動する",
+                    "name_en": null,
+                    "effects": [
+                        {
+                            "ac_apply": {
+                                "apply_id": "complete",
+                                "display": "Upon AC success"
+                            },
+                            "trigger": null,
+                            "target": null,
+                            "effect": {
+                                "type": "gain_stamina_sk_types",
+                                "value": 4000,
+                                "value_type": "value",
+                                "display": "Restore 4000 Stamina for each Sk type in Team",
+                                "formatting": "Restore {effect} Stamina for each Sk type in Team",
+                                "display_short": "Stamina Restore #Sk types",
+                                "until": null
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name_jp": "SP特技で合計142,000ボルテージを獲得する",
+                    "name_en": null,
+                    "effects": [
+                        {
+                            "ac_apply": {
+                                "apply_id": "begin",
+                                "display": "Start of Appeal Chance"
+                            },
+                            "trigger": null,
+                            "target": {
+                                "display": "Sp cards",
+                                "check": "role",
+                                "value": "sp"
+                            },
+                            "effect": {
+                                "type": "increase_base_sp_gain",
+                                "value": 0.5,
+                                "value_type": "percent",
+                                "display": "Increase base SP gain by 50%",
+                                "formatting": "Increase base SP gain by {effect}",
+                                "display_short": "SP Gain Up",
                                 "until": {
                                     "type": "ac_end",
                                     "display": "until AC ends",
@@ -869,18 +1148,9 @@
         }
     },
     "member_order": [
-        108,
-        104,
-        103,
-        102,
-        105,
-        101,
-        106,
-        109,
-        107
+        207
     ],
     "member_centers": [
-        102,
-        101
+        207
     ]
 }
