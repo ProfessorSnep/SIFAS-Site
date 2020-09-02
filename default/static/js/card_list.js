@@ -3,6 +3,8 @@ window.rarityFilterSelector = null;
 window.attributeFilterSelector = null;
 window.roleFilterSelector = null;
 window.setFilterSelector = null;
+window.activeFilterSelector = null;
+window.passiveFilterSelector = null;
 
 function updateFilter() {
     var mf = window.memberFilterSelector || '';
@@ -10,8 +12,10 @@ function updateFilter() {
     var af = window.attributeFilterSelector || '';
     var tf = window.roleFilterSelector || '';
     var sf = window.setFilterSelector || '';
+    var asf = window.activeFilterSelector || '';
+    var psf = window.passiveFilterSelector || '';
 
-    var select = '' + mf + rf + af + tf + sf;
+    var select = '' + mf + rf + af + tf + sf + asf + psf;
 
     if (select.length > 0) {
         $('.filtered-card').hide();
@@ -123,6 +127,39 @@ $('#set-sort').change(function(e) {
     }
     updateFilter();
 });
+
+$('#active-sort').change(function(e) {
+    if (this.value.length > 0) {
+        var ss = '.card-active-' + this.value;
+        window.activeFilterSelector = ss;
+    } else {
+        window.activeFilterSelector = null;
+    }
+    updateFilter();
+});
+
+$('#passive-sort').change(function(e) {
+    if (this.value.length > 0) {
+        var ss = '.card-passive-' + this.value;
+        window.passiveFilterSelector = ss;
+    } else {
+        window.passiveFilterSelector = null;
+    }
+    updateFilter();
+});
+
+$(document).scroll(function() {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        $('#back-to-top').show();
+    } else {
+        $('#back-to-top').hide();
+    }
+});
+
+function backToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 
 $(document).ready(function() {
     $('.show-on-load').show();

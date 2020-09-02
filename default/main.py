@@ -106,7 +106,9 @@ def template_attrib_info():
 
 
 def template_card_info(card_id):
-    return request_api('cards/all')[str(card_id)]
+    card_obj = request_api('cards/all')[str(card_id)]
+    card_obj['card_id'] = card_id
+    return card_obj
 
 
 def template_live_info(live_id):
@@ -153,12 +155,42 @@ def template_live_list():
     return key_list
 
 
+def template_all_card_skill_info():
+    active_skids = []
+    passive_skids = []
+    all_cards = request_api('cards/all')
+    for cid, card in all_cards.items():
+        for skill in card['skills']['active']:
+            for effect in skill['effects']:
+                if effect['effect']['type'] in map(lambda x: x['id'], active_skids):
+                    continue
+                active_skids.append({
+                    'id': effect['effect']['type'],
+                    'display': effect['effect']['display_short']
+                })
+        for skill in card['skills']['passive']:
+            for effect in skill['effects']:
+                if effect['effect']['type'] in map(lambda x: x['id'], passive_skids):
+                    continue
+                passive_skids.append({
+                    'id': effect['effect']['type'],
+                    'display': effect['effect']['display_short']
+                })
+
+    active_skids.sort(key=lambda x: x['id'])
+    passive_skids.sort(key=lambda x: x['id'])
+    return {
+        'active': active_skids,
+        'passive': passive_skids
+    }
+
+
 def template_card_latest():
     return request_api('cards/latest')
 
 
 @app.template_filter('skill_short')
-def filter_skill_short(skill, split="\n\n"):
+def filter_skill_short(skill, split="\n"):
     efs = []
     for effect in skill['effects']:
         efs.append(effect['short_display'])
@@ -169,44 +201,51 @@ def filter_skill_short(skill, split="\n\n"):
 def filter_skill(skill, path='effects'):
     efs = []
     for effect in skill[path]:
-        effect_format = effect['effect_format']
+        effect_format = effect['effect']['format']
 
         format_type = None
 
+        # format a value based off format type
         def format_val(val):
             if format_type == 'percent':
                 return '{0:.5g}%'.format(val*100)
             else:
                 return str(val)
 
+        # filter values to only be unique
         def filter_vals(l):
             s = set()
             sa = s.add
             l2 = [x for x in l if not (x in s or sa(x))]
             return l if len(l2) > 1 else l2
 
-        s_effect_vals = filter_vals(effect['effect_values'])
-        s_until_vals = filter_vals(effect['until_values'])
+        # format effect string
+        s_effect_vals = filter_vals(effect['effect']['values'])
 
-        s_trigger_vals = filter_vals(effect['trigger_values'])
-        s_trigger_chances = filter_vals(effect['trigger_chances'])
-
-        format_type = effect['effect_value_type']
+        format_type = effect['effect']['value_type']
         effect_vals = '/'.join(map(format_val, s_effect_vals))
-        format_type = effect['until_value_type']
-        until_vals = '/'.join(map(format_val, s_until_vals))
-
         if len(s_effect_vals) > 1:
             effect_vals = '[%s]' % effect_vals
-        if len(s_until_vals) > 1:
-            until_vals = '[%s]' % until_vals
 
-        effect_str = effect_format.format(
-            effect=effect_vals, until=until_vals)
+        until_vals = ''
+        # format effect until string if it exists
+        if effect['effect']['until']:
+            s_until_vals = filter_vals(effect['effect']['until']['values'])
 
-        trigger_format = effect['trigger_format']
-        if trigger_format:
-            format_type = effect['trigger_value_type']
+            format_type = effect['effect']['until']['value_type']
+            until_vals = '/'.join(map(format_val, s_until_vals))
+            if len(s_until_vals) > 1:
+                until_vals = '[%s]' % until_vals
+
+        effect_str = effect_format.format(effect=effect_vals, until=until_vals)
+
+        # format trigger string if it exists
+        trigger_str = None
+        if effect['trigger']:
+            s_trigger_vals = filter_vals(effect['trigger']['values'])
+            s_trigger_chances = filter_vals(effect['trigger']['chances'])
+
+            format_type = effect['trigger']['value_type']
             trigger_vals = '/'.join(map(format_val, s_trigger_vals))
             format_type = 'percent'
             trigger_chances = '/'.join(map(format_val, s_trigger_chances))
@@ -216,15 +255,18 @@ def filter_skill(skill, path='effects'):
             if len(s_trigger_chances) > 1:
                 trigger_chances = '[%s]' % trigger_chances
 
-            trigger_str = trigger_format.format(
+            trigger_str = effect['trigger']['format'].format(
                 trigger=trigger_vals, trigger_chance=trigger_chances)
-        else:
-            trigger_str = None
+
+        # format target string if it exists
+        target_str = None
+        if effect['target']:
+            target_str = effect['target']['display']
 
         efs.append({
             'effect': effect_str,
             'trigger': trigger_str,
-            'target': effect['target']
+            'target': target_str
         })
     return efs
 
@@ -240,6 +282,31 @@ def filter_loc_name(obj, name='name', preferred='en'):
         if v in obj and obj[v]:
             return obj[v]
     return None
+
+
+@app.template_filter('card_classes')
+def filter_card_classes(card):
+    classes = [
+        f"card-member-{card['member_id']}",
+        f"card-school-{int(card['member_id'] / 100 + 1)}",
+        f"card-rarity-{card['rarity']}",
+        f"card-attribute-{card['attribute']}",
+        f"card-role-{card['role']}"
+    ]
+    if card['is_fes']:
+        classes.append('card-fes')
+    card_set = template_get_card_set(card['card_id'])
+    if card_set:
+        classes.append(f"card-set-{card_set['id']}")
+
+    for skill in card['skills']['active']:
+        for effect in skill['effects']:
+            classes.append(f"card-active-{effect['effect']['type']}")
+    for skill in card['skills']['passive']:
+        for effect in skill['effects']:
+            classes.append(f"card-passive-{effect['effect']['type']}")
+
+    return classes
 
 
 app.jinja_env.globals.update({
@@ -258,7 +325,8 @@ app.jinja_env.globals.update({
     'latest_cards': template_card_latest,
     'member_info': template_member_info,
     'member_icon': template_member_icon_url,
-    'school_icon': template_school_icon_url
+    'school_icon': template_school_icon_url,
+    'all_card_skill_info': template_all_card_skill_info
 })
 
 
