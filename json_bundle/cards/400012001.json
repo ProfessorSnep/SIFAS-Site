@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "4954",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as Voltage",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.25,
-                            0.28,
-                            0.31,
-                            0.34,
-                            0.37
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_voltage_appeal",
+                            "format": "Gain {effect} of Appeal as Voltage",
+                            "values": [
+                                0.25,
+                                0.28,
+                                0.31,
+                                0.34,
+                                0.37
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Voltage Gain %Appeal",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Voltage Gain %Appeal",
-                        "trigger_limit": 0
+                        "short_display": "Voltage Gain %Appeal"
                     }
                 ]
             }
@@ -61,24 +60,29 @@
                 "thumbnail_image_asset": "6945",
                 "effects": [
                     {
-                        "effect_format": "Increase base Technique by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.02,
-                            0.023,
-                            0.026,
-                            0.029,
-                            0.032
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Attribute",
-                        "short_display": "Technique+ : Same Attribute",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_technique",
+                            "format": "Increase base Technique by {effect}",
+                            "values": [
+                                0.02,
+                                0.023,
+                                0.026,
+                                0.029,
+                                0.032
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Technique+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Technique+ : Same Attribute"
                     }
                 ]
             },
@@ -91,26 +95,44 @@
                 "thumbnail_image_asset": "7e2e",
                 "effects": [
                     {
-                        "effect_format": "Increase Voltage gain by {effect} until Live ends",
-                        "trigger_format": "On song start, {trigger_chance} chance",
-                        "effect_values": [
-                            0.03
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.3
-                        ],
-                        "until_values": [
-                            0
-                        ],
-                        "until_value_type": null,
-                        "target": "Same Attribute",
-                        "short_display": "Voltage Gain Up : Same Attribute / Live end (Song Start)",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_voltage_gain_percent",
+                            "format": "Increase Voltage gain by {effect} until Live ends",
+                            "values": [
+                                0.03
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Voltage Gain Up %",
+                            "until": {
+                                "type": "live_end",
+                                "values": [
+                                    0
+                                ],
+                                "value_type": null,
+                                "display_short": "Live end"
+                            }
+                        },
+                        "trigger": {
+                            "type": "live_start",
+                            "format": "On live start, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.3
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "Live Start"
+                        },
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Voltage Gain Up % : Same Attribute / Live end (Live Start)"
                     }
                 ]
             }

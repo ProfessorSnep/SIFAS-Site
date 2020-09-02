@@ -25,30 +25,38 @@
                 "thumbnail_image_asset": "7e2e",
                 "effects": [
                     {
-                        "effect_format": "Increase Voltage gain by {effect} for {until} notes",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.014,
-                            0.017,
-                            0.02,
-                            0.023,
-                            0.026
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [
-                            5,
-                            5,
-                            5,
-                            5,
-                            5
-                        ],
-                        "until_value_type": "value",
-                        "target": "All",
-                        "short_display": "Voltage Gain Up : All / # Notes",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_voltage_gain_percent",
+                            "format": "Increase Voltage gain by {effect} for {until} notes",
+                            "values": [
+                                0.014,
+                                0.017,
+                                0.02,
+                                0.023,
+                                0.026
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Voltage Gain Up %",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    5,
+                                    5,
+                                    5,
+                                    5,
+                                    5
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Voltage Gain Up % : All / # Notes"
                     }
                 ]
             }
@@ -67,24 +75,27 @@
                 "thumbnail_image_asset": "4b7a",
                 "effects": [
                     {
-                        "effect_format": "Increase base Appeal by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.028,
-                            0.031,
-                            0.034,
-                            0.037,
-                            0.04
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Strategy",
-                        "short_display": "Appeal+ : Same Strategy",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_appeal",
+                            "format": "Increase base Appeal by {effect}",
+                            "values": [
+                                0.028,
+                                0.031,
+                                0.034,
+                                0.037,
+                                0.04
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Appeal+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Strategy",
+                            "check": "party",
+                            "value": "owner"
+                        },
+                        "short_display": "Appeal+ : Same Strategy"
                     }
                 ]
             }

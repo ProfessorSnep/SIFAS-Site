@@ -25,30 +25,38 @@
                 "thumbnail_image_asset": "2234",
                 "effects": [
                     {
-                        "effect_format": "Increase Crit chance by {effect} for {until} notes",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.03,
-                            0.033,
-                            0.036,
-                            0.039,
-                            0.042
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [
-                            10,
-                            10,
-                            10,
-                            10,
-                            10
-                        ],
-                        "until_value_type": "value",
-                        "target": "All",
-                        "short_display": "Crit Chance Up : All / # Notes",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_crit_chance",
+                            "format": "Increase Crit chance by {effect} for {until} notes",
+                            "values": [
+                                0.03,
+                                0.033,
+                                0.036,
+                                0.039,
+                                0.042
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Crit Chance Up",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    10,
+                                    10,
+                                    10,
+                                    10,
+                                    10
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Crit Chance Up : All / # Notes"
                     }
                 ]
             }
@@ -67,24 +75,27 @@
                 "thumbnail_image_asset": "6945",
                 "effects": [
                     {
-                        "effect_format": "Increase base Technique by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.015,
-                            0.018,
-                            0.021,
-                            0.024,
-                            0.027
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Year",
-                        "short_display": "Technique+ : Same Year",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_technique",
+                            "format": "Increase base Technique by {effect}",
+                            "values": [
+                                0.015,
+                                0.018,
+                                0.021,
+                                0.024,
+                                0.027
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Technique+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Year",
+                            "check": "year",
+                            "value": "owner"
+                        },
+                        "short_display": "Technique+ : Same Year"
                     }
                 ]
             }

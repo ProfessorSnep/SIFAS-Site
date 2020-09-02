@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "5146",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Technique as extra Voltage on next SP skill",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.28,
-                            0.285,
-                            0.29,
-                            0.295,
-                            0.3
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "sp_bonus_voltage_technique",
+                            "format": "Gain {effect} of Technique as extra Voltage on next SP skill",
+                            "values": [
+                                0.28,
+                                0.285,
+                                0.29,
+                                0.295,
+                                0.3
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Next SP+ %Technique",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Next SP+ %Technique",
-                        "trigger_limit": 0
+                        "short_display": "Next SP+ %Technique"
                     }
                 ]
             }
@@ -61,24 +60,29 @@
                 "thumbnail_image_asset": "6945",
                 "effects": [
                     {
-                        "effect_format": "Increase base Technique by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.04,
-                            0.043,
-                            0.046,
-                            0.049,
-                            0.052
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Attribute",
-                        "short_display": "Technique+ : Same Attribute",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_technique",
+                            "format": "Increase base Technique by {effect}",
+                            "values": [
+                                0.04,
+                                0.043,
+                                0.046,
+                                0.049,
+                                0.052
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Technique+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Technique+ : Same Attribute"
                     }
                 ]
             },
@@ -91,24 +95,35 @@
                 "thumbnail_image_asset": "4c4f",
                 "effects": [
                     {
-                        "effect_format": "Cleanse lowering effects",
-                        "trigger_format": "On Strategy swap, {trigger_chance} chance",
-                        "effect_values": [
-                            0
-                        ],
-                        "effect_value_type": null,
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.2
-                        ],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "All",
-                        "short_display": "Cleanse : All (Strategy Swap)",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "cleanse_debuffs",
+                            "format": "Cleanse lowering effects",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "display_short": "Cleanse",
+                            "until": null
+                        },
+                        "trigger": {
+                            "type": "strategy_swap",
+                            "format": "On Strategy swap, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.2
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "Strategy Swap"
+                        },
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Cleanse : All (Strategy Swap)"
                     }
                 ]
             }

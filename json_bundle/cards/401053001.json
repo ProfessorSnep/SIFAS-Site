@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "3a",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Stamina as a Shield",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.17,
-                            0.2,
-                            0.23,
-                            0.26,
-                            0.29
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_shield_stamina",
+                            "format": "Gain {effect} of Stamina as a Shield",
+                            "values": [
+                                0.17,
+                                0.2,
+                                0.23,
+                                0.26,
+                                0.29
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Shield Gain %Stamina",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Shield Gain %Stamina",
-                        "trigger_limit": 0
+                        "short_display": "Shield Gain %Stamina"
                     }
                 ]
             }
@@ -61,24 +60,29 @@
                 "thumbnail_image_asset": "4b7a",
                 "effects": [
                     {
-                        "effect_format": "Increase base Appeal by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.03,
-                            0.033,
-                            0.036,
-                            0.039,
-                            0.042
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Attribute",
-                        "short_display": "Appeal+ : Same Attribute",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_appeal",
+                            "format": "Increase base Appeal by {effect}",
+                            "values": [
+                                0.03,
+                                0.033,
+                                0.036,
+                                0.039,
+                                0.042
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Appeal+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Appeal+ : Same Attribute"
                     }
                 ]
             },
@@ -91,26 +95,44 @@
                 "thumbnail_image_asset": "2234",
                 "effects": [
                     {
-                        "effect_format": "Increase Crit chance by {effect} for {until} notes",
-                        "trigger_format": "On AC success, {trigger_chance} chance",
-                        "effect_values": [
-                            0.08
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.4
-                        ],
-                        "until_values": [
-                            5
-                        ],
-                        "until_value_type": "value",
-                        "target": "Same Attribute",
-                        "short_display": "Crit Chance Up : Same Attribute / # Notes (AC Success)",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_crit_chance",
+                            "format": "Increase Crit chance by {effect} for {until} notes",
+                            "values": [
+                                0.08
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Crit Chance Up",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    5
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": {
+                            "type": "ac_success",
+                            "format": "On AC success, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.4
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "AC Success"
+                        },
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Crit Chance Up : Same Attribute / # Notes (AC Success)"
                     }
                 ]
             }

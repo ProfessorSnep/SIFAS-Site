@@ -25,30 +25,40 @@
                 "thumbnail_image_asset": "2234",
                 "effects": [
                     {
-                        "effect_format": "Increase Crit chance by {effect} for {until} notes",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.08,
-                            0.085,
-                            0.09,
-                            0.095,
-                            0.1
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [
-                            3,
-                            3,
-                            3,
-                            3,
-                            3
-                        ],
-                        "until_value_type": "value",
-                        "target": "Same Attribute",
-                        "short_display": "Crit Chance Up : Same Attribute / # Notes",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_crit_chance",
+                            "format": "Increase Crit chance by {effect} for {until} notes",
+                            "values": [
+                                0.08,
+                                0.085,
+                                0.09,
+                                0.095,
+                                0.1
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Crit Chance Up",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    3,
+                                    3,
+                                    3,
+                                    3,
+                                    3
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Crit Chance Up : Same Attribute / # Notes"
                     }
                 ]
             }
@@ -67,24 +77,29 @@
                 "thumbnail_image_asset": "6945",
                 "effects": [
                     {
-                        "effect_format": "Increase base Technique by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.02,
-                            0.023,
-                            0.026,
-                            0.029,
-                            0.032
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Attribute",
-                        "short_display": "Technique+ : Same Attribute",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_technique",
+                            "format": "Increase base Technique by {effect}",
+                            "values": [
+                                0.02,
+                                0.023,
+                                0.026,
+                                0.029,
+                                0.032
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Technique+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Technique+ : Same Attribute"
                     }
                 ]
             },
@@ -97,26 +112,42 @@
                 "thumbnail_image_asset": "4b5c",
                 "effects": [
                     {
-                        "effect_format": "Increase base Crit power by {effect} until Live ends",
-                        "trigger_format": "On song start, {trigger_chance} chance",
-                        "effect_values": [
-                            0.03
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.3
-                        ],
-                        "until_values": [
-                            0
-                        ],
-                        "until_value_type": null,
-                        "target": "All",
-                        "short_display": "Crit Power+ : All / Live end (Song Start)",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_crit_power",
+                            "format": "Increase base Crit power by {effect} until Live ends",
+                            "values": [
+                                0.03
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Crit Power+",
+                            "until": {
+                                "type": "live_end",
+                                "values": [
+                                    0
+                                ],
+                                "value_type": null,
+                                "display_short": "Live end"
+                            }
+                        },
+                        "trigger": {
+                            "type": "live_start",
+                            "format": "On live start, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.3
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "Live Start"
+                        },
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Crit Power+ : All / Live end (Live Start)"
                     }
                 ]
             }

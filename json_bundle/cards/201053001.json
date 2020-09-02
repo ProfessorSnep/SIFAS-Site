@@ -25,30 +25,38 @@
                 "thumbnail_image_asset": "4b39",
                 "effects": [
                     {
-                        "effect_format": "Increase Appeal (special) by {effect} for {until} notes",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.06,
-                            0.063,
-                            0.066,
-                            0.069,
-                            0.072
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [
-                            5,
-                            5,
-                            5,
-                            5,
-                            5
-                        ],
-                        "until_value_type": "value",
-                        "target": "Same Year",
-                        "short_display": "Appeal Up : Same Year / # Notes",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_appeal_special",
+                            "format": "Increase Appeal (special) by {effect} for {until} notes",
+                            "values": [
+                                0.06,
+                                0.063,
+                                0.066,
+                                0.069,
+                                0.072
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Appeal Up <Special>",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    5,
+                                    5,
+                                    5,
+                                    5,
+                                    5
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Year",
+                            "check": "year",
+                            "value": "owner"
+                        },
+                        "short_display": "Appeal Up <Special> : Same Year / # Notes"
                     }
                 ]
             }
@@ -67,24 +75,27 @@
                 "thumbnail_image_asset": "233f",
                 "effects": [
                     {
-                        "effect_format": "Increase base Stamina by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.03,
-                            0.033,
-                            0.036,
-                            0.039,
-                            0.042
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "All",
-                        "short_display": "Stamina+ : All",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_stamina",
+                            "format": "Increase base Stamina by {effect}",
+                            "values": [
+                                0.03,
+                                0.033,
+                                0.036,
+                                0.039,
+                                0.042
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Stamina+ : All"
                     }
                 ]
             },
@@ -97,26 +108,42 @@
                 "thumbnail_image_asset": "7079",
                 "effects": [
                     {
-                        "effect_format": "Increase Skill activation chance by {effect} for {until} notes",
-                        "trigger_format": "On Strategy swap, {trigger_chance} chance",
-                        "effect_values": [
-                            0.1
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.3
-                        ],
-                        "until_values": [
-                            10
-                        ],
-                        "until_value_type": "value",
-                        "target": "All",
-                        "short_display": "Skill Activation Up : All / # Notes (Strategy Swap)",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_skill_activation",
+                            "format": "Increase Skill activation chance by {effect} for {until} notes",
+                            "values": [
+                                0.1
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Skill Activation Up",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    10
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": {
+                            "type": "strategy_swap",
+                            "format": "On Strategy swap, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.3
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "Strategy Swap"
+                        },
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Skill Activation Up : All / # Notes (Strategy Swap)"
                     }
                 ]
             }

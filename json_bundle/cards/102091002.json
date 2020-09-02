@@ -25,30 +25,38 @@
                 "thumbnail_image_asset": "5f5d",
                 "effects": [
                     {
-                        "effect_format": "Increase SP gain by {effect} for {until} notes",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.02,
-                            0.023,
-                            0.026,
-                            0.029,
-                            0.032
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [
-                            10,
-                            10,
-                            10,
-                            10,
-                            10
-                        ],
-                        "until_value_type": "value",
-                        "target": "All",
-                        "short_display": "SP Gain Up : All / # Notes",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_sp_gain",
+                            "format": "Increase SP gain by {effect} for {until} notes",
+                            "values": [
+                                0.02,
+                                0.023,
+                                0.026,
+                                0.029,
+                                0.032
+                            ],
+                            "value_type": "percent",
+                            "display_short": "SP Gain Up",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    10,
+                                    10,
+                                    10,
+                                    10,
+                                    10
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "SP Gain Up : All / # Notes"
                     }
                 ]
             }
@@ -67,24 +75,27 @@
                 "thumbnail_image_asset": "4b7a",
                 "effects": [
                     {
-                        "effect_format": "Increase base Appeal by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.015,
-                            0.018,
-                            0.021,
-                            0.024,
-                            0.027
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Year",
-                        "short_display": "Appeal+ : Same Year",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_appeal",
+                            "format": "Increase base Appeal by {effect}",
+                            "values": [
+                                0.015,
+                                0.018,
+                                0.021,
+                                0.024,
+                                0.027
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Appeal+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Year",
+                            "check": "year",
+                            "value": "owner"
+                        },
+                        "short_display": "Appeal+ : Same Year"
                     }
                 ]
             }

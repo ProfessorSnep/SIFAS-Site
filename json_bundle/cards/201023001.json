@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "2749",
                 "effects": [
                     {
-                        "effect_format": "Restore {effect} of own Stamina",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.28,
-                            0.31,
-                            0.34,
-                            0.37,
-                            0.4
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_stamina_percent",
+                            "format": "Restore {effect} of own Stamina",
+                            "values": [
+                                0.28,
+                                0.31,
+                                0.34,
+                                0.37,
+                                0.4
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina Restore %Stamina",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Stamina Restore %Stamina",
-                        "trigger_limit": 0
+                        "short_display": "Stamina Restore %Stamina"
                     }
                 ]
             }
@@ -61,24 +60,29 @@
                 "thumbnail_image_asset": "233f",
                 "effects": [
                     {
-                        "effect_format": "Increase base Stamina by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.04,
-                            0.043,
-                            0.046,
-                            0.049,
-                            0.052
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Attribute",
-                        "short_display": "Stamina+ : Same Attribute",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_stamina",
+                            "format": "Increase base Stamina by {effect}",
+                            "values": [
+                                0.04,
+                                0.043,
+                                0.046,
+                                0.049,
+                                0.052
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Stamina+ : Same Attribute"
                     }
                 ]
             },
@@ -91,26 +95,44 @@
                 "thumbnail_image_asset": "7e2e",
                 "effects": [
                     {
-                        "effect_format": "Increase Voltage gain by {effect} for {until} notes",
-                        "trigger_format": "On own Appeal, {trigger_chance} chance",
-                        "effect_values": [
-                            0.08
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.15
-                        ],
-                        "until_values": [
-                            2
-                        ],
-                        "until_value_type": "value",
-                        "target": "Same Attribute",
-                        "short_display": "Voltage Gain Up : Same Attribute / # Notes (Appeal)",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_voltage_gain_percent",
+                            "format": "Increase Voltage gain by {effect} for {until} notes",
+                            "values": [
+                                0.08
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Voltage Gain Up %",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    2
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": {
+                            "type": "self_appeal",
+                            "format": "On own Appeal, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.15
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "Appeal"
+                        },
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Voltage Gain Up % : Same Attribute / # Notes (Appeal)"
                     }
                 ]
             }

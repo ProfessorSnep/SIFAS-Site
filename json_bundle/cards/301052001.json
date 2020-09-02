@@ -25,30 +25,38 @@
                 "thumbnail_image_asset": "4b5c",
                 "effects": [
                     {
-                        "effect_format": "Increase Crit power by {effect} for {until} notes",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.05,
-                            0.055,
-                            0.06,
-                            0.065,
-                            0.07
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [
-                            10,
-                            10,
-                            10,
-                            10,
-                            10
-                        ],
-                        "until_value_type": "value",
-                        "target": "Same Strategy",
-                        "short_display": "Crit Power Up : Same Strategy / # Notes",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_crit_power",
+                            "format": "Increase Crit power by {effect} for {until} notes",
+                            "values": [
+                                0.05,
+                                0.055,
+                                0.06,
+                                0.065,
+                                0.07
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Crit Power Up",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    10,
+                                    10,
+                                    10,
+                                    10,
+                                    10
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Strategy",
+                            "check": "party",
+                            "value": "owner"
+                        },
+                        "short_display": "Crit Power Up : Same Strategy / # Notes"
                     }
                 ]
             }
@@ -67,24 +75,27 @@
                 "thumbnail_image_asset": "6945",
                 "effects": [
                     {
-                        "effect_format": "Increase base Technique by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.05,
-                            0.055,
-                            0.06,
-                            0.065,
-                            0.07
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Self",
-                        "short_display": "Technique+ : Self",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_technique",
+                            "format": "Increase base Technique by {effect}",
+                            "values": [
+                                0.05,
+                                0.055,
+                                0.06,
+                                0.065,
+                                0.07
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Technique+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Self",
+                            "check": "self",
+                            "value": null
+                        },
+                        "short_display": "Technique+ : Self"
                     }
                 ]
             },
@@ -97,26 +108,42 @@
                 "thumbnail_image_asset": "7e2e",
                 "effects": [
                     {
-                        "effect_format": "Increase Voltage gain by {effect} until Live ends",
-                        "trigger_format": "On song start, {trigger_chance} chance",
-                        "effect_values": [
-                            0.03
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.3
-                        ],
-                        "until_values": [
-                            0
-                        ],
-                        "until_value_type": null,
-                        "target": "All",
-                        "short_display": "Voltage Gain Up : All / Live end (Song Start)",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_voltage_gain_percent",
+                            "format": "Increase Voltage gain by {effect} until Live ends",
+                            "values": [
+                                0.03
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Voltage Gain Up %",
+                            "until": {
+                                "type": "live_end",
+                                "values": [
+                                    0
+                                ],
+                                "value_type": null,
+                                "display_short": "Live end"
+                            }
+                        },
+                        "trigger": {
+                            "type": "live_start",
+                            "format": "On live start, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.3
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "Live Start"
+                        },
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Voltage Gain Up % : All / Live end (Live Start)"
                     }
                 ]
             }

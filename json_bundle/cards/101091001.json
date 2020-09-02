@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "2749",
                 "effects": [
                     {
-                        "effect_format": "Restore {effect} Stamina",
-                        "trigger_format": null,
-                        "effect_values": [
-                            150,
-                            200,
-                            250,
-                            300,
-                            350
-                        ],
-                        "effect_value_type": "value",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_stamina",
+                            "format": "Restore {effect} Stamina",
+                            "values": [
+                                150,
+                                200,
+                                250,
+                                300,
+                                350
+                            ],
+                            "value_type": "value",
+                            "display_short": "Restore Flat Stamina",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Restore Flat Stamina",
-                        "trigger_limit": 0
+                        "short_display": "Restore Flat Stamina"
                     }
                 ]
             }
@@ -61,24 +60,29 @@
                 "thumbnail_image_asset": "233f",
                 "effects": [
                     {
-                        "effect_format": "Increase base Stamina by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.01,
-                            0.013,
-                            0.016,
-                            0.019,
-                            0.022
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Attribute",
-                        "short_display": "Stamina+ : Same Attribute",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_stamina",
+                            "format": "Increase base Stamina by {effect}",
+                            "values": [
+                                0.01,
+                                0.013,
+                                0.016,
+                                0.019,
+                                0.022
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Stamina+ : Same Attribute"
                     }
                 ]
             }

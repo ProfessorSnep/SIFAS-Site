@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "4954",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as Voltage",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.25,
-                            0.28,
-                            0.31,
-                            0.34,
-                            0.37
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_voltage_appeal",
+                            "format": "Gain {effect} of Appeal as Voltage",
+                            "values": [
+                                0.25,
+                                0.28,
+                                0.31,
+                                0.34,
+                                0.37
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Voltage Gain %Appeal",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Voltage Gain %Appeal",
-                        "trigger_limit": 0
+                        "short_display": "Voltage Gain %Appeal"
                     }
                 ]
             }
@@ -61,24 +60,27 @@
                 "thumbnail_image_asset": "6945",
                 "effects": [
                     {
-                        "effect_format": "Increase base Technique by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.03,
-                            0.033,
-                            0.036,
-                            0.039,
-                            0.042
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "All",
-                        "short_display": "Technique+ : All",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_technique",
+                            "format": "Increase base Technique by {effect}",
+                            "values": [
+                                0.03,
+                                0.033,
+                                0.036,
+                                0.039,
+                                0.042
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Technique+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Technique+ : All"
                     }
                 ]
             },
@@ -91,24 +93,31 @@
                 "thumbnail_image_asset": "3a",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as a Shield",
-                        "trigger_format": "On AC success, {trigger_chance} chance",
-                        "effect_values": [
-                            0.1
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.2
-                        ],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_shield_appeal",
+                            "format": "Gain {effect} of Appeal as a Shield",
+                            "values": [
+                                0.1
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Shield Gain %Appeal",
+                            "until": null
+                        },
+                        "trigger": {
+                            "type": "ac_success",
+                            "format": "On AC success, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.2
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "AC Success"
+                        },
                         "target": null,
-                        "short_display": "Shield Gain %Appeal (AC Success)",
-                        "trigger_limit": 0
+                        "short_display": "Shield Gain %Appeal (AC Success)"
                     }
                 ]
             }

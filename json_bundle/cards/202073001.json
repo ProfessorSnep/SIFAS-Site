@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "4954",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as Voltage",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.3,
-                            0.33,
-                            0.36,
-                            0.39,
-                            0.42
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_voltage_appeal",
+                            "format": "Gain {effect} of Appeal as Voltage",
+                            "values": [
+                                0.3,
+                                0.33,
+                                0.36,
+                                0.39,
+                                0.42
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Voltage Gain %Appeal",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Voltage Gain %Appeal",
-                        "trigger_limit": 0
+                        "short_display": "Voltage Gain %Appeal"
                     }
                 ]
             }
@@ -61,24 +60,27 @@
                 "thumbnail_image_asset": "4b7a",
                 "effects": [
                     {
-                        "effect_format": "Increase base Appeal by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.05,
-                            0.055,
-                            0.06,
-                            0.065,
-                            0.07
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Strategy",
-                        "short_display": "Appeal+ : Same Strategy",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_appeal",
+                            "format": "Increase base Appeal by {effect}",
+                            "values": [
+                                0.05,
+                                0.055,
+                                0.06,
+                                0.065,
+                                0.07
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Appeal+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Strategy",
+                            "check": "party",
+                            "value": "owner"
+                        },
+                        "short_display": "Appeal+ : Same Strategy"
                     }
                 ]
             },
@@ -91,24 +93,31 @@
                 "thumbnail_image_asset": "4954",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as Voltage",
-                        "trigger_format": "On Strategy swap, {trigger_chance} chance",
-                        "effect_values": [
-                            0.1
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.3
-                        ],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_voltage_appeal",
+                            "format": "Gain {effect} of Appeal as Voltage",
+                            "values": [
+                                0.1
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Voltage Gain %Appeal",
+                            "until": null
+                        },
+                        "trigger": {
+                            "type": "strategy_swap",
+                            "format": "On Strategy swap, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.3
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "Strategy Swap"
+                        },
                         "target": null,
-                        "short_display": "Voltage Gain %Appeal (Strategy Swap)",
-                        "trigger_limit": 0
+                        "short_display": "Voltage Gain %Appeal (Strategy Swap)"
                     }
                 ]
             }

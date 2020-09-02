@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "5146",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as extra Voltage on next SP skill",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.2,
-                            0.205,
-                            0.21,
-                            0.215,
-                            0.22
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "sp_bonus_voltage_appeal",
+                            "format": "Gain {effect} of Appeal as extra Voltage on next SP skill",
+                            "values": [
+                                0.2,
+                                0.205,
+                                0.21,
+                                0.215,
+                                0.22
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Next SP+ %Appeal",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Next SP+ %Appeal",
-                        "trigger_limit": 0
+                        "short_display": "Next SP+ %Appeal"
                     }
                 ]
             }
@@ -61,24 +60,29 @@
                 "thumbnail_image_asset": "4b7a",
                 "effects": [
                     {
-                        "effect_format": "Increase base Appeal by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.02,
-                            0.023,
-                            0.026,
-                            0.029,
-                            0.032
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Attribute",
-                        "short_display": "Appeal+ : Same Attribute",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_appeal",
+                            "format": "Increase base Appeal by {effect}",
+                            "values": [
+                                0.02,
+                                0.023,
+                                0.026,
+                                0.029,
+                                0.032
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Appeal+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Appeal+ : Same Attribute"
                     }
                 ]
             },
@@ -91,26 +95,42 @@
                 "thumbnail_image_asset": "4b39",
                 "effects": [
                     {
-                        "effect_format": "Increase base Appeal by {effect} until Live ends",
-                        "trigger_format": "On AC success, {trigger_chance} chance, once per live",
-                        "effect_values": [
-                            0.03
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            1
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.3
-                        ],
-                        "until_values": [
-                            0
-                        ],
-                        "until_value_type": null,
-                        "target": "All",
-                        "short_display": "Appeal+ : All / Live end (AC Success)",
-                        "trigger_limit": 1
+                        "effect": {
+                            "type": "increase_base_appeal",
+                            "format": "Increase base Appeal by {effect} until Live ends",
+                            "values": [
+                                0.03
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Appeal+",
+                            "until": {
+                                "type": "live_end",
+                                "values": [
+                                    0
+                                ],
+                                "value_type": null,
+                                "display_short": "Live end"
+                            }
+                        },
+                        "trigger": {
+                            "type": "ac_success",
+                            "format": "On AC success, {trigger_chance} chance, once per live",
+                            "values": [
+                                1
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.3
+                            ],
+                            "trigger_limit": 1,
+                            "display_short": "AC Success"
+                        },
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Appeal+ : All / Live end (AC Success)"
                     }
                 ]
             }

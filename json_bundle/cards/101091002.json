@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "5146",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} extra Voltage on next SP skill",
-                        "trigger_format": null,
-                        "effect_values": [
-                            110,
-                            120,
-                            130,
-                            140,
-                            150
-                        ],
-                        "effect_value_type": "value",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "sp_bonus_voltage_flat",
+                            "format": "Gain {effect} extra Voltage on next SP skill",
+                            "values": [
+                                110,
+                                120,
+                                130,
+                                140,
+                                150
+                            ],
+                            "value_type": "value",
+                            "display_short": "Next SP+ Flat",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Next SP+ Flat",
-                        "trigger_limit": 0
+                        "short_display": "Next SP+ Flat"
                     }
                 ]
             }
@@ -61,24 +60,27 @@
                 "thumbnail_image_asset": "233f",
                 "effects": [
                     {
-                        "effect_format": "Increase base Stamina by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.015,
-                            0.018,
-                            0.021,
-                            0.024,
-                            0.027
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same School",
-                        "short_display": "Stamina+ : Same School",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_stamina",
+                            "format": "Increase base Stamina by {effect}",
+                            "values": [
+                                0.015,
+                                0.018,
+                                0.021,
+                                0.024,
+                                0.027
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same School",
+                            "check": "school",
+                            "value": "owner"
+                        },
+                        "short_display": "Stamina+ : Same School"
                     }
                 ]
             }

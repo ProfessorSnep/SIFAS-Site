@@ -25,30 +25,40 @@
                 "thumbnail_image_asset": "5f5d",
                 "effects": [
                     {
-                        "effect_format": "Increase SP gain by {effect} for {until} notes",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.052,
-                            0.055,
-                            0.058,
-                            0.061,
-                            0.064
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [
-                            10,
-                            10,
-                            10,
-                            10,
-                            10
-                        ],
-                        "until_value_type": "value",
-                        "target": "Same Attribute",
-                        "short_display": "SP Gain Up : Same Attribute / # Notes",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_sp_gain",
+                            "format": "Increase SP gain by {effect} for {until} notes",
+                            "values": [
+                                0.052,
+                                0.055,
+                                0.058,
+                                0.061,
+                                0.064
+                            ],
+                            "value_type": "percent",
+                            "display_short": "SP Gain Up",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    10,
+                                    10,
+                                    10,
+                                    10,
+                                    10
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "SP Gain Up : Same Attribute / # Notes"
                     }
                 ]
             }
@@ -67,44 +77,54 @@
                 "thumbnail_image_asset": "2a7c",
                 "effects": [
                     {
-                        "effect_format": "Increase base Appeal by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.04,
-                            0.043,
-                            0.046,
-                            0.049,
-                            0.052
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Attribute",
-                        "short_display": "Appeal+ : Same Attribute",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_appeal",
+                            "format": "Increase base Appeal by {effect}",
+                            "values": [
+                                0.04,
+                                0.043,
+                                0.046,
+                                0.049,
+                                0.052
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Appeal+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Appeal+ : Same Attribute"
                     },
                     {
-                        "effect_format": "Increase base Stamina by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.014,
-                            0.017,
-                            0.02,
-                            0.023,
-                            0.026
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Attribute",
-                        "short_display": "Stamina+ : Same Attribute",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_stamina",
+                            "format": "Increase base Stamina by {effect}",
+                            "values": [
+                                0.014,
+                                0.017,
+                                0.02,
+                                0.023,
+                                0.026
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Stamina+ : Same Attribute"
                     }
                 ]
             },
@@ -117,24 +137,31 @@
                 "thumbnail_image_asset": "4954",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as Voltage",
-                        "trigger_format": "On SP Skill activate",
-                        "effect_values": [
-                            0.07
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            1.0
-                        ],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_voltage_appeal",
+                            "format": "Gain {effect} of Appeal as Voltage",
+                            "values": [
+                                0.07
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Voltage Gain %Appeal",
+                            "until": null
+                        },
+                        "trigger": {
+                            "type": "sp_activate",
+                            "format": "On SP Skill activate",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                1.0
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "SP Activate"
+                        },
                         "target": null,
-                        "short_display": "Voltage Gain %Appeal (SP Activate)",
-                        "trigger_limit": 0
+                        "short_display": "Voltage Gain %Appeal (SP Activate)"
                     }
                 ]
             }

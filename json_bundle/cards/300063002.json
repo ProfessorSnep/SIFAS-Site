@@ -25,44 +25,42 @@
                 "thumbnail_image_asset": "477063",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of SP capacity as SP Gauge",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.03,
-                            0.035,
-                            0.04,
-                            0.045,
-                            0.05
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_sp_percent",
+                            "format": "Gain {effect} of SP capacity as SP Gauge",
+                            "values": [
+                                0.03,
+                                0.035,
+                                0.04,
+                                0.045,
+                                0.05
+                            ],
+                            "value_type": "percent",
+                            "display_short": "SP %Fill",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "SP %Fill",
-                        "trigger_limit": 0
+                        "short_display": "SP %Fill"
                     },
                     {
-                        "effect_format": "Gain {effect} of Technique as extra Voltage on next SP skill",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.17,
-                            0.175,
-                            0.18,
-                            0.185,
-                            0.19
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "sp_bonus_voltage_technique",
+                            "format": "Gain {effect} of Technique as extra Voltage on next SP skill",
+                            "values": [
+                                0.17,
+                                0.175,
+                                0.18,
+                                0.185,
+                                0.19
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Next SP+ %Technique",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Next SP+ %Technique",
-                        "trigger_limit": 0
+                        "short_display": "Next SP+ %Technique"
                     }
                 ]
             }
@@ -81,24 +79,27 @@
                 "thumbnail_image_asset": "6945",
                 "effects": [
                     {
-                        "effect_format": "Increase base Technique by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.07,
-                            0.075,
-                            0.08,
-                            0.085,
-                            0.09
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Self",
-                        "short_display": "Technique+ : Self",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_technique",
+                            "format": "Increase base Technique by {effect}",
+                            "values": [
+                                0.07,
+                                0.075,
+                                0.08,
+                                0.085,
+                                0.09
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Technique+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Self",
+                            "check": "self",
+                            "value": null
+                        },
+                        "short_display": "Technique+ : Self"
                     }
                 ]
             },
@@ -111,24 +112,31 @@
                 "thumbnail_image_asset": "6422",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as SP Gauge",
-                        "trigger_format": "On AC success, {trigger_chance} chance",
-                        "effect_values": [
-                            0.08
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.3
-                        ],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_sp_technique",
+                            "format": "Gain {effect} of Technique as SP Gauge",
+                            "values": [
+                                0.08
+                            ],
+                            "value_type": "percent",
+                            "display_short": "SP Fill %Technique",
+                            "until": null
+                        },
+                        "trigger": {
+                            "type": "ac_success",
+                            "format": "On AC success, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.3
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "AC Success"
+                        },
                         "target": null,
-                        "short_display": "SP Fill %Appeal (AC Success)",
-                        "trigger_limit": 0
+                        "short_display": "SP Fill %Technique (AC Success)"
                     }
                 ]
             }

@@ -25,30 +25,38 @@
                 "thumbnail_image_asset": "4b39",
                 "effects": [
                     {
-                        "effect_format": "Increase Appeal by {effect} for {until} notes",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.05,
-                            0.053,
-                            0.056,
-                            0.059,
-                            0.062
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [
-                            5,
-                            5,
-                            5,
-                            5,
-                            5
-                        ],
-                        "until_value_type": "value",
-                        "target": "All",
-                        "short_display": "Appeal Up : All / # Notes",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_appeal_percent",
+                            "format": "Increase Appeal by {effect} for {until} notes",
+                            "values": [
+                                0.05,
+                                0.053,
+                                0.056,
+                                0.059,
+                                0.062
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Appeal Up %",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    5,
+                                    5,
+                                    5,
+                                    5,
+                                    5
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Appeal Up % : All / # Notes"
                     }
                 ]
             }
@@ -67,24 +75,29 @@
                 "thumbnail_image_asset": "4b7a",
                 "effects": [
                     {
-                        "effect_format": "Increase base Appeal by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.04,
-                            0.043,
-                            0.046,
-                            0.049,
-                            0.052
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Attribute",
-                        "short_display": "Appeal+ : Same Attribute",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_appeal",
+                            "format": "Increase base Appeal by {effect}",
+                            "values": [
+                                0.04,
+                                0.043,
+                                0.046,
+                                0.049,
+                                0.052
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Appeal+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Appeal+ : Same Attribute"
                     }
                 ]
             },
@@ -97,24 +110,35 @@
                 "thumbnail_image_asset": "4c4f",
                 "effects": [
                     {
-                        "effect_format": "Cleanse lowering effects",
-                        "trigger_format": "On SP Skill activate, {trigger_chance} chance",
-                        "effect_values": [
-                            0
-                        ],
-                        "effect_value_type": null,
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.5
-                        ],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "All",
-                        "short_display": "Cleanse : All (SP Activate)",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "cleanse_debuffs",
+                            "format": "Cleanse lowering effects",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "display_short": "Cleanse",
+                            "until": null
+                        },
+                        "trigger": {
+                            "type": "sp_activate",
+                            "format": "On SP Skill activate, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.5
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "SP Activate"
+                        },
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Cleanse : All (SP Activate)"
                     }
                 ]
             }

@@ -25,30 +25,38 @@
                 "thumbnail_image_asset": "4b5c",
                 "effects": [
                     {
-                        "effect_format": "Increase Crit power by {effect} for {until} notes",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.03,
-                            0.033,
-                            0.036,
-                            0.039,
-                            0.042
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [
-                            10,
-                            10,
-                            10,
-                            10,
-                            10
-                        ],
-                        "until_value_type": "value",
-                        "target": "All",
-                        "short_display": "Crit Power Up : All / # Notes",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_crit_power",
+                            "format": "Increase Crit power by {effect} for {until} notes",
+                            "values": [
+                                0.03,
+                                0.033,
+                                0.036,
+                                0.039,
+                                0.042
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Crit Power Up",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    10,
+                                    10,
+                                    10,
+                                    10,
+                                    10
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Crit Power Up : All / # Notes"
                     }
                 ]
             }
@@ -67,24 +75,27 @@
                 "thumbnail_image_asset": "233f",
                 "effects": [
                     {
-                        "effect_format": "Increase base Stamina by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.015,
-                            0.018,
-                            0.021,
-                            0.024,
-                            0.027
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same School",
-                        "short_display": "Stamina+ : Same School",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_stamina",
+                            "format": "Increase base Stamina by {effect}",
+                            "values": [
+                                0.015,
+                                0.018,
+                                0.021,
+                                0.024,
+                                0.027
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same School",
+                            "check": "school",
+                            "value": "owner"
+                        },
+                        "short_display": "Stamina+ : Same School"
                     }
                 ]
             }

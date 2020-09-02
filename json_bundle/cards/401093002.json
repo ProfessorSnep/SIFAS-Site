@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "5146",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Technique as extra Voltage on next SP skill",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.28,
-                            0.285,
-                            0.29,
-                            0.295,
-                            0.3
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "sp_bonus_voltage_technique",
+                            "format": "Gain {effect} of Technique as extra Voltage on next SP skill",
+                            "values": [
+                                0.28,
+                                0.285,
+                                0.29,
+                                0.295,
+                                0.3
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Next SP+ %Technique",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Next SP+ %Technique",
-                        "trigger_limit": 0
+                        "short_display": "Next SP+ %Technique"
                     }
                 ]
             }
@@ -61,24 +60,27 @@
                 "thumbnail_image_asset": "233f",
                 "effects": [
                     {
-                        "effect_format": "Increase base Stamina by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.07,
-                            0.075,
-                            0.08,
-                            0.085,
-                            0.09
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Self",
-                        "short_display": "Stamina+ : Self",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_stamina",
+                            "format": "Increase base Stamina by {effect}",
+                            "values": [
+                                0.07,
+                                0.075,
+                                0.08,
+                                0.085,
+                                0.09
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Self",
+                            "check": "self",
+                            "value": null
+                        },
+                        "short_display": "Stamina+ : Self"
                     }
                 ]
             },
@@ -91,26 +93,42 @@
                 "thumbnail_image_asset": "4b5c",
                 "effects": [
                     {
-                        "effect_format": "Increase base Crit power by {effect} until Live ends",
-                        "trigger_format": "On song start, {trigger_chance} chance",
-                        "effect_values": [
-                            0.04
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.3
-                        ],
-                        "until_values": [
-                            0
-                        ],
-                        "until_value_type": null,
-                        "target": "All",
-                        "short_display": "Crit Power+ : All / Live end (Song Start)",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_crit_power",
+                            "format": "Increase base Crit power by {effect} until Live ends",
+                            "values": [
+                                0.04
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Crit Power+",
+                            "until": {
+                                "type": "live_end",
+                                "values": [
+                                    0
+                                ],
+                                "value_type": null,
+                                "display_short": "Live end"
+                            }
+                        },
+                        "trigger": {
+                            "type": "live_start",
+                            "format": "On live start, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.3
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "Live Start"
+                        },
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Crit Power+ : All / Live end (Live Start)"
                     }
                 ]
             }

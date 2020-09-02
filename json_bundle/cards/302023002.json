@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "2749",
                 "effects": [
                     {
-                        "effect_format": "Restore {effect} of own Stamina",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.2,
-                            0.23,
-                            0.26,
-                            0.29,
-                            0.32
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_stamina_percent",
+                            "format": "Restore {effect} of own Stamina",
+                            "values": [
+                                0.2,
+                                0.23,
+                                0.26,
+                                0.29,
+                                0.32
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina Restore %Stamina",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Stamina Restore %Stamina",
-                        "trigger_limit": 0
+                        "short_display": "Stamina Restore %Stamina"
                     }
                 ]
             }
@@ -61,24 +60,27 @@
                 "thumbnail_image_asset": "233f",
                 "effects": [
                     {
-                        "effect_format": "Increase base Stamina by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.05,
-                            0.055,
-                            0.06,
-                            0.065,
-                            0.07
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Strategy",
-                        "short_display": "Stamina+ : Same Strategy",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_stamina",
+                            "format": "Increase base Stamina by {effect}",
+                            "values": [
+                                0.05,
+                                0.055,
+                                0.06,
+                                0.065,
+                                0.07
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Strategy",
+                            "check": "party",
+                            "value": "owner"
+                        },
+                        "short_display": "Stamina+ : Same Strategy"
                     }
                 ]
             },
@@ -91,26 +93,42 @@
                 "thumbnail_image_asset": "7e2e",
                 "effects": [
                     {
-                        "effect_format": "Increase Voltage gain by {effect} for {until} notes",
-                        "trigger_format": "When taking {trigger} or more damage, {trigger_chance} chance",
-                        "effect_values": [
-                            0.07
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            200
-                        ],
-                        "trigger_value_type": "value",
-                        "trigger_chances": [
-                            0.05
-                        ],
-                        "until_values": [
-                            2
-                        ],
-                        "until_value_type": "value",
-                        "target": "Same Year",
-                        "short_display": "Voltage Gain Up : Same Year / # Notes (Damage)",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_voltage_gain_percent",
+                            "format": "Increase Voltage gain by {effect} for {until} notes",
+                            "values": [
+                                0.07
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Voltage Gain Up %",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    2
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": {
+                            "type": "take_damage",
+                            "format": "When taking {trigger} or more damage, {trigger_chance} chance",
+                            "values": [
+                                200
+                            ],
+                            "value_type": "value",
+                            "chances": [
+                                0.05
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "Damage"
+                        },
+                        "target": {
+                            "display": "Same Year",
+                            "check": "year",
+                            "value": "owner"
+                        },
+                        "short_display": "Voltage Gain Up % : Same Year / # Notes (Damage)"
                     }
                 ]
             }
