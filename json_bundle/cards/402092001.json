@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "5146",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as extra Voltage on next SP skill",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.2,
-                            0.205,
-                            0.21,
-                            0.215,
-                            0.22
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "sp_bonus_voltage_appeal",
+                            "format": "Gain {effect} of Appeal as extra Voltage on next SP skill",
+                            "values": [
+                                0.2,
+                                0.205,
+                                0.21,
+                                0.215,
+                                0.22
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Next SP+ %Appeal",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Next SP+ %Appeal",
-                        "trigger_limit": 0
+                        "short_display": "Next SP+ %Appeal"
                     }
                 ]
             }
@@ -61,24 +60,27 @@
                 "thumbnail_image_asset": "233f",
                 "effects": [
                     {
-                        "effect_format": "Increase base Stamina by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.05,
-                            0.055,
-                            0.06,
-                            0.065,
-                            0.07
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Self",
-                        "short_display": "Stamina+ : Self",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_stamina",
+                            "format": "Increase base Stamina by {effect}",
+                            "values": [
+                                0.05,
+                                0.055,
+                                0.06,
+                                0.065,
+                                0.07
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Self",
+                            "check": "self",
+                            "value": null
+                        },
+                        "short_display": "Stamina+ : Self"
                     }
                 ]
             },
@@ -91,24 +93,31 @@
                 "thumbnail_image_asset": "6422",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as SP Gauge",
-                        "trigger_format": "On song start, {trigger_chance} chance",
-                        "effect_values": [
-                            0.08
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.5
-                        ],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_sp_appeal",
+                            "format": "Gain {effect} of Appeal as SP Gauge",
+                            "values": [
+                                0.08
+                            ],
+                            "value_type": "percent",
+                            "display_short": "SP Fill %Appeal",
+                            "until": null
+                        },
+                        "trigger": {
+                            "type": "live_start",
+                            "format": "On live start, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.5
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "Live Start"
+                        },
                         "target": null,
-                        "short_display": "SP Fill %Appeal (Song Start)",
-                        "trigger_limit": 0
+                        "short_display": "SP Fill %Appeal (Live Start)"
                     }
                 ]
             }

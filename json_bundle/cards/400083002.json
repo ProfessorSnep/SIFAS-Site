@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "6422",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of SP capacity as SP Gauge",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.07,
-                            0.075,
-                            0.08,
-                            0.085,
-                            0.09
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_sp_percent",
+                            "format": "Gain {effect} of SP capacity as SP Gauge",
+                            "values": [
+                                0.07,
+                                0.075,
+                                0.08,
+                                0.085,
+                                0.09
+                            ],
+                            "value_type": "percent",
+                            "display_short": "SP %Fill",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "SP %Fill",
-                        "trigger_limit": 0
+                        "short_display": "SP %Fill"
                     }
                 ]
             }
@@ -61,24 +60,29 @@
                 "thumbnail_image_asset": "6945",
                 "effects": [
                     {
-                        "effect_format": "Increase base Technique by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.04,
-                            0.043,
-                            0.046,
-                            0.049,
-                            0.052
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Attribute",
-                        "short_display": "Technique+ : Same Attribute",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_technique",
+                            "format": "Increase base Technique by {effect}",
+                            "values": [
+                                0.04,
+                                0.043,
+                                0.046,
+                                0.049,
+                                0.052
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Technique+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Technique+ : Same Attribute"
                     }
                 ]
             },
@@ -91,24 +95,31 @@
                 "thumbnail_image_asset": "6422",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as SP Gauge",
-                        "trigger_format": "On Self crit, {trigger_chance} chance",
-                        "effect_values": [
-                            0.01
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.25
-                        ],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_sp_technique",
+                            "format": "Gain {effect} of Technique as SP Gauge",
+                            "values": [
+                                0.01
+                            ],
+                            "value_type": "percent",
+                            "display_short": "SP Fill %Technique",
+                            "until": null
+                        },
+                        "trigger": {
+                            "type": "self_crit",
+                            "format": "On Self crit, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.25
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "Crit"
+                        },
                         "target": null,
-                        "short_display": "SP Fill %Appeal (Crit)",
-                        "trigger_limit": 0
+                        "short_display": "SP Fill %Technique (Crit)"
                     }
                 ]
             }

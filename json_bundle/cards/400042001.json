@@ -25,30 +25,38 @@
                 "thumbnail_image_asset": "5f5d",
                 "effects": [
                     {
-                        "effect_format": "Increase SP gain by {effect} for {until} notes",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.03,
-                            0.033,
-                            0.036,
-                            0.039,
-                            0.042
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [
-                            5,
-                            5,
-                            5,
-                            5,
-                            5
-                        ],
-                        "until_value_type": "value",
-                        "target": "All",
-                        "short_display": "SP Gain Up : All / # Notes",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_sp_gain",
+                            "format": "Increase SP gain by {effect} for {until} notes",
+                            "values": [
+                                0.03,
+                                0.033,
+                                0.036,
+                                0.039,
+                                0.042
+                            ],
+                            "value_type": "percent",
+                            "display_short": "SP Gain Up",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    5,
+                                    5,
+                                    5,
+                                    5,
+                                    5
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "SP Gain Up : All / # Notes"
                     }
                 ]
             }
@@ -67,24 +75,27 @@
                 "thumbnail_image_asset": "6945",
                 "effects": [
                     {
-                        "effect_format": "Increase base Technique by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.03,
-                            0.035,
-                            0.04,
-                            0.045,
-                            0.05
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Strategy",
-                        "short_display": "Technique+ : Same Strategy",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_technique",
+                            "format": "Increase base Technique by {effect}",
+                            "values": [
+                                0.03,
+                                0.035,
+                                0.04,
+                                0.045,
+                                0.05
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Technique+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Strategy",
+                            "check": "party",
+                            "value": "owner"
+                        },
+                        "short_display": "Technique+ : Same Strategy"
                     }
                 ]
             },
@@ -97,24 +108,31 @@
                 "thumbnail_image_asset": "5146",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as extra Voltage on next SP skill",
-                        "trigger_format": "On AC start, {trigger_chance} chance",
-                        "effect_values": [
-                            0.08
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.3
-                        ],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "sp_bonus_voltage_appeal",
+                            "format": "Gain {effect} of Appeal as extra Voltage on next SP skill",
+                            "values": [
+                                0.08
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Next SP+ %Appeal",
+                            "until": null
+                        },
+                        "trigger": {
+                            "type": "ac_start",
+                            "format": "On AC start, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.3
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "AC Start"
+                        },
                         "target": null,
-                        "short_display": "Next SP+ %Appeal (AC Start)",
-                        "trigger_limit": 0
+                        "short_display": "Next SP+ %Appeal (AC Start)"
                     }
                 ]
             }

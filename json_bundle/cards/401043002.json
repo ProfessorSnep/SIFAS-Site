@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "4954",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as Voltage",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.23,
-                            0.26,
-                            0.29,
-                            0.32,
-                            0.35
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_voltage_appeal",
+                            "format": "Gain {effect} of Appeal as Voltage",
+                            "values": [
+                                0.23,
+                                0.26,
+                                0.29,
+                                0.32,
+                                0.35
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Voltage Gain %Appeal",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Voltage Gain %Appeal",
-                        "trigger_limit": 0
+                        "short_display": "Voltage Gain %Appeal"
                     }
                 ]
             }
@@ -61,24 +60,27 @@
                 "thumbnail_image_asset": "6945",
                 "effects": [
                     {
-                        "effect_format": "Increase base Technique by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.03,
-                            0.033,
-                            0.036,
-                            0.039,
-                            0.042
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "All",
-                        "short_display": "Technique+ : All",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_technique",
+                            "format": "Increase base Technique by {effect}",
+                            "values": [
+                                0.03,
+                                0.033,
+                                0.036,
+                                0.039,
+                                0.042
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Technique+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Technique+ : All"
                     }
                 ]
             },
@@ -91,26 +93,42 @@
                 "thumbnail_image_asset": "4b39",
                 "effects": [
                     {
-                        "effect_format": "Increase Appeal by {effect} for {until} notes",
-                        "trigger_format": "On Strategy swap, {trigger_chance} chance",
-                        "effect_values": [
-                            0.032
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.2
-                        ],
-                        "until_values": [
-                            5
-                        ],
-                        "until_value_type": "value",
-                        "target": "All",
-                        "short_display": "Appeal Up : All / # Notes (Strategy Swap)",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_appeal_percent",
+                            "format": "Increase Appeal by {effect} for {until} notes",
+                            "values": [
+                                0.032
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Appeal Up %",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    5
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": {
+                            "type": "strategy_swap",
+                            "format": "On Strategy swap, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.2
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "Strategy Swap"
+                        },
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Appeal Up % : All / # Notes (Strategy Swap)"
                     }
                 ]
             }

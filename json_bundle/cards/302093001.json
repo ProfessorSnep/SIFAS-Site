@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "2749",
                 "effects": [
                     {
-                        "effect_format": "Restore Stamina equal to {effect} of own Technique",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.2,
-                            0.23,
-                            0.26,
-                            0.29,
-                            0.32
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_stamina_technique",
+                            "format": "Restore Stamina equal to {effect} of own Technique",
+                            "values": [
+                                0.2,
+                                0.23,
+                                0.26,
+                                0.29,
+                                0.32
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina Restore %Technique",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Stamina Gain by Technique",
-                        "trigger_limit": 0
+                        "short_display": "Stamina Restore %Technique"
                     }
                 ]
             }
@@ -61,24 +60,27 @@
                 "thumbnail_image_asset": "6945",
                 "effects": [
                     {
-                        "effect_format": "Increase base Technique by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.04,
-                            0.043,
-                            0.046,
-                            0.049,
-                            0.052
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Year",
-                        "short_display": "Technique+ : Same Year",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_technique",
+                            "format": "Increase base Technique by {effect}",
+                            "values": [
+                                0.04,
+                                0.043,
+                                0.046,
+                                0.049,
+                                0.052
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Technique+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Year",
+                            "check": "year",
+                            "value": "owner"
+                        },
+                        "short_display": "Technique+ : Same Year"
                     }
                 ]
             },
@@ -91,24 +93,31 @@
                 "thumbnail_image_asset": "6422",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as SP Gauge",
-                        "trigger_format": "On song start, {trigger_chance} chance",
-                        "effect_values": [
-                            0.1
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.3
-                        ],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_sp_appeal",
+                            "format": "Gain {effect} of Appeal as SP Gauge",
+                            "values": [
+                                0.1
+                            ],
+                            "value_type": "percent",
+                            "display_short": "SP Fill %Appeal",
+                            "until": null
+                        },
+                        "trigger": {
+                            "type": "live_start",
+                            "format": "On live start, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.3
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "Live Start"
+                        },
                         "target": null,
-                        "short_display": "SP Fill %Appeal (Song Start)",
-                        "trigger_limit": 0
+                        "short_display": "SP Fill %Appeal (Live Start)"
                     }
                 ]
             }

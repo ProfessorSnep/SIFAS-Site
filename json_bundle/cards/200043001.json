@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "5146",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as extra Voltage on next SP skill",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.38,
-                            0.385,
-                            0.39,
-                            0.395,
-                            0.4
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "sp_bonus_voltage_appeal",
+                            "format": "Gain {effect} of Appeal as extra Voltage on next SP skill",
+                            "values": [
+                                0.38,
+                                0.385,
+                                0.39,
+                                0.395,
+                                0.4
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Next SP+ %Appeal",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Next SP+ %Appeal",
-                        "trigger_limit": 0
+                        "short_display": "Next SP+ %Appeal"
                     }
                 ]
             }
@@ -61,24 +60,29 @@
                 "thumbnail_image_asset": "6945",
                 "effects": [
                     {
-                        "effect_format": "Increase base Technique by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.04,
-                            0.043,
-                            0.046,
-                            0.049,
-                            0.052
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Attribute",
-                        "short_display": "Technique+ : Same Attribute",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_technique",
+                            "format": "Increase base Technique by {effect}",
+                            "values": [
+                                0.04,
+                                0.043,
+                                0.046,
+                                0.049,
+                                0.052
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Technique+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Technique+ : Same Attribute"
                     }
                 ]
             },
@@ -91,24 +95,31 @@
                 "thumbnail_image_asset": "6422",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as SP Gauge",
-                        "trigger_format": "On own Appeal, {trigger_chance} chance",
-                        "effect_values": [
-                            0.01
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.15
-                        ],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_sp_technique",
+                            "format": "Gain {effect} of Technique as SP Gauge",
+                            "values": [
+                                0.01
+                            ],
+                            "value_type": "percent",
+                            "display_short": "SP Fill %Technique",
+                            "until": null
+                        },
+                        "trigger": {
+                            "type": "self_appeal",
+                            "format": "On own Appeal, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.15
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "Appeal"
+                        },
                         "target": null,
-                        "short_display": "SP Fill %Appeal (Appeal)",
-                        "trigger_limit": 0
+                        "short_display": "SP Fill %Technique (Appeal)"
                     }
                 ]
             }

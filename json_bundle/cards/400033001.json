@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "3a",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Technique as a Shield",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.18,
-                            0.21,
-                            0.23,
-                            0.26,
-                            0.29
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_shield_technique",
+                            "format": "Gain {effect} of Technique as a Shield",
+                            "values": [
+                                0.18,
+                                0.21,
+                                0.23,
+                                0.26,
+                                0.29
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Shield Gain %Technique",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Shield Gain %Technique",
-                        "trigger_limit": 0
+                        "short_display": "Shield Gain %Technique"
                     }
                 ]
             }
@@ -61,24 +60,29 @@
                 "thumbnail_image_asset": "233f",
                 "effects": [
                     {
-                        "effect_format": "Increase base Stamina by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.04,
-                            0.043,
-                            0.046,
-                            0.049,
-                            0.052
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Attribute",
-                        "short_display": "Stamina+ : Same Attribute",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_stamina",
+                            "format": "Increase base Stamina by {effect}",
+                            "values": [
+                                0.04,
+                                0.043,
+                                0.046,
+                                0.049,
+                                0.052
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Stamina+ : Same Attribute"
                     }
                 ]
             },
@@ -91,24 +95,31 @@
                 "thumbnail_image_asset": "2749",
                 "effects": [
                     {
-                        "effect_format": "Restore Stamina equal to {effect} of own Technique",
-                        "trigger_format": "On AC success, {trigger_chance} chance",
-                        "effect_values": [
-                            0.2
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.3
-                        ],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_stamina_technique",
+                            "format": "Restore Stamina equal to {effect} of own Technique",
+                            "values": [
+                                0.2
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina Restore %Technique",
+                            "until": null
+                        },
+                        "trigger": {
+                            "type": "ac_success",
+                            "format": "On AC success, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.3
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "AC Success"
+                        },
                         "target": null,
-                        "short_display": "Stamina Gain by Technique (AC Success)",
-                        "trigger_limit": 0
+                        "short_display": "Stamina Restore %Technique (AC Success)"
                     }
                 ]
             }

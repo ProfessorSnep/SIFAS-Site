@@ -25,30 +25,34 @@
                 "thumbnail_image_asset": "4565",
                 "effects": [
                     {
-                        "effect_format": "Reduces Stamina damage by {effect} for {until} notes",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.07,
-                            0.08,
-                            0.09,
-                            0.1,
-                            0.11
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [
-                            10,
-                            10,
-                            10,
-                            10,
-                            10
-                        ],
-                        "until_value_type": "value",
+                        "effect": {
+                            "type": "reduce_damage",
+                            "format": "Reduces Stamina damage by {effect} for {until} notes",
+                            "values": [
+                                0.07,
+                                0.08,
+                                0.09,
+                                0.1,
+                                0.11
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Reduce Damage",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    10,
+                                    10,
+                                    10,
+                                    10,
+                                    10
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Reduce Damage / # Notes",
-                        "trigger_limit": 0
+                        "short_display": "Reduce Damage / # Notes"
                     }
                 ]
             }
@@ -67,24 +71,27 @@
                 "thumbnail_image_asset": "233f",
                 "effects": [
                     {
-                        "effect_format": "Increase base Stamina by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.02,
-                            0.023,
-                            0.026,
-                            0.029,
-                            0.032
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Type",
-                        "short_display": "Stamina+ : Same Type",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_stamina",
+                            "format": "Increase base Stamina by {effect}",
+                            "values": [
+                                0.02,
+                                0.023,
+                                0.026,
+                                0.029,
+                                0.032
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Type",
+                            "check": "role",
+                            "value": "owner"
+                        },
+                        "short_display": "Stamina+ : Same Type"
                     }
                 ]
             },
@@ -97,24 +104,35 @@
                 "thumbnail_image_asset": "4c4f",
                 "effects": [
                     {
-                        "effect_format": "Cleanse lowering effects",
-                        "trigger_format": "On SP Skill activate, {trigger_chance} chance",
-                        "effect_values": [
-                            0
-                        ],
-                        "effect_value_type": null,
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.5
-                        ],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "All",
-                        "short_display": "Cleanse : All (SP Activate)",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "cleanse_debuffs",
+                            "format": "Cleanse lowering effects",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "display_short": "Cleanse",
+                            "until": null
+                        },
+                        "trigger": {
+                            "type": "sp_activate",
+                            "format": "On SP Skill activate, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.5
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "SP Activate"
+                        },
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Cleanse : All (SP Activate)"
                     }
                 ]
             }

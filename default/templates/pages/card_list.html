@@ -6,11 +6,15 @@
 
 {% block scripts %}
 {{super()}}
-<script src="{{url_for('.static', filename='js/card_list.js')}}?v=1.0.3"></script>
+<script src="{{url_for('.static', filename='js/card_list.js')}}?v=1.0.4"></script>
 {% endblock scripts %}
 
+{% set card_skills = all_card_skill_info() %}
 
 {% block content %}
+<button id="back-to-top" class="btn btn-primary"
+    style="display: none; position: fixed; top: 10px; right: 10px; z-index: 99;" onclick="backToTop()">Back to
+    Top</button>
 <div class="container justify-content-center text-center">
     <div class="row text-center py-1">
         <div class="col">
@@ -126,14 +130,38 @@
             </div>
             <!-- END OF OTHER SORT ROW -->
             <div class="row align-items-center justify-content-center py-1 mx-1">
-                <div class="form-group">
-                    <label for="set-sort">Filter to SR set:</label>
-                    <select class="form-control" id="set-sort">
-                        <option value="">None</option>
-                        {% for set in sets() %}
-                        <option value="{{set['id']}}">{{set|loc_name}}</option>
-                        {% endfor %}
-                    </select>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="set-sort">Filter to SR set:</label>
+                        <select class="form-control" id="set-sort">
+                            <option value="">None</option>
+                            {% for set in sets() %}
+                            <option value="{{set['id']}}">{{set|loc_name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="active-sort">Filter to Skill:</label>
+                        <select class="form-control" id="active-sort">
+                            <option value="">None</option>
+                            {% for skill in card_skills['active'] %}
+                            <option value="{{skill['id']}}">{{skill['display']}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="passive-sort">Filter to Ability:</label>
+                        <select class="form-control" id="passive-sort">
+                            <option value="">None</option>
+                            {% for skill in card_skills['passive'] %}
+                            <option value="{{skill['id']}}">{{skill['display']}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
@@ -142,11 +170,8 @@
     <div class="row align-items-center justify-content-center py-3 show-on-load" style="display: none;">
         {% for cid in cards() %}
         {% set card = card_info(cid) %}
-        {% set card_set = get_card_set(cid) %}
-        <div class="col-xl-3 col-md-auto px-5 py-3 filtered-card 
-                card-member-{{card['member_id']}} card-rarity-{{card['rarity']}} card-attribute-{{card['attribute']}}
-                card-role-{{card['role']}} {{'card-fes' if card['is_fes'] else ''}} {{'card-set-' + card_set['id'] if card_set else ''}}
-                card-school-{{(card['member_id'] / 100 + 1)|int}}">
+        {% set classes = card|card_classes %}
+        <div class="col-xl-3 col-md-auto px-5 py-3 filtered-card {{' '.join(classes)}}">
             <a href="/card/{{cid}}" style="text-decoration: inherit; color: inherit;">
                 {{cm.thumb_card_view(cid)}}
             </a>

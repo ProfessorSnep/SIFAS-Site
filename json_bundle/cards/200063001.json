@@ -25,30 +25,34 @@
                 "thumbnail_image_asset": "4565",
                 "effects": [
                     {
-                        "effect_format": "Reduces Stamina damage by {effect} for {until} notes",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.11,
-                            0.12,
-                            0.13,
-                            0.14,
-                            0.15
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [
-                            10,
-                            10,
-                            10,
-                            10,
-                            10
-                        ],
-                        "until_value_type": "value",
+                        "effect": {
+                            "type": "reduce_damage",
+                            "format": "Reduces Stamina damage by {effect} for {until} notes",
+                            "values": [
+                                0.11,
+                                0.12,
+                                0.13,
+                                0.14,
+                                0.15
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Reduce Damage",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    10,
+                                    10,
+                                    10,
+                                    10,
+                                    10
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Reduce Damage / # Notes",
-                        "trigger_limit": 0
+                        "short_display": "Reduce Damage / # Notes"
                     }
                 ]
             }
@@ -67,24 +71,27 @@
                 "thumbnail_image_asset": "233f",
                 "effects": [
                     {
-                        "effect_format": "Increase base Stamina by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.05,
-                            0.055,
-                            0.06,
-                            0.065,
-                            0.07
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Strategy",
-                        "short_display": "Stamina+ : Same Strategy",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_stamina",
+                            "format": "Increase base Stamina by {effect}",
+                            "values": [
+                                0.05,
+                                0.055,
+                                0.06,
+                                0.065,
+                                0.07
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Strategy",
+                            "check": "party",
+                            "value": "owner"
+                        },
+                        "short_display": "Stamina+ : Same Strategy"
                     }
                 ]
             },
@@ -97,24 +104,31 @@
                 "thumbnail_image_asset": "3a",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Stamina as a Shield",
-                        "trigger_format": "On AC start, {trigger_chance} chance",
-                        "effect_values": [
-                            0.1
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.4
-                        ],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_shield_stamina",
+                            "format": "Gain {effect} of Stamina as a Shield",
+                            "values": [
+                                0.1
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Shield Gain %Stamina",
+                            "until": null
+                        },
+                        "trigger": {
+                            "type": "ac_start",
+                            "format": "On AC start, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.4
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "AC Start"
+                        },
                         "target": null,
-                        "short_display": "Shield Gain %Stamina (AC Start)",
-                        "trigger_limit": 0
+                        "short_display": "Shield Gain %Stamina (AC Start)"
                     }
                 ]
             }

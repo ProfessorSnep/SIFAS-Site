@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "4954",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as Voltage",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.25,
-                            0.28,
-                            0.31,
-                            0.34,
-                            0.37
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_voltage_appeal",
+                            "format": "Gain {effect} of Appeal as Voltage",
+                            "values": [
+                                0.25,
+                                0.28,
+                                0.31,
+                                0.34,
+                                0.37
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Voltage Gain %Appeal",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Voltage Gain %Appeal",
-                        "trigger_limit": 0
+                        "short_display": "Voltage Gain %Appeal"
                     }
                 ]
             }
@@ -61,24 +60,27 @@
                 "thumbnail_image_asset": "4b7a",
                 "effects": [
                     {
-                        "effect_format": "Increase base Appeal by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.05,
-                            0.055,
-                            0.06,
-                            0.065,
-                            0.07
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Self",
-                        "short_display": "Appeal+ : Self",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_appeal",
+                            "format": "Increase base Appeal by {effect}",
+                            "values": [
+                                0.05,
+                                0.055,
+                                0.06,
+                                0.065,
+                                0.07
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Appeal+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Self",
+                            "check": "self",
+                            "value": null
+                        },
+                        "short_display": "Appeal+ : Self"
                     }
                 ]
             },
@@ -91,26 +93,42 @@
                 "thumbnail_image_asset": "4b39",
                 "effects": [
                     {
-                        "effect_format": "Increase Appeal by {effect} for {until} notes",
-                        "trigger_format": "On AC start, {trigger_chance} chance",
-                        "effect_values": [
-                            0.08
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.3
-                        ],
-                        "until_values": [
-                            10
-                        ],
-                        "until_value_type": "value",
-                        "target": "All",
-                        "short_display": "Appeal Up : All / # Notes (AC Start)",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_appeal_percent",
+                            "format": "Increase Appeal by {effect} for {until} notes",
+                            "values": [
+                                0.08
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Appeal Up %",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    10
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": {
+                            "type": "ac_start",
+                            "format": "On AC start, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.3
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "AC Start"
+                        },
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Appeal Up % : All / # Notes (AC Start)"
                     }
                 ]
             }

@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "3a",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} Shield",
-                        "trigger_format": null,
-                        "effect_values": [
-                            250,
-                            300,
-                            350,
-                            400,
-                            450
-                        ],
-                        "effect_value_type": "value",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_shield",
+                            "format": "Gain {effect} Shield",
+                            "values": [
+                                250,
+                                300,
+                                350,
+                                400,
+                                450
+                            ],
+                            "value_type": "value",
+                            "display_short": "Gain Flat Shield",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Gain Flat Shield",
-                        "trigger_limit": 0
+                        "short_display": "Gain Flat Shield"
                     }
                 ]
             }
@@ -61,24 +60,29 @@
                 "thumbnail_image_asset": "4b7a",
                 "effects": [
                     {
-                        "effect_format": "Increase base Appeal by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.02,
-                            0.023,
-                            0.026,
-                            0.029,
-                            0.032
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Unit",
-                        "short_display": "Appeal+ : Same Unit",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_appeal",
+                            "format": "Increase base Appeal by {effect}",
+                            "values": [
+                                0.02,
+                                0.023,
+                                0.026,
+                                0.029,
+                                0.032
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Appeal+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Unit",
+                            "check": [
+                                "subunit"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Appeal+ : Same Unit"
                     }
                 ]
             }

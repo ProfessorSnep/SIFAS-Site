@@ -25,30 +25,38 @@
                 "thumbnail_image_asset": "5f5d",
                 "effects": [
                     {
-                        "effect_format": "Increase SP gain by {effect} for {until} notes",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.033,
-                            0.036,
-                            0.039,
-                            0.042,
-                            0.045
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [
-                            5,
-                            5,
-                            5,
-                            5,
-                            5
-                        ],
-                        "until_value_type": "value",
-                        "target": "Same Type",
-                        "short_display": "SP Gain Up : Same Type / # Notes",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_sp_gain",
+                            "format": "Increase SP gain by {effect} for {until} notes",
+                            "values": [
+                                0.033,
+                                0.036,
+                                0.039,
+                                0.042,
+                                0.045
+                            ],
+                            "value_type": "percent",
+                            "display_short": "SP Gain Up",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    5,
+                                    5,
+                                    5,
+                                    5,
+                                    5
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Type",
+                            "check": "role",
+                            "value": "owner"
+                        },
+                        "short_display": "SP Gain Up : Same Type / # Notes"
                     }
                 ]
             }
@@ -67,24 +75,29 @@
                 "thumbnail_image_asset": "6945",
                 "effects": [
                     {
-                        "effect_format": "Increase base Technique by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.02,
-                            0.023,
-                            0.026,
-                            0.029,
-                            0.032
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Attribute",
-                        "short_display": "Technique+ : Same Attribute",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_technique",
+                            "format": "Increase base Technique by {effect}",
+                            "values": [
+                                0.02,
+                                0.023,
+                                0.026,
+                                0.029,
+                                0.032
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Technique+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Technique+ : Same Attribute"
                     }
                 ]
             },
@@ -97,26 +110,42 @@
                 "thumbnail_image_asset": "5f5d",
                 "effects": [
                     {
-                        "effect_format": "Increase SP gain by {effect} for {until} notes",
-                        "trigger_format": "On Strategy swap, once per live",
-                        "effect_values": [
-                            0.08
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            1
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            1.0
-                        ],
-                        "until_values": [
-                            30
-                        ],
-                        "until_value_type": "value",
-                        "target": "Same Type",
-                        "short_display": "SP Gain Up : Same Type / # Notes (Strategy Swap)",
-                        "trigger_limit": 1
+                        "effect": {
+                            "type": "increase_sp_gain",
+                            "format": "Increase SP gain by {effect} for {until} notes",
+                            "values": [
+                                0.08
+                            ],
+                            "value_type": "percent",
+                            "display_short": "SP Gain Up",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    30
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": {
+                            "type": "strategy_swap",
+                            "format": "On Strategy swap, once per live",
+                            "values": [
+                                1
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                1.0
+                            ],
+                            "trigger_limit": 1,
+                            "display_short": "Strategy Swap"
+                        },
+                        "target": {
+                            "display": "Same Type",
+                            "check": "role",
+                            "value": "owner"
+                        },
+                        "short_display": "SP Gain Up : Same Type / # Notes (Strategy Swap)"
                     }
                 ]
             }

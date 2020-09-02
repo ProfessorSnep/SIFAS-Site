@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "2749",
                 "effects": [
                     {
-                        "effect_format": "Restore {effect} of own Stamina",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.2,
-                            0.23,
-                            0.26,
-                            0.29,
-                            0.32
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_stamina_percent",
+                            "format": "Restore {effect} of own Stamina",
+                            "values": [
+                                0.2,
+                                0.23,
+                                0.26,
+                                0.29,
+                                0.32
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina Restore %Stamina",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Stamina Restore %Stamina",
-                        "trigger_limit": 0
+                        "short_display": "Stamina Restore %Stamina"
                     }
                 ]
             }
@@ -61,24 +60,27 @@
                 "thumbnail_image_asset": "233f",
                 "effects": [
                     {
-                        "effect_format": "Increase base Stamina by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.04,
-                            0.043,
-                            0.046,
-                            0.049,
-                            0.052
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "All Others",
-                        "short_display": "Stamina+ : All Others",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_stamina",
+                            "format": "Increase base Stamina by {effect}",
+                            "values": [
+                                0.04,
+                                0.043,
+                                0.046,
+                                0.049,
+                                0.052
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "All Others",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Stamina+ : All Others"
                     }
                 ]
             },
@@ -91,24 +93,31 @@
                 "thumbnail_image_asset": "2749",
                 "effects": [
                     {
-                        "effect_format": "Restore {effect} of own Stamina",
-                        "trigger_format": "On AC start, {trigger_chance} chance",
-                        "effect_values": [
-                            0.2
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.3
-                        ],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_stamina_percent",
+                            "format": "Restore {effect} of own Stamina",
+                            "values": [
+                                0.2
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina Restore %Stamina",
+                            "until": null
+                        },
+                        "trigger": {
+                            "type": "ac_start",
+                            "format": "On AC start, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.3
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "AC Start"
+                        },
                         "target": null,
-                        "short_display": "Stamina Restore %Stamina (AC Start)",
-                        "trigger_limit": 0
+                        "short_display": "Stamina Restore %Stamina (AC Start)"
                     }
                 ]
             }

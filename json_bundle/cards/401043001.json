@@ -25,30 +25,34 @@
                 "thumbnail_image_asset": "4565",
                 "effects": [
                     {
-                        "effect_format": "Reduces Stamina damage by {effect} for {until} notes",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.33,
-                            0.36,
-                            0.39,
-                            0.42,
-                            0.45
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [
-                            3,
-                            3,
-                            3,
-                            3,
-                            3
-                        ],
-                        "until_value_type": "value",
+                        "effect": {
+                            "type": "reduce_damage",
+                            "format": "Reduces Stamina damage by {effect} for {until} notes",
+                            "values": [
+                                0.33,
+                                0.36,
+                                0.39,
+                                0.42,
+                                0.45
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Reduce Damage",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    3,
+                                    3,
+                                    3,
+                                    3,
+                                    3
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Reduce Damage / # Notes",
-                        "trigger_limit": 0
+                        "short_display": "Reduce Damage / # Notes"
                     }
                 ]
             }
@@ -67,24 +71,27 @@
                 "thumbnail_image_asset": "233f",
                 "effects": [
                     {
-                        "effect_format": "Increase base Stamina by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.03,
-                            0.033,
-                            0.036,
-                            0.039,
-                            0.042
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "All",
-                        "short_display": "Stamina+ : All",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_stamina",
+                            "format": "Increase base Stamina by {effect}",
+                            "values": [
+                                0.03,
+                                0.033,
+                                0.036,
+                                0.039,
+                                0.042
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "All",
+                            "check": "all",
+                            "value": null
+                        },
+                        "short_display": "Stamina+ : All"
                     }
                 ]
             },
@@ -97,24 +104,31 @@
                 "thumbnail_image_asset": "4954",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Stamina as Voltage",
-                        "trigger_format": "On AC start, {trigger_chance} chance",
-                        "effect_values": [
-                            0.35
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.45
-                        ],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_voltage_stamina",
+                            "format": "Gain {effect} of Stamina as Voltage",
+                            "values": [
+                                0.35
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Voltage Gain %Stamina",
+                            "until": null
+                        },
+                        "trigger": {
+                            "type": "ac_start",
+                            "format": "On AC start, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.45
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "AC Start"
+                        },
                         "target": null,
-                        "short_display": "Voltage Gain %Stamina (AC Start)",
-                        "trigger_limit": 0
+                        "short_display": "Voltage Gain %Stamina (AC Start)"
                     }
                 ]
             }

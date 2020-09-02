@@ -25,30 +25,34 @@
                 "thumbnail_image_asset": "4565",
                 "effects": [
                     {
-                        "effect_format": "Reduces Stamina damage by {effect} for {until} notes",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.07,
-                            0.08,
-                            0.09,
-                            0.1,
-                            0.11
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [
-                            10,
-                            10,
-                            10,
-                            10,
-                            10
-                        ],
-                        "until_value_type": "value",
+                        "effect": {
+                            "type": "reduce_damage",
+                            "format": "Reduces Stamina damage by {effect} for {until} notes",
+                            "values": [
+                                0.07,
+                                0.08,
+                                0.09,
+                                0.1,
+                                0.11
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Reduce Damage",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    10,
+                                    10,
+                                    10,
+                                    10,
+                                    10
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Reduce Damage / # Notes",
-                        "trigger_limit": 0
+                        "short_display": "Reduce Damage / # Notes"
                     }
                 ]
             }
@@ -67,24 +71,27 @@
                 "thumbnail_image_asset": "6945",
                 "effects": [
                     {
-                        "effect_format": "Increase base Technique by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.05,
-                            0.055,
-                            0.06,
-                            0.065,
-                            0.07
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Self",
-                        "short_display": "Technique+ : Self",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_technique",
+                            "format": "Increase base Technique by {effect}",
+                            "values": [
+                                0.05,
+                                0.055,
+                                0.06,
+                                0.065,
+                                0.07
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Technique+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Self",
+                            "check": "self",
+                            "value": null
+                        },
+                        "short_display": "Technique+ : Self"
                     }
                 ]
             },
@@ -97,26 +104,38 @@
                 "thumbnail_image_asset": "4565",
                 "effects": [
                     {
-                        "effect_format": "Reduces Stamina damage by {effect} until Live ends",
-                        "trigger_format": "On song start, {trigger_chance} chance",
-                        "effect_values": [
-                            0.012
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.3
-                        ],
-                        "until_values": [
-                            0
-                        ],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "reduce_damage",
+                            "format": "Reduces Stamina damage by {effect} until Live ends",
+                            "values": [
+                                0.012
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Reduce Damage",
+                            "until": {
+                                "type": "live_end",
+                                "values": [
+                                    0
+                                ],
+                                "value_type": null,
+                                "display_short": "Live end"
+                            }
+                        },
+                        "trigger": {
+                            "type": "live_start",
+                            "format": "On live start, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.3
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "Live Start"
+                        },
                         "target": null,
-                        "short_display": "Reduce Damage / Live end (Song Start)",
-                        "trigger_limit": 0
+                        "short_display": "Reduce Damage / Live end (Live Start)"
                     }
                 ]
             }

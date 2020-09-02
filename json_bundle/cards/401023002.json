@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "5146",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as extra Voltage on next SP skill",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.3,
-                            0.305,
-                            0.31,
-                            0.315,
-                            0.32
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "sp_bonus_voltage_appeal",
+                            "format": "Gain {effect} of Appeal as extra Voltage on next SP skill",
+                            "values": [
+                                0.3,
+                                0.305,
+                                0.31,
+                                0.315,
+                                0.32
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Next SP+ %Appeal",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Next SP+ %Appeal",
-                        "trigger_limit": 0
+                        "short_display": "Next SP+ %Appeal"
                     }
                 ]
             }
@@ -61,24 +60,29 @@
                 "thumbnail_image_asset": "6945",
                 "effects": [
                     {
-                        "effect_format": "Increase base Technique by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.04,
-                            0.043,
-                            0.046,
-                            0.049,
-                            0.052
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Attribute",
-                        "short_display": "Technique+ : Same Attribute",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_technique",
+                            "format": "Increase base Technique by {effect}",
+                            "values": [
+                                0.04,
+                                0.043,
+                                0.046,
+                                0.049,
+                                0.052
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Technique+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Technique+ : Same Attribute"
                     }
                 ]
             },
@@ -91,24 +95,31 @@
                 "thumbnail_image_asset": "2749",
                 "effects": [
                     {
-                        "effect_format": "Restore Stamina equal to {effect} of own Technique",
-                        "trigger_format": "On SP Skill activate, {trigger_chance} chance",
-                        "effect_values": [
-                            0.2
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.5
-                        ],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_stamina_technique",
+                            "format": "Restore Stamina equal to {effect} of own Technique",
+                            "values": [
+                                0.2
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina Restore %Technique",
+                            "until": null
+                        },
+                        "trigger": {
+                            "type": "sp_activate",
+                            "format": "On SP Skill activate, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.5
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "SP Activate"
+                        },
                         "target": null,
-                        "short_display": "Stamina Gain by Technique (SP Activate)",
-                        "trigger_limit": 0
+                        "short_display": "Stamina Restore %Technique (SP Activate)"
                     }
                 ]
             }

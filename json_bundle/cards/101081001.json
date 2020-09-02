@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "4954",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} Voltage",
-                        "trigger_format": null,
-                        "effect_values": [
-                            100,
-                            150,
-                            200,
-                            250,
-                            300
-                        ],
-                        "effect_value_type": "value",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_voltage",
+                            "format": "Gain {effect} Voltage",
+                            "values": [
+                                100,
+                                150,
+                                200,
+                                250,
+                                300
+                            ],
+                            "value_type": "value",
+                            "display_short": "Gain Flat Voltage",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Gain Flat Voltage",
-                        "trigger_limit": 0
+                        "short_display": "Gain Flat Voltage"
                     }
                 ]
             }
@@ -61,24 +60,27 @@
                 "thumbnail_image_asset": "6945",
                 "effects": [
                     {
-                        "effect_format": "Increase base Technique by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.015,
-                            0.018,
-                            0.021,
-                            0.024,
-                            0.027
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Type",
-                        "short_display": "Technique+ : Same Type",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_technique",
+                            "format": "Increase base Technique by {effect}",
+                            "values": [
+                                0.015,
+                                0.018,
+                                0.021,
+                                0.024,
+                                0.027
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Technique+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Type",
+                            "check": "role",
+                            "value": "owner"
+                        },
+                        "short_display": "Technique+ : Same Type"
                     }
                 ]
             }

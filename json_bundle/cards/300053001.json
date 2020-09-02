@@ -25,30 +25,38 @@
                 "thumbnail_image_asset": "7e2e",
                 "effects": [
                     {
-                        "effect_format": "Increase Voltage gain by {effect} for {until} notes",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.05,
-                            0.053,
-                            0.056,
-                            0.059,
-                            0.062
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [
-                            5,
-                            5,
-                            5,
-                            5,
-                            5
-                        ],
-                        "until_value_type": "value",
-                        "target": "Same Year",
-                        "short_display": "Voltage Gain Up : Same Year / # Notes",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_voltage_gain_percent",
+                            "format": "Increase Voltage gain by {effect} for {until} notes",
+                            "values": [
+                                0.05,
+                                0.053,
+                                0.056,
+                                0.059,
+                                0.062
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Voltage Gain Up %",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    5,
+                                    5,
+                                    5,
+                                    5,
+                                    5
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Year",
+                            "check": "year",
+                            "value": "owner"
+                        },
+                        "short_display": "Voltage Gain Up % : Same Year / # Notes"
                     }
                 ]
             }
@@ -67,24 +75,29 @@
                 "thumbnail_image_asset": "4b7a",
                 "effects": [
                     {
-                        "effect_format": "Increase base Appeal by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.04,
-                            0.043,
-                            0.046,
-                            0.049,
-                            0.052
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Attribute",
-                        "short_display": "Appeal+ : Same Attribute",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_appeal",
+                            "format": "Increase base Appeal by {effect}",
+                            "values": [
+                                0.04,
+                                0.043,
+                                0.046,
+                                0.049,
+                                0.052
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Appeal+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Appeal+ : Same Attribute"
                     }
                 ]
             },
@@ -97,26 +110,44 @@
                 "thumbnail_image_asset": "2234",
                 "effects": [
                     {
-                        "effect_format": "Increase Crit chance by {effect} for {until} notes",
-                        "trigger_format": "On AC success, {trigger_chance} chance",
-                        "effect_values": [
-                            0.1
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.5
-                        ],
-                        "until_values": [
-                            10
-                        ],
-                        "until_value_type": "value",
-                        "target": "Same Attribute",
-                        "short_display": "Crit Chance Up : Same Attribute / # Notes (AC Success)",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_crit_chance",
+                            "format": "Increase Crit chance by {effect} for {until} notes",
+                            "values": [
+                                0.1
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Crit Chance Up",
+                            "until": {
+                                "type": "note_count",
+                                "values": [
+                                    10
+                                ],
+                                "value_type": "value",
+                                "display_short": "# Notes"
+                            }
+                        },
+                        "trigger": {
+                            "type": "ac_success",
+                            "format": "On AC success, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.5
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "AC Success"
+                        },
+                        "target": {
+                            "display": "Same Attribute",
+                            "check": [
+                                "attribute"
+                            ],
+                            "value": "owner"
+                        },
+                        "short_display": "Crit Chance Up : Same Attribute / # Notes (AC Success)"
                     }
                 ]
             }

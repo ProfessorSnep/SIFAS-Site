@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "5146",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} of Appeal as extra Voltage on next SP skill",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.2,
-                            0.205,
-                            0.21,
-                            0.215,
-                            0.22
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "sp_bonus_voltage_appeal",
+                            "format": "Gain {effect} of Appeal as extra Voltage on next SP skill",
+                            "values": [
+                                0.2,
+                                0.205,
+                                0.21,
+                                0.215,
+                                0.22
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Next SP+ %Appeal",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "Next SP+ %Appeal",
-                        "trigger_limit": 0
+                        "short_display": "Next SP+ %Appeal"
                     }
                 ]
             }
@@ -61,24 +60,27 @@
                 "thumbnail_image_asset": "233f",
                 "effects": [
                     {
-                        "effect_format": "Increase base Stamina by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.02,
-                            0.023,
-                            0.026,
-                            0.029,
-                            0.032
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Type",
-                        "short_display": "Stamina+ : Same Type",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_stamina",
+                            "format": "Increase base Stamina by {effect}",
+                            "values": [
+                                0.02,
+                                0.023,
+                                0.026,
+                                0.029,
+                                0.032
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Stamina+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Type",
+                            "check": "role",
+                            "value": "owner"
+                        },
+                        "short_display": "Stamina+ : Same Type"
                     }
                 ]
             },
@@ -91,26 +93,42 @@
                 "thumbnail_image_asset": "2234",
                 "effects": [
                     {
-                        "effect_format": "Increase Crit chance by {effect} until AC ends",
-                        "trigger_format": "On AC start, {trigger_chance} chance",
-                        "effect_values": [
-                            0.05
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [
-                            0
-                        ],
-                        "trigger_value_type": null,
-                        "trigger_chances": [
-                            0.15
-                        ],
-                        "until_values": [
-                            0
-                        ],
-                        "until_value_type": null,
-                        "target": "Same Type",
-                        "short_display": "Crit Chance Up : Same Type / AC End (AC Start)",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_crit_chance",
+                            "format": "Increase Crit chance by {effect} until AC ends",
+                            "values": [
+                                0.05
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Crit Chance Up",
+                            "until": {
+                                "type": "ac_end",
+                                "values": [
+                                    0
+                                ],
+                                "value_type": null,
+                                "display_short": "AC End"
+                            }
+                        },
+                        "trigger": {
+                            "type": "ac_start",
+                            "format": "On AC start, {trigger_chance} chance",
+                            "values": [
+                                0
+                            ],
+                            "value_type": null,
+                            "chances": [
+                                0.15
+                            ],
+                            "trigger_limit": 0,
+                            "display_short": "AC Start"
+                        },
+                        "target": {
+                            "display": "Same Type",
+                            "check": "role",
+                            "value": "owner"
+                        },
+                        "short_display": "Crit Chance Up : Same Type / AC End (AC Start)"
                     }
                 ]
             }

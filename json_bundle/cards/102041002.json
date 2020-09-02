@@ -25,24 +25,23 @@
                 "thumbnail_image_asset": "6422",
                 "effects": [
                     {
-                        "effect_format": "Gain {effect} SP Gauge",
-                        "trigger_format": null,
-                        "effect_values": [
-                            160,
-                            170,
-                            180,
-                            190,
-                            200
-                        ],
-                        "effect_value_type": "value",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
+                        "effect": {
+                            "type": "gain_sp",
+                            "format": "Gain {effect} SP Gauge",
+                            "values": [
+                                160,
+                                170,
+                                180,
+                                190,
+                                200
+                            ],
+                            "value_type": "value",
+                            "display_short": "SP Flat Fill",
+                            "until": null
+                        },
+                        "trigger": null,
                         "target": null,
-                        "short_display": "SP Gauge Flat Fill",
-                        "trigger_limit": 0
+                        "short_display": "SP Flat Fill"
                     }
                 ]
             }
@@ -61,24 +60,27 @@
                 "thumbnail_image_asset": "6945",
                 "effects": [
                     {
-                        "effect_format": "Increase base Technique by {effect}",
-                        "trigger_format": null,
-                        "effect_values": [
-                            0.015,
-                            0.018,
-                            0.021,
-                            0.024,
-                            0.027
-                        ],
-                        "effect_value_type": "percent",
-                        "trigger_values": [],
-                        "trigger_value_type": null,
-                        "trigger_chances": [],
-                        "until_values": [],
-                        "until_value_type": null,
-                        "target": "Same Year",
-                        "short_display": "Technique+ : Same Year",
-                        "trigger_limit": 0
+                        "effect": {
+                            "type": "increase_base_technique",
+                            "format": "Increase base Technique by {effect}",
+                            "values": [
+                                0.015,
+                                0.018,
+                                0.021,
+                                0.024,
+                                0.027
+                            ],
+                            "value_type": "percent",
+                            "display_short": "Technique+",
+                            "until": null
+                        },
+                        "trigger": null,
+                        "target": {
+                            "display": "Same Year",
+                            "check": "year",
+                            "value": "owner"
+                        },
+                        "short_display": "Technique+ : Same Year"
                     }
                 ]
             }
