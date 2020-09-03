@@ -10,15 +10,13 @@ def api_home():
     return jsonify("Hello World! Documentation soon(tm)")
 
 
-@api.route('/cards/<resource>', defaults={'resource_type': 'cards'})
-@api.route('/members/<resource>', defaults={'resource_type': 'members'})
-@api.route('/lives/<resource>', defaults={'resource_type': 'lives'})
-@api.route('/attributes', defaults={'resource': 'attributes'})
-@api.route('/events', defaults={'resource': 'events'})
-@api.route('/icons', defaults={'resource': 'icons'})
-@api.route('/images', defaults={'resource': 'image_map'})
+@api.route('/<resource_type>/<resource>')
+@api.route('/<resource>')
 def request_resource(resource_type=None, resource=None):
     if resource_type:
-        return jsonify(storage_util.request_json(resource_type, resource))
+        obj = storage_util.request_json(resource_type, resource)
     else:
-        return jsonify(storage_util.request_json(resource))
+        obj = storage_util.request_json(resource)
+    if obj:
+        return jsonify(obj)
+    return jsonify(error="Resource could not be found"), 404

@@ -11,9 +11,13 @@ def request_json(*loc):
     if config.current['USE_LOCAL_DATA']:
         file_path = os.path.join(os.environ['JSON_BUCKET_PATH'], *loc)
         file_path = '%s.json' % (file_path)
-        with open(file_path, 'r', encoding='utf-8') as inf:
-            return json.load(inf)
+        if os.path.isfile(file_path):
+            with open(file_path, 'r', encoding='utf-8') as inf:
+                return json.load(inf)
+        return None
     else:
         file_path = '%s.json' % ('/'.join(loc))
         blob = storage_bucket.get_blob(file_path)
-        return json.loads(blob.download_as_string())
+        if blob:
+            return json.loads(blob.download_as_string())
+        return None
