@@ -1,82 +1,41 @@
-from flask import Flask, request, redirect, render_template
-import requests
-import json
-import os
-
-app = Flask(__name__, static_folder="static",
-            static_url_path="", template_folder="templates")
-app.url_map.strict_slashes = False
-app.config.from_object(os.environ['CONFIG_SETTINGS'])
-
-
-def api_endpoint(path):
-    return '%s/%s' % (app.config['API_ENDPOINT'], path)
+from app import config
+from app.data_handler import storage_util
 
 
 def content_endpoint(path):
-    return '%s/%s' % (app.config['CONTENT_ENDPOINT'], path)
+    return '%s/%s' % (config.current['CONTENT_ENDPOINT'], path)
 
 
-request_cache = {}
+resource_cache = {}
 
 
-def request_api(path, cacheable=True):
-    if cacheable and path in request_cache:
-        return request_cache[path]
-    req_url = api_endpoint(path)
-    req = requests.get(req_url)
-    response = req.json()
+def get_resource(path, cacheable=True):
+    if cacheable and path in resource_cache:
+        return resource_cache[path]
+
+    resource = storage_util.request_json(*path.split('/'))
+
     if cacheable:
-        request_cache[path] = response
-    return response
-
-
-@app.route('/')
-def home():
-    return render_template('pages/home.html')
-
-
-@app.route('/card/<card_id>/')
-def card_view(card_id):
-    return render_template('pages/card_view.html', card_id=card_id)
-
-
-@app.route('/live/<live_id>/')
-def live_view(live_id):
-    return render_template('pages/live_view.html', live_id=live_id)
-
-
-@app.route('/cards/')
-def card_list():
-    return render_template('pages/card_list.html')
-
-
-@app.route('/lives/')
-def event_list():
-    return render_template('pages/live_list.html')
-
-
-@app.route('/events/')
-def live_list():
-    return render_template('pages/event_list.html')
+        resource_cache[path] = resource
+    return resource
 
 
 def template_tex_url(path):
-    image_map = request_api('images')
+    image_map = get_resource('images')
     if path in image_map:
         return content_endpoint(image_map[path])
     return ''
 
 
 def template_ui_url(resource):
-    icon_map = request_api('icons')
+    icon_map = get_resource('icons')
     if resource in icon_map:
         return content_endpoint(icon_map[resource])
     return ''
 
 
 def template_member_info(member_id):
-    member_info = request_api('members/all')
+    member_info = get_resource('members/all')
     return member_info[str(member_id)]
 
 
@@ -102,38 +61,37 @@ def template_event_banner_url(event_banner_loc):
 
 
 def template_attrib_info():
-    return request_api('attributes')
+    return get_resource('attributes')
 
 
 def template_card_info(card_id):
-    card_obj = request_api('cards/all')[str(card_id)]
-    card_obj['card_id'] = card_id
+    card_obj = get_resource('cards/all')[str(card_id)]
     return card_obj
 
 
 def template_live_info(live_id):
-    return request_api('lives/all')[str(live_id)]
+    return get_resource('lives/all')[str(live_id)]
 
 
 def template_event_info(event_id):
-    event_list = request_api('events')
+    event_list = get_resource('events')
     return next(e for e in event_list if e['event_id'] == event_id)
 
 
 def template_card_list():
-    card_list = request_api('cards/all')
+    card_list = get_resource('cards/all')
     key_list = list(card_list.keys())
     key_list.sort(key=lambda x: card_list[x]['no'])
     return key_list
 
 
 def template_set_list():
-    set_list = request_api('cards/sets')
+    set_list = get_resource('cards/sets')
     return set_list
 
 
 def template_get_card_set(cid):
-    set_list = request_api('cards/sets')
+    set_list = get_resource('cards/sets')
     for s in set_list:
         for e in s['entries']:
             if e['card'] == str(cid):
@@ -142,7 +100,7 @@ def template_get_card_set(cid):
 
 
 def template_event_list(include_minis=False):
-    event_list = request_api('events')
+    event_list = get_resource('events')
     if not include_minis:
         event_list = list(
             filter(lambda e: e['type'] in ['pickup_gacha', 'fes_gacha', 'marathon', 'mining'], event_list))
@@ -150,7 +108,7 @@ def template_event_list(include_minis=False):
 
 
 def template_live_list():
-    live_list = request_api('lives/all')
+    live_list = get_resource('lives/all')
     key_list = list(live_list.keys())
     return key_list
 
@@ -158,7 +116,7 @@ def template_live_list():
 def template_all_card_skill_info():
     active_skids = []
     passive_skids = []
-    all_cards = request_api('cards/all')
+    all_cards = get_resource('cards/all')
     for cid, card in all_cards.items():
         for skill in card['skills']['active']:
             for effect in skill['effects']:
@@ -186,10 +144,9 @@ def template_all_card_skill_info():
 
 
 def template_card_latest():
-    return request_api('cards/latest')
+    return get_resource('cards/latest')
 
 
-@app.template_filter('skill_short')
 def filter_skill_short(skill, split="\n"):
     efs = []
     for effect in skill['effects']:
@@ -197,7 +154,6 @@ def filter_skill_short(skill, split="\n"):
     return split.join(efs)
 
 
-@app.template_filter('skill')
 def filter_skill(skill, path='effects'):
     efs = []
     for effect in skill[path]:
@@ -271,7 +227,6 @@ def filter_skill(skill, path='effects'):
     return efs
 
 
-@app.template_filter('loc_name')
 def filter_loc_name(obj, name='name', preferred='en'):
     vals = {'jp': '%s_jp' % name, 'en': '%s_en' % name}
     if preferred in vals.keys():
@@ -284,7 +239,6 @@ def filter_loc_name(obj, name='name', preferred='en'):
     return None
 
 
-@app.template_filter('card_classes')
 def filter_card_classes(card):
     classes = [
         f"card-member-{card['member_id']}",
@@ -309,26 +263,28 @@ def filter_card_classes(card):
     return classes
 
 
-app.jinja_env.globals.update({
-    'tex': template_tex_url,
-    'icon': template_ui_url,
-    'banner': template_event_banner_url,
-    'attributes': template_attrib_info,
-    'card_info': template_card_info,
-    'live_info': template_live_info,
-    'event_info': template_event_info,
-    'cards': template_card_list,
-    'lives': template_live_list,
-    'events': template_event_list,
-    'sets': template_set_list,
-    'get_card_set': template_get_card_set,
-    'latest_cards': template_card_latest,
-    'member_info': template_member_info,
-    'member_icon': template_member_icon_url,
-    'school_icon': template_school_icon_url,
-    'all_card_skill_info': template_all_card_skill_info
-})
+def add_globals(app):
+    app.jinja_env.globals.update({
+        'tex': template_tex_url,
+        'icon': template_ui_url,
+        'banner': template_event_banner_url,
+        'attributes': template_attrib_info,
+        'card_info': template_card_info,
+        'live_info': template_live_info,
+        'event_info': template_event_info,
+        'cards': template_card_list,
+        'lives': template_live_list,
+        'events': template_event_list,
+        'sets': template_set_list,
+        'get_card_set': template_get_card_set,
+        'latest_cards': template_card_latest,
+        'member_info': template_member_info,
+        'member_icon': template_member_icon_url,
+        'school_icon': template_school_icon_url,
+        'all_card_skill_info': template_all_card_skill_info
+    })
 
-
-if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=5000, debug=True)
+    app.add_template_filter(filter_skill_short, name='skill_short')
+    app.add_template_filter(filter_skill, name='skill')
+    app.add_template_filter(filter_loc_name, name='loc_name')
+    app.add_template_filter(filter_card_classes, name='card_classes')
