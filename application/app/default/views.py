@@ -20,6 +20,11 @@ def live_view(live_id):
     return render_template('pages/live_view.html', live_id=live_id)
 
 
+@default.route('/accessory/<acc_id>')
+def acc_view(acc_id):
+    return render_template('pages/accessory_view.html', acc_id=acc_id)
+
+
 @default.route('/cards/')
 def card_list():
     return render_template('pages/card_list.html')
@@ -33,3 +38,8 @@ def event_list():
 @default.route('/events/')
 def live_list():
     return render_template('pages/event_list.html')
+
+
+@default.route('/accessories/')
+def acc_list():
+    return render_template('pages/accessory_list.html')
