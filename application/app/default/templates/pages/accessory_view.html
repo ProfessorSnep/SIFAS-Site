@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% set acc = accessory_info(acc_id) %}
+
+{% set rarity_display = acc['rarity']|upper %}
+{% set role_display = acc['role'][0]|upper + acc['role'][1:] %}
+{% set attrib_display = acc['attribute'][0]|upper + acc['attribute'][1:] %}
+
+{% set active_page = '' -%}
+{% set title = "Accessory - %s" % (acc|loc_name) %}
+{% set description = 'Accessory #%d (%s) - %s Type, %s.' % (acc['no'], rarity_display, role_display, attrib_display) %}
+{% set embed_image = tex(acc['thumbnail_image_asset']) %}
+
+{% set desc = {'val':description} %}
+{% for skill in acc['skills'] %}
+{% if desc.update({'val': desc['val'] + '\nSkill: ' + skill['effect']['short_display']}) %}{% endif %}
+{% endfor %}
+{% set description = desc['val'] %}
+
+{% block content %}
+<div class="container">
+    <div class="row my-5 justify-content-center">
+        <div class="col-auto float-right">
+            <img src="{{tex(acc['thumbnail_image_asset'])}}" alt="">
+        </div>
+        <div class="col-auto float-left">
+            <h1>{{acc['name_jp']}}</h1>
+            {% if acc['name_en'] %}
+            <h2>{{acc['name_en']}}</h2>
+            {% endif %}
+            <img height="40" src="{{icon(acc['role'])}}" alt="">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col">
+            <div class="float-right">
+                <table class="table text-center" style="color: #fff;">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Max Lvl</th>
+                            <th scope="col"><img height="32" src="{{icon('appeal')}}" alt="Appeal" /></th>
+                            <th scope="col"><img height="32" src="{{icon('stamina')}}" alt="Stamina" /></th>
+                            <th scope="col"><img height="32" src="{{icon('technique')}}" alt="Technique" /></th>
+                            {% for skill in acc['skills'] %}
+                            {% set skill_info = skill|acc_skill %}
+                            {% if skill_info['lb_vals'] %}
+                            <th scope="col"><img height="32" src="{{tex(skill['thumbnail_image_asset'])}}" alt="" />
+                            </th>
+                            {% endif %}
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in range(0, 6) %}
+                        {% set stats = acc['stats']['max_parameters'][i|string] %}
+                        <tr>
+                            <th scope="row" class="align-middle" style="font-size: 0;">
+                                {% for j in range(i) %}
+                                <img width="16" src="{{icon('lb_full')}}" alt="" />
+                                {% endfor %}
+                                {% for j in range(5 - i) %}
+                                <img width="16" src="{{icon('lb_empty')}}" alt="" />
+                                {% endfor %}
+                            </th>
+                            <td>{{acc['stats']['max_levels'][i|string]}}</td>
+                            <td>{{stats['appeal']}}</td>
+                            <td>{{stats['stamina']}}</td>
+                            <td>{{stats['technique']}}</td>
+                            {% for skill in acc['skills'] %}
+                            {% set skill_info = skill|acc_skill %}
+                            {% if skill_info['lb_vals'] %}
+                            <td>{{skill_info['lb_vals'][i]}}</td>
+                            {% endif %}
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col">
+            <div class="float-left">
+                {% for skill in acc['skills'] %}
+                <div class="row justify-content-start skill-bg my-1">
+                    <div class="col-auto">
+                        <img height="72" src="{{tex(skill['thumbnail_image_asset'])}}" alt="" />
+                    </div>
+                    <div class="col text-left">
+                        <div>Max Skill Level: <strong>{{skill['max_skill_level']}}</strong></div>
+                        {% set skill_info = skill|acc_skill %}
+                        <div class="py-1">{{skill_info['effect']}}</div>
+                        {% if skill_info['trigger'] %}<div>Trigger: <strong>{{skill_info['trigger']}}</strong></div>
+                        {% endif %}
+                        {% if skill_info['target'] %}<div>Target: <strong>{{skill_info['target']}}</strong></div>
+                        {% endif %}
+                        {% if skill_info['lb_vals'] %}
+                        <div class="py-1">* Note: This skill has different maximums based off the accessory LB (limit
+                            break). The values for each LB are on the left.
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

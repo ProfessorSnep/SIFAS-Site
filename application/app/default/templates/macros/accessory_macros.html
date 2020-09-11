@@ -1,0 +1,27 @@
+{% macro accessory_thumb(acc_id) %}
+{% set acc = accessory_info(acc_id) %}
+<div class="accessory" style="width: 130px;">
+    <div class="row">
+        <div class="col-3">
+            <span style="font-size: 1.5rem;" class="mb-0">#{{acc['no']}}</span>
+        </div>
+        <div class="col-9">
+            <div class="float-right">
+                <img height="32" src="{{icon(acc['role'])}}" alt="">
+                {% for skill in acc['skills'] %}
+                <img height="32" src="{{tex(skill['thumbnail_image_asset'])}}" alt=""
+                    title="{{skill['effect']['short_display']}}">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <img width="128" src="{{tex(acc['thumbnail_image_asset'])}}" alt="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">{{acc|loc_name}}</div>
+    </div>
+</div>
+{% endmacro %}

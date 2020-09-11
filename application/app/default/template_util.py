@@ -1,3 +1,4 @@
+from ctypes import util
 from app import config
 from app.data_handler import storage_util
 
@@ -18,6 +19,13 @@ def get_resource(path, cacheable=True):
     if cacheable:
         resource_cache[path] = resource
     return resource
+
+
+def util_filter_to_unique(lst):
+    s = set()
+    sa = s.add
+    l2 = [x for x in lst if not (x in s or sa(x))]
+    return lst if len(l2) > 1 else l2
 
 
 def template_tex_url(path):
@@ -73,6 +81,10 @@ def template_live_info(live_id):
     return get_resource('lives/all')[str(live_id)]
 
 
+def template_accessory_info(acc_id):
+    return get_resource('accessories/all')[str(acc_id)]
+
+
 def template_event_info(event_id):
     event_list = get_resource('events')
     return next(e for e in event_list if e['event_id'] == event_id)
@@ -88,6 +100,13 @@ def template_card_list():
 def template_set_list():
     set_list = get_resource('cards/sets')
     return set_list
+
+
+def template_accessory_list():
+    acc_list = get_resource('accessories/all')
+    key_list = list(acc_list.keys())
+    key_list.sort(key=lambda x: acc_list[x]['no'])
+    return key_list
 
 
 def template_get_card_set(cid):
@@ -168,15 +187,8 @@ def filter_skill(skill, path='effects'):
             else:
                 return str(val)
 
-        # filter values to only be unique
-        def filter_vals(l):
-            s = set()
-            sa = s.add
-            l2 = [x for x in l if not (x in s or sa(x))]
-            return l if len(l2) > 1 else l2
-
         # format effect string
-        s_effect_vals = filter_vals(effect['effect']['values'])
+        s_effect_vals = util_filter_to_unique(effect['effect']['values'])
 
         format_type = effect['effect']['value_type']
         effect_vals = '/'.join(map(format_val, s_effect_vals))
@@ -186,7 +198,8 @@ def filter_skill(skill, path='effects'):
         until_vals = ''
         # format effect until string if it exists
         if effect['effect']['until']:
-            s_until_vals = filter_vals(effect['effect']['until']['values'])
+            s_until_vals = util_filter_to_unique(
+                effect['effect']['until']['values'])
 
             format_type = effect['effect']['until']['value_type']
             until_vals = '/'.join(map(format_val, s_until_vals))
@@ -198,8 +211,9 @@ def filter_skill(skill, path='effects'):
         # format trigger string if it exists
         trigger_str = None
         if effect['trigger']:
-            s_trigger_vals = filter_vals(effect['trigger']['values'])
-            s_trigger_chances = filter_vals(effect['trigger']['chances'])
+            s_trigger_vals = util_filter_to_unique(effect['trigger']['values'])
+            s_trigger_chances = util_filter_to_unique(
+                effect['trigger']['chances'])
 
             format_type = effect['trigger']['value_type']
             trigger_vals = '/'.join(map(format_val, s_trigger_vals))
@@ -225,6 +239,76 @@ def filter_skill(skill, path='effects'):
             'target': target_str
         })
     return efs
+
+
+def filter_acc_skill(skill):
+    chances = skill['chances']
+    values = skill['values']
+
+    effect = skill['effect']
+
+    format_type = None
+
+    # format a value based off format type
+    def format_val(val):
+        if format_type == 'percent':
+            return '{0:.5g}%'.format(val*100)
+        else:
+            return str(val)
+
+    show_chance = True
+    format_type = 'percent'
+    if chances[-1]['min'] == 1:
+        show_chance = False
+        chance_format = None
+    else:
+        min_str = format_val(chances[-1]['min'])
+        max_str = format_val(chances[-1]['max'])
+        if min_str == max_str:
+            chance_format = min_str
+        else:
+            chance_format = f"[{min_str}-{max_str}]"
+
+    lb_vals = None
+    if len(values) > 1:
+        format_type = effect['effect']['value_type']
+        lb_vals = {}
+        for i in range(len(values)):
+            val = values[i]
+            min_str = format_val(val['min'])
+            max_str = format_val(val['max'])
+            if min_str == max_str:
+                val_format = min_str
+            else:
+                val_format = f"{min_str}-{max_str}"
+            lb_vals[i] = val_format
+    format_type = effect['effect']['value_type']
+    min_str = format_val(values[-1]['min'])
+    max_str = format_val(values[-1]['max'])
+    if min_str == max_str:
+        value_format = min_str
+    else:
+        value_format = f"[{min_str}-{max_str}]{'*' if lb_vals else ''}"
+
+    effect_str = effect['effect']['formatting'].format(effect=value_format)
+
+    trigger_str = None
+    if effect['trigger']:
+        if show_chance:
+            trigger_str = f"{effect['trigger']['display']}, {chance_format} chance"
+        else:
+            trigger_str = effect['trigger']['display']
+
+    target_str = None
+    if effect['target']:
+        target_str = effect['target']['display']
+
+    return {
+        'effect': effect_str,
+        'trigger': trigger_str,
+        'target': target_str,
+        'lb_vals': lb_vals
+    }
 
 
 def filter_loc_name(obj, name='name', preferred='en'):
@@ -270,12 +354,14 @@ def add_globals(app):
         'banner': template_event_banner_url,
         'attributes': template_attrib_info,
         'card_info': template_card_info,
+        'accessory_info': template_accessory_info,
         'live_info': template_live_info,
         'event_info': template_event_info,
         'cards': template_card_list,
         'lives': template_live_list,
         'events': template_event_list,
         'sets': template_set_list,
+        'accessories': template_accessory_list,
         'get_card_set': template_get_card_set,
         'latest_cards': template_card_latest,
         'member_info': template_member_info,
@@ -286,5 +372,6 @@ def add_globals(app):
 
     app.add_template_filter(filter_skill_short, name='skill_short')
     app.add_template_filter(filter_skill, name='skill')
+    app.add_template_filter(filter_acc_skill, name='acc_skill')
     app.add_template_filter(filter_loc_name, name='loc_name')
     app.add_template_filter(filter_card_classes, name='card_classes')
