@@ -289,7 +289,12 @@ def filter_acc_skill(skill):
     else:
         value_format = f"[{min_str}-{max_str}]{'*' if lb_vals else ''}"
 
+    until_str = ''
+    if effect['effect']['until']:
+        until_str = effect['effect']['until']['display']
+
     effect_str = effect['effect']['formatting'].format(effect=value_format)
+    effect_str += f' {until_str}'
 
     trigger_str = None
     if effect['trigger']:
