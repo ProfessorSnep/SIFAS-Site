@@ -1,4 +1,3 @@
-from ctypes import util
 from app import config
 from app.data_handler import storage_util
 
