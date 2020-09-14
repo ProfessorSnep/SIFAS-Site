@@ -65,10 +65,6 @@ def template_school_icon_url(school_id):
     return content_endpoint(f'm/{simg}.png')
 
 
-def template_event_banner_url(event_banner_loc):
-    return content_endpoint(f'eb/{event_banner_loc}')
-
-
 def template_attrib_info():
     return get_resource('attributes')
 
@@ -365,7 +361,6 @@ def add_globals(app):
     app.jinja_env.globals.update({
         'tex': template_tex_url,
         'icon': template_ui_url,
-        'banner': template_event_banner_url,
         'attributes': template_attrib_info,
         'card_info': template_card_info,
         'accessory_info': template_accessory_info,
