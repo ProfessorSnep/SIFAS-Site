@@ -121,10 +121,12 @@
     </div>
     <div class="row justify-content-between">
         <div class="col-6 p-0 text-left">
-            <img class="img-fluid" src="{{tex(card['appearance']['unidolized']['thumbnail_image_asset'])}}" alt="" />
+            <img width="116" height="116" src="{{tex(card['appearance']['unidolized']['thumbnail_image_asset'])}}"
+                alt="" />
         </div>
         <div class="col-6 p-0 text-right">
-            <img class="img-fluid" src="{{tex(card['appearance']['idolized']['thumbnail_image_asset'])}}" alt="" />
+            <img width="116" height="116" src="{{tex(card['appearance']['idolized']['thumbnail_image_asset'])}}"
+                alt="" />
         </div>
     </div>
     <div class="row py-1 justify-content-between">
@@ -158,15 +160,57 @@
 
 {% macro event_cards_list(event) %}
 <div class="row py-4">
+    <div class="col-12 py-2">
+        {% if event['name_jp'] %}
+        <div style="font-size: 1.5rem;">{{event['name_jp']}}</div>
+        {% if event['name_en'] %}
+        <div style="font-size: 1.3rem;">{{event['name_en']}}</div>
+        {% endif %}
+        {% endif %}
+    </div>
     <div class="col-12">
         <div class="w-100">
-            <img class="img-fluid" style="max-height: 150px;" src="{{banner(event['banner'])}}" alt="Event Banner">
+            <img class="img-fluid" style="max-height: 150px;" src="{{tex(event['banner_image_asset'])}}"
+                alt="Event Banner">
         </div>
-        {% if event['name_jp'] %}
-        <caption>{{event['name_jp']}}</caption>
-        {% if event['name_en'] %}
-        <caption> / {{event['name_en']}}</caption>
+    </div>
+    <div class="col-12">
+        {% if event['type'] == 'mining' %}
+        <p class="badge badge-primary">MINING / ITEM EXCHANGE EVENT</p>
         {% endif %}
+        {% if event['type'] == 'marathon' %}
+        <p class="badge badge-primary">MARATHON / STORY EVENT</p>
+        {% endif %}
+        {% if event['type'] == 'fes_gacha' %}
+        <p class="badge badge-primary">FES GACHA</p>
+        {% endif %}
+        {% if event['type'] == 'pickup_gacha' %}
+        <p class="badge badge-primary">PICKUP GACHA</p>
+        {% endif %}
+        {% if event['type'] == 'tower' %}
+        <p class="badge badge-primary">DREAM LIVE PARADE</p>
+        <div><strong>Period #{{event['tower_period']}}</strong></div>
+        {% endif %}
+        {% if event['type'] == 'coop' %}
+        <p class="badge badge-primary">SIFAS BIG LIVE</p>
+        {% endif %}
+    </div>
+    <div class="col-12">
+        {% if event['start_time_jp'] %}
+        <div epoch-time="{{event['start_time_jp']}}"><strong>Start Date (JP):</strong>
+            {{event['start_time_jp']|epoch(tz='Asia/Tokyo')}} JST</div>
+        {% endif %}
+        {% if event['end_time_jp'] %}
+        <div epoch-time="{{event['end_time_jp']}}"><strong>End Date (JP):</strong>
+            {{event['end_time_jp']|epoch(tz='Asia/Tokyo')}} JST</div>
+        {% endif %}
+        {% if event['start_time_ww'] %}
+        <div epoch-time="{{event['start_time_ww']}}"><strong>Start Date (WW):</strong>
+            {{event['start_time_ww']|epoch(tz='UTC')}} UTC</div>
+        {% endif %}
+        {% if event['end_time_ww'] %}
+        <div epoch-time="{{event['end_time_ww']}}"><strong>End Date (WW):</strong>
+            {{event['end_time_ww']|epoch(tz='UTC')}} UTC</div>
         {% endif %}
     </div>
     <div class="col-12 py-2">

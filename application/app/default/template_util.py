@@ -1,5 +1,7 @@
 from app import config
 from app.data_handler import storage_util
+from datetime import datetime
+import pytz
 
 
 def content_endpoint(path):
@@ -351,6 +353,14 @@ def filter_card_classes(card):
     return classes
 
 
+def filter_epoch(time, tz=None):
+    time = datetime.fromtimestamp(time)
+    if tz:
+        tz_obj = pytz.timezone(tz)
+        time = time.astimezone(tz_obj)
+    return time.strftime("%B %d, %Y %H:%M")
+
+
 def add_globals(app):
     app.jinja_env.globals.update({
         'tex': template_tex_url,
@@ -379,3 +389,4 @@ def add_globals(app):
     app.add_template_filter(filter_acc_skill, name='acc_skill')
     app.add_template_filter(filter_loc_name, name='loc_name')
     app.add_template_filter(filter_card_classes, name='card_classes')
+    app.add_template_filter(filter_epoch, name='epoch')
