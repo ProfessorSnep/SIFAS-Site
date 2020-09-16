@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% set tower = tower_info(event_id) %}
+
+{% block scripts %}
+{{super()}}
+<script src="{{url_for('.static', filename='js/dlp_view.js')}}?v=1.0.0"></script>
+{% endblock scripts %}
+
+{% if not tower %}
+
+{% set active_page = '' -%}
+{% set title = "DLP - Unknown" %}
+{% set description = '' %}
+
+{% else %}
+
+{% set active_page = '' -%}
+{% set title = "DLP - %s" % (tower|loc_name(name='title')) %}
+{% set description = 'Dream Live Parade! Event' %}
+{% set embed_image = tex('banner_image_asset') %}
+
+{% endif %}
+
+
+{% block content %}
+{% if tower %}
+<div class="container justify-content-center text-center">
+    <div class="row align-items-center py-3">
+        <div class="col-12">
+            <img height="200" src="{{tex(tower['banner_image_asset'])}}" alt="">
+            <h1>{{tower['title_jp']}}</h1>
+            {% if tower['title_en'] %}
+            <h2>{{tower['title_en']}}</h2>
+            {% endif %}
+        </div>
+        <div class="col-12">
+            {% for pid, period in tower['periods'].items() %}
+            <div>
+                <div><strong>Period #{{pid}}</strong></div>
+                <div>Start (JP): {{period['start']|epoch(tz="Asia/Tokyo")}} JST</div>
+                <div>End (JP): {{period['end']|epoch(tz="Asia/Tokyo")}} JST</div>
+            </div>
+            {% if not loop.last %}
+            <div class="m-1"></div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row text-center flex-nowrap" style="white-space: nowrap; overflow-x: scroll;">
+        {% for level in tower['levels'] %}
+        {% set level_diff = difficulty_info(level['live_difficulty_id']) %}
+        {% set level_live = live_info(level_diff['live_id']) %}
+        <div class="col d-inline-block py-2 m-2 tower-level-box fake-link {{'level-type-super' if level['floor_type'] == 'super' else 'level-type-normal'}}"
+            style="width: 1000px;" level-no="{{level['floor_no']}}">
+            <div style="font-size: 1.3rem;">Level {{level['floor_no']}}</div>
+            <div><img width="200px" src="{{tex(level_live['jacket_image_asset'])}}" alt=""></div>
+            <div><img height="24" src="{{icon(level_diff['attribute'])}}" alt="" />
+                <strong>{{level_live|loc_name}}</strong></div>
+            <div>Target Voltage: {{'{0:,}'.format(level['target_voltage'])}}</div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="row py-4">
+        {% for level in tower['levels'] %}
+        <div id="level-{{level['floor_no']}}" class="col tower-diff-block" hidden>
+            {{lm.difficulty_view(level['live_difficulty_id'], show_live_heading=True)}}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<div class="container justify-content-center text-center">
+    <div style="font-size: 2rem;"><strong>This event has not started yet, or does not exist.</strong></div>
+</div>
+{% endif %}
+{% endblock content %}

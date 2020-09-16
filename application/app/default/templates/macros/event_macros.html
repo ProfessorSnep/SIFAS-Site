@@ -1,0 +1,103 @@
+{% import 'macros/card_macros.html' as cm %}
+
+{% macro event_small_display(event) %}
+<div class="row py-4">
+    <div class="col-12 py-2">
+        {% if event['name_jp'] %}
+        <div style="font-size: 1.5rem;">{{event['name_jp']}}</div>
+        {% if event['name_en'] %}
+        <div style="font-size: 1.3rem;">{{event['name_en']}}</div>
+        {% endif %}
+        {% endif %}
+    </div>
+    <div class="col-12">
+        <div class="w-100">
+            <img class="img-fluid" style="max-height: 150px;" src="{{tex(event['banner_image_asset'])}}"
+                alt="Event Banner">
+        </div>
+    </div>
+    <div class="col-12">
+        {% if event['type'] == 'mining' %}
+        <p class="badge badge-primary">MINING / ITEM EXCHANGE EVENT</p>
+        {% endif %}
+        {% if event['type'] == 'marathon' %}
+        <p class="badge badge-primary">MARATHON / STORY EVENT</p>
+        {% endif %}
+        {% if event['type'] == 'fes_gacha' %}
+        <p class="badge badge-primary">FES GACHA</p>
+        {% endif %}
+        {% if event['type'] == 'pickup_gacha' %}
+        <p class="badge badge-primary">PICKUP GACHA</p>
+        {% endif %}
+        {% if event['type'] == 'tower' %}
+        <p class="badge badge-primary">DREAM LIVE PARADE</p>
+        <div style="font-size: 1.5rem;">{{event['tower_name']}}</div>
+        <div><strong>Period #{{event['tower_period']}}</strong></div>
+        {% endif %}
+        {% if event['type'] == 'coop' %}
+        <p class="badge badge-primary">SIFAS BIG LIVE</p>
+        <div style="font-size: 1.5rem;">{{event['coop_name']}}</div>
+        {% endif %}
+    </div>
+    <div class="col-12">
+        {% if event['start_time_jp'] %}
+        <div epoch-time="{{event['start_time_jp']}}"><strong>Start Date (JP):</strong>
+            {{event['start_time_jp']|epoch(tz='Asia/Tokyo')}} JST</div>
+        {% endif %}
+        {% if event['end_time_jp'] %}
+        <div epoch-time="{{event['end_time_jp']}}"><strong>End Date (JP):</strong>
+            {{event['end_time_jp']|epoch(tz='Asia/Tokyo')}} JST</div>
+        {% endif %}
+        <div class="py-1"></div>
+        {% if event['start_time_ww'] %}
+        <div epoch-time="{{event['start_time_ww']}}"><strong>Start Date (WW):</strong>
+            {{event['start_time_ww']|epoch(tz='UTC')}} UTC</div>
+        {% endif %}
+        {% if event['end_time_ww'] %}
+        <div epoch-time="{{event['end_time_ww']}}"><strong>End Date (WW):</strong>
+            {{event['end_time_ww']|epoch(tz='UTC')}} UTC</div>
+        {% endif %}
+    </div>
+    <div class="col-12 py-2">
+        {% if event['cards'] %}
+        <div class="row justify-content-center">
+            {% for card in event['cards'] %}
+            <div class="col-auto px-5 py-3">
+                <a href="/card/{{card}}" style="text-decoration: inherit; color: inherit;">
+                    {{cm.thumb_card_view(card)}}
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if event['gacha_cards'] %}
+        <div class="row text-center py-2">
+            <span style="font-size: 1.5rem;" class="mx-auto">Gacha Cards</span>
+        </div>
+        <div class="row justify-content-center">
+            {% for card in event['gacha_cards'] %}
+            <div class="col-auto px-5 py-3">
+                <a href="/card/{{card}}" style="text-decoration: inherit; color: inherit;">
+                    {{cm.thumb_card_view(card)}}
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if event['reward_cards'] %}
+        <div class="row text-center py-2">
+            <span style="font-size: 1.5rem;" class="mx-auto">Reward Cards</span>
+        </div>
+        <div class="row justify-content-center">
+            {% for card in event['reward_cards'] %}
+            <div class="col-auto px-5 py-3">
+                <a href="/card/{{card}}" style="text-decoration: inherit; color: inherit;">
+                    {{cm.thumb_card_view(card)}}
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endmacro %}

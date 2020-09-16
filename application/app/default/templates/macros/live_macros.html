@@ -22,3 +22,169 @@
     </div>
 </div>
 {% endmacro %}
+
+{% macro difficulty_view(diff_id, show_live_heading=False) %}
+{% set diff = difficulty_info(diff_id) %}
+{% set diff_live = live_info(diff['live_id']) %}
+{% set diff_name = {'easy': "Easy", 'normal': "Normal", 'advanced': "Advanced", 'advanced_plus': "Advanced+"}[diff['difficulty_type']] %}
+<div class="diff-view row">
+    <div class="col">
+        <div class="row text-center justify-content-center">
+            <div class="col-12">
+                {% if show_live_heading %}
+                <img height="200" src="{{tex(diff_live['jacket_image_asset'])}}" alt="">
+                <h3><img height="32" src="{{icon(diff['attribute'])}}" alt="" /> {{diff_live|loc_name}}
+                </h3>
+                <span style="font-size: 1.4rem;"><strong>{{diff_name}}</strong></span>
+                {% else %}
+                <h3><img height="32" src="{{icon(diff['attribute'])}}" alt="" /> {{diff_name}}
+                </h3>
+                {% endif %}
+            </div>
+            <div class="col-auto px-3">
+                <p>Recommended Power: {{diff['recommended_power']}}</p>
+            </div>
+            <div class="col-auto px-3">
+                <p>Recommended Stamina: {{diff['recommended_stamina']}}</p>
+            </div>
+        </div>
+        <div class="row text-center justify-content-center">
+            <div class="col-auto px-3">
+                <p>LP: {{diff['lp_needed']}}</p>
+            </div>
+            <div class="col-auto px-3">
+                <p>EXP: {{diff['completion_exp']}}</p>
+            </div>
+            <div class="col-auto px-3">
+                <p>Bond: {{diff['completion_bond']}}</p>
+            </div>
+            <div class="col-auto px-3">
+                <p>SP Gauge Capacity: {{diff['sp_gauge']}}</p>
+            </div>
+            <div class="col-auto px-3">
+                <p>Damage per Note: {{diff['damage_per_note']}}</p>
+            </div>
+            <div class="col-auto px-3">
+                <p>Appeal Cap: {{diff['max_appeal']}}</p>
+            </div>
+        </div>
+        <div class="row text-center justify-content-center py-2">
+            <div class="col-xl-6 col-12">
+                <table class="table" style="color: #fff;">
+                    <thead>
+                        <tr>
+                            <th>S Rank</th>
+                            <th>A Rank</th>
+                            <th>B Rank</th>
+                            <th>C Rank</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% for v in ['s', 'a', 'b', 'c'] %}
+                            <td>
+                                {{'{0:,}'.format(diff['voltage_requirements'][v])}}
+                            </td>
+                            {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% set gimmick_hint = diff|loc_name(name='hint') %}
+        {% if gimmick_hint %}
+        <div class="row text-center py-2">
+            <div class="col">
+                {{gimmick_hint}}
+            </div>
+        </div>
+        {% endif %}
+        <div class="row text-center py-4">
+            <div class="col skill-bg">
+                <h4>Gimmick:</h4>
+                {% if diff['gimmick_effects'] %}
+
+                {% for effect in diff['gimmick_effects'] %}
+                <span>{{effect['effect']['display']}}{% if effect['effect']['until'] %}
+                    {{effect['effect']['until']['display']}}</span>{% endif %}
+                {% if effect['target'] %}
+                <br />
+                <span>Target: <strong>{{effect['target']['display']}}</strong></span>
+                {% endif %}
+                {% if effect['trigger'] %}
+                <br />
+                <span>Trigger: <strong>{{effect['trigger']['display']}}</strong></span>
+                {% endif %}
+                {% endfor %}
+
+                {% else %}
+                <p>None.</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row text-center py-3">
+            <div class="col-md mx-1">
+                <h4 class="py-2">Note Gimmicks:</h4>
+                {% if diff['note_gimmicks'] %}
+
+                {% for note in diff['note_gimmicks'] %}
+                <div class="row my-2 skill-bg">
+                    <div class="col">
+                        <div class="my-1">
+                            <img height="32" width="32" style="background-color: #ccc; border-radius: 5px;"
+                                src="{{tex(note['icon_image_asset'])}}" alt="" />
+                        </div>
+                        {% for effect in note['effects'] %}
+                        <span>{{effect['effect']['display']}}{% if effect['effect']['until'] %}
+                            {{effect['effect']['until']['display']}}{% endif %}
+                        </span>
+                        {% if effect['target'] %}
+                        <br />
+                        <span>Target: <strong>{{effect['target']['display']}}</strong></span>
+                        {% endif %}
+                        <br />
+                        <span>Applies: <strong>{{effect['note_apply']['display']}}</strong></span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+
+                {% else %}
+                <p>None.</p>
+                {% endif %}
+            </div>
+            <div class="col-md mx-1">
+                <h4 class="py-2">Appeal Chances:</h4>
+                {% if diff['appeal_chances'] %}
+
+                {% for chance in diff['appeal_chances'] %}
+                <div class="row my-2 skill-bg">
+                    <div class="col">
+                        <h5>{{chance|loc_name}}</h5>
+                        {% if chance['effects'] %}
+                        {% for effect in chance['effects'] %}
+                        <span>{{effect['effect']['display']}}{% if effect['effect']['until'] %}
+                            {{effect['effect']['until']['display']}}{% endif %}
+                        </span>
+                        {% if effect['target'] %}
+                        <br />
+                        <span>Target: <strong>{{effect['target']['display']}}</strong></span>
+                        {% endif %}
+                        <br />
+                        <span>Applies: <strong>{{effect['ac_apply']['display']}}</strong></span>
+                        {% endfor %}
+                        {% else %}
+                        <p>No effect.</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+
+                {% else %}
+                <p>None.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro %}
