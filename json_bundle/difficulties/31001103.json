@@ -1,0 +1,99 @@
+{
+    "difficulty_id": 31001103,
+    "live_id": 11001,
+    "difficulty_type": "easy",
+    "attribute": "pure",
+    "voltage_requirements": {
+        "s": 200000,
+        "a": 150000,
+        "b": 110000,
+        "c": 70000
+    },
+    "recommended_power": 1350,
+    "recommended_stamina": 12150,
+    "lp_needed": 10,
+    "completion_exp": 8,
+    "completion_bond": 10,
+    "sp_gauge": 3200,
+    "damage_per_note": 80,
+    "max_appeal": 50000,
+    "gimmick_effects": null,
+    "hint_jp": "【攻略ヒント】アピールチャンス前に特技発動率上昇効果を持つギミックノーツがあるので、タイミングよく\n処理して特技を発動させてみよう",
+    "hint_en": "[Hint] Trick Notes that increase skill activation will appear before the Appeal Chance, so tap them with good timing to activate your skills.",
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6458",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Pure cards",
+                        "check": "attribute",
+                        "value": "pure"
+                    },
+                    "effect": {
+                        "type": "increase_skill_activation",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase Skill activation chance by 10%",
+                        "formatting": "Increase Skill activation chance by {effect}",
+                        "display_short": "Skill Activation Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Skill Activation Up : Pure cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "6066",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_sp_percent",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Gain 50% of SP capacity as SP Gauge",
+                        "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                        "display_short": "SP %Fill",
+                        "until": null
+                    },
+                    "short_display": "SP %Fill"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計10,000ボルテージを獲得する",
+            "name_en": "Gain a total of 10,000 Voltage.",
+            "effects": null
+        },
+        {
+            "name_jp": "合計13,000ボルテージを獲得する",
+            "name_en": "Gain a total of 13,000 Voltage.",
+            "effects": null
+        },
+        {
+            "name_jp": "合計11,000ボルテージを獲得する",
+            "name_en": "Gain a total of 11,000 Voltage.",
+            "effects": null
+        }
+    ]
+}

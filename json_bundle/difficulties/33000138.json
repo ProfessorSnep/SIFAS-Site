@@ -1,0 +1,235 @@
+{
+    "difficulty_id": 33000138,
+    "live_id": 10011,
+    "difficulty_type": "advanced",
+    "attribute": "smile",
+    "voltage_requirements": {
+        "s": 1735400,
+        "a": 1414400,
+        "b": 1093500,
+        "c": 772600
+    },
+    "recommended_power": 6100,
+    "recommended_stamina": 57300,
+    "lp_needed": 16,
+    "completion_exp": 13,
+    "completion_bond": 16,
+    "sp_gauge": 4800,
+    "damage_per_note": 408,
+    "max_appeal": 50000,
+    "gimmick_effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 1.0,
+                "limit": 0
+            },
+            "target": {
+                "display": "Non-Smile cards",
+                "check": "attribute",
+                "value": "pure,cool,active,natural,elegant"
+            },
+            "effect": {
+                "type": "decrease_appeal",
+                "value": 0.05,
+                "value_type": "percent",
+                "display": "Decrease Appeal by 5%",
+                "formatting": "Decrease Appeal by {effect}",
+                "display_short": "Appeal Down",
+                "until": {
+                    "type": "live_end",
+                    "display": "until Live ends",
+                    "formatting": "until Live ends",
+                    "display_short": "Live end",
+                    "value": 0,
+                    "value_type": null
+                }
+            },
+            "short_display": "Appeal Down : Non-Smile cards / Live end (Live Start)"
+        }
+    ],
+    "hint_jp": "【攻略ヒント】アピールチャンス中は、楽曲と属性が異なるスクールアイドルでノーツを処理するとアピール値やSPゲージ獲得量が下がるので、編成は楽曲と属性が一致するスクールアイドルを中心にしよう",
+    "hint_en": null,
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6458",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Smile cards",
+                        "check": "attribute",
+                        "value": "smile"
+                    },
+                    "effect": {
+                        "type": "increase_skill_activation",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase Skill activation chance by 10%",
+                        "formatting": "Increase Skill activation chance by {effect}",
+                        "display_short": "Skill Activation Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Skill Activation Up : Smile cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "7e5e61",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Smile cards",
+                        "check": "attribute",
+                        "value": "smile"
+                    },
+                    "effect": {
+                        "type": "increase_sp_gain",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase SP gain by 20%",
+                        "formatting": "Increase SP gain by {effect}",
+                        "display_short": "SP Gain Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "SP Gain Up : Smile cards / # Notes"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計33,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Non-Smile cards",
+                        "check": "attribute",
+                        "value": "pure,cool,active,natural,elegant"
+                    },
+                    "effect": {
+                        "type": "decrease_base_appeal",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Decrease base Appeal by 10%",
+                        "formatting": "Decrease base Appeal by {effect}",
+                        "display_short": "Appeal-",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal- : Non-Smile cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計79,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Non-Smile cards",
+                        "check": "attribute",
+                        "value": "pure,cool,active,natural,elegant"
+                    },
+                    "effect": {
+                        "type": "decrease_base_sp_gain",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Decrease base SP Gain by 10%",
+                        "formatting": "Decrease base SP Gain by {effect}",
+                        "display_short": "SP Gain-",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "SP Gain- : Non-Smile cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計56,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Non-Smile cards",
+                        "check": "attribute",
+                        "value": "pure,cool,active,natural,elegant"
+                    },
+                    "effect": {
+                        "type": "decrease_base_appeal",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Decrease base Appeal by 10%",
+                        "formatting": "Decrease base Appeal by {effect}",
+                        "display_short": "Appeal-",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal- : Non-Smile cards / AC End"
+                }
+            ]
+        }
+    ]
+}

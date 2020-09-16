@@ -1,0 +1,76 @@
+{
+    "difficulty_id": 31001201,
+    "live_id": 11001,
+    "difficulty_type": "normal",
+    "attribute": "active",
+    "voltage_requirements": {
+        "s": 212000,
+        "a": 177000,
+        "b": 141000,
+        "c": 115000
+    },
+    "recommended_power": 950,
+    "recommended_stamina": 8000,
+    "lp_needed": 10,
+    "completion_exp": 8,
+    "completion_bond": 10,
+    "sp_gauge": 2800,
+    "damage_per_note": 38,
+    "max_appeal": 50000,
+    "gimmick_effects": null,
+    "hint_jp": "【攻略ヒント】1回目のアピールチャンスクリアに向けて、SP特技を発動できるようにしよう。ライブ最初\nに登場する特技発動率上昇のギミックノーツを処理しても、SPゲージをためておくだけにとどめよう",
+    "hint_en": "[Hint] Charge your gauge so that you can activate your SP Skill during the first Appeal Chance. Even if you tap the Trick Notes that boost your skill activation rate, focus on building your SP Gauge.",
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6458",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_skill_activation",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase Skill activation chance by 20%",
+                        "formatting": "Increase Skill activation chance by {effect}",
+                        "display_short": "Skill Activation Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Skill Activation Up : Active cards / # Notes"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計13,800ボルテージを獲得する",
+            "name_en": "Gain a total of 13,800 Voltage.",
+            "effects": null
+        },
+        {
+            "name_jp": "合計20,300ボルテージを獲得する",
+            "name_en": "Gain a total of 20,300 Voltage.",
+            "effects": null
+        },
+        {
+            "name_jp": "合計16,100ボルテージを獲得する",
+            "name_en": "Gain a total of 16,100 Voltage.",
+            "effects": null
+        }
+    ]
+}

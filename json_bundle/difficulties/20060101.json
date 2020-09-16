@@ -1,0 +1,223 @@
+{
+    "difficulty_id": 20060101,
+    "live_id": 10060,
+    "difficulty_type": "easy",
+    "attribute": null,
+    "voltage_requirements": {
+        "s": 273000,
+        "a": 211000,
+        "b": 149000,
+        "c": 87000
+    },
+    "recommended_power": 1450,
+    "recommended_stamina": 10800,
+    "lp_needed": 10,
+    "completion_exp": 8,
+    "completion_bond": 12,
+    "sp_gauge": 3600,
+    "damage_per_note": 81,
+    "max_appeal": 50000,
+    "gimmick_effects": null,
+    "hint_jp": "【攻略ヒント】ガードタイプとSPタイプが有利になるギミックがあるよ。編成はガードタイプとSPタイプのスクールアイドルを中心にしよう",
+    "hint_en": null,
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6066",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_sp_percent",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Gain 50% of SP capacity as SP Gauge",
+                        "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                        "display_short": "SP %Fill",
+                        "until": null
+                    },
+                    "short_display": "SP %Fill"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "7e5e61",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Sp cards",
+                        "check": "role",
+                        "value": "sp"
+                    },
+                    "effect": {
+                        "type": "increase_sp_gain",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase SP gain by 10%",
+                        "formatting": "Increase SP gain by {effect}",
+                        "display_short": "SP Gain Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "SP Gain Up : Sp cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "6458",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Gd cards",
+                        "check": "role",
+                        "value": "gd"
+                    },
+                    "effect": {
+                        "type": "increase_skill_activation",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase Skill activation chance by 20%",
+                        "formatting": "Increase Skill activation chance by {effect}",
+                        "display_short": "Skill Activation Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 20 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 20,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Skill Activation Up : Gd cards / # Notes"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "SP特技で合計7,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Sp cards",
+                        "check": "role",
+                        "value": "sp"
+                    },
+                    "effect": {
+                        "type": "increase_base_sp_gain",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Increase base SP gain by 50%",
+                        "formatting": "Increase base SP gain by {effect}",
+                        "display_short": "SP Gain+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "SP Gain+ : Sp cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計9,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Non-Gd cards",
+                        "check": "role",
+                        "value": "vo,sp,sk"
+                    },
+                    "effect": {
+                        "type": "decrease_base_appeal",
+                        "value": 0.05,
+                        "value_type": "percent",
+                        "display": "Decrease base Appeal by 5%",
+                        "formatting": "Decrease base Appeal by {effect}",
+                        "display_short": "Appeal-",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal- : Non-Gd cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "SP特技で合計14,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Sp cards",
+                        "check": "role",
+                        "value": "sp"
+                    },
+                    "effect": {
+                        "type": "increase_base_sp_gain",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Increase base SP gain by 50%",
+                        "formatting": "Increase base SP gain by {effect}",
+                        "display_short": "SP Gain+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "SP Gain+ : Sp cards / AC End"
+                }
+            ]
+        }
+    ]
+}

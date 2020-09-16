@@ -1,0 +1,134 @@
+{
+    "difficulty_id": 31007103,
+    "live_id": 11007,
+    "difficulty_type": "easy",
+    "attribute": "cool",
+    "voltage_requirements": {
+        "s": 670000,
+        "a": 530000,
+        "b": 400000,
+        "c": 300000
+    },
+    "recommended_power": 2100,
+    "recommended_stamina": 18900,
+    "lp_needed": 12,
+    "completion_exp": 10,
+    "completion_bond": 12,
+    "sp_gauge": 4800,
+    "damage_per_note": 85,
+    "max_appeal": 50000,
+    "gimmick_effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 1.0,
+                "limit": 0
+            },
+            "target": {
+                "display": "Non-Cool cards",
+                "check": "attribute",
+                "value": "smile,pure,active,natural,elegant"
+            },
+            "effect": {
+                "type": "decrease_skill_chance",
+                "value": 0.05,
+                "value_type": "percent",
+                "display": "Decrease Skill activation chance by 5%",
+                "formatting": "Decrease Skill activation chance by {effect}",
+                "display_short": "Skill Activation Down",
+                "until": {
+                    "type": "live_end",
+                    "display": "until Live ends",
+                    "formatting": "until Live ends",
+                    "display_short": "Live end",
+                    "value": 0,
+                    "value_type": null
+                }
+            },
+            "short_display": "Skill Activation Down : Non-Cool cards / Live end (Live Start)"
+        }
+    ],
+    "hint_jp": "【攻略ヒント】ライブ開始直後にSPゲージが上昇するギミックノーツが登場するので、タイミングよく\n処理してアピールチャンスでSP特技を発動させよう",
+    "hint_en": "[Hint] Right after the show starts, there will be Trick Notes that give a boost to SP Gauge, so try to get those with good timing and use your SP Skill during Appeal Chances.",
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6066",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_sp_percent",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Gain 50% of SP capacity as SP Gauge",
+                        "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                        "display_short": "SP %Fill",
+                        "until": null
+                    },
+                    "short_display": "SP %Fill"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "6458",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Cool cards",
+                        "check": "attribute",
+                        "value": "cool"
+                    },
+                    "effect": {
+                        "type": "increase_skill_activation",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase Skill activation chance by 20%",
+                        "formatting": "Increase Skill activation chance by {effect}",
+                        "display_short": "Skill Activation Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Skill Activation Up : Cool cards / # Notes"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計39,600ボルテージを獲得する",
+            "name_en": "Gain a total of 39,600 Voltage.",
+            "effects": null
+        },
+        {
+            "name_jp": "合計39,600ボルテージを獲得する",
+            "name_en": "Gain a total of 39,600 Voltage.",
+            "effects": null
+        },
+        {
+            "name_jp": "合計47,800ボルテージを獲得する",
+            "name_en": "Gain a total of 47,800 Voltage.",
+            "effects": null
+        }
+    ]
+}

@@ -1,0 +1,100 @@
+{
+    "difficulty_id": 10008101,
+    "live_id": 10008,
+    "difficulty_type": "easy",
+    "attribute": "natural",
+    "voltage_requirements": {
+        "s": 1200000,
+        "a": 800000,
+        "b": 500000,
+        "c": 150000
+    },
+    "recommended_power": 2150,
+    "recommended_stamina": 16200,
+    "lp_needed": 10,
+    "completion_exp": 8,
+    "completion_bond": 12,
+    "sp_gauge": 3600,
+    "damage_per_note": 109,
+    "max_appeal": 50000,
+    "gimmick_effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 1.0,
+                "limit": 0
+            },
+            "target": {
+                "display": "Non-Natural cards",
+                "check": "attribute",
+                "value": "smile,pure,cool,active,elegant"
+            },
+            "effect": {
+                "type": "decrease_base_sp_gain",
+                "value": 0.05,
+                "value_type": "percent",
+                "display": "Decrease base SP Gain by 5%",
+                "formatting": "Decrease base SP Gain by {effect}",
+                "display_short": "SP Gain-",
+                "until": {
+                    "type": "live_end",
+                    "display": "until Live ends",
+                    "formatting": "until Live ends",
+                    "display_short": "Live end",
+                    "value": 0,
+                    "value_type": null
+                }
+            },
+            "short_display": "SP Gain- : Non-Natural cards / Live end (Live Start)"
+        }
+    ],
+    "hint_jp": "【攻略ヒント】1、3回目のアピールチャンスではSP特技の発動が必要なのでゲージをためておこう",
+    "hint_en": "[Hint] You will need your SP Skill on the first and third Appeal Chances, so fill up your gauge.",
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6066",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "always",
+                        "display": "Always"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_sp_percent",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Gain 50% of SP capacity as SP Gauge",
+                        "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                        "display_short": "SP %Fill",
+                        "until": null
+                    },
+                    "short_display": "SP %Fill"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "SP特技で合計10,000ボルテージを獲得する",
+            "name_en": "Gain a total of 10,000 Voltage with SP Skills.",
+            "effects": null
+        },
+        {
+            "name_jp": "合計30,000ボルテージを獲得する",
+            "name_en": "Gain a total of 30,000 Voltage.",
+            "effects": null
+        },
+        {
+            "name_jp": "SP特技で合計30,000ボルテージを獲得する",
+            "name_en": "Gain a total of 30,000 Voltage with SP Skills.",
+            "effects": null
+        }
+    ]
+}

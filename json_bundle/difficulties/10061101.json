@@ -1,0 +1,178 @@
+{
+    "difficulty_id": 10061101,
+    "live_id": 10061,
+    "difficulty_type": "easy",
+    "attribute": "cool",
+    "voltage_requirements": {
+        "s": 232500,
+        "a": 171700,
+        "b": 111000,
+        "c": 50300
+    },
+    "recommended_power": 1200,
+    "recommended_stamina": 9000,
+    "lp_needed": 10,
+    "completion_exp": 8,
+    "completion_bond": 12,
+    "sp_gauge": 3600,
+    "damage_per_note": 62,
+    "max_appeal": 50000,
+    "gimmick_effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 1.0,
+                "limit": 0
+            },
+            "target": {
+                "display": "Non-Cool cards",
+                "check": "attribute",
+                "value": "smile,pure,active,natural,elegant"
+            },
+            "effect": {
+                "type": "decrease_appeal",
+                "value": 0.05,
+                "value_type": "percent",
+                "display": "Decrease Appeal by 5%",
+                "formatting": "Decrease Appeal by {effect}",
+                "display_short": "Appeal Down",
+                "until": {
+                    "type": "live_end",
+                    "display": "until Live ends",
+                    "formatting": "until Live ends",
+                    "display_short": "Live end",
+                    "value": 0,
+                    "value_type": null
+                }
+            },
+            "short_display": "Appeal Down : Non-Cool cards / Live end (Live Start)"
+        }
+    ],
+    "hint_jp": "【攻略ヒント】1回目のアピールチャンスはスタミナダメージの効果を持つノーツに注意しよう。アピール\nチャンスクリアで、スタミナを回復できるよ",
+    "hint_en": "[Hint] Watch out for Notes with stamina damage effects during the first Appeal Chance. Your stamina will be restored when you clear the Appeal Chance.",
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6f3c",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Cool cards",
+                        "check": "attribute",
+                        "value": "cool"
+                    },
+                    "effect": {
+                        "type": "increase_appeal_percent",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase Appeal by 10%",
+                        "formatting": "Increase Appeal by {effect}",
+                        "display_short": "Appeal Up %",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Appeal Up % : Cool cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "6525",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "always",
+                        "display": "Always"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "damage",
+                        "value": 2000,
+                        "value_type": "value",
+                        "display": "Take 2000 damage",
+                        "formatting": "Take {effect} damage",
+                        "display_short": "Damage",
+                        "until": null
+                    },
+                    "short_display": "Damage"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計6,800ボルテージを獲得する",
+            "name_en": "Gain a total of 6,800 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "complete",
+                        "display": "Upon AC success"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_stamina",
+                        "value": 3000,
+                        "value_type": "value",
+                        "display": "Restore 3000 Stamina",
+                        "formatting": "Restore {effect} Stamina",
+                        "display_short": "Restore Flat Stamina",
+                        "until": null
+                    },
+                    "short_display": "Restore Flat Stamina"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計11,000ボルテージを獲得する",
+            "name_en": "Gain a total of 11,000 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "complete",
+                        "display": "Upon AC success"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Cool cards",
+                        "check": "attribute",
+                        "value": "cool"
+                    },
+                    "effect": {
+                        "type": "increase_voltage_gain_percent",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase Voltage gain by 20%",
+                        "formatting": "Increase Voltage gain by {effect}",
+                        "display_short": "Voltage Gain Up %",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Voltage Gain Up % : Cool cards / # Notes"
+                }
+            ]
+        }
+    ]
+}

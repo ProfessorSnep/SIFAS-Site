@@ -1,0 +1,270 @@
+{
+    "difficulty_id": 20017101,
+    "live_id": 10017,
+    "difficulty_type": "easy",
+    "attribute": null,
+    "voltage_requirements": {
+        "s": 348000,
+        "a": 264500,
+        "b": 181100,
+        "c": 97700
+    },
+    "recommended_power": 1450,
+    "recommended_stamina": 10800,
+    "lp_needed": 10,
+    "completion_exp": 8,
+    "completion_bond": 12,
+    "sp_gauge": 3600,
+    "damage_per_note": 101,
+    "max_appeal": 50000,
+    "gimmick_effects": null,
+    "hint_jp": "【攻略ヒント】アピールチャンス中は、μ'sのスクールアイドルのみ有利な特殊効果があるよ。編成はμ'sのスクールアイドルを中心にしよう",
+    "hint_en": "[Hint] During Appeal Chances, there will be a special effect which gives μ's school idols an advantage. Try to base your formation around μ's members!",
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6066",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_sp_percent",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Gain 50% of SP capacity as SP Gauge",
+                        "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                        "display_short": "SP %Fill",
+                        "until": null
+                    },
+                    "short_display": "SP %Fill"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "6066",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_sp_percent",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Gain 10% of SP capacity as SP Gauge",
+                        "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                        "display_short": "SP %Fill",
+                        "until": null
+                    },
+                    "short_display": "SP %Fill"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "6458",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Gd cards",
+                        "check": "role",
+                        "value": "gd"
+                    },
+                    "effect": {
+                        "type": "increase_skill_activation",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Increase Skill activation chance by 50%",
+                        "formatting": "Increase Skill activation chance by {effect}",
+                        "display_short": "Skill Activation Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 20 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 20,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Skill Activation Up : Gd cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "6525",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "always",
+                        "display": "Always"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "damage",
+                        "value": 400,
+                        "value_type": "value",
+                        "display": "Take 400 damage",
+                        "formatting": "Take {effect} damage",
+                        "display_short": "Damage",
+                        "until": null
+                    },
+                    "short_display": "Damage"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "SP特技で合計5,000ボルテージを獲得する",
+            "name_en": "Gain a total of 5,000 Voltage with SP Skills.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Otonokizaka members",
+                        "check": "school",
+                        "value": "otonokizaka"
+                    },
+                    "effect": {
+                        "type": "increase_base_sp_gain",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Increase base SP gain by 50%",
+                        "formatting": "Increase base SP gain by {effect}",
+                        "display_short": "SP Gain+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "SP Gain+ : Otonokizaka members / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計10,000ボルテージを獲得する",
+            "name_en": "Gain a total of 10,000 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Otonokizaka members",
+                        "check": "school",
+                        "value": "otonokizaka"
+                    },
+                    "effect": {
+                        "type": "increase_base_appeal",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase base Appeal by 10%",
+                        "formatting": "Increase base Appeal by {effect}",
+                        "display_short": "Appeal+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal+ : Otonokizaka members / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計15,000ボルテージを獲得する",
+            "name_en": "Gain a total of 15,000 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Otonokizaka members",
+                        "check": "school",
+                        "value": "otonokizaka"
+                    },
+                    "effect": {
+                        "type": "increase_base_appeal",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase base Appeal by 10%",
+                        "formatting": "Increase base Appeal by {effect}",
+                        "display_short": "Appeal+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal+ : Otonokizaka members / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計10,000ボルテージを獲得する",
+            "name_en": "Gain a total of 10,000 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Otonokizaka members",
+                        "check": "school",
+                        "value": "otonokizaka"
+                    },
+                    "effect": {
+                        "type": "increase_base_skill_activation",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase base Skill activation chance by 10%",
+                        "formatting": "Increase base Skill activation chance by {effect}",
+                        "display_short": "Skill Activation+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Skill Activation+ : Otonokizaka members / AC End"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,109 @@
+{
+    "difficulty_id": 10004101,
+    "live_id": 10004,
+    "difficulty_type": "easy",
+    "attribute": "elegant",
+    "voltage_requirements": {
+        "s": 452000,
+        "a": 346000,
+        "b": 240000,
+        "c": 134000
+    },
+    "recommended_power": 1900,
+    "recommended_stamina": 14400,
+    "lp_needed": 10,
+    "completion_exp": 8,
+    "completion_bond": 12,
+    "sp_gauge": 3600,
+    "damage_per_note": 190,
+    "max_appeal": 50000,
+    "gimmick_effects": null,
+    "hint_jp": "【攻略ヒント】アピールチャンスをクリアすると、スタミナが回復するよ",
+    "hint_en": "[Hint] Clearing an Appeal Chance will restore your stamina.",
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6f3c",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Elegant cards",
+                        "check": "attribute",
+                        "value": "elegant"
+                    },
+                    "effect": {
+                        "type": "increase_appeal_percent",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase Appeal by 10%",
+                        "formatting": "Increase Appeal by {effect}",
+                        "display_short": "Appeal Up %",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 20 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 20,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Appeal Up % : Elegant cards / # Notes"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計12,300ボルテージを獲得する",
+            "name_en": "Gain a total of 12,300 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "complete",
+                        "display": "Upon AC success"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_stamina",
+                        "value": 2000,
+                        "value_type": "value",
+                        "display": "Restore 2000 Stamina",
+                        "formatting": "Restore {effect} Stamina",
+                        "display_short": "Restore Flat Stamina",
+                        "until": null
+                    },
+                    "short_display": "Restore Flat Stamina"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計28,200ボルテージを獲得する",
+            "name_en": "Gain a total of 28,200 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "complete",
+                        "display": "Upon AC success"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_stamina",
+                        "value": 1500,
+                        "value_type": "value",
+                        "display": "Restore 1500 Stamina",
+                        "formatting": "Restore {effect} Stamina",
+                        "display_short": "Restore Flat Stamina",
+                        "until": null
+                    },
+                    "short_display": "Restore Flat Stamina"
+                }
+            ]
+        }
+    ]
+}

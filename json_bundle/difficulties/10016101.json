@@ -1,0 +1,144 @@
+{
+    "difficulty_id": 10016101,
+    "live_id": 10016,
+    "difficulty_type": "easy",
+    "attribute": "active",
+    "voltage_requirements": {
+        "s": 502200,
+        "a": 378800,
+        "b": 255500,
+        "c": 132200
+    },
+    "recommended_power": 2000,
+    "recommended_stamina": 15300,
+    "lp_needed": 10,
+    "completion_exp": 8,
+    "completion_bond": 12,
+    "sp_gauge": 3600,
+    "damage_per_note": 219,
+    "max_appeal": 50000,
+    "gimmick_effects": null,
+    "hint_jp": "【攻略ヒント】アピールチャンス中に、スタミナダメージの効果を持つノーツがあるのでスタミナダメージに\n注意しよう",
+    "hint_en": "[Hint] There will be Notes with stamina damage effects during the Appeal Chance, so watch your stamina.",
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6525",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "always",
+                        "display": "Always"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "damage",
+                        "value": 400,
+                        "value_type": "value",
+                        "display": "Take 400 damage",
+                        "formatting": "Take {effect} damage",
+                        "display_short": "Damage",
+                        "until": null
+                    },
+                    "short_display": "Damage"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計12,000ボルテージを獲得する",
+            "name_en": "Gain a total of 12,000 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "complete",
+                        "display": "Upon AC success"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_stamina",
+                        "value": 4000,
+                        "value_type": "value",
+                        "display": "Restore 4000 Stamina",
+                        "formatting": "Restore {effect} Stamina",
+                        "display_short": "Restore Flat Stamina",
+                        "until": null
+                    },
+                    "short_display": "Restore Flat Stamina"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計16,000ボルテージを獲得する",
+            "name_en": "Gain a total of 16,000 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Vo cards",
+                        "check": "role",
+                        "value": "vo"
+                    },
+                    "effect": {
+                        "type": "increase_base_voltage_gain",
+                        "value": 0.3,
+                        "value_type": "percent",
+                        "display": "Increase base Voltage gain by 30%",
+                        "formatting": "Increase base Voltage gain by {effect}",
+                        "display_short": "Voltage Gain+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Voltage Gain+ : Vo cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "SP特技で合計8,000ボルテージを獲得する",
+            "name_en": "Gain a total of 8,000 Voltage with SP Skills.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Sp cards",
+                        "check": "role",
+                        "value": "sp"
+                    },
+                    "effect": {
+                        "type": "increase_base_sp_gain",
+                        "value": 1.0,
+                        "value_type": "percent",
+                        "display": "Increase base SP gain by 100%",
+                        "formatting": "Increase base SP gain by {effect}",
+                        "display_short": "SP Gain+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "SP Gain+ : Sp cards / AC End"
+                }
+            ]
+        }
+    ]
+}
