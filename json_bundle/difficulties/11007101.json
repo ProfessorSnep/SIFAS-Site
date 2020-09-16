@@ -1,0 +1,90 @@
+{
+    "difficulty_id": 11007101,
+    "live_id": 11007,
+    "difficulty_type": "easy",
+    "attribute": "smile",
+    "voltage_requirements": {
+        "s": 288500,
+        "a": 217000,
+        "b": 145600,
+        "c": 74200
+    },
+    "recommended_power": 1200,
+    "recommended_stamina": 9000,
+    "lp_needed": 10,
+    "completion_exp": 8,
+    "completion_bond": 12,
+    "sp_gauge": 3600,
+    "damage_per_note": 131,
+    "max_appeal": 50000,
+    "gimmick_effects": null,
+    "hint_jp": "【攻略ヒント】ライブ開始直後にSPゲージが上昇するギミックノーツが登場するので、タイミングよく\n処理してアピールチャンスでSP特技を発動させよう",
+    "hint_en": "[Hint] Right after the show starts, there will be Trick Notes that give a boost to SP Gauge, so try to get those with good timing and use your SP Skill during Appeal Chances.",
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6066",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_sp_percent",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Gain 50% of SP capacity as SP Gauge",
+                        "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                        "display_short": "SP %Fill",
+                        "until": null
+                    },
+                    "short_display": "SP %Fill"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計14,100ボルテージを獲得する",
+            "name_en": "Gain a total of 14,100 Voltage.",
+            "effects": null
+        },
+        {
+            "name_jp": "合計16,200ボルテージを獲得する",
+            "name_en": "Gain a total of 16,200 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "All",
+                        "check": "all",
+                        "value": null
+                    },
+                    "effect": {
+                        "type": "increase_base_appeal",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Increase base Appeal by 50%",
+                        "formatting": "Increase base Appeal by {effect}",
+                        "display_short": "Appeal+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal+ : All / AC End"
+                }
+            ]
+        }
+    ]
+}

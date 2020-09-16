@@ -1,0 +1,282 @@
+{
+    "difficulty_id": 33000185,
+    "live_id": 11009,
+    "difficulty_type": "advanced",
+    "attribute": "natural",
+    "voltage_requirements": {
+        "s": 4151000,
+        "a": 3289000,
+        "b": 2427000,
+        "c": 1565000
+    },
+    "recommended_power": 7700,
+    "recommended_stamina": 72100,
+    "lp_needed": 16,
+    "completion_exp": 13,
+    "completion_bond": 16,
+    "sp_gauge": 6000,
+    "damage_per_note": 152,
+    "max_appeal": 50000,
+    "gimmick_effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 1.0,
+                "limit": 0
+            },
+            "target": {
+                "display": "Non-Natural cards",
+                "check": "attribute",
+                "value": "smile,pure,cool,active,elegant"
+            },
+            "effect": {
+                "type": "decrease_base_appeal",
+                "value": 0.2,
+                "value_type": "percent",
+                "display": "Decrease base Appeal by 20%",
+                "formatting": "Decrease base Appeal by {effect}",
+                "display_short": "Appeal-",
+                "until": {
+                    "type": "live_end",
+                    "display": "until Live ends",
+                    "formatting": "until Live ends",
+                    "display_short": "Live end",
+                    "value": 0,
+                    "value_type": null
+                }
+            },
+            "short_display": "Appeal- : Non-Natural cards / Live end (Live Start)"
+        }
+    ],
+    "hint_jp": "【攻略ヒント】楽曲開始直後、スタミナダメージの効果を持つノーツがあるので注意しよう。Gd作戦の編成は、スタミナ回復の特技を持っているスクールアイドルを中心にしよう",
+    "hint_en": null,
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6066",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_sp_percent",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Gain 50% of SP capacity as SP Gauge",
+                        "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                        "display_short": "SP %Fill",
+                        "until": null
+                    },
+                    "short_display": "SP %Fill"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "6525",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "always",
+                        "display": "Always"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "damage",
+                        "value": 10000,
+                        "value_type": "value",
+                        "display": "Take 10000 damage",
+                        "formatting": "Take {effect} damage",
+                        "display_short": "Damage",
+                        "until": null
+                    },
+                    "short_display": "Damage"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "6458",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Gd cards",
+                        "check": "role",
+                        "value": "gd"
+                    },
+                    "effect": {
+                        "type": "increase_skill_activation",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase Skill activation chance by 20%",
+                        "formatting": "Increase Skill activation chance by {effect}",
+                        "display_short": "Skill Activation Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 20 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 20,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Skill Activation Up : Gd cards / # Notes"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "SP特技で合計32,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Gd cards",
+                        "check": "role",
+                        "value": "gd"
+                    },
+                    "effect": {
+                        "type": "increase_base_skill_activation",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Increase base Skill activation chance by 50%",
+                        "formatting": "Increase base Skill activation chance by {effect}",
+                        "display_short": "Skill Activation+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Skill Activation+ : Gd cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計108,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Non-Gd cards",
+                        "check": "role",
+                        "value": "vo,sp,sk"
+                    },
+                    "effect": {
+                        "type": "decrease_base_appeal",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Decrease base Appeal by 50%",
+                        "formatting": "Decrease base Appeal by {effect}",
+                        "display_short": "Appeal-",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal- : Non-Gd cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "SP特技で合計64,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Gd cards",
+                        "check": "role",
+                        "value": "gd"
+                    },
+                    "effect": {
+                        "type": "increase_base_sp_gain",
+                        "value": 1.0,
+                        "value_type": "percent",
+                        "display": "Increase base SP gain by 100%",
+                        "formatting": "Increase base SP gain by {effect}",
+                        "display_short": "SP Gain+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "SP Gain+ : Gd cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計90,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Vo cards",
+                        "check": "role",
+                        "value": "vo"
+                    },
+                    "effect": {
+                        "type": "increase_base_appeal_gd_types",
+                        "value": 0.08,
+                        "value_type": "percent",
+                        "display": "Increase base Appeal by 8% for each Gd type in Team",
+                        "formatting": "Increase base Appeal by {effect} for each Gd type in Team",
+                        "display_short": "Appeal+ #Gd types",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal+ #Gd types : Vo cards / AC End"
+                }
+            ]
+        }
+    ]
+}

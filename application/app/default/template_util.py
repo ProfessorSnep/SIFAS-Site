@@ -78,6 +78,14 @@ def template_live_info(live_id):
     return get_resource('lives/all')[str(live_id)]
 
 
+def template_difficulty_info(diff_id):
+    return get_resource('difficulties/all')[str(diff_id)]
+
+
+def template_tower_info(tower_id):
+    return get_resource(f'tower/{tower_id}')
+
+
 def template_accessory_info(acc_id):
     return get_resource('accessories/all')[str(acc_id)]
 
@@ -365,6 +373,8 @@ def add_globals(app):
         'card_info': template_card_info,
         'accessory_info': template_accessory_info,
         'live_info': template_live_info,
+        'difficulty_info': template_difficulty_info,
+        'tower_info': template_tower_info,
         'event_info': template_event_info,
         'cards': template_card_list,
         'lives': template_live_list,

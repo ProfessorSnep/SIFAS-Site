@@ -1,0 +1,135 @@
+{
+    "difficulty_id": 33000133,
+    "live_id": 12006,
+    "difficulty_type": "normal",
+    "attribute": "pure",
+    "voltage_requirements": {
+        "s": 2301400,
+        "a": 1860200,
+        "b": 1419000,
+        "c": 977800
+    },
+    "recommended_power": 6000,
+    "recommended_stamina": 56200,
+    "lp_needed": 16,
+    "completion_exp": 13,
+    "completion_bond": 16,
+    "sp_gauge": 6000,
+    "damage_per_note": 309,
+    "max_appeal": 50000,
+    "gimmick_effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 1.0,
+                "limit": 0
+            },
+            "target": {
+                "display": "Non-Pure cards",
+                "check": "attribute",
+                "value": "smile,cool,active,natural,elegant"
+            },
+            "effect": {
+                "type": "decrease_appeal",
+                "value": 0.1,
+                "value_type": "percent",
+                "display": "Decrease Appeal by 10%",
+                "formatting": "Decrease Appeal by {effect}",
+                "display_short": "Appeal Down",
+                "until": {
+                    "type": "live_end",
+                    "display": "until Live ends",
+                    "formatting": "until Live ends",
+                    "display_short": "Live end",
+                    "value": 0,
+                    "value_type": null
+                }
+            },
+            "short_display": "Appeal Down : Non-Pure cards / Live end (Live Start)"
+        }
+    ],
+    "hint_jp": "【攻略ヒント】SPゲージが上昇するギミックノーツをタイミングよく処理してゲージをため、SP特技\nを発動させよう",
+    "hint_en": null,
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6066",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_sp_percent",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Gain 50% of SP capacity as SP Gauge",
+                        "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                        "display_short": "SP %Fill",
+                        "until": null
+                    },
+                    "short_display": "SP %Fill"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計62,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": null
+        },
+        {
+            "name_jp": "合計70,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": null
+        },
+        {
+            "name_jp": "SP特技で合計69,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "All",
+                        "check": "all",
+                        "value": null
+                    },
+                    "effect": {
+                        "type": "increase_sp_gain",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Increase SP gain by 50%",
+                        "formatting": "Increase SP gain by {effect}",
+                        "display_short": "SP Gain Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 5 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 5,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "SP Gain Up : All / # Notes"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計62,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": null
+        }
+    ]
+}

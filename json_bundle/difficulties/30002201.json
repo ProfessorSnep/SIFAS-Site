@@ -1,0 +1,197 @@
+{
+    "difficulty_id": 30002201,
+    "live_id": 10002,
+    "difficulty_type": "normal",
+    "attribute": "smile",
+    "voltage_requirements": {
+        "s": 1200000,
+        "a": 900000,
+        "b": 650000,
+        "c": 450000
+    },
+    "recommended_power": 2900,
+    "recommended_stamina": 26000,
+    "lp_needed": 13,
+    "completion_exp": 10,
+    "completion_bond": 13,
+    "sp_gauge": 4800,
+    "damage_per_note": 140,
+    "max_appeal": 50000,
+    "gimmick_effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 1.0,
+                "limit": 0
+            },
+            "target": {
+                "display": "Non-Smile cards",
+                "check": "attribute",
+                "value": "pure,cool,active,natural,elegant"
+            },
+            "effect": {
+                "type": "decrease_appeal",
+                "value": 0.05,
+                "value_type": "percent",
+                "display": "Decrease Appeal by 5%",
+                "formatting": "Decrease Appeal by {effect}",
+                "display_short": "Appeal Down",
+                "until": {
+                    "type": "live_end",
+                    "display": "until Live ends",
+                    "formatting": "until Live ends",
+                    "display_short": "Live end",
+                    "value": 0,
+                    "value_type": null
+                }
+            },
+            "short_display": "Appeal Down : Non-Smile cards / Live end (Live Start)"
+        }
+    ],
+    "hint_jp": "【攻略ヒント】2回目のアピールチャンス前にSP特技の効果が上昇するギミックノーツが登場するので、タ\nイミングよく処理してアピールチャンスクリアを目指そう",
+    "hint_en": "[Hint] Trick Notes that increase the effect of your SP Skill appear before the second Appeal Chance, so hit them and aim to get through it.",
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6458",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Smile cards",
+                        "check": "attribute",
+                        "value": "smile"
+                    },
+                    "effect": {
+                        "type": "increase_skill_activation",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase Skill activation chance by 10%",
+                        "formatting": "Increase Skill activation chance by {effect}",
+                        "display_short": "Skill Activation Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Skill Activation Up : Smile cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "2470",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Smile cards",
+                        "check": "attribute",
+                        "value": "smile"
+                    },
+                    "effect": {
+                        "type": "sp_bonus_voltage_flat",
+                        "value": 1000,
+                        "value_type": "value",
+                        "display": "Gain 1000 extra Voltage on next SP skill",
+                        "formatting": "Gain {effect} extra Voltage on next SP skill",
+                        "display_short": "Next SP+ Flat",
+                        "until": null
+                    },
+                    "short_display": "Next SP+ Flat : Smile cards"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "7e5e61",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Smile cards",
+                        "check": "attribute",
+                        "value": "smile"
+                    },
+                    "effect": {
+                        "type": "increase_sp_gain",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase SP gain by 10%",
+                        "formatting": "Increase SP gain by {effect}",
+                        "display_short": "SP Gain Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "SP Gain Up : Smile cards / # Notes"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計54,600ボルテージを獲得する",
+            "name_en": "Gain a total of 54,600 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "All",
+                        "check": "all",
+                        "value": null
+                    },
+                    "effect": {
+                        "type": "increase_base_appeal",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase base Appeal by 10%",
+                        "formatting": "Increase base Appeal by {effect}",
+                        "display_short": "Appeal+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal+ : All / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計50,900ボルテージを獲得する",
+            "name_en": "Gain a total of 50,900 Voltage.",
+            "effects": null
+        }
+    ]
+}

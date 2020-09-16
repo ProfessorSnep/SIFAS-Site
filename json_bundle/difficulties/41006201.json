@@ -1,0 +1,339 @@
+{
+    "difficulty_id": 41006201,
+    "live_id": 11006,
+    "difficulty_type": "normal",
+    "attribute": "active",
+    "voltage_requirements": {
+        "s": 1661500,
+        "a": 1299000,
+        "b": 936500,
+        "c": 574000
+    },
+    "recommended_power": 3400,
+    "recommended_stamina": 26100,
+    "lp_needed": 0,
+    "completion_exp": 13,
+    "completion_bond": 16,
+    "sp_gauge": 6000,
+    "damage_per_note": 124,
+    "max_appeal": 50000,
+    "gimmick_effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 1.0,
+                "limit": 0
+            },
+            "target": {
+                "display": "Non-Active cards",
+                "check": "attribute",
+                "value": "smile,pure,cool,natural,elegant"
+            },
+            "effect": {
+                "type": "decrease_appeal",
+                "value": 0.05,
+                "value_type": "percent",
+                "display": "Decrease Appeal by 5%",
+                "formatting": "Decrease Appeal by {effect}",
+                "display_short": "Appeal Down",
+                "until": {
+                    "type": "live_end",
+                    "display": "until Live ends",
+                    "formatting": "until Live ends",
+                    "display_short": "Live end",
+                    "value": 0,
+                    "value_type": null
+                }
+            },
+            "short_display": "Appeal Down : Non-Active cards / Live end (Live Start)"
+        }
+    ],
+    "hint_jp": "【攻略ヒント】クリティカル率上昇やクリティカル値増加のギミックノーツが連続して登場するので、タイミ\nングよく処理しよう",
+    "hint_en": "[Hint] Trick Notes that improve critical rate and critical bonuses will appear one after another, so tap those with good timing.",
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "7e5e61",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_sp_gain",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase SP gain by 20%",
+                        "formatting": "Increase SP gain by {effect}",
+                        "display_short": "SP Gain Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "SP Gain Up : Active cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "5370",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_crit_power",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase Crit Power by 20%",
+                        "formatting": "Increase Crit Power by {effect}",
+                        "display_short": "Crit Power Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Crit Power Up : Active cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "6f3c",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_appeal_percent",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase Appeal by 10%",
+                        "formatting": "Increase Appeal by {effect}",
+                        "display_short": "Appeal Up %",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Appeal Up % : Active cards / # Notes"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計18,960ボルテージを獲得する",
+            "name_en": "Gain a total of 18,960 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_base_appeal",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase base Appeal by 20%",
+                        "formatting": "Increase base Appeal by {effect}",
+                        "display_short": "Appeal+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal+ : Active cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計37,040ボルテージを獲得する",
+            "name_en": "Gain a total of 37,040 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_base_appeal",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase base Appeal by 20%",
+                        "formatting": "Increase base Appeal by {effect}",
+                        "display_short": "Appeal+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal+ : Active cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計66,880ボルテージを獲得する",
+            "name_en": "Gain a total of 66,880 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_base_appeal",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase base Appeal by 20%",
+                        "formatting": "Increase base Appeal by {effect}",
+                        "display_short": "Appeal+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal+ : Active cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計66,880ボルテージを獲得する",
+            "name_en": "Gain a total of 66,880 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_base_appeal",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase base Appeal by 20%",
+                        "formatting": "Increase base Appeal by {effect}",
+                        "display_short": "Appeal+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal+ : Active cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計40,720ボルテージを獲得する",
+            "name_en": "Gain a total of 40,720 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_base_appeal",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase base Appeal by 20%",
+                        "formatting": "Increase base Appeal by {effect}",
+                        "display_short": "Appeal+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal+ : Active cards / AC End"
+                }
+            ]
+        }
+    ]
+}

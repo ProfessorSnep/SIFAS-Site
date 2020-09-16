@@ -55,11 +55,12 @@
                     <p>Select Difficulty:</p>
                     <div id="difficulty-selector" class="btn-group btn-group-lg btn-group-toggle"
                         style="flex-wrap: wrap;" data-toggle="buttons">
-                        {% for diff_id, diff_name, diff_style in difficulty_vals %}
-                        {% if live['difficulties'][diff_id] %}
+                        {% for diff_type, diff_name, diff_style in difficulty_vals %}
+                        {% if live['difficulties'][diff_type] %}
+                        {% set diff = difficulty_info(live['difficulties'][diff_type]) %}
                         <label class="btn button-{{diff_style}}">
-                            <input type="radio" name="difficulties" id="{{diff_id}}" autocomplete="off">
-                            <img width="32" src="{{icon(live['difficulties'][diff_id]['attribute'])}}" alt="" />
+                            <input type="radio" name="difficulties" id="{{diff_type}}" autocomplete="off">
+                            <img width="32" src="{{icon(diff['attribute'])}}" alt="" />
                             <span>{{diff_name}}</span>
                         </label>
                         {% endif %}
@@ -69,152 +70,10 @@
             </div>
         </div>
     </div>
-    {% for diff_id, diff_name, diff_style in difficulty_vals %}
-    {% if live['difficulties'][diff_id] %}
-    {% set diff = live['difficulties'][diff_id] %}
-    <div class="diff-block row py-2" id="diff-{{diff_id}}" hidden>
-        <div class="col">
-            <div class="row text-center justify-content-center">
-                <div class="col-12">
-                    <h3><img height="32" src="{{icon(live['difficulties'][diff_id]['attribute'])}}" alt="" /> {{diff_name}}</h3>
-                </div>
-                <div class="col-auto px-3">
-                    <p>Recommended Power: {{diff['recommended_power']}}</p>
-                </div>
-                <div class="col-auto px-3">
-                    <p>Recommended Stamina: {{diff['recommended_stamina']}}</p>
-                </div>
-            </div>
-            <div class="row text-center justify-content-center">
-                <div class="col-auto px-3">
-                    <p>LP: {{diff['lp_needed']}}</p>
-                </div>
-                <div class="col-auto px-3">
-                    <p>EXP: {{diff['completion_exp']}}</p>
-                </div>
-                <div class="col-auto px-3">
-                    <p>Bond: {{diff['completion_bond']}}</p>
-                </div>
-                <div class="col-auto px-3">
-                    <p>SP Gauge Capacity: {{diff['sp_gauge']}}</p>
-                </div>
-                <div class="col-auto px-3">
-                    <p>Damage per Note: {{diff['damage_per_note']}}</p>
-                </div>
-                <div class="col-auto px-3">
-                    <p>Appeal Cap: {{diff['max_appeal']}}</p>
-                </div>
-            </div>
-            <div class="row text-center justify-content-center py-2">
-                <div class="col-xl-6 col-12">
-                    <table class="table" style="color: #fff;">
-                        <thead>
-                            <tr>
-                                <th>S Rank</th>
-                                <th>A Rank</th>
-                                <th>B Rank</th>
-                                <th>C Rank</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                {% for v in ['s', 'a', 'b', 'c'] %}
-                                <td>
-                                    {{'{0:,}'.format(diff['voltage_requirements'][v])}}
-                                </td>
-                                {% endfor %}
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="row text-center py-2">
-                <div class="col">
-                    {{diff|loc_name(name='hint')}}
-                </div>
-            </div>
-            <div class="row text-center py-4">
-                <div class="col skill-bg">
-                    <h4>Gimmick:</h4>
-                    {% if diff['gimmick_effects'] %}
-
-                    {% for effect in diff['gimmick_effects'] %}
-                    <span>{{effect['effect']['display']}}{% if effect['effect']['until'] %}
-                        {{effect['effect']['until']['display']}}</span>{% endif %}
-                    {% if effect['target'] %}
-                    <br />
-                    <span>Target: <strong>{{effect['target']['display']}}</strong></span>
-                    {% endif %}
-                    {% if effect['trigger'] %}
-                    <br />
-                    <span>Trigger: <strong>{{effect['trigger']['display']}}</strong></span>
-                    {% endif %}
-                    {% endfor %}
-
-                    {% else %}
-                    <p>None.</p>
-                    {% endif %}
-                </div>
-            </div>
-            <div class="row text-center py-3">
-                <div class="col-md mx-1">
-                    <h4 class="py-2">Note Gimmicks:</h4>
-                    {% if diff['note_gimmicks'] %}
-
-                    {% for note in diff['note_gimmicks'] %}
-                    <div class="row my-2 skill-bg">
-                        <div class="col">
-                            <div class="my-1">
-                                <img height="32" width="32" style="background-color: #ccc; border-radius: 5px;"
-                                    src="{{tex(note['icon_image_asset'])}}" alt="" />
-                            </div>
-                            {% for effect in note['effects'] %}
-                            <span>{{effect['effect']['display']}}{% if effect['effect']['until'] %}
-                                {{effect['effect']['until']['display']}}{% endif %}
-                            </span>
-                            {% if effect['target'] %}
-                            <br />
-                            <span>Target: <strong>{{effect['target']['display']}}</strong></span>
-                            {% endif %}
-                            <br />
-                            <span>Applies: <strong>{{effect['note_apply']['display']}}</strong></span>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    {% endfor %}
-
-                    {% else %}
-                    <p>None.</p>
-                    {% endif %}
-                </div>
-                <div class="col-md mx-1">
-                    <h4 class="py-2">Appeal Chances:</h4>
-
-                    {% for chance in diff['appeal_chances'] %}
-                    <div class="row my-2 skill-bg">
-                        <div class="col">
-                            <h5>{{chance|loc_name}}</h5>
-                            {% if chance['effects'] %}
-                            {% for effect in chance['effects'] %}
-                            <span>{{effect['effect']['display']}}{% if effect['effect']['until'] %}
-                                {{effect['effect']['until']['display']}}{% endif %}
-                            </span>
-                            {% if effect['target'] %}
-                            <br />
-                            <span>Target: <strong>{{effect['target']['display']}}</strong></span>
-                            {% endif %}
-                            <br />
-                            <span>Applies: <strong>{{effect['ac_apply']['display']}}</strong></span>
-                            {% endfor %}
-                            {% else %}
-                            <p>No effect.</p>
-                            {% endif %}
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
+    {% for diff_type, diff_name, diff_style in difficulty_vals %}
+    {% if live['difficulties'][diff_type] %}
+    <div class="diff-block py-2" id="diff-{{diff_type}}" hidden>
+        {{lm.difficulty_view(live['difficulties'][diff_type])}}
     </div>
     {% endif %}
     {% endfor %}

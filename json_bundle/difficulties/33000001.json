@@ -1,0 +1,179 @@
+{
+    "difficulty_id": 33000001,
+    "live_id": 10016,
+    "difficulty_type": "easy",
+    "attribute": "active",
+    "voltage_requirements": {
+        "s": 1200000,
+        "a": 900000,
+        "b": 600000,
+        "c": 350000
+    },
+    "recommended_power": 4400,
+    "recommended_stamina": 39000,
+    "lp_needed": 16,
+    "completion_exp": 13,
+    "completion_bond": 16,
+    "sp_gauge": 4800,
+    "damage_per_note": 220,
+    "max_appeal": 50000,
+    "gimmick_effects": null,
+    "hint_jp": "【攻略ヒント】2回目のアピールチャンスはSP特技を使おう。目標値が少し高いので、SP特技の効果が強くなるスクールアイドルを編成する、特訓でスクールアイドルを強くするなど、ライブ前に準備しよう",
+    "hint_en": "[Hint] Try using your SP Skill during the second Appeal Chance. It needs a lot of points to clear, so try putting school idols who improve your SP Skill in your formation, or improve them through Practice beforehand.",
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6525",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "always",
+                        "display": "Always"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "damage",
+                        "value": 2000,
+                        "value_type": "value",
+                        "display": "Take 2000 damage",
+                        "formatting": "Take {effect} damage",
+                        "display_short": "Damage",
+                        "until": null
+                    },
+                    "short_display": "Damage"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計35,000ボルテージを獲得する",
+            "name_en": "Gain a total of 35,000 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Sk cards",
+                        "check": "role",
+                        "value": "sk"
+                    },
+                    "effect": {
+                        "type": "increase_base_skill_activation",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase base Skill activation chance by 20%",
+                        "formatting": "Increase base Skill activation chance by {effect}",
+                        "display_short": "Skill Activation+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Skill Activation+ : Sk cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計75,000ボルテージを獲得する",
+            "name_en": "Gain a total of 75,000 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "complete",
+                        "display": "Upon AC success"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_stamina",
+                        "value": 4000,
+                        "value_type": "value",
+                        "display": "Restore 4000 Stamina",
+                        "formatting": "Restore {effect} Stamina",
+                        "display_short": "Restore Flat Stamina",
+                        "until": null
+                    },
+                    "short_display": "Restore Flat Stamina"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計60,000ボルテージを獲得する",
+            "name_en": "Gain a total of 60,000 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Vo cards",
+                        "check": "role",
+                        "value": "vo"
+                    },
+                    "effect": {
+                        "type": "increase_base_voltage_gain",
+                        "value": 0.3,
+                        "value_type": "percent",
+                        "display": "Increase base Voltage gain by 30%",
+                        "formatting": "Increase base Voltage gain by {effect}",
+                        "display_short": "Voltage Gain+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Voltage Gain+ : Vo cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計50,000ボルテージを獲得する",
+            "name_en": "Gain a total of 50,000 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Sp cards",
+                        "check": "role",
+                        "value": "sp"
+                    },
+                    "effect": {
+                        "type": "increase_base_sp_gain",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Increase base SP gain by 50%",
+                        "formatting": "Increase base SP gain by {effect}",
+                        "display_short": "SP Gain+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "SP Gain+ : Sp cards / AC End"
+                }
+            ]
+        }
+    ]
+}

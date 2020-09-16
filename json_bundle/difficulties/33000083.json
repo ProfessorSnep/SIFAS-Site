@@ -1,0 +1,130 @@
+{
+    "difficulty_id": 33000083,
+    "live_id": 12004,
+    "difficulty_type": "normal",
+    "attribute": "cool",
+    "voltage_requirements": {
+        "s": 1351900,
+        "a": 1095500,
+        "b": 839200,
+        "c": 582900
+    },
+    "recommended_power": 5300,
+    "recommended_stamina": 48800,
+    "lp_needed": 16,
+    "completion_exp": 13,
+    "completion_bond": 16,
+    "sp_gauge": 4800,
+    "damage_per_note": 381,
+    "max_appeal": 50000,
+    "gimmick_effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 1.0,
+                "limit": 0
+            },
+            "target": {
+                "display": "Non-Cool cards",
+                "check": "attribute",
+                "value": "smile,pure,active,natural,elegant"
+            },
+            "effect": {
+                "type": "decrease_appeal",
+                "value": 0.05,
+                "value_type": "percent",
+                "display": "Decrease Appeal by 5%",
+                "formatting": "Decrease Appeal by {effect}",
+                "display_short": "Appeal Down",
+                "until": {
+                    "type": "live_end",
+                    "display": "until Live ends",
+                    "formatting": "until Live ends",
+                    "display_short": "Live end",
+                    "value": 0,
+                    "value_type": null
+                }
+            },
+            "short_display": "Appeal Down : Non-Cool cards / Live end (Live Start)"
+        }
+    ],
+    "hint_jp": "【攻略ヒント】2回目のアピールチャンス中にSPゲージが上昇するギミックノーツが登場するので、タイミングよく処理して、SP特技を発動させよう",
+    "hint_en": "[Hint] There will be Trick Notes that boost your SP Gauge during the second Appeal Chance, so give them some well-timed taps and activate your SP Skill.",
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6066",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_sp_percent",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Gain 50% of SP capacity as SP Gauge",
+                        "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                        "display_short": "SP %Fill",
+                        "until": null
+                    },
+                    "short_display": "SP %Fill"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計55,000ボルテージを獲得する",
+            "name_en": "Gain a total of 55,000 Voltage.",
+            "effects": null
+        },
+        {
+            "name_jp": "SP特技で合計44,000ボルテージを獲得する",
+            "name_en": "Gain a total of 44,000 Voltage with SP Skills.",
+            "effects": null
+        },
+        {
+            "name_jp": "合計74,000ボルテージを獲得する",
+            "name_en": "Gain a total of 74,000 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "All",
+                        "check": "all",
+                        "value": null
+                    },
+                    "effect": {
+                        "type": "increase_base_crit_chance",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Increase base Crit Chance by 50%",
+                        "formatting": "Increase base Crit Chance by {effect}",
+                        "display_short": "Crit Chance+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Crit Chance+ : All / AC End"
+                }
+            ]
+        }
+    ]
+}

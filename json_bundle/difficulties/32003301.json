@@ -1,0 +1,71 @@
+{
+    "difficulty_id": 32003301,
+    "live_id": 12003,
+    "difficulty_type": "advanced",
+    "attribute": "elegant",
+    "voltage_requirements": {
+        "s": 224000,
+        "a": 192000,
+        "b": 160000,
+        "c": 128000
+    },
+    "recommended_power": 1250,
+    "recommended_stamina": 10000,
+    "lp_needed": 10,
+    "completion_exp": 8,
+    "completion_bond": 10,
+    "sp_gauge": 3000,
+    "damage_per_note": 37,
+    "max_appeal": 50000,
+    "gimmick_effects": null,
+    "hint_jp": "【攻略ヒント】2回目のアピールチャンスでSP特技を発動できるように、ゲージをためておこう。特技発動\n率上昇のギミックノーツには、スキルタイプやボルテージタイプの作戦を使い、ボルテージを増やそう",
+    "hint_en": "[Hint] Save your gauge so that you can activate your SP Skill during the second Appeal Chance. When dealing with the Trick Notes that increase your skill activation, use Skill-type and Voltage-type strategies to increase your Voltage yield.",
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6458",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Elegant cards",
+                        "check": "attribute",
+                        "value": "elegant"
+                    },
+                    "effect": {
+                        "type": "increase_skill_activation",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase Skill activation chance by 10%",
+                        "formatting": "Increase Skill activation chance by {effect}",
+                        "display_short": "Skill Activation Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Skill Activation Up : Elegant cards / # Notes"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計13,000ボルテージを獲得する",
+            "name_en": "Gain a total of 13,000 Voltage.",
+            "effects": null
+        },
+        {
+            "name_jp": "合計18,000ボルテージを獲得する",
+            "name_en": "Gain a total of 18,000 Voltage.",
+            "effects": null
+        }
+    ]
+}

@@ -1,0 +1,134 @@
+{
+    "difficulty_id": 32001301,
+    "live_id": 12001,
+    "difficulty_type": "advanced",
+    "attribute": "smile",
+    "voltage_requirements": {
+        "s": 1700000,
+        "a": 1400000,
+        "b": 1100000,
+        "c": 900000
+    },
+    "recommended_power": 4500,
+    "recommended_stamina": 38700,
+    "lp_needed": 16,
+    "completion_exp": 13,
+    "completion_bond": 16,
+    "sp_gauge": 6000,
+    "damage_per_note": 160,
+    "max_appeal": 50000,
+    "gimmick_effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 1.0,
+                "limit": 0
+            },
+            "target": {
+                "display": "Non-Smile cards",
+                "check": "attribute",
+                "value": "pure,cool,active,natural,elegant"
+            },
+            "effect": {
+                "type": "decrease_skill_chance",
+                "value": 0.1,
+                "value_type": "percent",
+                "display": "Decrease Skill activation chance by 10%",
+                "formatting": "Decrease Skill activation chance by {effect}",
+                "display_short": "Skill Activation Down",
+                "until": {
+                    "type": "live_end",
+                    "display": "until Live ends",
+                    "formatting": "until Live ends",
+                    "display_short": "Live end",
+                    "value": 0,
+                    "value_type": null
+                }
+            },
+            "short_display": "Skill Activation Down : Non-Smile cards / Live end (Live Start)"
+        }
+    ],
+    "hint_jp": "【攻略ヒント】1回目のアピールチャンスは目標値が高いので、失敗しそうな時はガードタイプの作戦や、回\n復の特技を使ってみよう。アピールチャンスをクリアすると、多くのボルテージを獲得できるよ",
+    "hint_en": "[Hint] The first Appeal Chance has a high objective, so try using a Guard-type strategy or restorative skills if it seems you will fail. You will gain a high amount of Voltage after clearing it.",
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6458",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Smile cards",
+                        "check": "attribute",
+                        "value": "smile"
+                    },
+                    "effect": {
+                        "type": "increase_skill_activation",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase Skill activation chance by 20%",
+                        "formatting": "Increase Skill activation chance by {effect}",
+                        "display_short": "Skill Activation Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Skill Activation Up : Smile cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "7e40",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_stamina_percent_max",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Restore 10% of max Stamina",
+                        "formatting": "Restore {effect} of max Stamina",
+                        "display_short": "Stamina Restore %Max Stamina",
+                        "until": null
+                    },
+                    "short_display": "Stamina Restore %Max Stamina"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計100,900ボルテージを獲得する",
+            "name_en": "Gain a total of 100,900 Voltage.",
+            "effects": null
+        },
+        {
+            "name_jp": "合計80,600ボルテージを獲得する",
+            "name_en": "Gain a total of 80,600 Voltage.",
+            "effects": null
+        },
+        {
+            "name_jp": "合計181,500ボルテージを獲得する",
+            "name_en": "Gain a total of 181,500 Voltage.",
+            "effects": null
+        }
+    ]
+}

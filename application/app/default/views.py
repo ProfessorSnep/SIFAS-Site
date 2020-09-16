@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, Response, render_template
 import requests
 
 default = Blueprint('default', __name__, template_folder="templates", static_folder="static",
@@ -23,6 +23,13 @@ def live_view(live_id):
 @default.route('/accessory/<acc_id>')
 def acc_view(acc_id):
     return render_template('pages/accessory_view.html', acc_id=acc_id)
+
+
+@default.route('/event/<event_type>/<event_id>')
+def event_view(event_type, event_id):
+    if event_type not in ['tower']:
+        return Response(404)
+    return render_template(f'pages/event/{event_type}.html', event_id=event_id)
 
 
 @default.route('/cards/')

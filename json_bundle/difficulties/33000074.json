@@ -1,0 +1,218 @@
+{
+    "difficulty_id": 33000074,
+    "live_id": 12010,
+    "difficulty_type": "normal",
+    "attribute": "active",
+    "voltage_requirements": {
+        "s": 1516200,
+        "a": 1230900,
+        "b": 945700,
+        "c": 660500
+    },
+    "recommended_power": 5300,
+    "recommended_stamina": 48800,
+    "lp_needed": 16,
+    "completion_exp": 13,
+    "completion_bond": 16,
+    "sp_gauge": 4800,
+    "damage_per_note": 336,
+    "max_appeal": 50000,
+    "gimmick_effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 1.0,
+                "limit": 0
+            },
+            "target": {
+                "display": "Non-Active cards",
+                "check": "attribute",
+                "value": "smile,pure,cool,natural,elegant"
+            },
+            "effect": {
+                "type": "decrease_appeal",
+                "value": 0.05,
+                "value_type": "percent",
+                "display": "Decrease Appeal by 5%",
+                "formatting": "Decrease Appeal by {effect}",
+                "display_short": "Appeal Down",
+                "until": {
+                    "type": "live_end",
+                    "display": "until Live ends",
+                    "formatting": "until Live ends",
+                    "display_short": "Live end",
+                    "value": 0,
+                    "value_type": null
+                }
+            },
+            "short_display": "Appeal Down : Non-Active cards / Live end (Live Start)"
+        }
+    ],
+    "hint_jp": "【攻略ヒント】特技発動率やクリティカル率など、ステータスの上昇効果を持つギミックノーツがたくさん登場す\nるので、タイミングよく処理しよう。ミスをするとアピール値が減るギミックノーツには注意しよう",
+    "hint_en": "[Hint] Many Trick Notes with buff effects such as increased skill activation and critical chance will appear, so take advantage of those. Watch out for Trick Notes that lower your Appeal when you miss them.",
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6458",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_skill_activation",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase Skill activation chance by 20%",
+                        "formatting": "Increase Skill activation chance by {effect}",
+                        "display_short": "Skill Activation Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Skill Activation Up : Active cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "4a66",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_crit_chance",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase Crit Chance by 20%",
+                        "formatting": "Increase Crit Chance by {effect}",
+                        "display_short": "Crit Chance Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Crit Chance Up : Active cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "6f3c",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_appeal_percent",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase Appeal by 20%",
+                        "formatting": "Increase Appeal by {effect}",
+                        "display_short": "Appeal Up %",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Appeal Up % : Active cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "6731",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "failure",
+                        "display": "On Note Miss"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Non-Active cards",
+                        "check": "attribute",
+                        "value": "smile,pure,cool,natural,elegant"
+                    },
+                    "effect": {
+                        "type": "decrease_appeal",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Decrease Appeal by 10%",
+                        "formatting": "Decrease Appeal by {effect}",
+                        "display_short": "Appeal Down",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Appeal Down : Non-Active cards / # Notes"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計44,000ボルテージを獲得する",
+            "name_en": "Gain a total of 44,000 Voltage.",
+            "effects": null
+        },
+        {
+            "name_jp": "合計67,000ボルテージを獲得する",
+            "name_en": "Gain a total of 67,000 Voltage.",
+            "effects": null
+        },
+        {
+            "name_jp": "合計57,000ボルテージを獲得する",
+            "name_en": "Gain a total of 57,000 Voltage.",
+            "effects": null
+        },
+        {
+            "name_jp": "合計107,000ボルテージを獲得する",
+            "name_en": "Gain a total of 107,000 Voltage.",
+            "effects": null
+        }
+    ]
+}

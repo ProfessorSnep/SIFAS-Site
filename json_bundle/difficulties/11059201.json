@@ -1,0 +1,130 @@
+{
+    "difficulty_id": 11059201,
+    "live_id": 11059,
+    "difficulty_type": "normal",
+    "attribute": "smile",
+    "voltage_requirements": {
+        "s": 1078700,
+        "a": 837100,
+        "b": 595700,
+        "c": 354300
+    },
+    "recommended_power": 3200,
+    "recommended_stamina": 24300,
+    "lp_needed": 12,
+    "completion_exp": 13,
+    "completion_bond": 16,
+    "sp_gauge": 4800,
+    "damage_per_note": 230,
+    "max_appeal": 50000,
+    "gimmick_effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 1.0,
+                "limit": 0
+            },
+            "target": {
+                "display": "Non-Smile cards",
+                "check": "attribute",
+                "value": "pure,cool,active,natural,elegant"
+            },
+            "effect": {
+                "type": "decrease_appeal",
+                "value": 0.1,
+                "value_type": "percent",
+                "display": "Decrease Appeal by 10%",
+                "formatting": "Decrease Appeal by {effect}",
+                "display_short": "Appeal Down",
+                "until": {
+                    "type": "live_end",
+                    "display": "until Live ends",
+                    "formatting": "until Live ends",
+                    "display_short": "Live end",
+                    "value": 0,
+                    "value_type": null
+                }
+            },
+            "short_display": "Appeal Down : Non-Smile cards / Live end (Live Start)"
+        }
+    ],
+    "hint_jp": "【攻略ヒント】SP特技の発動が必要なアピールチャンスがあるので、SPゲージをためることを意識し\nよう",
+    "hint_en": "[Hint] There is an Appeal Chance you will need to activate your SP Skill for, so keep your SP Gauge in mind.",
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "6066",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_sp_percent",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Gain 50% of SP capacity as SP Gauge",
+                        "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                        "display_short": "SP %Fill",
+                        "until": null
+                    },
+                    "short_display": "SP %Fill"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計49,100ボルテージを獲得する",
+            "name_en": "Gain a total of 49,100 Voltage.",
+            "effects": null
+        },
+        {
+            "name_jp": "合計96,100ボルテージを獲得する",
+            "name_en": "Gain a total of 96,100 Voltage.",
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Smile cards",
+                        "check": "attribute",
+                        "value": "smile"
+                    },
+                    "effect": {
+                        "type": "increase_base_sp_gain",
+                        "value": 1.0,
+                        "value_type": "percent",
+                        "display": "Increase base SP gain by 100%",
+                        "formatting": "Increase base SP gain by {effect}",
+                        "display_short": "SP Gain+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "SP Gain+ : Smile cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "SP特技で合計17,820ボルテージを獲得する",
+            "name_en": "Gain a total of 17,820 Voltage with SP Skills.",
+            "effects": null
+        }
+    ]
+}
