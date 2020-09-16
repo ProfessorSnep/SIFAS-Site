@@ -16,7 +16,7 @@
             <h2>Latest Event</h2>
         </div>
         <div class="col-12">
-            {% set event = (events()|reverse)|first %}
+            {% set event = (events(include_minis=True)|reverse)|first %}
             {{em.event_small_display(event)}}
         </div>
     </div>
