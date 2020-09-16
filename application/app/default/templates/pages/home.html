@@ -17,7 +17,20 @@
         </div>
         <div class="col-12">
             {% set event = (events(include_minis=True)|reverse)|first %}
-            {{em.event_small_display(event)}}
+            {% set event_link = None %}
+
+            {% if event['type'] == 'tower' %}
+            {% set event_link = 'tower/%s' % (event['tower_id']) %}
+            {% endif %}
+
+            {% if event_link %}
+            <a style="text-decoration: none; color: inherit;" href="/event/{{event_link}}">
+                {% endif %}
+                {{em.event_small_display(event)}}
+                {% if event_link %}
+            </a>
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
     <div class="row align-items-center text-center">
