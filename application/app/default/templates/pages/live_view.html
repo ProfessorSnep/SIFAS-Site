@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% set live = live_info(live_id) %}
-{% set attributes = attributes() %}
 
 {% block scripts %}
 {{super()}}
@@ -33,17 +32,20 @@
             </div>
             <div class="row d-flex justify-content-center py-2">
                 {% for mid in live['member_order'] %}
-                {% set member = member_info(mid) %}
+                {% set member = live['members']|find(id=mid|string) %}
                 <div class="col px-1 text-center" style="max-width: fit-content;">
                     <div class="row">
                         <div class="col">
-                            <img class="img-fluid" src="{{tex(member['thumbnail_asset_path'])}}" alt="" />
+                            <img class="img-fluid" src="{{tex(member['thumbnail_image_asset'])}}" alt="" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             {% if mid in live['member_centers'] %}
                             <div class="badge">CENTER</div>
+                            {% endif %}
+                            {% if mid in live['additional_members'] %}
+                            <div class="badge">EXTRA</div>
                             {% endif %}
                         </div>
                     </div>
@@ -60,7 +62,7 @@
                         {% set diff = difficulty_info(live['difficulties'][diff_type]) %}
                         <label class="btn button-{{diff_style}}">
                             <input type="radio" name="difficulties" id="{{diff_type}}" autocomplete="off">
-                            <img width="32" src="{{icon(diff['attribute'])}}" alt="" />
+                            <img width="32" src="{{tex(diff['attribute']['ui_image_asset'])}}" alt="" />
                             <span>{{diff_name}}</span>
                         </label>
                         {% endif %}

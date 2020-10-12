@@ -1,17 +1,16 @@
 {% macro expanded_card_view(card_id) %}
 {% set card = card_info(card_id) %}
-{% set attribute = attributes()[card['attribute']] %}
-{% set attrib_bg = tex(attribute['background_image_asset']) %}
+{% set attrib_bg = tex(card['attribute']['background_image_asset']) %}
 <div class="card-info">
     <div class="row justify-content-center py-2">
         <div class="col-md-6 d-flex align-items-end justify-content-xl-end justify-content-md-center">
             <span style="font-size: 1.5rem;" class="mb-0">Card No. {{card['no']}}</span>
         </div>
         <div class="col-md-6 d-flex align-items-end justify-content-xl-start justify-content-md-center">
-            <img height="32" class="px-1" src="{{member_icon(card['member_id'])}}" alt="" />
-            <img height="40" class="px-1" src="{{icon(card['rarity'])}}" alt="" />
-            <img height="32" class="px-1" src="{{icon(card['attribute'])}}" alt="" />
-            <img height="32" class="px-1" src="{{icon(card['role'])}}" alt="" />
+            <img height="32" class="px-1" src="{{tex(card['member']['icon_color_image_asset'])}}" alt="" />
+            <img height="40" class="px-1" src="{{tex(card['rarity']['ui_image_asset'])}}" alt="" />
+            <img height="32" class="px-1" src="{{tex(card['attribute']['ui_image_asset'])}}" alt="" />
+            <img height="32" class="px-1" src="{{tex(card['role']['ui_image_asset'])}}" alt="" />
             {% if card['is_fes'] %}
             <img height="28" class="px-1" src="{{icon('fes')}}" alt="FES Card" />
             {% endif %}
@@ -113,10 +112,10 @@
             <span style="font-size: 1.5rem;">#{{card['no']}}</span>
         </div>
         <div class="col-8 px-0">
-            <img height="28" class="float-right px-1" src="{{icon(card['role'])}}" alt="" />
-            <img height="28" class="float-right px-1" src="{{icon(card['attribute'])}}" alt="" />
-            <img height="28" class="float-right px-1" src="{{icon(card['rarity'])}}" alt="" />
-            <img height="28" class="float-right px-1" src="{{member_icon(card['member_id'])}}" alt="" />
+            <img height="28" class="float-right px-1" src="{{tex(card['role']['ui_image_asset'])}}" alt="" />
+            <img height="28" class="float-right px-1" src="{{tex(card['attribute']['ui_image_asset'])}}" alt="" />
+            <img height="28" class="float-right px-1" src="{{tex(card['rarity']['ui_image_asset'])}}" alt="" />
+            <img height="28" class="float-right px-1" src="{{tex(card['member']['icon_color_image_asset'])}}" alt="" />
         </div>
     </div>
     <div class="row justify-content-between">

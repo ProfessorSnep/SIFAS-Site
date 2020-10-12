@@ -30,10 +30,7 @@ def util_filter_to_unique(lst):
 
 
 def template_tex_url(path):
-    image_map = get_resource('images')
-    if path in image_map:
-        return content_endpoint(image_map[path])
-    return ''
+    return content_endpoint(path)
 
 
 def template_ui_url(resource):
@@ -43,9 +40,19 @@ def template_ui_url(resource):
     return ''
 
 
-def template_member_info(member_id):
+def template_member_info():
     member_info = get_resource('members/all')
-    return member_info[str(member_id)]
+    return member_info
+
+
+def template_group_info():
+    group_info = get_resource('members/groups')
+    return group_info
+
+
+def template_unit_info():
+    unit_info = get_resource('members/units')
+    return unit_info
 
 
 def template_member_icon_url(member_id):
@@ -63,10 +70,6 @@ def template_school_icon_url(school_id):
         'nijigasaki': 'niji'
     }[str(school_id)]
     return content_endpoint(f'm/{simg}.png')
-
-
-def template_attrib_info():
-    return get_resource('attributes')
 
 
 def template_card_info(card_id):
@@ -335,11 +338,11 @@ def filter_loc_name(obj, name='name', preferred='en'):
 
 def filter_card_classes(card):
     classes = [
-        f"card-member-{card['member_id']}",
-        f"card-school-{int(card['member_id'] / 100 + 1)}",
-        f"card-rarity-{card['rarity']}",
-        f"card-attribute-{card['attribute']}",
-        f"card-role-{card['role']}"
+        f"card-member-{card['member']['id']}",
+        f"card-group-{card['member']['group']['id']}",
+        f"card-rarity-{card['rarity']['id']}",
+        f"card-attribute-{card['attribute']['id']}",
+        f"card-role-{card['role']['id']}"
     ]
     if card['is_fes']:
         classes.append('card-fes')
@@ -365,11 +368,18 @@ def filter_epoch(time, tz=None):
     return time.strftime("%B %d, %Y %H:%M")
 
 
+def filter_find(arr, **kwargs):
+    for obj in arr:
+        for k, v in kwargs.items():
+            if k in obj and obj[k] == v:
+                return obj
+    return None
+
+
 def add_globals(app):
     app.jinja_env.globals.update({
         'tex': template_tex_url,
         'icon': template_ui_url,
-        'attributes': template_attrib_info,
         'card_info': template_card_info,
         'accessory_info': template_accessory_info,
         'live_info': template_live_info,
@@ -384,8 +394,8 @@ def add_globals(app):
         'get_card_set': template_get_card_set,
         'latest_cards': template_card_latest,
         'member_info': template_member_info,
-        'member_icon': template_member_icon_url,
-        'school_icon': template_school_icon_url,
+        'group_info': template_group_info,
+        'unit_info': template_unit_info,
         'all_card_skill_info': template_all_card_skill_info
     })
 
@@ -395,3 +405,4 @@ def add_globals(app):
     app.add_template_filter(filter_loc_name, name='loc_name')
     app.add_template_filter(filter_card_classes, name='card_classes')
     app.add_template_filter(filter_epoch, name='epoch')
+    app.add_template_filter(filter_find, name='find')
