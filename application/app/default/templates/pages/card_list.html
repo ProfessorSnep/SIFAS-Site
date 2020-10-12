@@ -168,22 +168,24 @@
         </div>
         <!-- END OF SORT BAR -->
     </div>
-    <div class="row align-items-center justify-content-center py-3 show-on-load" style="display: none;">
-        {% for cid in cards() %}
-        {% set card = card_info(cid) %}
-        {% set classes = card|card_classes %}
-        <div class="col-xl-3 col-md-auto px-5 py-3 filtered-card {{' '.join(classes)}}">
-            <a href="/card/{{cid}}" style="text-decoration: inherit; color: inherit;">
-                {{cm.thumb_card_view(cid)}}
-            </a>
-        </div>
-        {% endfor %}
-    </div>
     <div class="row text-center hide-on-load">
         <div class="col">
             <h2>Loading...</h2>
             <noscript>You must enable JavaScript to view this page.</noscript>
         </div>
+    </div>
+</div>
+<div class="container-fluid show-on-load" style="display: none;">
+    <div class="row align-items-center justify-content-center py-3 mx-2">
+        {% for cid in cards() %}
+        {% set card = card_info(cid) %}
+        {% set classes = card|card_classes %}
+        <div class="col-auto mx-3 px-3 py-3 filtered-card {{' '.join(classes)}}">
+            <a href="/card/{{cid}}" style="text-decoration: inherit; color: inherit;">
+                {{cm.thumb_card_view(cid)}}
+            </a>
+        </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock content %}
