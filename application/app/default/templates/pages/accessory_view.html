@@ -2,9 +2,9 @@
 
 {% set acc = accessory_info(acc_id) %}
 
-{% set rarity_display = acc['rarity']|upper %}
-{% set role_display = acc['role'][0]|upper + acc['role'][1:] %}
-{% set attrib_display = acc['attribute'][0]|upper + acc['attribute'][1:] %}
+{% set rarity_display = acc['rarity']['id']|upper %}
+{% set role_display = acc['role']['id'][0]|upper + acc['role']['id'][1:] %}
+{% set attrib_display = acc['attribute']['id'][0]|upper + acc['attribute']['id'][1:] %}
 
 {% set active_page = '' -%}
 {% set title = "Accessory - %s" % (acc|loc_name) %}
@@ -28,7 +28,7 @@
             {% if acc['name_en'] %}
             <h2>{{acc['name_en']}}</h2>
             {% endif %}
-            <img height="40" src="{{icon(acc['role'])}}" alt="">
+            <img height="40" src="{{tex(acc['role']['ui_image_asset'])}}" alt="">
         </div>
     </div>
     <div class="row justify-content-center">

@@ -2,7 +2,14 @@
     "difficulty_id": 10011101,
     "live_id": 10011,
     "difficulty_type": "easy",
-    "attribute": "pure",
+    "attribute": {
+        "id": "pure",
+        "color": "05c159",
+        "guest_color": "39a85d",
+        "ui_image_asset": "ui/ui_common_icon_attribute_2.png",
+        "background_image_asset": "tex/734a.jpg",
+        "thumbnail_image_asset": "tex/5047.png"
+    },
     "voltage_requirements": {
         "s": 496700,
         "a": 374500,
@@ -18,11 +25,11 @@
     "damage_per_note": 222,
     "max_appeal": 50000,
     "gimmick_effects": null,
-    "hint_jp": "【攻略ヒント】アピールチャンス中は、ピュア属性以外のスクールアイドルでノーツを処理するとアピール値\nが下がるので、編成はピュア属性のスクールアイドルを中心にしよう",
-    "hint_en": "[Hint] During Appeal Chances, tapping the Notes with a school idol of an attribute other than Pure will lower your Appeal points, so try basing your formation around the Pure attribute.",
+    "hint_jp": "【攻略ヒント】アピールチャンス中、ピュア属性以外のアピールが減少する特殊効果があるよ",
+    "hint_en": null,
     "note_gimmicks": [
         {
-            "icon_image_asset": "7e5e61",
+            "icon_image_asset": "tex/7e5e61.png",
             "effects": [
                 {
                     "note_apply": {
@@ -33,6 +40,7 @@
                     "target": {
                         "display": "Pure cards",
                         "check": "attribute",
+                        "excludes_self": false,
                         "value": "pure"
                     },
                     "effect": {
@@ -70,6 +78,7 @@
                     "target": {
                         "display": "Non-Pure cards",
                         "check": "attribute",
+                        "excludes_self": false,
                         "value": "smile,cool,active,natural,elegant"
                     },
                     "effect": {
@@ -105,6 +114,7 @@
                     "target": {
                         "display": "Non-Pure cards",
                         "check": "attribute",
+                        "excludes_self": false,
                         "value": "smile,cool,active,natural,elegant"
                     },
                     "effect": {

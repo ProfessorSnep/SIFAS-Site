@@ -2,7 +2,14 @@
     "difficulty_id": 10005101,
     "live_id": 10005,
     "difficulty_type": "easy",
-    "attribute": "active",
+    "attribute": {
+        "id": "active",
+        "color": "fe4646",
+        "guest_color": "db3e3e",
+        "ui_image_asset": "ui/ui_common_icon_attribute_4.png",
+        "background_image_asset": "tex/575c.jpg",
+        "thumbnail_image_asset": "tex/426f.png"
+    },
     "voltage_requirements": {
         "s": 448800,
         "a": 343400,
@@ -18,11 +25,11 @@
     "damage_per_note": 193,
     "max_appeal": 50000,
     "gimmick_effects": null,
-    "hint_jp": "【攻略ヒント】最初のアピールチャンスをクリアするとSPゲージが上昇するよ。SPゲージをため\nて、次のアピールチャンスでSP特技を発動させよう",
-    "hint_en": "[Hint] Clearing the first Appeal Chance will boost your SP Gauge. Save up your SP Gauge and unleash your SP Skill in the next Appeal Chance.",
+    "hint_jp": "【攻略ヒント】アピールチャンスをクリアすると、SPゲージが増加するよ",
+    "hint_en": null,
     "note_gimmicks": [
         {
-            "icon_image_asset": "6458",
+            "icon_image_asset": "tex/6458.png",
             "effects": [
                 {
                     "note_apply": {
@@ -33,6 +40,7 @@
                     "target": {
                         "display": "Active cards",
                         "check": "attribute",
+                        "excludes_self": false,
                         "value": "active"
                     },
                     "effect": {
@@ -94,6 +102,7 @@
                     "target": {
                         "display": "All",
                         "check": "all",
+                        "excludes_self": false,
                         "value": null
                     },
                     "effect": {

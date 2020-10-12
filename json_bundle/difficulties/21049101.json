@@ -1,0 +1,240 @@
+{
+    "difficulty_id": 21049101,
+    "live_id": 11049,
+    "difficulty_type": "easy",
+    "attribute": null,
+    "voltage_requirements": {
+        "s": 320000,
+        "a": 243000,
+        "b": 166000,
+        "c": 89000
+    },
+    "recommended_power": 1450,
+    "recommended_stamina": 10800,
+    "lp_needed": 10,
+    "completion_exp": 8,
+    "completion_bond": 12,
+    "sp_gauge": 3600,
+    "damage_per_note": 188,
+    "max_appeal": 50000,
+    "gimmick_effects": null,
+    "hint_jp": "【攻略ヒント】ボルテージタイプとガードタイプが有利になる特殊効果があるよ",
+    "hint_en": null,
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "tex/6f3c.png",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Gd cards",
+                        "check": "role",
+                        "excludes_self": false,
+                        "value": "gd"
+                    },
+                    "effect": {
+                        "type": "increase_appeal_percent",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase Appeal by 10%",
+                        "formatting": "Increase Appeal by {effect}",
+                        "display_short": "Appeal Up %",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Appeal Up % : Gd cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "tex/6f3c.png",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Vo cards",
+                        "check": "role",
+                        "excludes_self": false,
+                        "value": "vo"
+                    },
+                    "effect": {
+                        "type": "increase_appeal_percent",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase Appeal by 10%",
+                        "formatting": "Increase Appeal by {effect}",
+                        "display_short": "Appeal Up %",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Appeal Up % : Vo cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "tex/6458.png",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Gd cards",
+                        "check": "role",
+                        "excludes_self": false,
+                        "value": "gd"
+                    },
+                    "effect": {
+                        "type": "increase_skill_activation",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase Skill activation chance by 20%",
+                        "formatting": "Increase Skill activation chance by {effect}",
+                        "display_short": "Skill Activation Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Skill Activation Up : Gd cards / # Notes"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計18,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Vo/Gd cards",
+                        "check": "role",
+                        "excludes_self": false,
+                        "value": "vo,gd"
+                    },
+                    "effect": {
+                        "type": "increase_base_appeal",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase base Appeal by 20%",
+                        "formatting": "Increase base Appeal by {effect}",
+                        "display_short": "Appeal+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal+ : Vo/Gd cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "特技を3回発動する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Vo/Gd cards",
+                        "check": "role",
+                        "excludes_self": false,
+                        "value": "vo,gd"
+                    },
+                    "effect": {
+                        "type": "increase_base_skill_activation",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase base Skill activation chance by 10%",
+                        "formatting": "Increase base Skill activation chance by {effect}",
+                        "display_short": "Skill Activation+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Skill Activation+ : Vo/Gd cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計14,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Vo/Gd cards",
+                        "check": "role",
+                        "excludes_self": false,
+                        "value": "vo,gd"
+                    },
+                    "effect": {
+                        "type": "increase_base_appeal",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase base Appeal by 20%",
+                        "formatting": "Increase base Appeal by {effect}",
+                        "display_short": "Appeal+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal+ : Vo/Gd cards / AC End"
+                }
+            ]
+        }
+    ]
+}

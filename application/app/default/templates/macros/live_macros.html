@@ -1,7 +1,7 @@
 {% macro thumb_live_view(live_id) %}
 {% set live = live_info(live_id) %}
 {% set diffs = {'easy': {'n': 'E', 'c': 'primary'}, 'normal': {'n': 'N', 'c': 'success'}, 'advanced': {'n': 'A', 'c': 'warning'}, 'advanced_plus': {'n': 'A+', 'c': 'danger'}} %}
-<div class="live-view song-group-{{live['group']}}">
+<div class="live-view song-group-{{live['group']['id']}}">
     <div class="row align-content-center">
         <div class="col text-left">
             <div class="row p-1 h-100">
@@ -33,11 +33,12 @@
             <div class="col-12">
                 {% if show_live_heading %}
                 <img height="200" src="{{tex(diff_live['jacket_image_asset'])}}" alt="">
-                <h3><img height="32" src="{{icon(diff['attribute'])}}" alt="" /> {{diff_live|loc_name}}
+                <h3><img height="32" src="{{tex(diff['attribute']['ui_image_asset'])}}" alt="" />
+                    {{diff_live|loc_name}}
                 </h3>
                 <span style="font-size: 1.4rem;"><strong>{{diff_name}}</strong></span>
                 {% else %}
-                <h3><img height="32" src="{{icon(diff['attribute'])}}" alt="" /> {{diff_name}}
+                <h3><img height="32" src="{{tex(diff['attribute']['ui_image_asset'])}}" alt="" /> {{diff_name}}
                 </h3>
                 {% endif %}
             </div>

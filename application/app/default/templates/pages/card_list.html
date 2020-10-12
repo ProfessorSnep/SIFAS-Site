@@ -6,10 +6,12 @@
 
 {% block scripts %}
 {{super()}}
-<script src="{{url_for('.static', filename='js/card_list.js')}}?v=1.0.4"></script>
+<script src="{{url_for('.static', filename='js/card_list.js')}}?v=1.0.5"></script>
 {% endblock scripts %}
 
 {% set card_skills = all_card_skill_info() %}
+{% set members = member_info() %}
+{% set groups = group_info() %}
 
 {% block content %}
 <button id="back-to-top" class="btn btn-primary"
@@ -27,13 +29,12 @@
             <!-- START OF MEMBER SORT ROW -->
             <div class="row align-items-center justify-content-center py-3">
                 <div class="col-auto">
-                    {% for i in range(3) %}
+                    {% for group in groups.values() %}
                     <div class="row my-3 justify-content-center">
-                        {% for j in range(9 if i != 2 else 10) %}
-                        {% set mid = i * 100 + j + 1 %}
+                        {% for member in members.values()|selectattr('group.id', 'equalto', group['id']) %}
                         <div class="col px-1 py-1">
-                            <div class="fake-link member-filter" member-id="{{mid}}"><img height="36"
-                                    src="{{member_icon(mid)}}" alt="" /></div>
+                            <div class="fake-link member-filter" member-id="{{member['id']}}"><img height="36"
+                                    src="{{tex(member['icon_color_image_asset'])}}" alt="" /></div>
                         </div>
                         {% endfor %}
                     </div>
@@ -41,10 +42,10 @@
                 </div>
                 <div class="col-md-2 col-12">
                     <div class="row justify-content-center">
-                        {% for school in [1, 2, 3] %}
+                        {% for group in groups.values() %}
                         <div class="col-md-12 col-4 my-2">
-                            <div class="fake-link school-filter" school-id="{{school}}"><img height="36"
-                                    src="{{school_icon(school)}}" alt="" /></div>
+                            <div class="fake-link group-filter" group-id="{{group['id']}}"><img height="36"
+                                    src="{{tex(group['logo_image_asset'])}}" alt="" /></div>
                         </div>
                         {% endfor %}
                     </div>

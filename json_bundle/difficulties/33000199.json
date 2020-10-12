@@ -1,0 +1,113 @@
+{
+    "difficulty_id": 33000199,
+    "live_id": 12006,
+    "difficulty_type": "normal",
+    "attribute": {
+        "id": "cool",
+        "color": "00aeff",
+        "guest_color": "0099ee",
+        "ui_image_asset": "ui/ui_common_icon_attribute_3.png",
+        "background_image_asset": "tex/7352.jpg",
+        "thumbnail_image_asset": "tex/4853.png"
+    },
+    "voltage_requirements": {
+        "s": 2309000,
+        "a": 1910000,
+        "b": 1511000,
+        "c": 1111000
+    },
+    "recommended_power": 8500,
+    "recommended_stamina": 79800,
+    "lp_needed": 16,
+    "completion_exp": 13,
+    "completion_bond": 16,
+    "sp_gauge": 4800,
+    "damage_per_note": 594,
+    "max_appeal": 50000,
+    "gimmick_effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 1.0,
+                "limit": 0
+            },
+            "target": {
+                "display": "Non-Cool cards",
+                "check": "attribute",
+                "excludes_self": false,
+                "value": "smile,pure,active,natural,elegant"
+            },
+            "effect": {
+                "type": "decrease_appeal",
+                "value": 0.05,
+                "value_type": "percent",
+                "display": "Decrease Appeal by 5%",
+                "formatting": "Decrease Appeal by {effect}",
+                "display_short": "Appeal Down",
+                "until": {
+                    "type": "live_end",
+                    "display": "until Live ends",
+                    "formatting": "until Live ends",
+                    "display_short": "Live end",
+                    "value": 0,
+                    "value_type": null
+                }
+            },
+            "short_display": "Appeal Down : Non-Cool cards / Live end (Live Start)"
+        }
+    ],
+    "hint_jp": "【攻略ヒント】SPゲージが上昇するギミックノーツをタイミングよく処理してゲージをため、SP特技を発動させよう",
+    "hint_en": null,
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "tex/6066.png",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_sp_percent",
+                        "value": 0.5,
+                        "value_type": "percent",
+                        "display": "Gain 50% of SP capacity as SP Gauge",
+                        "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                        "display_short": "SP %Fill",
+                        "until": null
+                    },
+                    "short_display": "SP %Fill"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計127,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": null
+        },
+        {
+            "name_jp": "合計135,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": null
+        },
+        {
+            "name_jp": "合計143,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": null
+        },
+        {
+            "name_jp": "合計111,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": null
+        }
+    ]
+}

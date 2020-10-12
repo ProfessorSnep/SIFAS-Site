@@ -1,16 +1,14 @@
 {% extends 'base.html' %}
 
 {% set card = card_info(card_id) %}
-{% set member = member_info(card['member_id']) %}
-{% set attribute = attributes()[card['attribute']] %}
-{% set attrib_bg = tex(attribute['background_image_asset']) %}
+{% set attrib_bg = tex(card['attribute']['background_image_asset']) %}
 
-{% set rarity_display = card['rarity']|upper %}
-{% set role_display = card['role'][0]|upper + card['role'][1:] %}
-{% set attrib_display = card['attribute'][0]|upper + card['attribute'][1:] %}
+{% set rarity_display = card['rarity']['id']|upper %}
+{% set role_display = card['role']['id'][0]|upper + card['role']['id'][1:] %}
+{% set attrib_display = card['attribute']['id'][0]|upper + card['attribute']['id'][1:] %}
 
 {% set active_page = '' -%}
-{% set title = "Card - %s %s" % (card['appearance']['idolized']|loc_name, member|loc_name) %}
+{% set title = "Card - %s %s" % (card['appearance']['idolized']|loc_name, card['member']|loc_name) %}
 {% set description = 'Card #%d (%s) - %s Type, %s.' % (card['no'], rarity_display, role_display, attrib_display) %}
 {% set embed_image = tex(card['appearance']['idolized']['thumbnail_image_asset']) %}
 
@@ -32,10 +30,10 @@
                     <h2 class="mb-0">Card No. {{card['no']}}</h5>
                 </div>
                 <div class="col-auto d-flex align-items-end justify-content-xl-start justify-content-md-center">
-                    <img height="32" class="px-1" src="{{member_icon(card['member_id'])}}" alt="" />
-                    <img height="40" class="px-1" src="{{icon(card['rarity'])}}" alt="" />
-                    <img height="32" class="px-1" src="{{icon(card['attribute'])}}" alt="" />
-                    <img height="32" class="px-1" src="{{icon(card['role'])}}" alt="" />
+                    <img height="32" class="px-1" src="{{tex(card['member']['icon_color_image_asset'])}}" alt="" />
+                    <img height="40" class="px-1" src="{{tex(card['rarity']['ui_image_asset'])}}" alt="" />
+                    <img height="32" class="px-1" src="{{tex(card['attribute']['ui_image_asset'])}}" alt="" />
+                    <img height="32" class="px-1" src="{{tex(card['role']['ui_image_asset'])}}" alt="" />
                     {% if card['is_fes'] %}
                     <img height="40" class="px-1" src="{{icon('fes')}}" alt="FES Card" />
                     {% endif %}

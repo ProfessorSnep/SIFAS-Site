@@ -31,7 +31,7 @@ $('.member-filter').click(function(e) {
     var ms = '.card-member-' + memberId;
 
     $('.member-filter.img-hl').removeClass('img-hl');
-    $('.school-filter.img-hl').removeClass('img-hl');
+    $('.group-filter.img-hl').removeClass('img-hl');
     if (window.memberFilterSelector !== ms) {
         window.memberFilterSelector = ms;
         $(this).addClass('img-hl');
@@ -41,13 +41,13 @@ $('.member-filter').click(function(e) {
     updateFilter();
 });
 
-$('.school-filter').click(function(e) {
+$('.group-filter').click(function(e) {
     e.preventDefault();
-    var memberId = $(this).attr('school-id');
-    var ms = '.card-school-' + memberId;
+    var memberId = $(this).attr('group-id');
+    var ms = '.card-group-' + memberId;
 
     $('.member-filter.img-hl').removeClass('img-hl');
-    $('.school-filter.img-hl').removeClass('img-hl');
+    $('.group-filter.img-hl').removeClass('img-hl');
     if (window.memberFilterSelector !== ms) {
         window.memberFilterSelector = ms;
         $(this).addClass('img-hl');
