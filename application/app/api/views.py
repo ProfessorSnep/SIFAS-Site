@@ -9,11 +9,13 @@ api = Blueprint('api', __name__, url_prefix='/api/v1')
 def api_home():
     return jsonify("Hello World! Documentation soon(tm)")
 
-
+@api.route('/<resource_type>/<resource>/<addl_path>')
 @api.route('/<resource_type>/<resource>')
 @api.route('/<resource>')
-def request_resource(resource_type=None, resource=None):
-    if resource_type:
+def request_resource(resource_type=None, resource=None, addl_path=None):
+    if addl_path:
+        obj = storage_util.request_json(resource_type, resource, addl_path)
+    elif resource_type:
         obj = storage_util.request_json(resource_type, resource)
     else:
         obj = storage_util.request_json(resource)

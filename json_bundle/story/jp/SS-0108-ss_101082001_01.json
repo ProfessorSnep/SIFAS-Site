@@ -1,0 +1,765 @@
+{
+    "resource_source": {
+        "resource": [
+            "NovelKit/ProductAdvObjectBg",
+            "NovelKit/ProductAdvObject2D",
+            "NovelKit/ProductAdvObject2DSub",
+            "NovelKit/ProductAdvObjectCg"
+        ],
+        "sound": [],
+        "script": [],
+        "definition": [
+            "Scenarios/ConstantValues/llas_constants",
+            "Scenarios/ConstantValues/llas_character_constants",
+            "Scenarios/ConstantValues/llas_bg_constants",
+            "Scenarios/ConstantValues/llas_sound_constants",
+            "Scenarios/ConstantValues/llas_character_preset",
+            "Scenarios/ConstantValues/llas_character_facial"
+        ]
+    },
+    "preload": {
+        "ui": [
+            "label|0|1|2|3|4"
+        ],
+        "icon": [
+            "aqours|5|6|7|8|9|10|11|12|13|14|15|16"
+        ],
+        "ch": [
+            "108 15|17|18",
+            "103 6|19|20"
+        ],
+        "bg": [
+            "22"
+        ],
+        "cg": [
+            "21"
+        ],
+        "sp": [],
+        "phoneicon": []
+    },
+    "markers": {
+        "jump": {},
+        "other": {}
+    },
+    "commands": [
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "wait_for_load"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|22"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.5"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "unknown_backeffection",
+            "backeffection_args": "enable"
+        },
+        {
+            "command": "unknown_plane",
+            "plane_arg": "3 clip 100% 0"
+        },
+        {
+            "command": "unknown_plane",
+            "plane_arg": "3 clip 100% 160 0.5"
+        },
+        {
+            "command": "unknown_plane",
+            "plane_arg": "3 frame horizontal single"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "load",
+            "load_args": "empty"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "color",
+            "background_args": [
+                "#00000080"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "show"
+        },
+        {
+            "command": "unknown_se",
+            "se_arg": "1 blur 1 0.5"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "plane",
+            "character_args": [
+                "3"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "108",
+            "visual_outfit": "15"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "100",
+            "pos_y": "-290"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "scale",
+            "scale_x": 1.9,
+            "scale_y": 1.9
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "plane",
+            "character_args": [
+                "3"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "visual",
+            "visual_character": "103",
+            "visual_outfit": "6"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "-125",
+            "pos_y": "-315"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "scale",
+            "scale_x": 2.0,
+            "scale_y": 2.0
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "鞠莉",
+            "line": "果南……あなたの背中、とてもあったかい……",
+            "voice_idx": "0",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "果南",
+            "line": "こら、耳元でしゃべるな。ぞわっとするでしょ",
+            "voice_idx": "1",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.2
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 2"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "鞠莉",
+            "line": "いやーん、果南は耳がウィークポイントなのね！",
+            "voice_idx": "3",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "0.2",
+                "/-3",
+                "/-2"
+            ]
+        },
+        {
+            "command": "set_label",
+            "label_value": "@mari"
+        },
+        {
+            "command": "speak",
+            "speaker": "鞠莉",
+            "line": "ふぅ～",
+            "voice_idx": "4",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.4
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "果南",
+            "line": "ぎゃっ！　やめてってば！　<br/>もー、怪我人なんだから大人しくしててよ",
+            "voice_idx": "5",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "果南",
+            "line": "もうおぶってあげないからね！　下ろすからね！",
+            "voice_idx": "6",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "3"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "1",
+                "5"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "1",
+                "3"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "鞠莉",
+            "line": "それはイヤ～",
+            "voice_idx": "7",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 1"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 0"
+        },
+        {
+            "command": "music",
+            "args": "8"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "1 load card|21"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "1 scale 1.1 1.1"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "1 show 0.5"
+        },
+        {
+            "command": "wait",
+            "duration": 0.7
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "set_label",
+            "label_value": "@kanan"
+        },
+        {
+            "command": "speak",
+            "speaker": "果南",
+            "line": "全く……石段の途中で転んだ上に捻挫なんて。<br/>初めて登る所じゃないんだから、しっかりしてよ",
+            "voice_idx": "9",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "1 shake x 1 4"
+        },
+        {
+            "command": "set_label",
+            "label_value": "@mari"
+        },
+        {
+            "command": "speak",
+            "speaker": "鞠莉",
+            "line": "むー。ビギナーでもベテランでも、<br/>この石段をクリアするのはベリーハードだと思うわよ？　<br/>一段一段の大きさが不揃いだし、ごつごつしてるしっ",
+            "voice_idx": "10",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.0
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "1 stopshake"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "set_label",
+            "label_value": "@kanan"
+        },
+        {
+            "command": "speak",
+            "speaker": "果南",
+            "line": "競争デース☆　なんて言って走り出さなきゃ<br/>ビギナーだろうと転ばないよ。ライブを控えた時期だったら<br/>大騒ぎする事態なんだからね。分かってる？",
+            "voice_idx": "11",
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "@mari"
+        },
+        {
+            "command": "speak",
+            "speaker": "鞠莉",
+            "line": "……ごめんなさい",
+            "voice_idx": "12",
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "@kanan"
+        },
+        {
+            "command": "speak",
+            "speaker": "果南",
+            "line": "うむ。以後気を付けるように",
+            "voice_idx": "13",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 load card|21"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 pos 270 70"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 scale @size_l2"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 show 0.4"
+        },
+        {
+            "command": "set_label",
+            "label_value": "@kanan"
+        },
+        {
+            "command": "speak",
+            "speaker": "果南",
+            "line": "……そういえば、<br/>小さい頃もこうやって鞠莉をおぶって帰ったことがあったね",
+            "voice_idx": "14",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "3 load card|21"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "3 pos 200 -180"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "3 scale @size_l2"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "3 show 0.4"
+        },
+        {
+            "command": "set_label",
+            "label_value": "@mari"
+        },
+        {
+            "command": "speak",
+            "speaker": "鞠莉",
+            "line": "そんなことあったかしら？",
+            "voice_idx": "15",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "3 hide 0.4"
+        },
+        {
+            "command": "wait",
+            "duration": 0.4
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 shake x 1 4"
+        },
+        {
+            "command": "set_label",
+            "label_value": "@kanan"
+        },
+        {
+            "command": "speak",
+            "speaker": "果南",
+            "line": "あー、忘れたな、薄情者め。<br/>石段じゃなかったけど、今回と同じで走り出した鞠莉が転んで……<br/>あの時は確か、膝を擦りむいたんだよ",
+            "voice_idx": "16",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.0
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 stopshake"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "set_label",
+            "label_value": "@kanan"
+        },
+        {
+            "command": "speak",
+            "speaker": "果南",
+            "line": "座り込んだまま痛い痛いって泣くから……<br/>仕方なく私が家までおんぶしてあげたの",
+            "voice_idx": "17",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "3 show 0.4"
+        },
+        {
+            "command": "wait",
+            "duration": 0.4
+        },
+        {
+            "command": "set_label",
+            "label_value": "@mari"
+        },
+        {
+            "command": "speak",
+            "speaker": "鞠莉",
+            "line": "ああ……思い出したわ",
+            "voice_idx": "18",
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "@mari"
+        },
+        {
+            "command": "speak",
+            "speaker": "鞠莉",
+            "line": "果南と遊べたことが嬉しくてたまらなくて、走り出したのね。<br/>転んで痛かったけど、果南の背中があったかくて……",
+            "voice_idx": "19",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 hide 0"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "3 hide 0.4"
+        },
+        {
+            "command": "wait",
+            "duration": 0.4
+        },
+        {
+            "command": "set_label",
+            "label_value": "@mari"
+        },
+        {
+            "command": "speak",
+            "speaker": "鞠莉",
+            "line": "変わらないわね、果南。<br/>あの頃と同じであなたの背中は私を安心させてくれる",
+            "voice_idx": "20",
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "@kanan"
+        },
+        {
+            "command": "speak",
+            "speaker": "果南",
+            "line": "……鞠莉は変わったね",
+            "voice_idx": "21",
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "@mari"
+        },
+        {
+            "command": "speak",
+            "speaker": "鞠莉",
+            "line": "え……そう？　どこが？",
+            "voice_idx": "22",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 scale 1.1 1.1"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 show 0"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 material NegativePosition"
+        },
+        {
+            "command": "music",
+            "args": "stop"
+        },
+        {
+            "command": "speak",
+            "speaker": "果南",
+            "line": "重くなった",
+            "voice_idx": "23",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 hide 0.5"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.5"
+        },
+        {
+            "command": "music",
+            "args": "24"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "speak",
+            "speaker": "鞠莉",
+            "line": "なっ！　そこはビューティになったって言うところでしょ～！　<br/>かな～～ん！！",
+            "voice_idx": "25",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "2"
+        }
+    ]
+}

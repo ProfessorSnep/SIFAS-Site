@@ -1,0 +1,335 @@
+{% extends 'base.html' %}
+
+{% set active_page = 'stories' -%}
+{% set title = "Stories" %}
+{% set description = "List of all SIFAS stories" %}
+
+{% set directory = stories() %}
+
+{% set header = {'h1': "Story List", 'h2': None, 'h3': None} %}
+{% set display_type = None %}
+
+{% if story_type == 'main' %}
+{# MAIN STORY #}
+{% if header.update({'h1': "Main Story"}) %}{% endif %}
+{% set display_type = 'main_part_list' %}
+{% set description = 'SIFAS Main Story' %}
+
+{% set dir_part = directory['main']|find(part_id=story_sel) %}
+{% if dir_part %}
+{# Part Selected #}
+{% if header.update({'h2': dir_part|loc_name('title')}) %}{% endif %}
+{% set display_type = 'main_chapter_list' %}
+{% set description = 'List of all chapters in the SIFAS Main Story (%s)' % (dir_part|loc_name('title')) %}
+{% set embed_image = tex(dir_part['still_image_asset']) %}
+
+{% set dir_chapter = dir_part['chapters']|find(chapter_id=story_addl) %}
+{% if dir_chapter %}
+{# Chapter Selected #}
+{% if header.update({'h3': dir_chapter|loc_name('title')}) %}{% endif %}
+{% set display_type = 'main_episode_list' %}
+{% set description = 'List of all episodes in Chapter %s of the Main Story, "%s"' % (dir_chapter['chapter_id'], dir_chapter|loc_name('description')) %}
+{% set embed_image = tex(dir_chapter['thumbnail_image_asset']) %}
+{# End Chapter Selected #}
+{% endif %}
+{# End Part Selected #}
+{% endif %}
+
+{# END MAIN STORY #}
+{% elif story_type == 'member' %}
+{# MEMBER STORY #}
+{% if header.update({'h1': "Member Stories"}) %}{% endif %}
+{% set display_type = 'member_list' %}
+{% set description = "List of member stories in SIFAS" %}
+
+{% set members = member_info() %}
+
+{% set cur_member = members[story_sel] %}
+{% if cur_member %}
+{# Member Selected #}
+{% if header.update({'h2': cur_member|loc_name}) %}{% endif %}
+{% set display_type = 'member_type_list' %}
+{% set description = "SIFAS Member stories for %s" % (cur_member|loc_name) %}
+{% set embed_image = tex(cur_member['thumbnail_image_asset']) %}
+
+{% if story_addl and story_addl in directory %}
+{# Story Type Selected #}
+{% set dir_member = directory[story_addl][cur_member['id']] %}
+
+{% if story_addl == 'bond' %}
+{# Bond Story #}
+{% if header.update({'h3': "Bond Stories"}) %}{% endif %}
+{% set display_type = 'member_bond_list' %}
+{% set description = "SIFAS Bond stories for %s" % (cur_member|loc_name) %}
+{# End Bond Story #}
+{% elif story_addl == 'card' %}
+{# Card Story #}
+{% if header.update({'h3': "Card Stories"}) %}{% endif %}
+{% set display_type = 'member_card_list' %}
+{% set description = "SIFAS Card side stories for %s" % (cur_member|loc_name) %}
+{# End Card Story #}
+{% endif %}
+{# End Story Type Selected #}
+{% endif %}
+{# End Member Selected #}
+{% endif %}
+
+{# END MEMBER STORY #}
+{% elif story_type == 'event' %}
+{# EVENT STORY #}
+{% if header.update({'h1': "Event Stories"}) %}{% endif %}
+{% set display_type = 'event_list' %}
+{% set description = "List of SIFAS event stories" %}
+
+{% set event_info_list = events() %}
+{% if story_sel %}
+{# Event Selected #}
+{% set cur_event = event_info_list|find(event_id=story_sel) %}
+{% set dir_event = directory['event']|find(event_id=story_sel) %}
+{% if header.update({'h2': cur_event|loc_name}) %}{% endif %}
+{% set display_type = 'event_stories_list' %}
+{% set description = 'SIFAS Event story chapters for "%s"' % (cur_event|loc_name) %}
+{% set embed_image = tex(dir_event['banner_image_asset']) %}
+{# End Event Selected #}
+{% endif %}
+
+{# END EVENT STORY #}
+{% endif %}
+
+{% set back_url = None %}
+{% if story_type %}
+{% set title = "%s" % (header['h1']) %}
+{% set back_url = '/stories/' %}
+{% if story_sel %}
+{% set title = "%s - %s" % (header['h1'], header['h2']) %}
+{% set back_url = '/stories/%s' % (story_type) %}
+{% if story_addl %}
+{% set title = "%s - %s - %s" % (header['h1'], header['h2'], header['h3']) %}
+{% set back_url = '/stories/%s/%s' % (story_type, story_sel) %}
+{% endif %}
+{% endif %}
+{% endif %}
+
+{% block content %}
+<div class="container justify-content-center text-center">
+    <!-- HEADER -->
+    <div class="row text-center py-1">
+        <div class="col">
+            <h1>{{header['h1']}}</h1>
+            {% if header['h2'] %}
+            <h2>{{header['h2']}}</h2>
+            {% endif %}
+            {% if header['h3'] %}
+            <h3>{{header['h3']}}</h3>
+            {% endif %}
+        </div>
+    </div>
+    {% if back_url %}
+    <div class="row text-center py-2">
+        <div class="col">
+            <a href="{{back_url}}" class="btn btn-primary">Back</a>
+        </div>
+    </div>
+    {% endif %}
+    {% if not story_type %}
+    <!-- DEFAULT -->
+    <div class="row text-center py-1">
+        <div class="col">
+            <div class="p-2">
+                <a href="/stories/main/" class="btn btn-block btn-primary p-5">Main Story</a>
+            </div>
+            <div class="p-2">
+                <a href="/stories/member/" class="btn btn-block btn-secondary p-5">Member Stories</a>
+            </div>
+            <div class="p-2">
+                <a href="/stories/event/" class="btn btn-block btn-info p-5">Event Stories</a>
+            </div>
+        </div>
+    </div>
+    {% elif story_type == 'main' %}
+    <!-- MAIN STORY -->
+    <div class="row text-center justify-content-center py-1">
+        {% if display_type == 'main_part_list' %}
+        {% for part in directory['main'] %}
+        <div class="col-md-6 col-12 p-2">
+            <a href="/stories/main/{{part['part_id']}}/" class="link-object">
+                <div>
+                    <h4>{{part|loc_name('title')}}</h4>
+                    <img class="img-fluid" style="max-height: 300px;" src="{{tex(part['still_image_asset'])}}" alt="">
+                </div>
+                {% if part|loc_name('description') %}
+                <div>
+                    <span>{{part|loc_name('description')}}</span>
+                </div>
+                {% endif %}
+            </a>
+        </div>
+        {% endfor %}
+        {% elif display_type == 'main_chapter_list' %}
+        {% for chapter in dir_part['chapters'] %}
+        <div class="col-lg-4 col-auto p-3">
+            <a href="/stories/main/{{dir_part['part_id']}}/{{chapter['chapter_id']}}" class="link-object">
+                <div class="row">
+                    <div class="col">
+                        <h4>{{chapter|loc_name('title')}}</h4>
+                        <img class="img-fluid" src="{{tex(chapter['thumbnail_image_asset'])}}" alt="" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span>{{chapter|loc_name('description')}}</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+        {% elif display_type == 'main_episode_list' %}
+        {% for episode in dir_chapter['episodes'] %}
+        <div class="col-lg-6 col-12 p-3">
+            <div class="row text-sm-left text-center">
+                <div class="col">
+                    <h4>{{episode|loc_name('index')}}</h4>
+                    <h5>{{episode|loc_name('title')}}</h4>
+                </div>
+            </div>
+            <div class="row text-sm-left text-center">
+                <div class="col-sm-auto col-12">
+                    <img height="200" src="{{tex(episode['thumbnail_image_asset'])}}" alt="" />
+                </div>
+                <div class="col-sm col-12">
+                    <div class="row">
+                        <div class="col">
+                            <span>{{episode|loc_name('summary')}}</span>
+                        </div>
+                    </div>
+                    <div class="row text-right py-4">
+                        <div class="col">
+                            <span>Transcripts: </span>
+                            <a href="/transcript/jp/{{episode['script_path']}}" class="btn btn-success">日本語</a>
+                            {% if episode['on_global'] %}
+                            <a href="/transcript/en/{{episode['script_path']}}" class="btn btn-info">English</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    {% elif story_type == 'member' %}
+    <!-- MEMBER STORY -->
+    <div class="row text-center justify-content-center py-1">
+        {% if display_type == 'member_list' %}
+        <div class="col">
+            {% set groups = group_info() %}
+            {% for group in groups.values() %}
+            <div class="row my-3 justify-content-center">
+                {% for member in members.values()|selectattr('group.id', 'equalto', group['id']) %}
+                <div class="col p-1">
+                    <a href="/stories/member/{{member['id']}}" class="link-object">
+                        <img width="100" src="{{tex(member['thumbnail_image_asset'])}}" alt="" />
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+        {% elif display_type == 'member_type_list' %}
+        <div class="col py-2">
+            <div>
+                <img src="{{tex(cur_member['thumbnail_image_asset'])}}" alt="">
+            </div>
+            <div class="py-2">
+                <a href="/stories/member/{{cur_member['id']}}/bond" class="btn btn-lg btn-secondary">Bond Stories</a>
+                <a href="/stories/member/{{cur_member['id']}}/card" class="btn btn-lg btn-secondary">Card Stories</a>
+            </div>
+            <div>
+                <img src="{{tex(cur_member['autograph_image_asset'])}}" alt="">
+            </div>
+        </div>
+        {% elif display_type == 'member_bond_list' %}
+        {% for story in dir_member %}
+        <div class="col-12 m-2">
+            <div class="row text-md-left text-center">
+                <div class="col-md-auto col-12">
+                    <img class="img-fluid" src="{{tex(story['card_image_asset'])}}" alt="" />
+                    <div>Requires Bond Level {{story['required_bond']}}</div>
+                </div>
+                <div class="col my-2">
+                    <div class="row">
+                        <div class="col">
+                            <h4>{{story|loc_name('title')}}</h4>
+                            <caption>{{story|loc_name('description')}}</caption>
+                        </div>
+                    </div>
+                    <div class="row text-right py-4">
+                        <div class="col">
+                            <span>Transcripts: </span>
+                            <a href="/transcript/jp/{{story['script_path']}}" class="btn btn-success">日本語</a>
+                            {% if story['on_global'] %}
+                            <a href="/transcript/en/{{story['script_path']}}" class="btn btn-info">English</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% elif display_type == 'member_card_list' %}
+        {% for story in dir_member %}
+        <div class="col-auto py-3">
+            <div class="row">
+                <div class="col">
+                    <h5>{{story|loc_name('title')}}</h5>
+                    <img class="img-fluid" src="{{tex(story['card_image_asset'])}}" alt="" />
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col text-right">
+                    <span>Transcripts: </span>
+                    <a href="/transcript/jp/{{story['script_path']}}" class="btn btn-success">日本語</a>
+                    {% if story['on_global'] %}
+                    <a href="/transcript/en/{{story['script_path']}}" class="btn btn-info">English</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    {% elif story_type == 'event' %}
+    <!-- EVENT STORY -->
+
+    <div class="row text-center justify-content-center py-1">
+        {% if display_type == 'event_list' %}
+        {% for event in directory['event'] %}
+        {% set event_info = event_info_list|find(event_id=event['event_id']) %}
+        <div class="col-auto py-3">
+            <a href="/stories/event/{{event['event_id']}}" class="link-object">
+                <h4>{{event_info|loc_name}}</h4>
+                <img class="img-fluid" src="{{tex(event['banner_image_asset'])}}" alt="Event Banner">
+            </a>
+        </div>
+        {% endfor %}
+        {% elif display_type == 'event_stories_list' %}
+        {% for story in dir_event['stories'] %}
+        <div class="col-auto py-2">
+            <div>
+                <h4>{{story|loc_name('title')}}</h4>
+                <img class="img-fluid" src="{{tex(story['detail_image_asset'])}}">
+            </div>
+            <div class="text-right py-2">
+                <span>Transcripts: </span>
+                <a href="/transcript/jp/{{story['script_path']}}" class="btn btn-success">日本語</a>
+                {% if story['on_global'] %}
+                <a href="/transcript/en/{{story['script_path']}}" class="btn btn-info">English</a>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}

@@ -1,5 +1,5 @@
-from flask import Blueprint, Response, render_template
 import requests
+from flask import Blueprint, Response, render_template
 
 default = Blueprint('default', __name__, template_folder="templates", static_folder="static",
                     static_url_path="")
@@ -50,3 +50,22 @@ def live_list():
 @default.route('/accessories/')
 def acc_list():
     return render_template('pages/accessory_list.html')
+
+# main: /stories/main/[part]/[chapter]
+# bond|card: /stories/member/[mid]/(bond|card)
+# event: /stories/event/[eid]
+@default.route('/stories/<story_type>/<story_sel>/<story_addl>/')
+@default.route('/stories/<story_type>/<story_sel>/')
+@default.route('/stories/<story_type>/')
+@default.route('/stories/')
+def story_list(story_type=None, story_sel=None, story_addl=None):
+    if story_type and story_type not in ['main', 'member', 'event']:
+        return Response(404)
+    return render_template('pages/story_list.html', story_type=story_type, story_sel=story_sel, story_addl=story_addl)
+
+
+@default.route('/transcript/<lang>/<script_path>')
+def story_transcript(lang, script_path):
+    if lang not in ['en', 'jp']:
+        return Response(404)
+    return render_template('/pages/story/transcript.html', lang=lang, script_path=script_path)
