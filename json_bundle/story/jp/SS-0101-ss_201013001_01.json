@@ -1,0 +1,1034 @@
+{
+    "resource_source": {
+        "resource": [
+            "NovelKit/ProductAdvObjectBg",
+            "NovelKit/ProductAdvObject2D",
+            "NovelKit/ProductAdvObject2DSub",
+            "NovelKit/ProductAdvObjectCg"
+        ],
+        "sound": [],
+        "script": [],
+        "definition": [
+            "Scenarios/ConstantValues/llas_constants",
+            "Scenarios/ConstantValues/llas_character_constants",
+            "Scenarios/ConstantValues/llas_bg_constants",
+            "Scenarios/ConstantValues/llas_sound_constants",
+            "Scenarios/ConstantValues/llas_character_preset",
+            "Scenarios/Macro/llas_voice_effect",
+            "Scenarios/ConstantValues/llas_unique_dress",
+            "Scenarios/ConstantValues/llas_character_facial"
+        ]
+    },
+    "preload": {
+        "ui": [
+            "label|0|1|2|3|4"
+        ],
+        "icon": [
+            "muse|5|6|7|8|9|10|11|12|13|14|15|16",
+            "aqours|17|18|19|20|21|22|23|24|25|14|26|16",
+            "niji|27|28|29|30|31|32|33|34|35|36|14|37|16"
+        ],
+        "ch": [
+            "101 23001|38|39"
+        ],
+        "bg": [
+            "40",
+            "41"
+        ],
+        "cg": [
+            "42"
+        ],
+        "sp": [],
+        "phoneicon": []
+    },
+    "markers": {
+        "jump": {
+            "#select_1": 73,
+            "#select_2": 77,
+            "#main_1": 81
+        },
+        "other": {}
+    },
+    "commands": [
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "wait_for_load"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|40"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "load",
+            "load_args": "default|40"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "scale",
+            "scale_x": 1.4,
+            "scale_y": 1.4
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "pos",
+            "background_args": [
+                "/200",
+                "/0"
+            ]
+        },
+        {
+            "command": "unknown_volume",
+            "volume_args": "ambient 6 0"
+        },
+        {
+            "command": "sound",
+            "args": "ambient 0"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep bg2_move"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "move",
+            "background_args": [
+                "-",
+                "-",
+                "10.0",
+                "/70",
+                "/0"
+            ]
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Slanting"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.5"
+        },
+        {
+            "command": "wait",
+            "duration": 3.0
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 1.4
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end bg2_move"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "101",
+            "visual_outfit": "23001"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "わぁ……すごく綺麗だね。<br/>今日は千歌ちゃんのお気に入りの場所を<br/>たくさん案内してくれてありがとう",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "1.5",
+                "4"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "えへへ。<br/>あなたにはいつも、元気をもらってるから、お返しがしたくって。<br/>こちらこそ、付き合ってくれてありがとうだよー",
+            "voice_idx": "1",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep volume_down"
+        },
+        {
+            "command": "unknown_volume",
+            "volume_args": "ambient 0 3.0"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip disable"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.6"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "1 load card|42"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 load card|42"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 scale 1.5 1.5"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 pos /400 /190"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 2.0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 2"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep cg2_move"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 move - - 7.0 /-70 /0"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip enable"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "1.0"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "set_label",
+            "label_value": "aqours @chika"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "ここ、綺麗だよね。<br/>空の青とオレンジのグラデーションが海と溶け合って、<br/>水平線がキラキラで……",
+            "voice_idx": "3",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 hide 0.8"
+        },
+        {
+            "command": "wait",
+            "duration": 1.0
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end volume_down"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end cg2_move"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "set_label",
+            "label_value": "aqours @chika"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "ただ見てるだけで、<br/>不安になってる気持ちを海が吸い取ってくれる……",
+            "voice_idx": "4",
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "aqours @chika"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "……そう思わない？",
+            "voice_idx": "5",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "千歌ちゃん……",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "私が悩んでるの知ってた？ select_1"
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "私が悩んでるように見えた？ select_2"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "私が、スクールアイドル活動のことで<br/>悩んでるのを知ってて連れてきてくれたのかな？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "aqours @chika"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "えへへ。<br/>私も……あなたと同じように、悩んだことがあったから",
+            "voice_idx": "6",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "もしかして、私が悩んでるように見えた？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "aqours @chika"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "見えたな～。なんでそう思ったかっていうと！<br/>昔、スクールアイドル活動のことで悩んでた私と<br/>同じ顔をしてたから",
+            "voice_idx": "7",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "あはは、そっか。千歌ちゃんには隠し事できないね",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "aqours @chika"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "ふっふっふっ、Aqoursのリーダーはテレパシーも使えるのです！",
+            "voice_idx": "8",
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "aqours @chika"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "虹ヶ咲学園スクールアイドル同好会の『部長』だから、<br/>ひとりで頑張らなきゃ～！ってなってるでしょ？<br/>わかるよ、その気持ち",
+            "voice_idx": "9",
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "aqours @chika"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "私も『リーダー』としてしっかりしなきゃ！　頑張らなくちゃ！<br/>ってなったことがあったから",
+            "voice_idx": "10",
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "aqours @chika"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "そういうとき、みんなに相談すればいいんだけど、<br/>ひとりで悩んじゃうこともあって……。ぐるぐるして、<br/>答えが出なくて、どうしよう、ってなったときにね",
+            "voice_idx": "11",
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "aqours @chika"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "夕焼けの海を見てたら、<br/>不思議と心のもやもやが落ち着いたんだよね……。<br/>波が持って行ってくれたのかも",
+            "voice_idx": "12",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "1 hide 0.8"
+        },
+        {
+            "command": "wait",
+            "duration": 1.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "あ、そうだ！　実は、夜の海も素敵なんだよ！",
+            "voice_idx": "13",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "あのね。あなたさえよかったら、それまで一緒にいない？<br/>その頃には、きっとあなたの元気も戻ってきてると思うんだ",
+            "voice_idx": "14",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "あはは。千歌ちゃんのおかげで、もうだいぶ気持ちが軽いよ。<br/>でも、一緒にいてもらっていい？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "もちろんだよ！",
+            "voice_idx": "15",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "unknown_soundstop",
+            "soundstop_args": "bgm 2"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type SlimStripeVertical"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip disable"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "1.0"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "1 hide"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "color",
+            "character_args": [
+                "#C8C8C8FF"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|41"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "load",
+            "load_args": "default|41"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "pos",
+            "background_args": [
+                "0",
+                "-50"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 1.0
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 16"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type SlimStripeVertical"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip enable"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "1.0"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "うわあ……本当にキレイだね",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "でしょ？　月明かりが海に溶けていってるみたいだよね",
+            "voice_idx": "17",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "千歌ちゃんはすごいな。私の悩み事も海に溶けちゃったみたい。<br/>元気でてきた！",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "よかった。実はね、あなたが元気なくて、すごく心配してたんだ。<br/>だって、大事なひとがしょんぼりしてたら、力になりたいでしょ？",
+            "voice_idx": "18",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "……うん、そうだね。<br/>千歌ちゃん、そばにいてくれて……ありがとう",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "2",
+                "4"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "お礼なんていらないよ。<br/>だって、私がしたかっただけだから",
+            "voice_idx": "19",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.8
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "えへへっ。……ふぅ、なんでかなあ……。<br/>そろそろ帰ろうって言わなきゃいけないのに……<br/>もっとあなたと一緒に、海を見ていたいな",
+            "voice_idx": "20",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 3.0
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "open"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "千歌ちゃん。私も今、同じこと思ってたんだ。……って、あっ！<br/>見て、流れ星だよ！",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "visual",
+            "visual_character": "101",
+            "visual_outfit": "23001"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "color",
+            "character_args": [
+                "#C8C8C8FF"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "show"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.6
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "本当だ！　どんなお願い事をしようかな？<br/>Aqoursがもっと活躍できますようにとか……<br/>あっ、でも今は……",
+            "voice_idx": "21",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 3.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "千歌",
+            "line": "あなたとまた、一緒に海を見に来たいな、だね！",
+            "voice_idx": "22",
+            "is_plus": false
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.5"
+        }
+    ]
+}

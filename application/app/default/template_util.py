@@ -1,7 +1,8 @@
+from datetime import datetime
+
+import pytz
 from app import config
 from app.data_handler import storage_util
-from datetime import datetime
-import pytz
 
 
 def content_endpoint(path):
@@ -138,6 +139,49 @@ def template_live_list():
     live_list = get_resource('lives/all')
     key_list = list(live_list.keys())
     return key_list
+
+
+def template_story_directory(story_type=None):
+    story_dir = get_resource('story/directory/%s' %
+                             (story_type if story_type else 'all'))
+    return story_dir
+
+
+def template_script(script_path, region='jp'):
+    script_obj = get_resource('story/%s/%s' % (region, script_path))
+    return script_obj
+
+
+def template_transcript(script_path, region='jp'):
+    script_obj = get_resource('story/%s/%s' % (region, script_path))
+
+    used_cmds = ['speak']
+    transcript_cmds = [cmd for cmd in script_obj['commands']
+                       if cmd['command'] in used_cmds]
+
+    return transcript_cmds
+
+
+def template_script_path_obj(script_path):
+    script_path_objs = get_resource('story/path')
+    if script_path in script_path_objs:
+        return script_path_objs[script_path]
+    return None
+
+
+def template_find_member_by_story_name(story_name):
+    member_list = get_resource('members/all')
+
+    for member in member_list.values():
+        if '・' in member['name_jp']:
+            first_name_jp = member['name_jp'].split('・')[0]
+        else:
+            first_name_jp = member['name_jp'].split(' ')[1]
+        first_name_en = member['name_en'].split(' ')[0]
+        if story_name in [first_name_en, first_name_jp]:
+            return member
+
+    return None
 
 
 def template_all_card_skill_info():
@@ -368,10 +412,18 @@ def filter_epoch(time, tz=None):
     return time.strftime("%B %d, %Y %H:%M")
 
 
-def filter_find(arr, **kwargs):
+def filter_find(arr, all_true=False, **kwargs):
     for obj in arr:
-        for k, v in kwargs.items():
-            if k in obj and obj[k] == v:
+        if not all_true:
+            for k, v in kwargs.items():
+                if k in obj and (obj[k] == v or str(obj[k]) == str(v)):
+                    return obj
+        else:
+            check = True
+            for k, v in kwargs.items():
+                if k not in obj or (obj[k] != v and str(obj[k]) != str(v)):
+                    check = False
+            if check:
                 return obj
     return None
 
@@ -396,7 +448,12 @@ def add_globals(app):
         'member_info': template_member_info,
         'group_info': template_group_info,
         'unit_info': template_unit_info,
-        'all_card_skill_info': template_all_card_skill_info
+        'all_card_skill_info': template_all_card_skill_info,
+        'stories': template_story_directory,
+        'script': template_script,
+        'transcript': template_transcript,
+        'script_path_obj': template_script_path_obj,
+        'find_member_from_name': template_find_member_by_story_name
     })
 
     app.add_template_filter(filter_skill_short, name='skill_short')

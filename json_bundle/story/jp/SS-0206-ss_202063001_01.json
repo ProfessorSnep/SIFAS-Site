@@ -1,0 +1,1139 @@
+{
+    "resource_source": {
+        "resource": [
+            "NovelKit/ProductAdvObjectBg",
+            "NovelKit/ProductAdvObject2D",
+            "NovelKit/ProductAdvObject2DSub",
+            "NovelKit/ProductAdvObjectCg",
+            "NovelKit/ProductAdvObjectSprite"
+        ],
+        "sound": [],
+        "script": [],
+        "definition": [
+            "Scenarios/ConstantValues/llas_constants",
+            "Scenarios/ConstantValues/llas_character_constants",
+            "Scenarios/ConstantValues/llas_bg_constants",
+            "Scenarios/ConstantValues/llas_sound_constants",
+            "Scenarios/ConstantValues/llas_character_preset",
+            "Scenarios/ConstantValues/llas_unique_dress",
+            "Scenarios/ConstantValues/llas_character_facial"
+        ]
+    },
+    "preload": {
+        "ui": [
+            "label|0|1|2|3|4"
+        ],
+        "icon": [
+            "niji|5|6|7|8|9|10|11|12|13|14|15|16|17"
+        ],
+        "ch": [
+            "206 23001|18|19"
+        ],
+        "bg": [
+            "21",
+            "22"
+        ],
+        "cg": [
+            "20"
+        ],
+        "sp": [],
+        "phoneicon": []
+    },
+    "markers": {
+        "jump": {
+            "#select_1": 72,
+            "#select_2": 77,
+            "#main_1": 82
+        },
+        "other": {}
+    },
+    "commands": [
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0"
+        },
+        {
+            "command": "unknown_window",
+            "window_args": "hide"
+        },
+        {
+            "command": "set_clicking",
+            "clicking_value": "disable"
+        },
+        {
+            "command": "wait_for_load"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|22"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "load",
+            "load_args": "default|21"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "scale",
+            "scale_x": 1.7,
+            "scale_y": 1.7
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "pos",
+            "background_args": [
+                "-50",
+                "-130"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "206",
+            "visual_outfit": "23001",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.5"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 0"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep bg_move"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "movex",
+            "background_args": [
+                "-",
+                "-",
+                "4",
+                "/-200"
+            ]
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "1"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "sound",
+            "args": "se 1"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "show"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 2.0
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.4
+        },
+        {
+            "command": "set_clicking",
+            "clicking_value": "enable"
+        },
+        {
+            "command": "unknown_window",
+            "window_args": "show"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "いい天気だね～。<br/>こんな日に彼方さんと公園に遊びに来られるなんて嬉しいよ",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "彼方ちゃんも嬉しいよ～。暑くもない、寒くもない、<br/>日差しも優しくて風もそよそよ～",
+            "voice_idx": "2",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "open"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "こんな絶好のお昼寝日和に、<br/>あなたと一緒にいられるんだからね～",
+            "voice_idx": "3",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "あははっ。相変わらず彼方さんは睡眠第一だね。<br/>確かに今日は眠くなっちゃうくらい穏やかな日だよ",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "でも、せっかくこうして公園に来たんだし、<br/>お昼寝の前にちょっとお散歩しよう",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "nod",
+            "character_args": [
+                "-5"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "うん。動いたほうがぐっすり眠れるもんね～",
+            "voice_idx": "4",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "そうそう♪　快適な睡眠のためにね。行こう♪",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "music",
+            "args": "stop"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "movex",
+            "character_args": [
+                "-",
+                "-",
+                "1",
+                "/50"
+            ]
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Horizontal"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip disable"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "1"
+        },
+        {
+            "command": "wait",
+            "duration": 0.8
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 1"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 0.5"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "206",
+            "visual_outfit": "23001",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "show"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip enable"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "1"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "さっきの犬、可愛かったね～！<br/>触らせてもらったけど、すごく大人しかったし",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "うん。ふわふわで、あの毛並みに顔をうずめたら良く眠れそう……",
+            "voice_idx": "6",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "……む……？<br/>おっと、そろそろいい時間ですなぁ……",
+            "voice_idx": "7",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "いい時間？ select_1"
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "お昼食べに行こうか select_2"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "いい時間？　……あ、ほんとだ、もうお昼だね。<br/>散歩に夢中で時間忘れてたよ",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "ごはんにしよう。<br/>今日は彼方ちゃん、お弁当を作ってきたんだ～",
+            "voice_idx": "8",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "そうだね、もうお昼だ……どこか食べに行こうか？<br/>この辺、カフェとかファミレスあったかな……",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "お昼ごはんならここにあるよ。<br/>彼方ちゃん特製弁当・公園デートバージョン～♪",
+            "voice_idx": "9",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "本当！？　やったぁ、彼方さんのお弁当だ～！",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "じゃ～ん。どうぞ召し上がれ～",
+            "voice_idx": "10",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "うわあ～！　すごい！<br/>おにぎり、唐揚げ、玉子焼き……どれもすっごく美味しそう！<br/>特にこの玉子焼き、見ただけでふっくらふわふわなのが分かる！",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "この玉子焼きは自信作なんだ～。<br/>味も焼き加減も、今までで一番上手くできたんだよ。<br/>食べて食べて～",
+            "voice_idx": "11",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "うん！　いただきま<span spacing=\"0\">――――</span>",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "music",
+            "args": "stop"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "visual",
+            "visual_character": "206",
+            "visual_outfit": "23001",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "scale",
+            "scale_x": 1.8,
+            "scale_y": 1.8
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-260"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "plane",
+            "character_args": [
+                "3"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "show"
+        },
+        {
+            "command": "unknown_backeffection",
+            "backeffection_args": "enable"
+        },
+        {
+            "command": "unknown_se",
+            "se_arg": "1 blur 2 0.4"
+        },
+        {
+            "command": "wait",
+            "duration": 0.6
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "ほい、あーん",
+            "voice_idx": "12",
+            "is_plus": false
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 13"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "えっ！？　か、彼方さん、そんな、恥ずかしいって……！",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "そんなことないよ。<br/>あなたと彼方ちゃんの仲なんだから～♪　口開けて～",
+            "voice_idx": "14",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "は、はい……もぐもぐもぐ……美味しい！<br/>見た目通りめちゃくちゃ美味しい～！！",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "206",
+            "visual_outfit": "23001",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "show"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "unknown_se",
+            "se_arg": "1 blur 0 0.4"
+        },
+        {
+            "command": "wait",
+            "duration": 0.6
+        },
+        {
+            "command": "unknown_backeffection",
+            "backeffection_args": "disable"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "良かった～。そんなに喜んでもらえるなら、<br/>頑張って作った甲斐があったよ～。じゃあ、はい",
+            "voice_idx": "15",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "ん？　お箸？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.5"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "3 load card|20 4"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "3 scale 1 1"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "3 pos 1 1"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "3 hide 0"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "4 load card|20 3"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "4 scale 2 2"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "4 pos 480 -350"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "4 show 0"
+        },
+        {
+            "command": "background",
+            "background_id": "5",
+            "background_cmd": "load",
+            "load_args": "empty"
+        },
+        {
+            "command": "background",
+            "background_id": "5",
+            "background_cmd": "color",
+            "background_args": [
+                "#ffffff90"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "5",
+            "background_cmd": "show"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "1 preset effect1"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "1 plane 2"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "1 scale 1.8 1.8"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "1 pos -400 280"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "2 preset effect2"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "2 plane 2"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "2 scale 2 2"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "2 pos -400 280"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "3 preset circle2"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "3 plane 2"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "3 scale 0.5 0.5"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "3 pos -400 280"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "3 color #ffffff90"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "4 preset circle2"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "4 plane 2"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "4 scale 0.3 0.3"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "4 pos -400 280"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "4 color #ffffff80"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "5 preset circle2"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "5 plane 2"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "5 scale 1 1"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "5 pos -400 280"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "5 color #ffffff80"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep cg_move"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "4 move Quadratic EaseOut 4 /-120 /70"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "1 move Quadratic EaseOut 1.5 /-60 /10"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "2 move Quadratic EaseOut 1.5 /-60 /10"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "3 move Quadratic EaseOut 1.5 -350 150"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "4 move Quadratic EaseOut 1.5 -250 160"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "5 move Quadratic EaseOut 1.5 -100 180"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "1.5"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep bg_hide"
+        },
+        {
+            "command": "background",
+            "background_id": "5",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "3 show 0"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "1 hide 0.3"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "2 hide 0.3"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "3 hide 0.3"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "4 hide 0.3"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "5 hide 0.3"
+        },
+        {
+            "command": "wait",
+            "duration": 0.8
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "4 hide 1"
+        },
+        {
+            "command": "wait",
+            "duration": 1.5
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end cg_move"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end bg_hide"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "set_label",
+            "label_value": "@kanata"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "次は彼方ちゃんの番で～す♪",
+            "voice_idx": "16",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "え、ええ～っ！<br/>今度は私が彼方さんにあーんするってこと……！？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "@kanata"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "唐揚げを１つお願いします",
+            "voice_idx": "17",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "……わ、分かった。じゃあ……あーん",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "@kanata"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "あ～ん……もぐもぐもぐ……んふふ♪　美味しい",
+            "voice_idx": "18",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "良かった……って、作ったのは私じゃなくて彼方さんだけどね",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "@kanata"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "冷めても柔らかいままだし、<br/>揚げてすぐよりも味が馴染んでていい感じ～",
+            "voice_idx": "19",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "唐揚げって揚げたてサクサクはもちろんだけど、<br/>冷めてしっとりしたのも美味しいよね。<br/>私も次は唐揚げを食べようかな",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "@kanata"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "おっけ～、唐揚げね。あーん",
+            "voice_idx": "20",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "かかか、彼方さん……！",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "@kanata"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "うふふ♪　ほ～れ、口を開けろ～♪",
+            "voice_idx": "21",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_volume",
+            "volume_args": "bgm 7 1"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "wait",
+            "duration": 1.0
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "3.5"
+        }
+    ]
+}
