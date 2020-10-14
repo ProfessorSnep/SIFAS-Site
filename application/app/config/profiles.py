@@ -1,7 +1,7 @@
 
 
 class Config(object):
-    CONTENT_ENDPOINT = 'https://sifas-content.snep.pw'
+    CONTENT_ENDPOINT = 'https://content.sifas.guru'
     USE_LOCAL_DATA = False
     JSON_AS_ASCII = False
 
