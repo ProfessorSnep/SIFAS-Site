@@ -27,7 +27,7 @@
 
     <title>SIFAS - {{title}}</title>
     {% block meta %}
-    <meta property="og:site_name" content="Snep's SIFAS Hub" />
+    <meta property="og:site_name" content="SIFAS.Guru" />
     <meta property="og:title" content="{{title}}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{request.url}}" />
@@ -42,10 +42,10 @@
     {% endblock %}
 </head>
 
-<body>
+<body style="min-height: 100vh; position: relative; padding-bottom: 30px;">
     {% block navbar %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">SIFAS Hub</a>
+        <a class="navbar-brand" href="/">SIFAS.Guru</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain"
             aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -62,6 +62,17 @@
     </nav>
     {% endblock %}
     {% block content %}{% endblock %}
+    {% block footer %}
+    <footer class="footer w-100" style="position: absolute; bottom: 15px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center">
+                    Site maintained by ProfessorSnep. <a href="mailto:snep@sifas.guru">Contact.</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% endblock %}
 
     {% block scripts %}
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
