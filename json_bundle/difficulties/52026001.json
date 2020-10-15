@@ -1,0 +1,346 @@
+{
+    "difficulty_id": 52026001,
+    "live_id": 12026,
+    "difficulty_type": "advanced",
+    "attribute": {
+        "id": "natural",
+        "color": "ffb400",
+        "guest_color": "edbb3e",
+        "ui_image_asset": "ui/ui_common_icon_attribute_5.png",
+        "background_image_asset": "tex/6726.jpg",
+        "thumbnail_image_asset": "tex/394c.png"
+    },
+    "voltage_requirements": {
+        "s": 12605920,
+        "a": 0,
+        "b": 0,
+        "c": 0
+    },
+    "recommended_power": 7200,
+    "recommended_stamina": 66100,
+    "lp_needed": 0,
+    "completion_exp": 0,
+    "completion_bond": 24,
+    "sp_gauge": 6000,
+    "damage_per_note": 371,
+    "max_appeal": 50000,
+    "gimmick_effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 1.0,
+                "limit": 0
+            },
+            "target": {
+                "display": "Sp/Gd cards",
+                "check": "role",
+                "excludes_self": false,
+                "value": "sp,gd"
+            },
+            "effect": {
+                "type": "decrease_base_appeal",
+                "value": 0.2,
+                "value_type": "percent",
+                "display": "Decrease base Appeal by 20%",
+                "formatting": "Decrease base Appeal by {effect}",
+                "display_short": "Appeal-",
+                "until": {
+                    "type": "live_end",
+                    "display": "until Live ends",
+                    "formatting": "until Live ends",
+                    "display_short": "Live end",
+                    "value": 0,
+                    "value_type": null
+                }
+            },
+            "short_display": "Appeal- : Sp/Gd cards / Live end (Live Start)"
+        }
+    ],
+    "hint_jp": "【攻略ヒント】ボルテージタイプとスキルタイプが有利になる特殊効果があるよ",
+    "hint_en": null,
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "tex/6525.png",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "always",
+                        "display": "Always"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "damage",
+                        "value": 10000,
+                        "value_type": "value",
+                        "display": "Take 10000 damage",
+                        "formatting": "Take {effect} damage",
+                        "display_short": "Damage",
+                        "until": null
+                    },
+                    "short_display": "Damage"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "tex/6f3c.png",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "sk_type",
+                        "display": "On Note Hit with Sk type"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Sk cards",
+                        "check": "role",
+                        "excludes_self": false,
+                        "value": "sk"
+                    },
+                    "effect": {
+                        "type": "increase_appeal_percent",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase Appeal by 10%",
+                        "formatting": "Increase Appeal by {effect}",
+                        "display_short": "Appeal Up %",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Appeal Up % : Sk cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "tex/7e40.png",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "vo_type",
+                        "display": "On Note Hit with Vo type"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Vo cards",
+                        "check": "role",
+                        "excludes_self": false,
+                        "value": "vo"
+                    },
+                    "effect": {
+                        "type": "gain_stamina_percent_max",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Restore 10% of max Stamina",
+                        "formatting": "Restore {effect} of max Stamina",
+                        "display_short": "Stamina Restore %Max Stamina",
+                        "until": null
+                    },
+                    "short_display": "Stamina Restore %Max Stamina : Vo cards"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "tex/4a66.png",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "sk_type",
+                        "display": "On Note Hit with Sk type"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Sk cards",
+                        "check": "role",
+                        "excludes_self": false,
+                        "value": "sk"
+                    },
+                    "effect": {
+                        "type": "increase_crit_chance",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase Crit Chance by 10%",
+                        "formatting": "Increase Crit Chance by {effect}",
+                        "display_short": "Crit Chance Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Crit Chance Up : Sk cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "tex/6458.png",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "sk_type",
+                        "display": "On Note Hit with Sk type"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Sk cards",
+                        "check": "role",
+                        "excludes_self": false,
+                        "value": "sk"
+                    },
+                    "effect": {
+                        "type": "increase_skill_activation",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase Skill activation chance by 10%",
+                        "formatting": "Increase Skill activation chance by {effect}",
+                        "display_short": "Skill Activation Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 10 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 10,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Skill Activation Up : Sk cards / # Notes"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計650,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "complete",
+                        "display": "Upon AC success"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_stamina",
+                        "value": 15000,
+                        "value_type": "value",
+                        "display": "Restore 15000 Stamina",
+                        "formatting": "Restore {effect} Stamina",
+                        "display_short": "Restore Flat Stamina",
+                        "until": null
+                    },
+                    "short_display": "Restore Flat Stamina"
+                }
+            ]
+        },
+        {
+            "name_jp": "特技を4回発動する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Vo/Sk cards",
+                        "check": "role",
+                        "excludes_self": false,
+                        "value": "vo,sk"
+                    },
+                    "effect": {
+                        "type": "increase_base_skill_activation",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase base Skill activation chance by 10%",
+                        "formatting": "Increase base Skill activation chance by {effect}",
+                        "display_short": "Skill Activation+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Skill Activation+ : Vo/Sk cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "クリティカル判定を15回出す",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "complete",
+                        "display": "Upon AC success"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_stamina",
+                        "value": 15000,
+                        "value_type": "value",
+                        "display": "Restore 15000 Stamina",
+                        "formatting": "Restore {effect} Stamina",
+                        "display_short": "Restore Flat Stamina",
+                        "until": null
+                    },
+                    "short_display": "Restore Flat Stamina"
+                }
+            ]
+        },
+        {
+            "name_jp": "特技を4回発動する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Vo/Sk cards",
+                        "check": "role",
+                        "excludes_self": false,
+                        "value": "vo,sk"
+                    },
+                    "effect": {
+                        "type": "increase_base_skill_activation",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase base Skill activation chance by 10%",
+                        "formatting": "Increase base Skill activation chance by {effect}",
+                        "display_short": "Skill Activation+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Skill Activation+ : Vo/Sk cards / AC End"
+                }
+            ]
+        }
+    ]
+}
