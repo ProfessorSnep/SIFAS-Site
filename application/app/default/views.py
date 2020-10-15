@@ -1,4 +1,3 @@
-import requests
 from flask import Blueprint, Response, render_template
 
 default = Blueprint('default', __name__, template_folder="templates", static_folder="static",

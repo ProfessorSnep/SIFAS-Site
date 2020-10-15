@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Any, Dict
 
 import pytz
 from app import config
@@ -9,7 +10,7 @@ def content_endpoint(path):
     return '%s/%s' % (config.current['CONTENT_ENDPOINT'], path)
 
 
-resource_cache = {}
+resource_cache: Dict[str, Any] = {}
 
 
 def get_resource(path, cacheable=True):
