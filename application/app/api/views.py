@@ -1,5 +1,6 @@
 
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
+from app import config
 from app.data_handler import storage_util
 
 api = Blueprint('api', __name__, url_prefix='/api/v1')
@@ -8,6 +9,17 @@ api = Blueprint('api', __name__, url_prefix='/api/v1')
 @api.route('/')
 def api_home():
     return jsonify("Hello World! Documentation soon(tm)")
+
+
+@api.route('/cacheclear')
+def clear_cache():
+    if 'key' in request.args:
+        key_req = request.args['key']
+        if key_req == config.current['CACHE_RESET_KEY']:
+            storage_util.resource_cache = {}
+            return jsonify(success="Cache reset successfully")
+    return jsonify(error="Not Authorized."), 401
+
 
 @api.route('/<resource_type>/<resource>/<addl_path>')
 @api.route('/<resource_type>/<resource>')

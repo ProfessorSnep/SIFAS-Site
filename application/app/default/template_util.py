@@ -1,26 +1,8 @@
 from datetime import datetime
+from typing import Any, Dict
 
 import pytz
-from app import config
-from app.data_handler import storage_util
-
-
-def content_endpoint(path):
-    return '%s/%s' % (config.current['CONTENT_ENDPOINT'], path)
-
-
-resource_cache = {}
-
-
-def get_resource(path, cacheable=True):
-    if cacheable and path in resource_cache:
-        return resource_cache[path]
-
-    resource = storage_util.request_json(*path.split('/'))
-
-    if cacheable:
-        resource_cache[path] = resource
-    return resource
+from app.data_handler.storage_util import content_endpoint, get_resource
 
 
 def util_filter_to_unique(lst):
