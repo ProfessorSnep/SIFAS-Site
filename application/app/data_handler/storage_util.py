@@ -1,7 +1,9 @@
-from google.cloud import storage
 import json
 import os
+from typing import Any, Dict
+
 from app import config
+from google.cloud import storage
 
 storage_client = storage.Client()
 storage_bucket = storage_client.get_bucket("sifas-site.appspot.com")
@@ -21,3 +23,21 @@ def request_json(*loc):
         if blob:
             return json.loads(blob.download_as_string())
         return None
+
+
+resource_cache: Dict[str, Any] = {}
+
+
+def get_resource(path, cacheable=True):
+    if cacheable and path in resource_cache:
+        return resource_cache[path]
+
+    resource = request_json(*path.split('/'))
+
+    if cacheable:
+        resource_cache[path] = resource
+    return resource
+
+
+def content_endpoint(path):
+    return '%s/%s' % (config.current['CONTENT_ENDPOINT'], path)
