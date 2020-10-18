@@ -39,5 +39,20 @@ def get_resource(path, cacheable=True):
     return resource
 
 
+def get_resource_from_key(path, key, cacheable=True):
+    resource = get_resource(path, cacheable=cacheable)
+    if resource:
+        if str(key) in resource:
+            return resource[str(key)]
+    # refetch
+    resource = get_resource(path, cacheable=False)
+    if resource:
+        if cacheable:
+            resource_cache[path] = resource
+        if str(key) in resource:
+            return resource[str(key)]
+    return None
+
+
 def content_endpoint(path):
     return '%s/%s' % (config.current['CONTENT_ENDPOINT'], path)
