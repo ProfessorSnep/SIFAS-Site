@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Any, Dict
 
 import pytz
-from app.data_handler.storage_util import content_endpoint, get_resource
+from app.data_handler.storage_util import content_endpoint, get_resource, get_resource_from_key
 
 
 def util_filter_to_unique(lst):
@@ -56,16 +56,16 @@ def template_school_icon_url(school_id):
 
 
 def template_card_info(card_id):
-    card_obj = get_resource('cards/all')[str(card_id)]
+    card_obj = get_resource_from_key('cards/all', card_id)
     return card_obj
 
 
 def template_live_info(live_id):
-    return get_resource('lives/all')[str(live_id)]
+    return get_resource_from_key('lives/all', live_id)
 
 
 def template_difficulty_info(diff_id):
-    return get_resource('difficulties/all')[str(diff_id)]
+    return get_resource_from_key('difficulties/all', diff_id)
 
 
 def template_tower_info(tower_id):
@@ -73,7 +73,7 @@ def template_tower_info(tower_id):
 
 
 def template_accessory_info(acc_id):
-    return get_resource('accessories/all')[str(acc_id)]
+    return get_resource_from_key('accessories/all', acc_id)
 
 
 def template_event_info(event_id):

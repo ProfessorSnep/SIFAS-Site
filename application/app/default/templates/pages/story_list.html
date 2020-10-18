@@ -305,12 +305,14 @@
         {% if display_type == 'event_list' %}
         {% for event in directory['event'] %}
         {% set event_info = event_info_list|find(event_id=event['event_id']) %}
+        {% if event_info %}
         <div class="col-auto py-3">
             <a href="/stories/event/{{event['event_id']}}" class="link-object">
                 <h4>{{event_info|loc_name}}</h4>
                 <img class="img-fluid" src="{{tex(event['banner_image_asset'])}}" alt="Event Banner">
             </a>
         </div>
+        {% endif %}
         {% endfor %}
         {% elif display_type == 'event_stories_list' %}
         {% for story in dir_event['stories'] %}
