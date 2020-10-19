@@ -120,6 +120,7 @@ def template_event_list(include_minis=False):
 def template_live_list():
     live_list = get_resource('lives/all')
     key_list = list(live_list.keys())
+    key_list.sort(key=lambda x: live_list[x]['display_order'])
     return key_list
 
 
