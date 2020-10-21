@@ -1,0 +1,1427 @@
+{
+    "resource_source": {
+        "resource": [
+            "NovelKit/ProductAdvObjectBg",
+            "NovelKit/ProductAdvObject2D",
+            "NovelKit/ProductAdvObject2DSub"
+        ],
+        "sound": [],
+        "script": [],
+        "definition": [
+            "Scenarios/ConstantValues/llas_constants",
+            "Scenarios/ConstantValues/llas_character_constants",
+            "Scenarios/ConstantValues/llas_bg_constants",
+            "Scenarios/ConstantValues/llas_sound_constants",
+            "Scenarios/ConstantValues/llas_character_preset",
+            "Scenarios/Macro/llas_voice_effect",
+            "Scenarios/ConstantValues/llas_character_facial"
+        ]
+    },
+    "preload": {
+        "ui": [
+            "label|0|1|2|3|4"
+        ],
+        "icon": [
+            "muse|5|6|7|8|9|10|11|12|13|14|15|16",
+            "aqours|17|18|19|20|21|22|23|24|25|14|26|16",
+            "niji|27|28|29|30|31|32|33|34|35|14|36|16"
+        ],
+        "ch": [
+            "3 5|37|38",
+            "3 2|39|40"
+        ],
+        "bg": [
+            "41",
+            "42"
+        ],
+        "cg": [],
+        "sp": [],
+        "phoneicon": []
+    },
+    "markers": {
+        "jump": {
+            "#select_1": 209,
+            "#select_2": 220,
+            "#main_1": 230
+        },
+        "other": {}
+    },
+    "commands": [
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "wait_for_load"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|42"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "load",
+            "load_args": "default|42"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "pos",
+            "background_args": [
+                "0",
+                "70"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.5"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 0"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Slanting"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.5"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "3",
+            "visual_outfit": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "The time has come for your solo live show! Are you ready?",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "For sure! I put together some of my favorite outfits. I think the fashion show's gonna be really fun!",
+            "voice_idx": "1",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "Oops, I'd better get going! Wish me luck!",
+            "voice_idx": "2",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "0.3",
+                "/20",
+                "/0"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "(Oh, good. Her doubts seem to have vanished. I hope Kotori's solo live show is a fun one!)",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "unknown_soundstop",
+            "soundstop_args": "bgm 0"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type AlternateStripeHorizontal"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip disable"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.7"
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "load",
+            "load_args": "default|41"
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "scale",
+            "scale_x": 1.7,
+            "scale_y": 1.7
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "pos",
+            "background_args": [
+                "0",
+                "-120"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 1.0
+        },
+        {
+            "command": "delay",
+            "duration": 0.4
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.5"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 3"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type AlternateStripeHorizontal"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip enable"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.7"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "visual",
+            "visual_character": "3",
+            "visual_outfit": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC12_Stage",
+            "effect_param": "0.8"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "Hello, everyone. I'm Kotori Minami! Thank you for coming to my live show today!",
+            "voice_idx": "4",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC12_Stage",
+            "effect_param": "0.8"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "Today I want to combine my two favorite things: school idol live shows and fashion shows!",
+            "voice_idx": "5",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC12_Stage",
+            "effect_param": "0.8"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "The stage costumes I brought today are some of my very favorites. I'll spin around so you can see the details on the back! Spin, spin, spin!",
+            "voice_idx": "6",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "0.4",
+                "/-15",
+                "/0"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 0.6
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "/20",
+            "pos_y": "/0"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "0.4",
+                "/-20",
+                "/0"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 1.2
+        },
+        {
+            "command": "sound",
+            "args": "se 7"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "8",
+                "2"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "shake",
+            "character_args": [
+                "y",
+                "10",
+                "-2"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "shake",
+            "background_args": [
+                "x",
+                "8",
+                "2"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "shake",
+            "background_args": [
+                "y",
+                "10",
+                "-2"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 2.0
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "stopshake",
+            "background_args": []
+        },
+        {
+            "command": "wait",
+            "duration": 1.0
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC12_Stage",
+            "effect_param": "0.8"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "*Giggle* The costume I have on isn't just adorable. It's been altered for functionality, too!",
+            "voice_idx": "8",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC12_Stage",
+            "effect_param": "0.8"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "Watch me as I count to three, okay? One, two...",
+            "voice_idx": "9",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip disable"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.6"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "visual",
+            "visual_character": "3",
+            "visual_outfit": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip enable"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.6"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC12_Stage",
+            "effect_param": "0.8"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "Three!",
+            "voice_idx": "10",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "unknown_volume",
+            "volume_args": "ambient 10 0"
+        },
+        {
+            "command": "sound",
+            "args": "ambient 11"
+        },
+        {
+            "command": "wait",
+            "duration": 2.0
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "1.5",
+                "5"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "unknown_volume",
+            "volume_args": "ambient 0 2.0"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC12_Stage",
+            "effect_param": "0.8"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "*Giggle* Did my quick costume change shock you? I like seeing smiles on your faces, but seeing you light up with surprise makes me super happy, too!",
+            "voice_idx": "12",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC12_Stage",
+            "effect_param": "0.8"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "I love outfits like these. I make everything myself, from the stage costumes to my everyday outfits!",
+            "voice_idx": "13",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC12_Stage",
+            "effect_param": "0.8"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "But I also practiced really hard on my songs. Let's have a whole bunch of fun today, okay?",
+            "voice_idx": "14",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC12_Stage",
+            "effect_param": "0.8"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "I hope you like this next song. Here we go!",
+            "voice_idx": "15",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "unknown_soundstop",
+            "soundstop_args": "bgm 3"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Round"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip disable"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.7"
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 1.0
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Round"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip enable"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.7"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 16"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "3",
+            "visual_outfit": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "/15",
+            "pos_y": "/0"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "0.3",
+                "/-15",
+                "/0"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "Ahhh, that was SO fun!",
+            "voice_idx": "17",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "You were amazing, Kotori! Your fashion show was also a huge success!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "Thanks! I couldn't have done it without you!",
+            "voice_idx": "18",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "*Chuckle* I think your passion really shined through more than anything!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "2.5",
+                "4"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "Nuh-uh. If you didn't give me that little push, I don't think I would've gone through with a solo live show.",
+            "voice_idx": "19",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "I never even realized that there were things I actually want to do on my own.",
+            "voice_idx": "20",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "show"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "What did you think of my solo live show?",
+            "voice_idx": "21",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "What did I think?",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "||You really like clothes, huh!|| select_1"
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "||You always come through!|| select_2"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "I could tell that you really love making clothes, Kotori. You seemed really happy to be talking about clothes on stage.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "1.5",
+                "5"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "*Giggle* I may have talked a bit too much about them. The show ran a little long.",
+            "voice_idx": "22",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.5
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Seeing you on stage all by yourself made me think how I can always count on you to come through with things.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Both your costumes and performance were excellent. I couldn't take my eyes off you.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "Really? *Giggle* I'm happy if that's the case.",
+            "voice_idx": "23",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 2.0
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "At first, I wasn't sure I'd be able to pull off a solo live show... But it looks like I was able to create a special, fun time with everyone who came to see me.",
+            "voice_idx": "24",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "Of course I love μ's and the live shows that the nine of us put on together... But I wouldn't mind doing this sort of thing again.",
+            "voice_idx": "25",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "I'm happy to hear you say that! I want to thank you myself for an enjoyable solo live show!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "1.5",
+                "4"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Kotori",
+            "line": "Hehehe! You're welcome!",
+            "voice_idx": "26",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        }
+    ]
+}
