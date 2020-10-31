@@ -1,0 +1,498 @@
+{
+    "difficulty_id": 33100210,
+    "live_id": 10071,
+    "attribute": {
+        "id": "active",
+        "color": "fe4646",
+        "guest_color": "db3e3e",
+        "ui_image_asset": "ui/ui_common_icon_attribute_4.png",
+        "background_image_asset": "tex/575c.jpg",
+        "thumbnail_image_asset": "tex/426f.png"
+    },
+    "difficulty_type": "advanced",
+    "design_type": "not_available",
+    "unlock_type": null,
+    "voltage_requirements": {
+        "s": 691000,
+        "a": 522000,
+        "b": 352000,
+        "c": 183000
+    },
+    "recommended_power": 1100,
+    "recommended_stamina": 9900,
+    "lp_needed": 9,
+    "completion_exp": 7,
+    "completion_bond": 9,
+    "sp_gauge": 3600,
+    "damage_per_note": 43,
+    "max_appeal": 50000,
+    "gimmick_effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 1.0,
+                "limit": 0
+            },
+            "target": {
+                "display": "Non-Active cards",
+                "check": "attribute",
+                "excludes_self": false,
+                "value": "smile,pure,cool,natural,elegant"
+            },
+            "effect": {
+                "type": "decrease_base_appeal",
+                "value": 0.1,
+                "value_type": "percent",
+                "display": "Decrease base Appeal by 10%",
+                "formatting": "Decrease base Appeal by {effect}",
+                "display_short": "Appeal-",
+                "until": {
+                    "type": "live_end",
+                    "display": "until Live ends",
+                    "formatting": "until Live ends",
+                    "display_short": "Live end",
+                    "value": 0,
+                    "value_type": null
+                }
+            },
+            "short_display": "Appeal- : Non-Active cards / Live end (Live Start)"
+        }
+    ],
+    "hint_jp": "【攻略ヒント】アピールチャンス中、アクティブ属性のスクールアイドルが有利になるギミックがあるよ。編成はアクティブ属性を中心にしよう",
+    "hint_en": null,
+    "note_gimmicks": [
+        {
+            "icon_image_asset": "tex/6458.png",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Vo cards",
+                        "check": "role",
+                        "excludes_self": false,
+                        "value": "vo"
+                    },
+                    "effect": {
+                        "type": "increase_skill_activation",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase Skill activation chance by 10%",
+                        "formatting": "Increase Skill activation chance by {effect}",
+                        "display_short": "Skill Activation Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 20 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 20,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Skill Activation Up : Vo cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "tex/6525.png",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "always",
+                        "display": "Always"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "damage",
+                        "value": 400,
+                        "value_type": "value",
+                        "display": "Take 400 damage",
+                        "formatting": "Take {effect} damage",
+                        "display_short": "Damage",
+                        "until": null
+                    },
+                    "short_display": "Damage"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "tex/6458.png",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Gd cards",
+                        "check": "role",
+                        "excludes_self": false,
+                        "value": "gd"
+                    },
+                    "effect": {
+                        "type": "increase_skill_activation",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase Skill activation chance by 20%",
+                        "formatting": "Increase Skill activation chance by {effect}",
+                        "display_short": "Skill Activation Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 20 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 20,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "Skill Activation Up : Gd cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "tex/7e5e61.png",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Sp cards",
+                        "check": "role",
+                        "excludes_self": false,
+                        "value": "sp"
+                    },
+                    "effect": {
+                        "type": "increase_sp_gain",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase SP gain by 20%",
+                        "formatting": "Increase SP gain by {effect}",
+                        "display_short": "SP Gain Up",
+                        "until": {
+                            "type": "note_count",
+                            "display": "for 20 notes",
+                            "formatting": "for {until} notes",
+                            "display_short": "# Notes",
+                            "value": 20,
+                            "value_type": "value"
+                        }
+                    },
+                    "short_display": "SP Gain Up : Sp cards / # Notes"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "tex/6066.png",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_sp_percent",
+                        "value": 0.25,
+                        "value_type": "percent",
+                        "display": "Gain 25% of SP capacity as SP Gauge",
+                        "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                        "display_short": "SP %Fill",
+                        "until": null
+                    },
+                    "short_display": "SP %Fill"
+                }
+            ]
+        },
+        {
+            "icon_image_asset": "tex/6066.png",
+            "effects": [
+                {
+                    "note_apply": {
+                        "apply_id": "success",
+                        "display": "On Note Hit"
+                    },
+                    "trigger": null,
+                    "target": null,
+                    "effect": {
+                        "type": "gain_sp_percent",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Gain 10% of SP capacity as SP Gauge",
+                        "formatting": "Gain {effect} of SP capacity as SP Gauge",
+                        "display_short": "SP %Fill",
+                        "until": null
+                    },
+                    "short_display": "SP %Fill"
+                }
+            ]
+        }
+    ],
+    "appeal_chances": [
+        {
+            "name_jp": "合計10,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "excludes_self": false,
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_base_appeal",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase base Appeal by 10%",
+                        "formatting": "Increase base Appeal by {effect}",
+                        "display_short": "Appeal+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal+ : Active cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "特技を5回発動する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "excludes_self": false,
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_base_skill_activation",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase base Skill activation chance by 20%",
+                        "formatting": "Increase base Skill activation chance by {effect}",
+                        "display_short": "Skill Activation+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Skill Activation+ : Active cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "SP特技で合計8,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "excludes_self": false,
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_base_sp_gain",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase base SP gain by 20%",
+                        "formatting": "Increase base SP gain by {effect}",
+                        "display_short": "SP Gain+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "SP Gain+ : Active cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計11,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "excludes_self": false,
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_base_appeal",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase base Appeal by 10%",
+                        "formatting": "Increase base Appeal by {effect}",
+                        "display_short": "Appeal+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal+ : Active cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "特技を7回発動する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "excludes_self": false,
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_base_skill_activation",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase base Skill activation chance by 20%",
+                        "formatting": "Increase base Skill activation chance by {effect}",
+                        "display_short": "Skill Activation+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Skill Activation+ : Active cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "SP特技で合計8,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "excludes_self": false,
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_base_sp_gain",
+                        "value": 0.2,
+                        "value_type": "percent",
+                        "display": "Increase base SP gain by 20%",
+                        "formatting": "Increase base SP gain by {effect}",
+                        "display_short": "SP Gain+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "SP Gain+ : Active cards / AC End"
+                }
+            ]
+        },
+        {
+            "name_jp": "合計28,000ボルテージを獲得する",
+            "name_en": null,
+            "effects": [
+                {
+                    "ac_apply": {
+                        "apply_id": "begin",
+                        "display": "Start of Appeal Chance"
+                    },
+                    "trigger": null,
+                    "target": {
+                        "display": "Active cards",
+                        "check": "attribute",
+                        "excludes_self": false,
+                        "value": "active"
+                    },
+                    "effect": {
+                        "type": "increase_base_appeal",
+                        "value": 0.1,
+                        "value_type": "percent",
+                        "display": "Increase base Appeal by 10%",
+                        "formatting": "Increase base Appeal by {effect}",
+                        "display_short": "Appeal+",
+                        "until": {
+                            "type": "ac_end",
+                            "display": "until AC ends",
+                            "formatting": "until AC ends",
+                            "display_short": "AC End",
+                            "value": 0,
+                            "value_type": null
+                        }
+                    },
+                    "short_display": "Appeal+ : Active cards / AC End"
+                }
+            ]
+        }
+    ]
+}
