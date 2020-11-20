@@ -1,0 +1,1023 @@
+{
+    "resource_source": {
+        "resource": [
+            "NovelKit/ProductAdvObjectBg",
+            "NovelKit/ProductAdvObject2D",
+            "NovelKit/ProductAdvObject2DSub"
+        ],
+        "sound": [],
+        "script": [],
+        "definition": [
+            "Scenarios/ConstantValues/llas_constants",
+            "Scenarios/ConstantValues/llas_character_constants",
+            "Scenarios/ConstantValues/llas_bg_constants",
+            "Scenarios/ConstantValues/llas_sound_constants",
+            "Scenarios/ConstantValues/llas_character_preset",
+            "Scenarios/ConstantValues/llas_unique_dress",
+            "Scenarios/ConstantValues/llas_character_facial"
+        ]
+    },
+    "preload": {
+        "ui": [
+            "label|0|1|2|3|4"
+        ],
+        "icon": [
+            "muse|5|6|7|8|9|10|11|12|13|14|15|16",
+            "aqours|17|18|19|20|21|22|23|24|25|14|26|16",
+            "niji|27|28|29|30|31|32|33|34|35|36|14|37|16"
+        ],
+        "ch": [
+            "206 1|38|39",
+            "109 1|40|41"
+        ],
+        "bg": [
+            "42"
+        ],
+        "cg": [],
+        "sp": [],
+        "phoneicon": []
+    },
+    "markers": {
+        "jump": {},
+        "other": {}
+    },
+    "commands": [
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "wait_for_load"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|42"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "load",
+            "load_args": "default|42"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 3.0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 0"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Slanting"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.5"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "206",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "260",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "visual",
+            "visual_character": "109",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "-260",
+            "pos_y": "-40"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "はい、ルビィちゃん。銀杏だよ",
+            "voice_idx": "1",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "いっただっきまーす！　はむっ……<br/>わあ、ホクホク……。<br/>銀杏って、茶碗蒸しに入ってるのしか食べたことなかったよ",
+            "voice_idx": "2",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 2.5
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "nod",
+            "character_args": [
+                "-10"
+            ]
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 1.5
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "でも、こうやって食べるのも美味しいよね～。<br/>あ、キノコのホイル焼きも、食べごろだよ",
+            "voice_idx": "3",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 4.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "open"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch2_move"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "1.0",
+                "/20",
+                "/0"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "くんくん……<br/>バターとお醤油の香りがたまらない……",
+            "voice_idx": "4",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "eye",
+            "visual_eyes": "open"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "うんうん。ルビィちゃん、わかってるね",
+            "voice_idx": "5",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.1
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "nod",
+            "character_args": [
+                "-10"
+            ]
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "nod",
+            "character_args": [
+                "-10"
+            ]
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "はむはむ……<br/>彼方さん。これも美味しい～！",
+            "voice_idx": "6",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.1
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "nod",
+            "character_args": [
+                "-10"
+            ]
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "じゃあ、次はコレ。<br/>薄く切ったサツマイモの上に、ほぐしたお魚と<br/>小さく切った銀杏を乗せて、お塩をパラっとかけて焼いたやつ",
+            "voice_idx": "7",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 2.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "お、美味しいもの全部乗せだ～！",
+            "voice_idx": "8",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "はむはむ……<br/>うっ、おいしい～～！",
+            "voice_idx": "9",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.1
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "nod",
+            "character_args": [
+                "-10"
+            ]
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 2.0
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "visual",
+            "visual_character": "206",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "pos",
+            "pos_x": "260",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "show"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "visual",
+            "visual_character": "109",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "pos",
+            "pos_x": "-260",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "show"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch3_move"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "1.0",
+                "/-20",
+                "/0"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "……じ～～",
+            "voice_idx": "10",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "ん？　どうかしたの、彼方さん？",
+            "voice_idx": "11",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "なんか……口いっぱいに頬張ってるとこが、<br/>リスとかハムスターみたいに見える……",
+            "voice_idx": "12",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "ピギィ！　<br/>お、お行儀が悪かったでしょうか！？",
+            "voice_idx": "13",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_soundstop",
+            "soundstop_args": "bgm 0"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "2.5",
+                "4"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "そうじゃなくって、あのね……",
+            "voice_idx": "14",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "はい……",
+            "voice_idx": "15",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.1
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "nod",
+            "character_args": [
+                "-10"
+            ]
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 16"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "かわいいっ！<br/>彼方ちゃん、そういう姿見ると、<br/>たくさんごはんあげたくなっちゃう！",
+            "voice_idx": "17",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.7
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "2",
+                "5"
+            ]
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "ええ！？　<br/>あ、あのあのっ！",
+            "voice_idx": "18",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "eye",
+            "visual_eyes": "open"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "はい！　次はキノコたっぷりの炊き込みご飯と、<br/>具沢山のお味噌汁だよ～",
+            "voice_idx": "19",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "美味しそうーー！！",
+            "voice_idx": "20",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "shake",
+            "character_args": [
+                "y",
+                "3",
+                "-4"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "彼方",
+            "line": "ふふっ、いっぱいお食べ～♪",
+            "voice_idx": "21",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        }
+    ]
+}

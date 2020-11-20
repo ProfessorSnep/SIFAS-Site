@@ -1,0 +1,912 @@
+{
+    "resource_source": {
+        "resource": [
+            "NovelKit/ProductAdvObjectBg",
+            "NovelKit/ProductAdvObject2D",
+            "NovelKit/ProductAdvObject2DSub",
+            "NovelKit/ProductAdvObjectCg"
+        ],
+        "sound": [],
+        "script": [],
+        "definition": [
+            "Scenarios/ConstantValues/llas_constants",
+            "Scenarios/ConstantValues/llas_character_constants",
+            "Scenarios/ConstantValues/llas_bg_constants",
+            "Scenarios/ConstantValues/llas_character_preset",
+            "Scenarios/ConstantValues/llas_sound_constants",
+            "Scenarios/ConstantValues/llas_character_facial"
+        ]
+    },
+    "preload": {
+        "ui": [
+            "label|0|1|2|3|4"
+        ],
+        "icon": [
+            "muse|5|6|7|8|9|10|11|12|13|14|15|16"
+        ],
+        "ch": [
+            "8 1 1|17|18",
+            "8 1 2|17|18",
+            "8 1 5|17|18",
+            "8 1 4|17|18",
+            "8 1 99|19"
+        ],
+        "bg": [
+            "20"
+        ],
+        "cg": [
+            "21"
+        ],
+        "sp": [],
+        "phoneicon": []
+    },
+    "markers": {
+        "jump": {
+            "#select_1": 23,
+            "#select_2": 34,
+            "#main_1": 45
+        },
+        "other": {}
+    },
+    "commands": [
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "wait_for_load"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|20"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 0"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Slanting"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.5"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "8",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "花陽",
+            "line": "アルパカさんの小屋のお掃除、手伝ってくれてありがとう～",
+            "voice_idx": "1",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "ううん、そんなお礼なんていいよ。<br/>普段、花陽ちゃんにはスクールアイドルの資料を<br/>貸してもらったりとかいろいろお世話になってるし",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "花陽",
+            "line": "そうかな？<br/>いつもお世話になってるの、私のような気がするけど……",
+            "voice_idx": "2",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "そんなことないけど…… select_1"
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "私のほうがお世話になってる select_2"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "そんなことないけど、<br/>あ、でも花陽ちゃん、助けて～って言ってくるね",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "3",
+                "5"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "花陽",
+            "line": "そ、それは、あなたが頼もしいからだよ～",
+            "voice_idx": "3",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "ちがうよ！　私のほうがお世話になってる！",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "花陽",
+            "line": "ええー？　そうじゃなくて、私が……って、<br/>ふふ、じゃあ、どっちもお世話になってるってことかな？",
+            "voice_idx": "4",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 3.7
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "あ、花陽ちゃん、アルパカさんがこっちを見てるよ？<br/>何か言いたそうな感じ……？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "花陽",
+            "line": "あっ！　そっか。<br/>ごめんね～。今、なでなでしてあげるからね〜",
+            "voice_idx": "5",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.7
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "なでなで？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "花陽",
+            "line": "ほら、私たちがお掃除している間、<br/>邪魔にならないようにはしっこにいてくれたでしょ？",
+            "voice_idx": "6",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "うん、とってもかしこいんだなって思ってた",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "花陽",
+            "line": "あれね、最初のころは甘えてきてて、<br/>お掃除できないくらいだったんだけどね",
+            "voice_idx": "7",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "花陽",
+            "line": "お掃除させてほしいなって、<br/>目を見てお話したら、わかってくれたんだよ～",
+            "voice_idx": "8",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "本当にかしこいんだね！",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "花陽",
+            "line": "そうなの～！<br/>きっと私の言葉や気持ちをわかってくれてるんだ。<br/>かわいいよね～",
+            "voice_idx": "9",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "……そ、そうだね。かわいいね。<br/>うん、かわいい……",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "unknown_soundstop",
+            "soundstop_args": "bgm 0"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type SlimStripeHorizontal"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip enable"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "1 load card|21"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 10"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type SlimStripeHorizontal"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip disable"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.5"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "set_label",
+            "label_value": "muse @hanayo"
+        },
+        {
+            "command": "speak",
+            "speaker": "花陽",
+            "line": "うふふ、今日も大人しくしててくれてありがとう。<br/>なでなでなで",
+            "voice_idx": "11",
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "muse @hanayo"
+        },
+        {
+            "command": "speak",
+            "speaker": "花陽",
+            "line": "それから、今日はもうかわいすぎるから、ぎゅ～～～！",
+            "voice_idx": "12",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "……アルパカさん、<br/>花陽ちゃんに本当にすごく懐いてるんだね",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "muse @hanayo"
+        },
+        {
+            "command": "speak",
+            "speaker": "花陽",
+            "line": "うん！　仲良しだから……って、<br/>あれ？　なにかあった？",
+            "voice_idx": "13",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip enable"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.6"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "1 hide"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip disable"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.6"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "え？　何かって……私、なにか変かな？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "花陽",
+            "line": "うん。ちょっと顔がこわばってるっていうか、<br/>面白くなさそうな感じだよ？<br/>あっ！　もしかして私、あなたに変なこと言った？",
+            "voice_idx": "14",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "nod",
+            "character_args": [
+                "-10"
+            ]
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "ううん！　変なこと言われた覚えないよ！<br/>ただ、アルパカさんばかりかわいがってて、<br/>なんだか寂しいっていうか……あっ！",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "花陽",
+            "line": "それって……。<br/>ふふ、あなたもアルパカさんと同じくらい甘えんぼうさんだね？",
+            "voice_idx": "15",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 2.4
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "うう、だって！<br/>なでなでしてもらって、ぎゅ～～ってしてもらって<br/>羨ましいなって思っちゃうものでしょ？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "2",
+                "4"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "花陽",
+            "line": "えへへ、そっか。<br/>あなたにそう言ってもらえて、胸の中が<br/>ぽかぽかするっていうか、嬉しくなっちゃうなあ",
+            "voice_idx": "16",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "……うう、私はすごく恥ずかしい",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "visual",
+            "visual_character": "8",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "花陽",
+            "line": "えへへ。じゃあ、お手伝いしてもらったお礼に、<br/>あなたをなでなでして、ぎゅ～ってしてもいいかな？",
+            "voice_idx": "17",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "花陽",
+            "line": "だってアルパカさんと同じくらい……<br/>ううん、それよりあなたのことが大切だから",
+            "voice_idx": "18",
+            "is_plus": false
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.5"
+        }
+    ]
+}

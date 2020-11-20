@@ -1,0 +1,1036 @@
+{
+    "resource_source": {
+        "resource": [
+            "NovelKit/ProductAdvObjectBg",
+            "NovelKit/ProductAdvObject2D",
+            "NovelKit/ProductAdvObject2DSub"
+        ],
+        "sound": [],
+        "script": [],
+        "definition": [
+            "Scenarios/ConstantValues/llas_constants",
+            "Scenarios/ConstantValues/llas_character_constants",
+            "Scenarios/ConstantValues/llas_bg_constants",
+            "Scenarios/ConstantValues/llas_character_preset",
+            "Scenarios/ConstantValues/llas_sound_constants",
+            "Scenarios/ConstantValues/llas_character_facial"
+        ]
+    },
+    "preload": {
+        "ui": [
+            "label|0|1|2|3|4"
+        ],
+        "icon": [
+            "aqours|5|6|7|8|9|10|11|12|13|14|15|16"
+        ],
+        "ch": [
+            "104 1 1|17|18",
+            "104 1 2|17|18",
+            "104 1 3|17|18",
+            "104 1 5|17|18",
+            "104 1 4|17|18"
+        ],
+        "bg": [
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"
+        ],
+        "cg": [],
+        "sp": [],
+        "phoneicon": []
+    },
+    "markers": {
+        "jump": {},
+        "other": {}
+    },
+    "commands": [
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "wait_for_load"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|19"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "load",
+            "load_args": "default|20"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep bg_move"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "move",
+            "background_args": [
+                "-",
+                "-",
+                "3",
+                "/-50"
+            ]
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Slanting"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.5"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.5"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 0"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "delay",
+            "duration": 0.5
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait",
+            "duration": 2.5
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "わ、もうすっかり夕方だ。私、そろそろ帰るね",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "104",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ダイヤ",
+            "line": "すみません。<br/>ずいぶん遅くまでお引止めしてしまいましたわね……",
+            "voice_idx": "1",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "ううん、気にしないで。<br/>今日は思いがけずダイヤさんとお話できて楽しかったよ",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ダイヤ",
+            "line": "ふふふ♪　わたくしも楽しかったですわ。<br/>こうしてあなたとたくさんお話ができて",
+            "voice_idx": "2",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ダイヤ",
+            "line": "今度は幽霊のようにこっそりせず、<br/>堂々とお声を掛けてくださいませね",
+            "voice_idx": "3",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "それはっ、<br/>も～、蒸し返さないでってば……",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "unknown_soundstop",
+            "soundstop_args": "bgm 0"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.6"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|21"
+        },
+        {
+            "command": "wait",
+            "duration": 1.0
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.5"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 4"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.6"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "scale",
+            "scale_x": 1.0,
+            "scale_y": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "……ダイヤさん",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ダイヤ",
+            "line": "何です？",
+            "voice_idx": "5",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "ダイヤさんは、スクールアイドルと生徒会長と、<br/>それから琴や華道とかの習い事……<br/>全部をこなすのは大変じゃない？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ダイヤ",
+            "line": "大変、ですか？",
+            "voice_idx": "6",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "うん……。<br/>スクールアイドル活動と学業を両立させるだけでも、<br/>結構きついことだと思うんだ",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip disable"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.7"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "load",
+            "load_args": "default|22"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "color",
+            "background_args": [
+                "grey"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "pos",
+            "background_args": [
+                "-150",
+                "-70"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "show"
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "load",
+            "load_args": "default|24"
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "pos",
+            "background_args": [
+                "150",
+                "0"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "color",
+            "background_args": [
+                "grey"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "load",
+            "load_args": "default|23"
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "pos",
+            "background_args": [
+                "-150",
+                "0"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "color",
+            "background_args": [
+                "grey"
+            ]
+        },
+        {
+            "command": "letterbox",
+            "letterbox_arg": "show 0.1 15% 5"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip enable"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.7"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep move_@uranohoshi_classroom"
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "move",
+            "background_args": [
+                "-",
+                "-",
+                "5",
+                "/150",
+                "/0"
+            ]
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "学校に通ってると、日中はほとんど授業で拘束されるでしょ？　<br/>更にテストや課題があれば、授業が終わった後も<br/>勉強に時間を割く必要がある",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep move_@uranohoshi_club_room_evening"
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "move",
+            "background_args": [
+                "-",
+                "-",
+                "5",
+                "/-150",
+                "/0"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "残った時間で曲と衣装を作り、ダンスを覚えるなんて……<br/>ちょっと考えただけでも、すごくハードだよ",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep move_@uranohoshi_student_council_room"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "move",
+            "background_args": [
+                "-",
+                "-",
+                "5",
+                "/150",
+                "/0"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "ダイヤさんは、それに加えて生徒会の仕事や習い事まで……。<br/>Aqoursでも、3年生として後輩をまとめる立場にいるし……",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.7"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end move_@uranohoshi_classroom"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end move_@uranohoshi_club_room_evening"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end move_@uranohoshi_student_council_room"
+        },
+        {
+            "command": "background",
+            "background_id": "5",
+            "background_cmd": "load",
+            "load_args": "default|21"
+        },
+        {
+            "command": "background",
+            "background_id": "5",
+            "background_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "background",
+            "background_id": "5",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "letterbox",
+            "letterbox_arg": "hide 0.1"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "show"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip enable"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.7"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "nod",
+            "character_args": [
+                "-10"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.4
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ダイヤ",
+            "line": "……心配だとおっしゃりたいのですね。<br/>ありがとうございます",
+            "voice_idx": "7",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "visual",
+            "visual_character": "104",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "show"
+        },
+        {
+            "command": "background",
+            "background_id": "5",
+            "background_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ダイヤ",
+            "line": "ですが、気遣いは無用ですわ。たしかに大変ではありますが、<br/>全てわたくしが望んでしていることです",
+            "voice_idx": "8",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ダイヤ",
+            "line": "大変だからといって、半端に投げ出すつもりはありません。<br/>それに、のんびりするより<br/>忙しく動き回っている方が性に合っています",
+            "voice_idx": "9",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "ダイヤさんがそう言うなら、私からは何も言えないけど……<br/>無理はしないでね",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ダイヤ",
+            "line": "分かっていますわ。<br/>自分の力量を把握するのも、生きる上で重要なスキルですから",
+            "voice_idx": "10",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "ダイヤさんは本当にしっかりしてるなぁ",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ダイヤ",
+            "line": "当然でしょう？",
+            "voice_idx": "11",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "ダイヤさん、<br/>今度、ちゃんとダイヤさんの琴の演奏、聴かせてもらえる？<br/>今日は中途半端に聞こえちゃったって感じだったから……",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ダイヤ",
+            "line": "もちろんですわ。<br/>バチが当たらぬよう、心して聴いてくださいませ？",
+            "voice_idx": "12",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "うっ。ハイ……",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ダイヤ",
+            "line": "ふふふ",
+            "voice_idx": "13",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "ねぇ、ダイヤさん、今度ライブがあるよね？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ダイヤ",
+            "line": "ええ。メンバー全員で猛練習中ですわ",
+            "voice_idx": "14",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "観に行くね！　生徒会長のダイヤさんも、<br/>琴や華道が上手なダイヤさんも素敵だけど",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "私の中のダイヤさんは……<br/>やっぱり『Aqoursの黒澤ダイヤ』だから",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ダイヤ",
+            "line": "ええ。わたくしも、Aqoursとしての自分には誇りを持っています。<br/>ライブ、楽しみにしていてくださいませ。<br/>必ず最高の時間をお届けしますわ！",
+            "voice_idx": "15",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "nod",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.5"
+        }
+    ]
+}

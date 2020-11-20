@@ -1,0 +1,1088 @@
+{
+    "resource_source": {
+        "resource": [
+            "NovelKit/ProductAdvObjectBg",
+            "NovelKit/ProductAdvObject2D",
+            "NovelKit/ProductAdvObject2DSub",
+            "NovelKit/ProductAdvObjectCg",
+            "NovelKit/ProductAdvObjectSprite"
+        ],
+        "sound": [],
+        "script": [],
+        "definition": [
+            "Scenarios/ConstantValues/llas_constants",
+            "Scenarios/ConstantValues/llas_character_constants",
+            "Scenarios/ConstantValues/llas_bg_constants",
+            "Scenarios/ConstantValues/llas_sound_constants",
+            "Scenarios/ConstantValues/llas_character_preset",
+            "Scenarios/ConstantValues/llas_unique_dress",
+            "Scenarios/ConstantValues/llas_character_facial"
+        ]
+    },
+    "preload": {
+        "ui": [
+            "label|0|1|2|3|4"
+        ],
+        "icon": [
+            "aqours|5|6|7|8|9|10|11|12|13|14|15|16"
+        ],
+        "ch": [
+            "109 23001|17|18"
+        ],
+        "bg": [
+            "19"
+        ],
+        "cg": [
+            "20"
+        ],
+        "sp": [],
+        "phoneicon": []
+    },
+    "markers": {
+        "jump": {
+            "#select_1": 53,
+            "#select_2": 58,
+            "#main_1": 63
+        },
+        "other": {}
+    },
+    "commands": [
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "wait_for_load"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|19"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "load",
+            "load_args": "default|19"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "scale",
+            "scale_x": 1.4,
+            "scale_y": 1.4
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "pos",
+            "background_args": [
+                "/300",
+                "/-150"
+            ]
+        },
+        {
+            "command": "unknown_backeffection",
+            "backeffection_args": "enable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "109",
+            "visual_outfit": "23001",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "color",
+            "character_args": [
+                "#C8C8C8FF"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 0"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep bg_move"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "movex",
+            "background_args": [
+                "-",
+                "-",
+                "4",
+                "/-100"
+            ]
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "1.5"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 2.0
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end bg_move"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.4
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "ルビィちゃん、今日は誘ってくれてありがとう！<br/>こんなにいろんなものがある公園、<br/>初めてですっごく楽しかった！",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "喜んでもらえてよかった。<br/>あのね、前にお姉ちゃんと一緒にきて、<br/>とっても楽しかったから、あなたと一緒にきてみたかったの",
+            "voice_idx": "1",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "だから、いま、ルビィはすごく嬉しいんだ。<br/>こちらこそ、楽しい時間をありがとう！",
+            "voice_idx": "2",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "またこの公園で遊びたくなったら、<br/>ルビィちゃんを誘ってもいい？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "nod",
+            "character_args": [
+                "-5"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "う、うん！<br/>……えへへ、嬉しいな。約束だよ？",
+            "voice_idx": "3",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 2.0
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "うん、約束！<br/>……っと、もう暗くなってきたし、そろそろ帰ろうか",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.4
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "えっ！　あ、あの、えっと、<br/>ルビィ、もうすこし一緒にいたいなって思ってるんだけど、<br/>だ、だめかな？",
+            "voice_idx": "4",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 2.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "私ももう少し一緒にいたい select_1"
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "ダイヤさん、心配しないかな？ select_2"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "いいよ。実は私もね、<br/>もうちょっとルビィちゃんと一緒にいたいって思ってたんだ",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "あ……ありがとう",
+            "voice_idx": "5",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "でも遅くなったら、ダイヤさん、心配しないかな？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "お姉ちゃんには、すこし遅くなるかもって、<br/>ちゃんと連絡しておいたから大丈夫だよ",
+            "voice_idx": "6",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "じゃあ、これからどうしよっか？<br/>どこか行きたいところはある？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.4
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "え！？　えっと……その、あの……",
+            "voice_idx": "7",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 2.0
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "あ、もしかして寒い？<br/>あっちに自動販売機があったから、あったかい飲み物でも買う？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "nod",
+            "character_args": [
+                "-5"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "う、うん、そうだね",
+            "voice_idx": "8",
+            "is_plus": false
+        },
+        {
+            "command": "music",
+            "args": "stop"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "load",
+            "load_args": "default|19"
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "scale",
+            "scale_x": 1.4,
+            "scale_y": 1.4
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "pos",
+            "background_args": [
+                "/0",
+                "/-100"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.6
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "scale",
+            "scale_x": 1.4,
+            "scale_y": 1.4
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-120"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "1",
+                "8"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "……あう……うう、勇気をださなきゃ……<br/>でもでも……あうう……",
+            "voice_idx": "9",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.4
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "ルビィちゃん？　どうかしたの？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.4
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "ピギィ！　あ、あの、えっと、その……あ、あう……<br/>じ……実は……ルビィ、あなたに渡したいものがあって……！",
+            "voice_idx": "10",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "渡したいもの？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "nod",
+            "character_args": [
+                "-5"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "う、う、うん……！",
+            "voice_idx": "11",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "load",
+            "load_args": "empty"
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "color",
+            "background_args": [
+                "#ffffff30"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "show"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "1 load card|20 4"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "1 show 0.5"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.5"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 12"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep cg_sp9"
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "1 preset effect1"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "1 color #ffffff90"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "1 scale 0.7 0.7"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "1 pos -160 240"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "1 plane 2"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep cg_sp3"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "1 show 0.2"
+        },
+        {
+            "command": "wait",
+            "duration": 0.1
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "2 preset effect1"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "2 scale 0.4 0.4"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "2 pos -150 210"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "2 plane 2"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep cg_sp"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "2 show 0.2"
+        },
+        {
+            "command": "wait",
+            "duration": 0.1
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep cg_sp2"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "1 hide 0.2"
+        },
+        {
+            "command": "wait",
+            "duration": 0.1
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep cg_sp4"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "2 hide 0.2"
+        },
+        {
+            "command": "wait",
+            "duration": 0.1
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "3 preset effect1"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "3 scale 0.7 0.7"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "3 pos 160 200"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "3 plane 2"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep cg_sp5"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "3 show 0.2"
+        },
+        {
+            "command": "wait",
+            "duration": 0.1
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "4 preset effect1"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "4 scale 0.5 0.5"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "4 pos 180 170"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "4 plane 2"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep cg_sp6"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "4 show 0.2"
+        },
+        {
+            "command": "wait",
+            "duration": 0.1
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep cg_sp7"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "3 hide 0.2"
+        },
+        {
+            "command": "wait",
+            "duration": 0.1
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep cg_sp8"
+        },
+        {
+            "command": "unknown_sp",
+            "sp_arg": "4 hide 0.2"
+        },
+        {
+            "command": "wait",
+            "duration": 0.8
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end cg_sp"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end cg_sp2"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end cg_sp3"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end cg_sp4"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end cg_sp5"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end cg_sp6"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end cg_sp7"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end cg_sp8"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end cg_sp9"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "set_label",
+            "label_value": "@ruby"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "こ、これ！　下手かもしれないけど、<br/>でも、あなたのためにマフラーを編んだの！",
+            "voice_idx": "13",
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "@ruby"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "だから、だから……受け取ってください！",
+            "voice_idx": "14",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "（わっ……！　イルミネーションが光って……）",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "ふふ、ルビィちゃんも、<br/>ルビィちゃんのプレゼントもキラキラ光ってるね",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "@ruby"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "えっ！　えっと、そ、そうかな？",
+            "voice_idx": "15",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "うん。ルビィちゃん、ありがとう。<br/>こんなにキラキラ光ってるプレゼントもらったの、はじめて。<br/>私、きっとこのときを一生忘れないよ",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 1.5"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 0"
+        },
+        {
+            "command": "set_label",
+            "label_value": "@ruby"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "あ、あう、なんだかすごく恥ずかしいよぉ……！<br/>でも、あなたに喜んでもらえて嬉しい。<br/>ルビィのほうこそ、受け取ってくれてありがとう",
+            "voice_idx": "16",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "ねえ、このマフラー早速使ってもいい？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "@ruby"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "え……今？　だって、下手だから恥ずかしいよ……",
+            "voice_idx": "17",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "そんなこと関係ないよ！<br/>ね、ルビィちゃんが巻いて？　お願い……",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_label",
+            "label_value": "@ruby"
+        },
+        {
+            "command": "speak",
+            "speaker": "ルビィ",
+            "line": "ピギィ！　あのあの……っ！<br/>うん、わかった……。<br/>ちょっとかがんでもらっても、いい？",
+            "voice_idx": "18",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "2"
+        }
+    ]
+}

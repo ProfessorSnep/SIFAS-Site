@@ -1,0 +1,1368 @@
+{
+    "resource_source": {
+        "resource": [
+            "NovelKit/ProductAdvObjectBg",
+            "NovelKit/ProductAdvObject2D",
+            "NovelKit/ProductAdvObject2DSub",
+            "NovelKit/ProductAdvObjectCg"
+        ],
+        "sound": [],
+        "script": [],
+        "definition": [
+            "Scenarios/ConstantValues/llas_constants",
+            "Scenarios/ConstantValues/llas_character_constants",
+            "Scenarios/ConstantValues/llas_bg_constants",
+            "Scenarios/ConstantValues/llas_character_preset",
+            "Scenarios/ConstantValues/llas_sound_constants",
+            "Scenarios/Macro/llas_voice_effect",
+            "Scenarios/ConstantValues/llas_character_facial"
+        ]
+    },
+    "preload": {
+        "ui": [
+            "label|0|1|2|3|4"
+        ],
+        "icon": [
+            "muse|5|6|7|8|9|10|11|12|13|14|15|16",
+            "niji|17|18|19|20|21|22|23|24|25|26|14|27|16"
+        ],
+        "ch": [
+            "202 1|28|29",
+            "202 1 99|30"
+        ],
+        "bg": [
+            "31"
+        ],
+        "cg": [
+            "32"
+        ],
+        "sp": [],
+        "phoneicon": []
+    },
+    "markers": {
+        "jump": {
+            "#select_1": 132,
+            "#select_2": 143,
+            "#main_1": 150
+        },
+        "other": {}
+    },
+    "commands": [
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "wait_for_load"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|31"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "load",
+            "load_args": "default|31"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 0.5"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 0"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Slanting"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.5"
+        },
+        {
+            "command": "wait",
+            "duration": 0.7
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "scaling",
+            "background_args": [
+                "-",
+                "-",
+                "2.0",
+                "1.6",
+                "1.6"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "move",
+            "background_args": [
+                "-",
+                "-",
+                "2.0",
+                "/-400",
+                "/80"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 2.5
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "coloring",
+            "background_args": [
+                "-",
+                "-",
+                "0.5",
+                "#CCCCCC"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "load",
+            "load_args": "empty"
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "plane",
+            "background_args": [
+                "12"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "color",
+            "background_args": [
+                "#000000"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "show"
+        },
+        {
+            "command": "unknown_plane",
+            "plane_arg": "12 clip 0 0"
+        },
+        {
+            "command": "unknown_plane",
+            "plane_arg": "12 clip 400 500 0.5"
+        },
+        {
+            "command": "unknown_plane",
+            "plane_arg": "12 magnet center"
+        },
+        {
+            "command": "unknown_plane",
+            "plane_arg": "12 frame all double black"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "visual",
+            "visual_character": "202",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "scale",
+            "scale_x": 2.2,
+            "scale_y": 2.2
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "pos",
+            "pos_x": "/100",
+            "pos_y": "/-20"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "plane",
+            "character_args": [
+                "12"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "鏡よ鏡よ、鏡さん。世界で一番可愛いのは、だ～れ？",
+            "voice_idx": "1",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_volume",
+            "volume_args": "bgm 5 0.5"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0.5"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.7"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 2"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "1 load default|32"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "1 plane 12"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "1 scale 2.2 2.2"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "1 pos 400 0"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "1 show 0.3"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @kasumi"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "それはもちろんかすみんです！　早起きしてブローしてる髪型も<br/>最高だし、爪も磨いてぴかぴか、制服のシャツを<br/>いい匂いの柔軟剤で仕上げちゃうとこなんかもう、可愛すぎです！",
+            "voice_idx": "3",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_soundstop",
+            "soundstop_args": "bgm 2"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @kasumi"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "……なーんてね。はぁ……",
+            "voice_idx": "4",
+            "is_plus": false
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "unknown_volume",
+            "volume_args": "bgm 10 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 5"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 load default|32"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 show 0.7"
+        },
+        {
+            "command": "wait",
+            "duration": 1.0
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @kasumi"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "かすみんのファンクラブだけ会員が増えないなんて変なの……。<br/>誰かの陰謀じゃないかな？<br/>そうじゃなきゃ説明がつかなくない？",
+            "voice_idx": "6",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_plane",
+            "plane_arg": "12 clip 0% 0% 0.2"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "color",
+            "background_args": [
+                "",
+                "white"
+            ]
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @kasumi"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "……もしかして、かすみん実は……可愛くないとか……？",
+            "voice_idx": "7",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "unknown_cg",
+            "cg_arg": "2 hide 0.5"
+        },
+        {
+            "command": "wait",
+            "duration": 0.7
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "move",
+            "background_args": [
+                "-",
+                "-",
+                "0.8",
+                "/0",
+                "/-90"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.8
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "visual",
+            "visual_character": "202",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "face",
+            "visual_expression": "99"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "3",
+                "4"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @kasumi"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "ダメダメ、そんなことないもん。<br/>かすみんは可愛くなくちゃいけないし、<br/>そもそもかすみんの可愛さは無限大だし！",
+            "voice_idx": "8",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.8
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "……あの、かすみちゃん、大丈夫？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "4",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "visual",
+            "visual_character": "202",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.4
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "せ、先輩！？　い、いつからそこにいたんですか！？",
+            "voice_idx": "9",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.5
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "えっとね……",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "そんなことより、聞いて！<br/>私はかすみちゃんのこと、本当に可愛いって思ってる！",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "まず笑顔が最高に可愛い！！<br/>いつも元気で明るくて、周りのみんなを笑顔にしてくれるところとか、<br/>どんなときも一生懸命で頑張り屋なところとか……",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "あげたらキリがないくらい、可愛いところがいっぱいある、<br/>素敵な女の子だよ！！！",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "3",
+                "3"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "ししし、知ってますけど？<br/>かすみんが最高に可愛いなんて、当たり前じゃないですか～",
+            "voice_idx": "10",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "……",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "3"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "……もしかして、さっきの独り言……聞いてました？",
+            "voice_idx": "11",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "聞いてた select_1"
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "聞いてないよ select_2"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "うん、聞こえちゃった……。<br/>盗み聞きみたいな真似して、ごめん",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "3",
+                "3"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "うっ……！　べ、別に謝らなくてもいいですけど！",
+            "voice_idx": "12",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "き、聞いてないよ！",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "下手っぴですか！　嘘ですって顔に思いっきり出てますよ！<br/>聞いてたんですね！",
+            "voice_idx": "13",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "unknown_soundstop",
+            "soundstop_args": "bgm 5"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 1.0
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 2"
+        },
+        {
+            "command": "wait",
+            "duration": 0.4
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "202",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "ていうか、聞かれてもかすみん全然平気ですもんね！<br/>だって、あんなの嘘ですし！",
+            "voice_idx": "14",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "え？　嘘？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "ちょっと落ち込んだフリをしてみただけです。<br/>そういう、か弱いところを見せるのも、<br/>演出としてありかな～って試してました！",
+            "voice_idx": "15",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "open"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "いつもと違ったかすみんも、きっと可愛いですもん～♪",
+            "voice_idx": "16",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "先輩のその反応……ふっふっふっ～、<br/>やっぱり、かすみんの思った通りです♪",
+            "voice_idx": "17",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "6"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "1.5",
+                "4"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "アンニュイな、かすみんの魅力にメロメロ～って感じですね。<br/>くふふっ",
+            "voice_idx": "18",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.8
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "scale",
+            "scale_x": 1.4,
+            "scale_y": 1.4
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-120"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.4
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "だから先輩！",
+            "voice_idx": "19",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "はい？",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "3"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "さっきのは、あくまで！　あくまで嘘ですので！<br/>かすみんの可愛さは揺らぎませんので！",
+            "voice_idx": "20",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.5
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch2_scale"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "scaling",
+            "character_args": [
+                "-",
+                "-",
+                "0.3",
+                "1.5",
+                "1.5"
+            ]
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch2_move"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "0.3",
+                "/0",
+                "/-30"
+            ]
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "うん、わかったよ。じゃあ、もう遅いから一緒に帰ろう？<br/>駅でアイスおごってあげる",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "アイス！？　やったー！　先輩、はやくはやく～！",
+            "voice_idx": "21",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end ch2_scale"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "end ch2_scale"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "うん！",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "あのね。かすみちゃんは、本当に本当に可愛いよ",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "1.5",
+                "4"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "もー、何当たり前のこと言ってるんですか！",
+            "voice_idx": "22",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "かすみ",
+            "line": "でも……えへへ。ありがとうございます、先輩！",
+            "voice_idx": "23",
+            "is_plus": false
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.5"
+        }
+    ]
+}

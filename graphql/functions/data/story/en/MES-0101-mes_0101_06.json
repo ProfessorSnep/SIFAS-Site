@@ -1,0 +1,816 @@
+{
+    "resource_source": {
+        "resource": [
+            "NovelKit/ProductAdvObjectBg",
+            "NovelKit/Phone",
+            "NovelKit/ProductAdvObject2D",
+            "NovelKit/ProductAdvObject2DSub"
+        ],
+        "sound": [],
+        "script": [],
+        "definition": [
+            "Scenarios/ConstantValues/llas_constants",
+            "Scenarios/ConstantValues/llas_character_constants",
+            "Scenarios/ConstantValues/llas_bg_constants",
+            "Scenarios/ConstantValues/llas_character_preset",
+            "Scenarios/ConstantValues/llas_sound_constants",
+            "Scenarios/Macro/llas_voice_effect",
+            "Scenarios/ConstantValues/llas_character_facial"
+        ]
+    },
+    "preload": {
+        "ui": [
+            "label|0|1|2|3|4",
+            "phone|21|22|23"
+        ],
+        "icon": [
+            "aqours|5|6|7|8|9|10|11|12|13|14|15|16"
+        ],
+        "ch": [
+            "101 7 1|17|18",
+            "101 7 2|17|18",
+            "101 7 5|17|18",
+            "101 7 4|17|18"
+        ],
+        "bg": [
+            "19",
+            "20"
+        ],
+        "cg": [],
+        "sp": [],
+        "phoneicon": []
+    },
+    "markers": {
+        "jump": {
+            "#select_1": 105,
+            "#select_2": 115,
+            "#main_1": 124
+        },
+        "other": {}
+    },
+    "commands": [
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "wait_for_load"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|19"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 0"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Slanting"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.5"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "I wonder if there's any new information on events I haven't seen. I'll just search on the web for school idol events and see what I get.",
+            "voice_idx": "+",
+            "is_plus": false
+        },
+        {
+            "command": "sound",
+            "args": "se 1"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "unknown_soundstop",
+            "soundstop_args": "se 1"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "sound",
+            "args": "ambient 2"
+        },
+        {
+            "command": "unknown_soundstop",
+            "soundstop_args": "bgm 0"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Hmm? A video call? Who is it? Oh!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "unknown_phone",
+            "phone_args": "set 4"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "load",
+            "load_args": "default|20"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "plane",
+            "character_args": [
+                "4"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "101",
+            "visual_outfit": "7"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "scale",
+            "scale_x": 1.4,
+            "scale_y": 1.4
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-120"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "sound",
+            "args": "se 3"
+        },
+        {
+            "command": "unknown_soundstop",
+            "soundstop_args": "ambient 2"
+        },
+        {
+            "command": "unknown_phone",
+            "phone_args": "open"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 4"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Good evening, Chika!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC15_Telephone",
+            "effect_param": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Chika",
+            "line": "Good evening! Yay, you picked up!",
+            "voice_idx": "5",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "It's been a while. This is a happy surprise! Usually we just voice call or text. Video calling's a nice change.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC15_Telephone",
+            "effect_param": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Chika",
+            "line": "*Giggle* I surprised myself! My heart was pounding when I pressed the call button. I thought about giving you a normal phone call, but I really wanted to talk face-to-face.",
+            "voice_idx": "6",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Well, I'm glad I get to see your face while we speak. So, what's up?",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "3",
+                "7"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC15_Telephone",
+            "effect_param": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Chika",
+            "line": "Oh, nothing in particular. I just thought we could catch up, you know? I was wondering how you've been. Wait, you're not busy, are you?",
+            "voice_idx": "7",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "I'm okay to talk. I was checking out the latest event info right before you called, looking for upcoming events that'd be a good fit for the Nijigasaki girls.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC15_Telephone",
+            "effect_param": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Chika",
+            "line": "Ooh, events! I bet there are more events in Tokyo than you can shake a light stick at!",
+            "voice_idx": "8",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Yup. Oh, jackpot! An event looking for performers! I'll talk to everyone about it tomorrow. So, how about you all? Does Aqours have plans to appear in any upcoming events?",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC15_Telephone",
+            "effect_param": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Chika",
+            "line": "Nope, nothing right at the moment for us. There were a few really cool events on the radar, but, well...",
+            "voice_idx": "9",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC15_Telephone",
+            "effect_param": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Chika",
+            "line": "We couldn't quite get everyone's schedules to align, so we had to pass on them.",
+            "voice_idx": "10",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "That stinks. Dia's on the student council, Mari's the chairwoman, and You's on the swim team, right? It must be hard getting all nine of your schedules to line up.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC15_Telephone",
+            "effect_param": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Chika",
+            "line": "Right. But since we've got this time to rest and recharge, we're using it to compose songs and think up new dances!",
+            "voice_idx": "11",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "nod",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC15_Telephone",
+            "effect_param": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Chika",
+            "line": "Plus, we're doing study sessions for the members who tend to fall behind on their studies because of live shows and practices. Gotta get our grades back up while we can.",
+            "voice_idx": "12",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "*Chuckle* I bet Aqours will be more powered-up than ever the next time I see you all. Clearly, we can't afford to slack off!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC15_Telephone",
+            "effect_param": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Chika",
+            "line": "Now that you mention it, the Nijigasaki girls all perform solo instead of as a group, right?",
+            "voice_idx": "13",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Right. They were apparently planning to work as a group when the club was first founded, but now solo performances are the default.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC15_Telephone",
+            "effect_param": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Chika",
+            "line": "Wow, performing solo... So does that mean when they perform at events, all nine of them aren't necessarily there?",
+            "voice_idx": "14",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "That's right. Sometimes all of them appear at the same event, other times it's only one. I spend a lot of time checking on event dates and discussing them with the girls.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "But apparently, they all do their own research, too! Sometimes one of them will grab me and show me an event she wants to sign up for.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC15_Telephone",
+            "effect_param": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Chika",
+            "line": "Wow, neat. But they all sing and dance on their own, right? I wonder what that feels like.",
+            "voice_idx": "15",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "||Are you interested in going solo?|| select_1"
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "||Does Aqours always perform as a group, no matter what?|| select_2"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Are you interested in going solo?",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC15_Telephone",
+            "effect_param": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Chika",
+            "line": "Hmm... Maybe a bit. I've never done it before, so I can't help but be a little curious.",
+            "voice_idx": "16",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "open"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Does Aqours always perform as a group, no matter what? You've never had solo appearances?",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC15_Telephone",
+            "effect_param": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Chika",
+            "line": "Nope. Sometimes we'll split off into groups of two or three to sing, but never solo.",
+            "voice_idx": "17",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "nod",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "I suppose you don't really get many opportunities to perform on your own when you've organized yourselves as one big group.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "But hypothetically, say someone was going to ask for one member of Aqours to sing as a solo act. It would fall on you, right?",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC15_Telephone",
+            "effect_param": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Chika",
+            "line": "What?! Me? Why?",
+            "voice_idx": "18",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Because you're the leader, Chika. I figure they'd totally pick you to be the face of the group.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC15_Telephone",
+            "effect_param": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Chika",
+            "line": "The face of the group? R-Really? Could I actually pull that off?",
+            "voice_idx": "19",
+            "is_plus": false
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.5"
+        },
+        {
+            "command": "unknown_phone",
+            "phone_args": "close"
+        }
+    ]
+}
