@@ -1,0 +1,39 @@
+{
+    "skill_id": 10033403,
+    "skill_rarity": 1,
+    "name_jp": "結ばれているかもね",
+    "name_en": null,
+    "description_jp": "5ノーツの間SPゲージ獲得量が30%上昇\n対象:同属性",
+    "description_en": null,
+    "thumbnail_image_asset": "tex/5f5d.png",
+    "sp_gauge": 200,
+    "base_chance": 0.33,
+    "effects": [
+        {
+            "trigger": null,
+            "target": {
+                "display": "Same Attribute",
+                "check": "attribute",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_sp_gain",
+                "value": 0.3,
+                "value_type": "percent",
+                "display": "Increase SP gain by 30%",
+                "formatting": "Increase SP gain by {effect}",
+                "display_short": "SP Gain Up",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "SP Gain Up : Same Attribute / # Notes"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "skill_id": 30000106,
+    "skill_rarity": 3,
+    "name_jp": "ボルテージUP [中]:AC時/同学校",
+    "name_en": "Voltage Up (M):During AC/Same School",
+    "description_jp": "5ノーツの間獲得ボルテージが2%増加\n条件:アピールチャンス(AC)開始時 確率:22%\n対象:同学校",
+    "description_en": "Increase Voltage gain by 2% for 5 Notes.\nCondition: On Appeal Chance start, 22% chance\nAffects: Same School",
+    "thumbnail_image_asset": "tex/3568.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "ac_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On AC start",
+                "formatting": "On AC start",
+                "display_short": "AC Start",
+                "trigger_chance": 0.22,
+                "limit": 0
+            },
+            "target": {
+                "display": "Same School",
+                "check": "school",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_voltage_gain_percent",
+                "value": 0.02,
+                "value_type": "percent",
+                "display": "Increase Voltage gain by 2%",
+                "formatting": "Increase Voltage gain by {effect}",
+                "display_short": "Voltage Gain Up %",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Voltage Gain Up % : Same School / # Notes (AC Start)"
+        }
+    ]
+}

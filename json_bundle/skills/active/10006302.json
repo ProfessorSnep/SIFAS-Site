@@ -1,0 +1,39 @@
+{
+    "skill_id": 10006302,
+    "skill_rarity": 1,
+    "name_jp": "それが仲間ずら",
+    "name_en": "That's Friendship, Zura",
+    "description_jp": "5ノーツの間クリティカル値が5.5%上昇\n対象:同作戦",
+    "description_en": "Increase Critical Power by 5.5% for 5 Notes.\nAffects: Same Strategy",
+    "thumbnail_image_asset": "tex/4b5c.png",
+    "sp_gauge": 150,
+    "base_chance": 0.3,
+    "effects": [
+        {
+            "trigger": null,
+            "target": {
+                "display": "Same Strategy",
+                "check": "party",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_crit_power",
+                "value": 0.055,
+                "value_type": "percent",
+                "display": "Increase Crit Power by 5.5%",
+                "formatting": "Increase Crit Power by {effect}",
+                "display_short": "Crit Power Up",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Crit Power Up : Same Strategy / # Notes"
+        }
+    ]
+}

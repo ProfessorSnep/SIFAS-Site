@@ -1,0 +1,39 @@
+{
+    "skill_id": 10005901,
+    "skill_rarity": 1,
+    "name_jp": "堕天使の裁き",
+    "name_en": "Fallen Angel's Judgement",
+    "description_jp": "10ノーツの間クリティカル率が5%上昇\n対象:同作戦",
+    "description_en": "Increase Critical % by 5% for 10 Notes.\nAffects: Same Strategy",
+    "thumbnail_image_asset": "tex/2234.png",
+    "sp_gauge": 150,
+    "base_chance": 0.3,
+    "effects": [
+        {
+            "trigger": null,
+            "target": {
+                "display": "Same Strategy",
+                "check": "party",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_crit_chance",
+                "value": 0.05,
+                "value_type": "percent",
+                "display": "Increase Crit Chance by 5%",
+                "formatting": "Increase Crit Chance by {effect}",
+                "display_short": "Crit Chance Up",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 10 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 10,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Crit Chance Up : Same Strategy / # Notes"
+        }
+    ]
+}

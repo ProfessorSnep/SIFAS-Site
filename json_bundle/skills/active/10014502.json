@@ -1,0 +1,39 @@
+{
+    "skill_id": 10014502,
+    "skill_rarity": 1,
+    "name_jp": "堕天使の雨",
+    "name_en": "Fallen Angel Rain",
+    "description_jp": "2ノーツの間特技発動率が24%上昇\n対象:同作戦",
+    "description_en": "Increase Skill Activation % by 24% for 2 Notes.\nAffects: Same Strategy",
+    "thumbnail_image_asset": "tex/7079.png",
+    "sp_gauge": 200,
+    "base_chance": 0.33,
+    "effects": [
+        {
+            "trigger": null,
+            "target": {
+                "display": "Same Strategy",
+                "check": "party",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_skill_activation",
+                "value": 0.24,
+                "value_type": "percent",
+                "display": "Increase Skill activation chance by 24%",
+                "formatting": "Increase Skill activation chance by {effect}",
+                "display_short": "Skill Activation Up",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 2 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 2,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Skill Activation Up : Same Strategy / # Notes"
+        }
+    ]
+}

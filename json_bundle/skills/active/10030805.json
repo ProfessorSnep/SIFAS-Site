@@ -1,0 +1,53 @@
+{
+    "skill_id": 10030805,
+    "skill_rarity": 1,
+    "name_jp": "シュガードリーム",
+    "name_en": null,
+    "description_jp": "自身のアピールの23%ボルテージを獲得し5ノーツの間アピールが4.4%増加\n対象:同学年",
+    "description_en": null,
+    "thumbnail_image_asset": "tex/7231.png",
+    "sp_gauge": 200,
+    "base_chance": 0.33,
+    "effects": [
+        {
+            "trigger": null,
+            "target": {
+                "display": "Same Year",
+                "check": "year",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_appeal_percent",
+                "value": 0.044,
+                "value_type": "percent",
+                "display": "Increase Appeal by 4.4%",
+                "formatting": "Increase Appeal by {effect}",
+                "display_short": "Appeal Up %",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Appeal Up % : Same Year / # Notes"
+        },
+        {
+            "trigger": null,
+            "target": null,
+            "effect": {
+                "type": "gain_voltage_appeal",
+                "value": 0.23,
+                "value_type": "percent",
+                "display": "Gain 23% of Appeal as Voltage",
+                "formatting": "Gain {effect} of Appeal as Voltage",
+                "display_short": "Voltage Gain %Appeal",
+                "until": null
+            },
+            "short_display": "Voltage Gain %Appeal"
+        }
+    ]
+}

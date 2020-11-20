@@ -1,0 +1,41 @@
+{
+    "skill_id": 30000060,
+    "skill_rarity": 4,
+    "name_jp": "ダメージ軽減 [小]:AC時",
+    "name_en": "Lower Damage (S):AC Start",
+    "description_jp": "5ノーツの間スタミナダメージを3%軽減\n条件:アピールチャンス(AC)開始時 確率:26%",
+    "description_en": "Reduce Stamina damage by 3% for 5 Notes.\nCondition: On Appeal Chance start, 26% chance",
+    "thumbnail_image_asset": "tex/7d4c.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "ac_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On AC start",
+                "formatting": "On AC start",
+                "display_short": "AC Start",
+                "trigger_chance": 0.26,
+                "limit": 0
+            },
+            "target": null,
+            "effect": {
+                "type": "reduce_damage",
+                "value": 0.03,
+                "value_type": "percent",
+                "display": "Reduces Stamina damage by 3%",
+                "formatting": "Reduces Stamina damage by {effect}",
+                "display_short": "Reduce Damage",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Reduce Damage / # Notes (AC Start)"
+        }
+    ]
+}

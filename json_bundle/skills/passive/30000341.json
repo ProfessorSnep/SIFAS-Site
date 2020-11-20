@@ -1,0 +1,46 @@
+{
+    "skill_id": 30000341,
+    "skill_rarity": 2,
+    "name_jp": "アピールUP [中]:残80%時/同学校",
+    "name_en": "Appeal Up (M):On 80% Left/Same School",
+    "description_jp": "5ノーツの間アピールが2%増加\n条件:スタミナが80％以下で1回だけ発動 確率:18%\n対象:同学校",
+    "description_en": "Increase Appeal by 2% for 5 Notes.\nCondition: Once When Under 80% Stamina, 18% Chance\nAffects: Same School",
+    "thumbnail_image_asset": "tex/2c3b.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "stamina_low",
+                "value": 0.8,
+                "value_type": "percent",
+                "display": "When stamina falls below 80%",
+                "formatting": "When stamina falls below {trigger}",
+                "display_short": "Stamina Low",
+                "trigger_chance": 0.18,
+                "limit": 0
+            },
+            "target": {
+                "display": "Same School",
+                "check": "school",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_appeal_percent",
+                "value": 0.02,
+                "value_type": "percent",
+                "display": "Increase Appeal by 2%",
+                "formatting": "Increase Appeal by {effect}",
+                "display_short": "Appeal Up %",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Appeal Up % : Same School / # Notes (Stamina Low)"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "skill_id": 30000321,
+    "skill_rarity": 3,
+    "name_jp": "アピールUP [小]:残80%時/全員",
+    "name_en": "Appeal Up (S):On 80% Left/All",
+    "description_jp": "5ノーツの間アピールが1%増加\n条件:スタミナが80％以下で1回だけ発動 確率:22%\n対象:全員",
+    "description_en": "Increase Appeal by 1% for 5 Notes.\nCondition: Once When Under 80% Stamina, 22% Chance\nAffects: Everyone",
+    "thumbnail_image_asset": "tex/4074.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "stamina_low",
+                "value": 0.8,
+                "value_type": "percent",
+                "display": "When stamina falls below 80%",
+                "formatting": "When stamina falls below {trigger}",
+                "display_short": "Stamina Low",
+                "trigger_chance": 0.22,
+                "limit": 0
+            },
+            "target": {
+                "display": "All",
+                "check": "all",
+                "excludes_self": false,
+                "value": null
+            },
+            "effect": {
+                "type": "increase_appeal_percent",
+                "value": 0.01,
+                "value_type": "percent",
+                "display": "Increase Appeal by 1%",
+                "formatting": "Increase Appeal by {effect}",
+                "display_short": "Appeal Up %",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Appeal Up % : All / # Notes (Stamina Low)"
+        }
+    ]
+}

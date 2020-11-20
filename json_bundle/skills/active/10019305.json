@@ -1,0 +1,39 @@
+{
+    "skill_id": 10019305,
+    "skill_rarity": 1,
+    "name_jp": "うちの虜になる魔法やん♪",
+    "name_en": "Captivating Magic",
+    "description_jp": "5ノーツの間アピールが9%増加\n対象:同作戦",
+    "description_en": "Increase Appeal by 9% for 5 Notes.\nAffects: Same Strategy",
+    "thumbnail_image_asset": "tex/4b39.png",
+    "sp_gauge": 200,
+    "base_chance": 0.33,
+    "effects": [
+        {
+            "trigger": null,
+            "target": {
+                "display": "Same Strategy",
+                "check": "party",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_appeal_percent",
+                "value": 0.09,
+                "value_type": "percent",
+                "display": "Increase Appeal by 9%",
+                "formatting": "Increase Appeal by {effect}",
+                "display_short": "Appeal Up %",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Appeal Up % : Same Strategy / # Notes"
+        }
+    ]
+}

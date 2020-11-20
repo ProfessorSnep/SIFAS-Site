@@ -1,0 +1,39 @@
+{
+    "skill_id": 20053801,
+    "skill_rarity": 1,
+    "name_jp": "効果解除 :作戦切替時/全員",
+    "name_en": "Remove Effects :On Strategy Switch/All",
+    "description_jp": "すべての低下/減少効果を解除（基本低下/基本減少を除く）\n条件:作戦変更時 確率:23%\n対象:全員",
+    "description_en": "Negate all lowering effects. (Does not include Base effects.)\nCondition: On Strategy Switch, 23% chance\nAffects: Everyone",
+    "thumbnail_image_asset": "tex/4c4f.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "strategy_swap",
+                "value": 0,
+                "value_type": null,
+                "display": "On Strategy swap",
+                "formatting": "On Strategy swap",
+                "display_short": "Strategy Swap",
+                "trigger_chance": 0.23,
+                "limit": 0
+            },
+            "target": {
+                "display": "All",
+                "check": "all",
+                "excludes_self": false,
+                "value": null
+            },
+            "effect": {
+                "type": "cleanse_debuffs",
+                "value": 0,
+                "value_type": null,
+                "display": "Cleanse lowering effects",
+                "formatting": "Cleanse lowering effects",
+                "display_short": "Cleanse",
+                "until": null
+            },
+            "short_display": "Cleanse : All (Strategy Swap)"
+        }
+    ]
+}

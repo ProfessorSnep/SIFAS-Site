@@ -1,0 +1,46 @@
+{
+    "skill_id": 20052001,
+    "skill_rarity": 1,
+    "name_jp": "アピールUP(Vo) :作戦切替時/同属性",
+    "name_en": "Appeal Up (Vo) :On Strategy Switch/Same Attribute",
+    "description_jp": "10ノーツの間ライブ編成に含まれるボルテージタイプの数×1%アピールが増加\n条件:作戦変更時に1回だけ発動 確率:100%\n対象:同属性",
+    "description_en": "Increase Appeal by amount of Voltage-types in your Show Formation x 1% for 10 Notes.\nCondition: Activates once on Strategy Switch\nChance: 100%\nAffects: Same Attribute",
+    "thumbnail_image_asset": "tex/4b39.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "strategy_swap",
+                "value": 1,
+                "value_type": null,
+                "display": "On Strategy swap",
+                "formatting": "On Strategy swap",
+                "display_short": "Strategy Swap",
+                "trigger_chance": 1.0,
+                "limit": 1
+            },
+            "target": {
+                "display": "Same Attribute",
+                "check": "attribute",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_appeal_vo_types",
+                "value": 0.01,
+                "value_type": "percent",
+                "display": "Increase Appeal by 1% for each Vo type in Team",
+                "formatting": "Increase Appeal by {effect} for each Vo type in Team",
+                "display_short": "Appeal Up #Vo types",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 10 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 10,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Appeal Up #Vo types : Same Attribute / # Notes (Strategy Swap)"
+        }
+    ]
+}

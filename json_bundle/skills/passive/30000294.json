@@ -1,0 +1,34 @@
+{
+    "skill_id": 30000294,
+    "skill_rarity": 2,
+    "name_jp": "シールド獲得 [小]:残80%時",
+    "name_en": "Shield Gained (S):On 80% Left",
+    "description_jp": "自身のスタミナの20%シールドを獲得\n条件:スタミナが80％以下で1回だけ発動 確率:18%",
+    "description_en": "Gain 20% of own stamina as a shield.\nCondition: Once When Under 80% Stamina, 18% Chance",
+    "thumbnail_image_asset": "tex/6735.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "stamina_low",
+                "value": 0.8,
+                "value_type": "percent",
+                "display": "When stamina falls below 80%",
+                "formatting": "When stamina falls below {trigger}",
+                "display_short": "Stamina Low",
+                "trigger_chance": 0.18,
+                "limit": 0
+            },
+            "target": null,
+            "effect": {
+                "type": "gain_shield_stamina",
+                "value": 0.2,
+                "value_type": "percent",
+                "display": "Gain 20% of Stamina as a Shield",
+                "formatting": "Gain {effect} of Stamina as a Shield",
+                "display_short": "Shield Gain %Stamina",
+                "until": null
+            },
+            "short_display": "Shield Gain %Stamina (Stamina Low)"
+        }
+    ]
+}

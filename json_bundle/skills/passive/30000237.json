@@ -1,0 +1,46 @@
+{
+    "skill_id": 30000237,
+    "skill_rarity": 2,
+    "name_jp": "アピールUP [大]:曲開始時",
+    "name_en": "Appeal Up (L):Song Start",
+    "description_jp": "5ノーツの間アピールが3%増加\n条件:楽曲開始時 確率:18%\n対象:自身",
+    "description_en": "Increase Appeal by 3% for 5 Notes.\nCondition: On song start, 18% chance\nAffects: Self",
+    "thumbnail_image_asset": "tex/2c3b.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 0.18,
+                "limit": 0
+            },
+            "target": {
+                "display": "Self",
+                "check": "self",
+                "excludes_self": false,
+                "value": null
+            },
+            "effect": {
+                "type": "increase_appeal_percent",
+                "value": 0.03,
+                "value_type": "percent",
+                "display": "Increase Appeal by 3%",
+                "formatting": "Increase Appeal by {effect}",
+                "display_short": "Appeal Up %",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Appeal Up % : Self / # Notes (Live Start)"
+        }
+    ]
+}

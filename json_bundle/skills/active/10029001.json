@@ -1,0 +1,39 @@
+{
+    "skill_id": 10029001,
+    "skill_rarity": 1,
+    "name_jp": "まばたき禁止♡",
+    "name_en": null,
+    "description_jp": "10ノーツの間SPゲージ獲得量が5.2%上昇\n対象:同属性",
+    "description_en": null,
+    "thumbnail_image_asset": "tex/5f5d.png",
+    "sp_gauge": 200,
+    "base_chance": 0.33,
+    "effects": [
+        {
+            "trigger": null,
+            "target": {
+                "display": "Same Attribute",
+                "check": "attribute",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_sp_gain",
+                "value": 0.052,
+                "value_type": "percent",
+                "display": "Increase SP gain by 5.2%",
+                "formatting": "Increase SP gain by {effect}",
+                "display_short": "SP Gain Up",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 10 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 10,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "SP Gain Up : Same Attribute / # Notes"
+        }
+    ]
+}

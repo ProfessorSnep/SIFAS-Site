@@ -1,0 +1,39 @@
+{
+    "skill_id": 10025204,
+    "skill_rarity": 1,
+    "name_jp": "この時間を楽しもう♪",
+    "name_en": "Let's Enjoy Our Time Here",
+    "description_jp": "3ノーツの間クリティカル率が9.5%上昇\n対象:同属性",
+    "description_en": "Increase Critical % by 9.5% for 3 Notes.\nAffects: Same Attribute",
+    "thumbnail_image_asset": "tex/2234.png",
+    "sp_gauge": 150,
+    "base_chance": 0.3,
+    "effects": [
+        {
+            "trigger": null,
+            "target": {
+                "display": "Same Attribute",
+                "check": "attribute",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_crit_chance",
+                "value": 0.095,
+                "value_type": "percent",
+                "display": "Increase Crit Chance by 9.5%",
+                "formatting": "Increase Crit Chance by {effect}",
+                "display_short": "Crit Chance Up",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 3 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 3,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Crit Chance Up : Same Attribute / # Notes"
+        }
+    ]
+}

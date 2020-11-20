@@ -1,0 +1,46 @@
+{
+    "skill_id": 30000231,
+    "skill_rarity": 2,
+    "name_jp": "ボルテージUP [中]:AC成功時/同属性",
+    "name_en": "Voltage Up (M):On AC Success/Same Attribute",
+    "description_jp": "5ノーツの間獲得ボルテージが2%増加\n条件:アピールチャンス(AC)成功時 確率:18%\n対象:同属性",
+    "description_en": "Increase Voltage gain by 2% for 5 Notes.\nCondition: On Appeal Chance success, 18% chance\nAffects: Same Attribute",
+    "thumbnail_image_asset": "tex/5938.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "ac_success",
+                "value": 0,
+                "value_type": null,
+                "display": "On AC success",
+                "formatting": "On AC success",
+                "display_short": "AC Success",
+                "trigger_chance": 0.18,
+                "limit": 0
+            },
+            "target": {
+                "display": "Same Attribute",
+                "check": "attribute",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_voltage_gain_percent",
+                "value": 0.02,
+                "value_type": "percent",
+                "display": "Increase Voltage gain by 2%",
+                "formatting": "Increase Voltage gain by {effect}",
+                "display_short": "Voltage Gain Up %",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Voltage Gain Up % : Same Attribute / # Notes (AC Success)"
+        }
+    ]
+}

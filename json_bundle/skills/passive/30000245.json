@@ -1,0 +1,46 @@
+{
+    "skill_id": 30000245,
+    "skill_rarity": 3,
+    "name_jp": "ボルテージUP [中]:曲開始時/仲間",
+    "name_en": "Voltage Up (M):On Song Start/Group",
+    "description_jp": "5ノーツの間獲得ボルテージが2%増加\n条件:楽曲開始時 確率:22%\n対象:自身以外",
+    "description_en": "Increase Voltage gain by 2% for 5 Notes.\nCondition: On song start, 22% chance\nAffects: Other Than Self",
+    "thumbnail_image_asset": "tex/3568.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 0.22,
+                "limit": 0
+            },
+            "target": {
+                "display": "All Others",
+                "check": "all",
+                "excludes_self": true,
+                "value": null
+            },
+            "effect": {
+                "type": "increase_voltage_gain_percent",
+                "value": 0.02,
+                "value_type": "percent",
+                "display": "Increase Voltage gain by 2%",
+                "formatting": "Increase Voltage gain by {effect}",
+                "display_short": "Voltage Gain Up %",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Voltage Gain Up % : All Others / # Notes (Live Start)"
+        }
+    ]
+}

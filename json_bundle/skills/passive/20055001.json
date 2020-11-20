@@ -1,0 +1,34 @@
+{
+    "skill_id": 20055001,
+    "skill_rarity": 1,
+    "name_jp": "スタミナ回復 :SP特技発動時",
+    "name_en": "Stamina Restored :On SP Skill Use",
+    "description_jp": "自身のテクニックの3%スタミナを回復\n条件:SP特技発動時 確率:100%",
+    "description_en": "Restore Stamina equal to 3% of own Technique\nCondition: SP Skill activation, 100% chance",
+    "thumbnail_image_asset": "tex/2749.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "sp_activate",
+                "value": 0,
+                "value_type": null,
+                "display": "On SP Skill activate",
+                "formatting": "On SP Skill activate",
+                "display_short": "SP Activate",
+                "trigger_chance": 1.0,
+                "limit": 0
+            },
+            "target": null,
+            "effect": {
+                "type": "gain_stamina_technique",
+                "value": 0.03,
+                "value_type": "percent",
+                "display": "Restore Stamina equal to 3% of own Technique",
+                "formatting": "Restore Stamina equal to {effect} of own Technique",
+                "display_short": "Stamina Restore %Technique",
+                "until": null
+            },
+            "short_display": "Stamina Restore %Technique (SP Activate)"
+        }
+    ]
+}

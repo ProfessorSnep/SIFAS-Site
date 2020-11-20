@@ -1,0 +1,46 @@
+{
+    "skill_id": 30000396,
+    "skill_rarity": 1,
+    "name_jp": "ボルテージUP [大]:30%達成時",
+    "name_en": "Voltage Up (L):On 30% Clear",
+    "description_jp": "5ノーツの間獲得ボルテージが3%増加\n条件:目標ボルテージ30％達成で1回だけ発動 確率:14%\n対象:自身",
+    "description_en": "Increase Voltage gain by 3% for 5 Notes.\nCondition: Once On 30% Target Voltage Gained, 14% Chance\nAffects: Self",
+    "thumbnail_image_asset": "tex/5e.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "voltage_gained",
+                "value": 0.3,
+                "value_type": "percent",
+                "display": "Once, when 30% voltage target gained",
+                "formatting": "Once, when {trigger} voltage target gained",
+                "display_short": "Voltage Gain",
+                "trigger_chance": 0.14,
+                "limit": 0
+            },
+            "target": {
+                "display": "Self",
+                "check": "self",
+                "excludes_self": false,
+                "value": null
+            },
+            "effect": {
+                "type": "increase_voltage_gain_percent",
+                "value": 0.03,
+                "value_type": "percent",
+                "display": "Increase Voltage gain by 3%",
+                "formatting": "Increase Voltage gain by {effect}",
+                "display_short": "Voltage Gain Up %",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Voltage Gain Up % : Self / # Notes (Voltage Gain)"
+        }
+    ]
+}

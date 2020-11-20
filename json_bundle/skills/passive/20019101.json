@@ -1,0 +1,34 @@
+{
+    "skill_id": 20019101,
+    "skill_rarity": 1,
+    "name_jp": "復活 :曲開始時",
+    "name_en": "Revive :Song Start",
+    "description_jp": "スタミナが0になると10%回復し復活する効果を付与する\n条件:楽曲開始時 確率:30%",
+    "description_en": "Adds the effect to revive and restore 10% stamina when it hits 0.\nCondition: On song start, 30% chance",
+    "thumbnail_image_asset": "tex/2b5f.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "live_start",
+                "value": 0,
+                "value_type": null,
+                "display": "On live start",
+                "formatting": "On live start",
+                "display_short": "Live Start",
+                "trigger_chance": 0.3,
+                "limit": 0
+            },
+            "target": null,
+            "effect": {
+                "type": "revive",
+                "value": 0.1,
+                "value_type": "percent",
+                "display": "When stamina runs out, restore 10% of total Stamina",
+                "formatting": "When stamina runs out, restore {effect} of total Stamina",
+                "display_short": "Revive",
+                "until": null
+            },
+            "short_display": "Revive (Live Start)"
+        }
+    ]
+}

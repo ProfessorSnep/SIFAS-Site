@@ -1,0 +1,39 @@
+{
+    "skill_id": 10012804,
+    "skill_rarity": 1,
+    "name_jp": "全速前進っ!!",
+    "name_en": "Full Speed Ahead!",
+    "description_jp": "5ノーツの間アピールが6.9%増加(特殊)\n対象:同学年",
+    "description_en": "Increase Appeal by 6.9% (special) for 5 Notes.\nAffects: Same Year",
+    "thumbnail_image_asset": "tex/4b39.png",
+    "sp_gauge": 200,
+    "base_chance": 0.33,
+    "effects": [
+        {
+            "trigger": null,
+            "target": {
+                "display": "Same Year",
+                "check": "year",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_appeal_special",
+                "value": 0.069,
+                "value_type": "percent",
+                "display": "Increase Appeal (special) by 6.9%",
+                "formatting": "Increase Appeal (special) by {effect}",
+                "display_short": "Appeal Up <Special>",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Appeal Up <Special> : Same Year / # Notes"
+        }
+    ]
+}

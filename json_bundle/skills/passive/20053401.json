@@ -1,0 +1,46 @@
+{
+    "skill_id": 20053401,
+    "skill_rarity": 1,
+    "name_jp": "ボルテージUP :アピール時/同属性",
+    "name_en": "Voltage Up :アピール時/同属性",
+    "description_jp": "2ノーツの間獲得ボルテージが8%増加\n条件:自身のアピール時 確率:15%\n対象:同属性",
+    "description_en": "Increase Voltage gain by 8% for 2 Notes.\nCondition: On own Appeal, 15% chance\nAffects: Same Attribute",
+    "thumbnail_image_asset": "tex/7e2e.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "self_appeal",
+                "value": 0,
+                "value_type": null,
+                "display": "On own Appeal",
+                "formatting": "On own Appeal",
+                "display_short": "Appeal",
+                "trigger_chance": 0.15,
+                "limit": 0
+            },
+            "target": {
+                "display": "Same Attribute",
+                "check": "attribute",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_voltage_gain_percent",
+                "value": 0.08,
+                "value_type": "percent",
+                "display": "Increase Voltage gain by 8%",
+                "formatting": "Increase Voltage gain by {effect}",
+                "display_short": "Voltage Gain Up %",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 2 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 2,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Voltage Gain Up % : Same Attribute / # Notes (Appeal)"
+        }
+    ]
+}

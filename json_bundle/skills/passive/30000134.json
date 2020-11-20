@@ -1,0 +1,46 @@
+{
+    "skill_id": 30000134,
+    "skill_rarity": 4,
+    "name_jp": "特技発動率＋ [中]:AC時/同属性",
+    "name_en": "Skill Activation %+ (M):During AC/Same Attribute",
+    "description_jp": "ゲーム終了まで基本特技発動率が1%上昇\n条件:アピールチャンス(AC)開始時1回だけ発動 確率:26%\n対象:同属性",
+    "description_en": "Increase base skill activation by 1% until the Live Show ends.\nCondition: Once on Appeal Chance start, 26% chance\nAffects: Same Attribute",
+    "thumbnail_image_asset": "tex/594c.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "ac_start",
+                "value": 1,
+                "value_type": null,
+                "display": "On AC start",
+                "formatting": "On AC start",
+                "display_short": "AC Start",
+                "trigger_chance": 0.26,
+                "limit": 1
+            },
+            "target": {
+                "display": "Same Attribute",
+                "check": "attribute",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_base_skill_activation",
+                "value": 0.01,
+                "value_type": "percent",
+                "display": "Increase base Skill activation chance by 1%",
+                "formatting": "Increase base Skill activation chance by {effect}",
+                "display_short": "Skill Activation+",
+                "until": {
+                    "type": "live_end",
+                    "display": "until Live ends",
+                    "formatting": "until Live ends",
+                    "display_short": "Live end",
+                    "value": 0,
+                    "value_type": null
+                }
+            },
+            "short_display": "Skill Activation+ : Same Attribute / Live end (AC Start)"
+        }
+    ]
+}

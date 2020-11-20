@@ -1,0 +1,46 @@
+{
+    "skill_id": 30000372,
+    "skill_rarity": 2,
+    "name_jp": "ボルテージUP [中]:残80%時/タイプ",
+    "name_en": "Voltage Up (M):On 80% Left/Type",
+    "description_jp": "5ノーツの間獲得ボルテージが2%増加\n条件:スタミナが80％以下で1回だけ発動 確率:18%\n対象:同タイプ",
+    "description_en": "Increase Voltage gain by 2% for 5 Notes.\nCondition: Once When Under 80% Stamina, 18% Chance\nAffects: Same Type",
+    "thumbnail_image_asset": "tex/5938.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "stamina_low",
+                "value": 0.8,
+                "value_type": "percent",
+                "display": "When stamina falls below 80%",
+                "formatting": "When stamina falls below {trigger}",
+                "display_short": "Stamina Low",
+                "trigger_chance": 0.18,
+                "limit": 0
+            },
+            "target": {
+                "display": "Same Type",
+                "check": "role",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_voltage_gain_percent",
+                "value": 0.02,
+                "value_type": "percent",
+                "display": "Increase Voltage gain by 2%",
+                "formatting": "Increase Voltage gain by {effect}",
+                "display_short": "Voltage Gain Up %",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Voltage Gain Up % : Same Type / # Notes (Stamina Low)"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "skill_id": 30000530,
+    "skill_rarity": 3,
+    "name_jp": "ボンダンス",
+    "name_en": null,
+    "description_jp": "5ノーツの間ライブ編成に含まれるボルテージタイプの数×0.4%アピールが増加\n条件:アピールチャンス(AC)成功時1回だけ発動 確率:50%\n対象:同作戦",
+    "description_en": null,
+    "thumbnail_image_asset": "tex/4074.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "ac_success",
+                "value": 1,
+                "value_type": null,
+                "display": "On AC success",
+                "formatting": "On AC success",
+                "display_short": "AC Success",
+                "trigger_chance": 0.5,
+                "limit": 1
+            },
+            "target": {
+                "display": "Same Strategy",
+                "check": "party",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_appeal_vo_types",
+                "value": 0.004,
+                "value_type": "percent",
+                "display": "Increase Appeal by 0.4% for each Vo type in Team",
+                "formatting": "Increase Appeal by {effect} for each Vo type in Team",
+                "display_short": "Appeal Up #Vo types",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Appeal Up #Vo types : Same Strategy / # Notes (AC Success)"
+        }
+    ]
+}

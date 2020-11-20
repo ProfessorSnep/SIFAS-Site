@@ -1,0 +1,39 @@
+{
+    "skill_id": 10007404,
+    "skill_rarity": 1,
+    "name_jp": "夢への階段",
+    "name_en": "Stairway to Dreams",
+    "description_jp": "5ノーツの間特技発動率が1.8%上昇\n対象:全員",
+    "description_en": "Increase Skill Activation % by 1.8 for 5 Notes.\nAffects: All",
+    "thumbnail_image_asset": "tex/7079.png",
+    "sp_gauge": 100,
+    "base_chance": 0.3,
+    "effects": [
+        {
+            "trigger": null,
+            "target": {
+                "display": "All",
+                "check": "all",
+                "excludes_self": false,
+                "value": null
+            },
+            "effect": {
+                "type": "increase_skill_activation",
+                "value": 0.018,
+                "value_type": "percent",
+                "display": "Increase Skill activation chance by 1.8%",
+                "formatting": "Increase Skill activation chance by {effect}",
+                "display_short": "Skill Activation Up",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Skill Activation Up : All / # Notes"
+        }
+    ]
+}

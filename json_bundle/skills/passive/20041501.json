@@ -1,0 +1,46 @@
+{
+    "skill_id": 20041501,
+    "skill_rarity": 1,
+    "name_jp": "アピールUPEX :AC成功時/同属性",
+    "name_en": "Appeal Up+ :On AC Success/Same Attribute",
+    "description_jp": "5ノーツの間アピールが8.2%増加(特殊)\n条件:アピールチャンス(AC)成功時 確率:50%\n対象:同属性",
+    "description_en": "Increase Appeal by 8.2%(special) for 5 Notes.\nCondition: On Appeal Chance success, 50% chance\nAffects: Same Attribute",
+    "thumbnail_image_asset": "tex/4b39.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "ac_success",
+                "value": 0,
+                "value_type": null,
+                "display": "On AC success",
+                "formatting": "On AC success",
+                "display_short": "AC Success",
+                "trigger_chance": 0.5,
+                "limit": 0
+            },
+            "target": {
+                "display": "Same Attribute",
+                "check": "attribute",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_appeal_special",
+                "value": 0.082,
+                "value_type": "percent",
+                "display": "Increase Appeal (special) by 8.2%",
+                "formatting": "Increase Appeal (special) by {effect}",
+                "display_short": "Appeal Up <Special>",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Appeal Up <Special> : Same Attribute / # Notes (AC Success)"
+        }
+    ]
+}

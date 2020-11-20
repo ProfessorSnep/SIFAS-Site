@@ -1,0 +1,46 @@
+{
+    "skill_id": 20001701,
+    "skill_rarity": 1,
+    "name_jp": "アピールUP :SP特技発動時/全員",
+    "name_en": "Appeal Up :On SP Skill Activation/All",
+    "description_jp": "15ノーツの間アピールが10%増加\n条件:SP特技発動時 確率:50%\n対象:全員",
+    "description_en": "Increase Appeal by 10% for 15 Notes.\nCondition: SP Skill activation, 50% chance\nAffects: Everyone",
+    "thumbnail_image_asset": "tex/4b39.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "sp_activate",
+                "value": 0,
+                "value_type": null,
+                "display": "On SP Skill activate",
+                "formatting": "On SP Skill activate",
+                "display_short": "SP Activate",
+                "trigger_chance": 0.5,
+                "limit": 0
+            },
+            "target": {
+                "display": "All",
+                "check": "all",
+                "excludes_self": false,
+                "value": null
+            },
+            "effect": {
+                "type": "increase_appeal_percent",
+                "value": 0.1,
+                "value_type": "percent",
+                "display": "Increase Appeal by 10%",
+                "formatting": "Increase Appeal by {effect}",
+                "display_short": "Appeal Up %",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 15 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 15,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Appeal Up % : All / # Notes (SP Activate)"
+        }
+    ]
+}

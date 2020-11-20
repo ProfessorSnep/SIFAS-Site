@@ -1,0 +1,46 @@
+{
+    "skill_id": 30000439,
+    "skill_rarity": 2,
+    "name_jp": "クリティカルUP [中]:30%達成時/同学校",
+    "name_en": "Critical Up (M):On 30% Clear/Same School",
+    "description_jp": "5ノーツの間クリティカル率が2%上昇\n条件:目標ボルテージ30％達成で1回だけ発動 確率:18%\n対象:同学校",
+    "description_en": "Increase Critical % by 2% for 5 Notes.\nCondition: Once On 30% Target Voltage Gained, 18% Chance\nAffects: Same School",
+    "thumbnail_image_asset": "tex/406f.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "voltage_gained",
+                "value": 0.3,
+                "value_type": "percent",
+                "display": "Once, when 30% voltage target gained",
+                "formatting": "Once, when {trigger} voltage target gained",
+                "display_short": "Voltage Gain",
+                "trigger_chance": 0.18,
+                "limit": 0
+            },
+            "target": {
+                "display": "Same School",
+                "check": "school",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_crit_chance",
+                "value": 0.02,
+                "value_type": "percent",
+                "display": "Increase Crit Chance by 2%",
+                "formatting": "Increase Crit Chance by {effect}",
+                "display_short": "Crit Chance Up",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Crit Chance Up : Same School / # Notes (Voltage Gain)"
+        }
+    ]
+}

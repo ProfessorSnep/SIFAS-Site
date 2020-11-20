@@ -1,0 +1,46 @@
+{
+    "skill_id": 20021901,
+    "skill_rarity": 1,
+    "name_jp": "クリティカルUP :AC成功時/同属性",
+    "name_en": "Critical Up :On AC Success/Same Attribute",
+    "description_jp": "10ノーツの間クリティカル率が10%上昇\n条件:アピールチャンス(AC)成功時 確率:50%\n対象:同属性",
+    "description_en": "Increase Critical % by 10% for 10 Notes.\nCondition: On Appeal Chance success, 50% chance\nAffects: Same Attribute",
+    "thumbnail_image_asset": "tex/2234.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "ac_success",
+                "value": 0,
+                "value_type": null,
+                "display": "On AC success",
+                "formatting": "On AC success",
+                "display_short": "AC Success",
+                "trigger_chance": 0.5,
+                "limit": 0
+            },
+            "target": {
+                "display": "Same Attribute",
+                "check": "attribute",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_crit_chance",
+                "value": 0.1,
+                "value_type": "percent",
+                "display": "Increase Crit Chance by 10%",
+                "formatting": "Increase Crit Chance by {effect}",
+                "display_short": "Crit Chance Up",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 10 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 10,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Crit Chance Up : Same Attribute / # Notes (AC Success)"
+        }
+    ]
+}

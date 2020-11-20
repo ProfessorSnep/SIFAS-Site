@@ -1,0 +1,46 @@
+{
+    "skill_id": 20027701,
+    "skill_rarity": 1,
+    "name_jp": "クリティカルUP :作戦切替時/同作戦",
+    "name_en": "Critical Up :On Strategy Switch/Same Strategy",
+    "description_jp": "10ノーツの間クリティカル率が10%上昇\n条件:作戦変更時 確率:20%\n対象:同作戦",
+    "description_en": "Increase Critical % by 10% for 10 Notes.\nCondition: On Strategy Switch, 20% chance\nAffects: Same Strategy Member",
+    "thumbnail_image_asset": "tex/2234.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "strategy_swap",
+                "value": 0,
+                "value_type": null,
+                "display": "On Strategy swap",
+                "formatting": "On Strategy swap",
+                "display_short": "Strategy Swap",
+                "trigger_chance": 0.2,
+                "limit": 0
+            },
+            "target": {
+                "display": "Same Strategy",
+                "check": "party",
+                "excludes_self": false,
+                "value": "owner"
+            },
+            "effect": {
+                "type": "increase_crit_chance",
+                "value": 0.1,
+                "value_type": "percent",
+                "display": "Increase Crit Chance by 10%",
+                "formatting": "Increase Crit Chance by {effect}",
+                "display_short": "Crit Chance Up",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 10 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 10,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Crit Chance Up : Same Strategy / # Notes (Strategy Swap)"
+        }
+    ]
+}

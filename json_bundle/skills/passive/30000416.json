@@ -1,0 +1,46 @@
+{
+    "skill_id": 30000416,
+    "skill_rarity": 3,
+    "name_jp": "アピールUP [小]:30%達成時/全員",
+    "name_en": "Appeal Up (S):On 30% Clear/All",
+    "description_jp": "5ノーツの間アピールが1%増加\n条件:目標ボルテージ30％達成で1回だけ発動 確率:22%\n対象:全員",
+    "description_en": "Increase Appeal by 1% for 5 Notes.\nCondition: Once On 30% Target Voltage Gained, 22% Chance\nAffects: Everyone",
+    "thumbnail_image_asset": "tex/4074.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "voltage_gained",
+                "value": 0.3,
+                "value_type": "percent",
+                "display": "Once, when 30% voltage target gained",
+                "formatting": "Once, when {trigger} voltage target gained",
+                "display_short": "Voltage Gain",
+                "trigger_chance": 0.22,
+                "limit": 0
+            },
+            "target": {
+                "display": "All",
+                "check": "all",
+                "excludes_self": false,
+                "value": null
+            },
+            "effect": {
+                "type": "increase_appeal_percent",
+                "value": 0.01,
+                "value_type": "percent",
+                "display": "Increase Appeal by 1%",
+                "formatting": "Increase Appeal by {effect}",
+                "display_short": "Appeal Up %",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 5 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 5,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Appeal Up % : All / # Notes (Voltage Gain)"
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "skill_id": 20060801,
+    "skill_rarity": 1,
+    "name_jp": "ダメージ軽減 :作戦切替時",
+    "name_en": "Lower Damage :On Strategy Switch",
+    "description_jp": "1ノーツの間スタミナダメージを30%軽減\n条件:作戦変更時に2回だけ発動 確率:100%",
+    "description_en": "Reduce Stamina damage by 30% for 1 Notes.\n条件:作戦変更時に2回だけ発動 確率:100%",
+    "thumbnail_image_asset": "tex/4565.png",
+    "effects": [
+        {
+            "trigger": {
+                "on": "strategy_swap",
+                "value": 2,
+                "value_type": null,
+                "display": "On Strategy swap",
+                "formatting": "On Strategy swap",
+                "display_short": "Strategy Swap",
+                "trigger_chance": 1.0,
+                "limit": 2
+            },
+            "target": null,
+            "effect": {
+                "type": "reduce_damage",
+                "value": 0.3,
+                "value_type": "percent",
+                "display": "Reduces Stamina damage by 30%",
+                "formatting": "Reduces Stamina damage by {effect}",
+                "display_short": "Reduce Damage",
+                "until": {
+                    "type": "note_count",
+                    "display": "for 1 notes",
+                    "formatting": "for {until} notes",
+                    "display_short": "# Notes",
+                    "value": 1,
+                    "value_type": "value"
+                }
+            },
+            "short_display": "Reduce Damage / # Notes (Strategy Swap)"
+        }
+    ]
+}
