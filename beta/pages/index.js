@@ -8,16 +8,8 @@ export default function Home() {
                 <Grid item xs style={{ textAlign: "center" }}>
                     <Typography variant="h3">Welcome!</Typography>
                     <Typography variant="subtitle1">
-                        This is where I keep my things
+                        This is a test redesign, very much work in progress.
                     </Typography>
-                </Grid>
-                <Grid container item justifyContent="space-around">
-                    <Grid item>
-                        <h2>Test</h2>
-                    </Grid>
-                    <Grid item>
-                        <h3>Test</h3>
-                    </Grid>
                 </Grid>
             </Grid>
         </Layout>

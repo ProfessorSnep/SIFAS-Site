@@ -1,7 +1,34 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
 import { Grid } from "@material-ui/core";
 import CardThumbnail from "../../src/components/cards/thumbnail";
 import Layout from "../../src/components/layout";
+import { apolloClient } from "../../src/data";
+
+export default function CardsList({ cardList }) {
+    cardList = cardList.slice().sort((c1, c2) => c1.no - c2.no);
+    return (
+        <Layout title="Cards">
+            <Grid container item spacing={3} justifyContent="center">
+                {cardList.map((card) => (
+                    <Grid item key={card.id}>
+                        <CardThumbnail card={card} idolized />
+                    </Grid>
+                ))}
+            </Grid>
+        </Layout>
+    );
+}
+
+export async function getStaticProps() {
+    const result = await apolloClient.query({
+        query: QUERY_CARD_LIST,
+    });
+    return {
+        props: {
+            cardList: result.data.cards,
+        },
+    };
+}
 
 const QUERY_CARD_LIST = gql`
     query {
@@ -57,34 +84,15 @@ const QUERY_CARD_LIST = gql`
                     deck_thumbnail
                 }
             }
+            outfits {
+                id
+                name {
+                    jp
+                    en
+                }
+                thumbnail
+            }
             is_fes
         }
     }
 `;
-
-export default function CardsList() {
-    const { loading, data } = useQuery(QUERY_CARD_LIST);
-
-    var cardList = [];
-    if (!loading) {
-        cardList = data.cards.slice();
-        cardList = cardList.sort((c1, c2) => c1.no - c2.no);
-    }
-    return (
-        <Layout title="Cards">
-            <Grid container>
-                {loading ? (
-                    <Grid item>Loading...</Grid>
-                ) : (
-                    <Grid container item spacing={3}>
-                        {cardList.map((card) => (
-                            <Grid item key={card.id}>
-                                <CardThumbnail cardObj={card} idolized />
-                            </Grid>
-                        ))}
-                    </Grid>
-                )}
-            </Grid>
-        </Layout>
-    );
-}

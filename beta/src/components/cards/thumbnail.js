@@ -1,6 +1,4 @@
-import { gql, useQuery } from "@apollo/client";
 import {
-    Button,
     Card,
     CardActions,
     CardContent,
@@ -20,115 +18,12 @@ import { ExpandMore } from "@material-ui/icons";
 import React from "react";
 import { image } from "../../data";
 
-const QUERY_CARD_THUMBNAIL = gql`
-    query GetCard($cardId: Int) {
-        card(id: $cardId) {
-            id
-            no
-            rarity {
-                icon
-            }
-            attribute {
-                icon
-            }
-            role {
-                icon
-            }
-            member {
-                icon_colored
-                color
-            }
-            skills {
-                actives {
-                    thumbnail
-                }
-                passives {
-                    thumbnail
-                }
-            }
-            appearance {
-                unidolized {
-                    deck_thumbnail
-                }
-                idolized {
-                    deck_thumbnail
-                }
-            }
-            is_fes
-        }
-    }
-`;
-
-const useStyles = makeStyles((theme) => ({
-    card: {
-        borderRadius: 20,
-        borderRight: 3,
-        borderRightStyle: "solid",
-    },
-    content: {
-        padding: 8,
-        width: 150,
-        height: "100%",
-    },
-    fullHeight: {
-        height: "100%",
-    },
-    cardMedia: {
-        width: 100,
-        height: 175,
-        borderTopRightRadius: 20,
-        borderBottomRightRadius: 20,
-    },
-    rarityIcon: {
-        width: 50,
-        height: 40,
-        padding: 2,
-    },
-    squareIcon: {
-        width: 40,
-        height: 40,
-        padding: 2,
-    },
-    skillIcon: {
-        width: 35,
-        height: 35,
-        marginLeft: 2,
-    },
-    fesIcon: {
-        width: 60,
-        height: 30,
-    },
-    number: {
-        paddingTop: 5,
-    },
-    expandButton: {
-        transform: "rotate(0deg)",
-        transition: theme.transitions.create("transform", {
-            duration: theme.transitions.duration.shortest,
-        }),
-    },
-    expandButtonOpen: {
-        transform: "rotate(180deg)",
-    },
-    expandedContainer: {
-        paddingTop: 5,
-    },
-}));
-
-export default function CardThumbnail({ cardId, cardObj, idolized }) {
-    const { loading, data } = useQuery(QUERY_CARD_THUMBNAIL, {
-        variables: { cardId },
-        skip: cardObj !== undefined,
-    });
+export default function CardThumbnail({ card, idolized }) {
     const classes = useStyles();
 
     const [expanded, setExpanded] = React.useState(false);
 
-    const card = cardObj || (data && data.card);
-
-    return loading ? (
-        <span>Loading...</span>
-    ) : (
+    return (
         <Card
             className={classes.card}
             style={{ borderRightColor: "#" + card.member.color }}
@@ -225,6 +120,18 @@ export default function CardThumbnail({ cardId, cardObj, idolized }) {
                                             className={classes.fesIcon}
                                         />
                                     ) : undefined}
+                                </Grid>
+                                <Grid item>
+                                    {card.outfits.map((outfit) => (
+                                        <img
+                                            key={outfit.id}
+                                            src={outfit.thumbnail}
+                                            className={classes.outfitIcon}
+                                            title={
+                                                outfit.name.en || outfit.name.jp
+                                            }
+                                        />
+                                    ))}
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -332,3 +239,64 @@ export default function CardThumbnail({ cardId, cardObj, idolized }) {
         </Card>
     );
 }
+
+const useStyles = makeStyles((theme) => ({
+    card: {
+        borderRadius: 20,
+        borderRight: 3,
+        borderRightStyle: "solid",
+    },
+    content: {
+        padding: 8,
+        width: 150,
+        height: "100%",
+    },
+    fullHeight: {
+        height: "100%",
+    },
+    cardMedia: {
+        width: 100,
+        height: 175,
+        borderTopRightRadius: 20,
+        borderBottomRightRadius: 20,
+    },
+    rarityIcon: {
+        width: 50,
+        height: 40,
+        padding: 2,
+    },
+    squareIcon: {
+        width: 40,
+        height: 40,
+        padding: 2,
+    },
+    skillIcon: {
+        width: 35,
+        height: 35,
+        marginLeft: 2,
+    },
+    fesIcon: {
+        width: 50,
+        height: 25,
+    },
+    outfitIcon: {
+        width: 35,
+        height: 35,
+        padding: 1,
+    },
+    number: {
+        paddingTop: 5,
+    },
+    expandButton: {
+        transform: "rotate(0deg)",
+        transition: theme.transitions.create("transform", {
+            duration: theme.transitions.duration.shortest,
+        }),
+    },
+    expandButtonOpen: {
+        transform: "rotate(180deg)",
+    },
+    expandedContainer: {
+        paddingTop: 5,
+    },
+}));
