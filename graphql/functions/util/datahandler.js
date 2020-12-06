@@ -7,6 +7,8 @@ var path = require("path");
 const storage = new Storage({});
 const bucket = storage.bucket("sifas-site.appspot.com");
 
+const IS_PROD = process.env.NODE_ENV === "production";
+
 class JSONDataSource extends DataSource {
     constructor() {
         super();
@@ -90,7 +92,9 @@ const readJSON = async (filePath) => {
 };
 
 const content = (contentPath) => {
-    return `https://content.sifas.guru/${contentPath}`; // TODO add dev server
+    return IS_PROD
+        ? `https://content.sifas.guru/${contentPath}`
+        : `http://localhost:8080/${contentPath}`;
 };
 
 exports.JSONDataSource = JSONDataSource;
