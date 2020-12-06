@@ -1,0 +1,1041 @@
+{
+    "resource_source": {
+        "resource": [
+            "NovelKit/ProductAdvObjectBg",
+            "NovelKit/ProductAdvObject2D",
+            "NovelKit/ProductAdvObject2DSub"
+        ],
+        "sound": [],
+        "script": [],
+        "definition": [
+            "Scenarios/ConstantValues/llas_constants",
+            "Scenarios/ConstantValues/llas_character_constants",
+            "Scenarios/ConstantValues/llas_bg_constants",
+            "Scenarios/ConstantValues/llas_sound_constants",
+            "Scenarios/ConstantValues/llas_character_preset",
+            "Scenarios/ConstantValues/llas_character_facial"
+        ]
+    },
+    "preload": {
+        "ui": [
+            "label|0|1|2|3|4"
+        ],
+        "icon": [
+            "niji|5|6|7|8|9|10|11|12|13|14|15|16|17"
+        ],
+        "ch": [
+            "210 14|18|19",
+            "207 25|21|22"
+        ],
+        "bg": [
+            "20"
+        ],
+        "cg": [],
+        "sp": [],
+        "phoneicon": []
+    },
+    "markers": {
+        "jump": {
+            "#select_1": 125,
+            "#select_2": 130,
+            "#main_1": 135
+        },
+        "other": {}
+    },
+    "commands": [
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "wait_for_load"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|20"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "210",
+            "visual_outfit": "14",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "260",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "visual",
+            "visual_character": "207",
+            "visual_outfit": "25",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "-260",
+            "pos_y": "-40"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 0"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.5"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Shioriko, I'll leave the file you asked for right over here.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Setsuna",
+            "line": "Here are the documents concerning club activities. They are categorized by club. Please look over them when you can.",
+            "voice_idx": "1",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "nod",
+            "character_args": [
+                "-10"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.4
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shioriko",
+            "line": "Yes, thank you. I appreciate the help.",
+            "voice_idx": "2",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Setsuna",
+            "line": "No need to thank me, I'm just handing things over to the new student council president. My apologies, I should have done this task sooner.",
+            "voice_idx": "3",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 5.5
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shioriko",
+            "line": "I should apologize, too. I kept putting this off because I had been so busy.",
+            "voice_idx": "4",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shioriko",
+            "line": "The two of you really are exceptionally competent. I can see it so clearly now that we are all working together like this.",
+            "voice_idx": "5",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shioriko",
+            "line": "What do you say? You can still do your club activities, but what do you say to helping me out with student council work on a regular basis?",
+            "voice_idx": "6",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "I'll help you in any way I can.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Setsuna",
+            "line": "You'll be run ragged with student council work, club activities, and all of your lessons, Shioriko. If there's ever anything I can do to help, please do not hesitate to ask.",
+            "voice_idx": "7",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shioriko",
+            "line": "Thank you.",
+            "voice_idx": "8",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "No problem. If your student council workload is lighter, you'll have more time to focus on our club activities.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "music",
+            "args": "stop"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shioriko",
+            "line": "Yes, club activities...",
+            "voice_idx": "9",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Setsuna",
+            "line": "Shioriko?",
+            "voice_idx": "10",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "load",
+            "load_args": "default|20"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.6
+        },
+        {
+            "command": "sound",
+            "args": "bgm 11"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "130",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shioriko",
+            "line": "Um... I have given it some thought since we last spoke, and I think that I might not be cut out to be a school idol.",
+            "voice_idx": "12",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "What? Why?!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shioriko",
+            "line": "I don't...believe in school idols the way the others do.",
+            "voice_idx": "13",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Believe? You only have to want to be a school idol to become one!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "-260",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "/-10",
+            "pos_y": "/-10"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "movex",
+            "character_args": [
+                "-",
+                "-",
+                "0.2",
+                "/10"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.4
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Setsuna",
+            "line": "Hm... Shioriko, what made you decide to join us in the first place?",
+            "voice_idx": "14",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shioriko",
+            "line": "My reason? Well... I was quite drawn to how your rigorous practicing every day created such a polished performance, and how you moved so many people emotionally.",
+            "voice_idx": "15",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 2.0
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shioriko",
+            "line": "I thought that maybe I could learn to express my own feelings better if I tried being a school idol.",
+            "voice_idx": "16",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Setsuna",
+            "line": "After you express your feelings, what then?",
+            "voice_idx": "17",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "movex",
+            "background_args": [
+                "-",
+                "-",
+                "0.4",
+                "/-100"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.6
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shioriko",
+            "line": "After that? Even if it's just a little bit, I want to make the world a better place than it is now. I don't want anyone to be unhappy.",
+            "voice_idx": "18",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 2.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shioriko",
+            "line": "I know that sounds ridiculous.",
+            "voice_idx": "19",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "||It doesn't sound ridiculous.|| select_1"
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "||That's a big dream.|| select_2"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "It doesn't sound ridiculous. It's really great!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "7"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shioriko",
+            "line": "But still, it is an unreachable dream.",
+            "voice_idx": "20",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "That's a big dream.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "7"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shioriko",
+            "line": "It's also very vague.",
+            "voice_idx": "21",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "music",
+            "args": "stop"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 0.6
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "260",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "scale",
+            "scale_x": 1.0,
+            "scale_y": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "show"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "6"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "-260",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "scale",
+            "scale_x": 1.0,
+            "scale_y": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Setsuna",
+            "line": "Oh, I love it! How wonderful, Shioriko! I think that's what makes you so amazing!",
+            "voice_idx": "22",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shioriko",
+            "line": "Setsuna?",
+            "voice_idx": "23",
+            "is_plus": false
+        },
+        {
+            "command": "sound",
+            "args": "bgm 24"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Setsuna",
+            "line": "Most people don't have enough motivation to want to change the world, but you really want to do it! I think you should be sharing those feelings with everyone, Shioriko!",
+            "voice_idx": "25",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Setsuna's right. If you have a clear idea of what you want to achieve, you should go for it!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shioriko",
+            "line": "You don't think I'm being unrealistic, or reckless?",
+            "voice_idx": "26",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Why would we? You're our friend, and it's your dream. Of course we're gonna want to help you achieve it.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Setsuna",
+            "line": "Exactly! I am so happy you shared your dream with us!",
+            "voice_idx": "27",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shioriko",
+            "line": "Th-Thank you! I am so glad I talked to the two of you.",
+            "voice_idx": "28",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        }
+    ]
+}

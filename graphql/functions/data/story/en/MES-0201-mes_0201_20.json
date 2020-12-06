@@ -1,0 +1,1057 @@
+{
+    "resource_source": {
+        "resource": [
+            "NovelKit/ProductAdvObjectBg",
+            "NovelKit/ProductAdvObject2D",
+            "NovelKit/ProductAdvObject2DSub"
+        ],
+        "sound": [],
+        "script": [],
+        "definition": [
+            "Scenarios/ConstantValues/llas_constants",
+            "Scenarios/ConstantValues/llas_character_constants",
+            "Scenarios/ConstantValues/llas_bg_constants",
+            "Scenarios/ConstantValues/llas_character_preset",
+            "Scenarios/ConstantValues/llas_sound_constants",
+            "Scenarios/ConstantValues/llas_character_facial"
+        ]
+    },
+    "preload": {
+        "ui": [
+            "label|0|1|2|3|4"
+        ],
+        "icon": [
+            "muse|5|6|7|8|9|10|11|12|13|14|15|16",
+            "aqours|17|18|19|20|21|22|23|24|25|14|26|16",
+            "niji|27|28|29|30|31|32|33|34|35|36|14|37|16"
+        ],
+        "ch": [
+            "201 2|38|39"
+        ],
+        "bg": [
+            "40",
+            "41"
+        ],
+        "cg": [],
+        "sp": [],
+        "phoneicon": []
+    },
+    "markers": {
+        "jump": {
+            "#select_1": 168,
+            "#select_2": 179,
+            "#main_1": 186
+        },
+        "other": {}
+    },
+    "commands": [
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "wait_for_load"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|40"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.7"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 0"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Slanting"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.5"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "201",
+            "visual_outfit": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Good job today. You must be tired after meeting so many people all day.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "2",
+                "4"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "Not at all. I'm the one who asked you to bring me along, so I have to be okay. Honestly, I was just nervous to meet the people who've been cheering for me this whole time.",
+            "voice_idx": "1",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.8
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 2.0
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "open"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Ahaha. I think your fans were more on edge than you were.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "nod",
+            "character_args": [
+                "-10"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "We all were, definitely. But I'm really so glad I could talk to them. Actually, something occurred to me over the course of the conversation. Can I tell you about it?",
+            "voice_idx": "2",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 2.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "unknown_soundstop",
+            "soundstop_args": "bgm 0"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type StripeHorizontal"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip disable"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.7"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|41"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "load",
+            "load_args": "default|41"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 1.0
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 3.0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 3"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type StripeHorizontal"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "flip enable"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.7"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "What was it?",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "Well, it's just...I was thinking I have to change too.",
+            "voice_idx": "4",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Hmm? What do you mean?",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "Well, I just kinda feel like...I need to have more confidence in myself.",
+            "voice_idx": "5",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "open"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "I realized that today when I met my fans. They all have so much faith in me.",
+            "voice_idx": "6",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_soundstop",
+            "soundstop_args": "bgm 3"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "But you know, up until now, I haven't had all that much faith in myself. I just couldn't understand why they'd be fans of someone like me.",
+            "voice_idx": "7",
+            "is_plus": false
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 3.0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 8"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Oh, Ayumu.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "6"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "I mean, I did want them to like me, of course! I'd been going up on stage to tell everyone, \"This is who I am. Please look at me and watch over me.\"",
+            "voice_idx": "9",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "But I wonder if maybe I was going about it all wrong.",
+            "voice_idx": "10",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Right...",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "visual",
+            "visual_character": "201",
+            "visual_outfit": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "show"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.7
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "No matter what I think of myself, my fans say they like me how I am.",
+            "voice_idx": "11",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 3.5
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "3"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "I need to stop questioning why they like me. It's rude to all the people who support me each day.",
+            "voice_idx": "12",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "I think so too. It's really sad to see someone you like and admire put themselves down.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "Mm-hmm. I'm just a normal girl, and there's really nothing that stands out about me. But there are so many people who like me anyway. It's really amazing!",
+            "voice_idx": "13",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.1
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "nod",
+            "character_args": [
+                "-10"
+            ]
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "I want to learn to like myself the way they do too. I want to have the confidence to say, \"Yeah, I am pretty great, huh?\"",
+            "voice_idx": "14",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "It's a shame you didn't tell that to all your fans. I bet they would've loved to hear it!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "I wanted to tell you first.",
+            "voice_idx": "15",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "Also! I want to tell them how I feel at my live show! I'm sure they'll pick up on it!",
+            "voice_idx": "16",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_soundstop",
+            "soundstop_args": "bgm 8"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Then we've gotta make a song that conveys that!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 17"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "Yeah!",
+            "voice_idx": "18",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.1
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "nod",
+            "character_args": [
+                "-12"
+            ]
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Here I'd been wondering how you could make your fans happy when the answer was staring us right in the face all this time.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "We should use your words. No bells or whistles, just your honest feelings laid bare.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "6"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "Wait, you want ME to write the lyrics?! I-I don't know about that... Do you really think I can?",
+            "voice_idx": "19",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "||Of course!|| select_1"
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "||Does it scare you?|| select_2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Of course you can! You have feelings you want to share with everyone, don't you?",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "nod",
+            "character_args": [
+                "-10"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "I guess that's true. I have so many words welling up inside my heart right now.",
+            "voice_idx": "20",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 2.0
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Does it scare you?",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "Well, I mean, I don't know if I can put my thoughts into words.",
+            "voice_idx": "21",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "It'll be all right. You've got me with you!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ayumu",
+            "line": "Well, then I'll give it a whirl! And I'll let everyone know just how I feel!",
+            "voice_idx": "22",
+            "is_plus": false
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        }
+    ]
+}

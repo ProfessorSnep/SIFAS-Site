@@ -1,0 +1,2583 @@
+{
+    "resource_source": {
+        "resource": [
+            "NovelKit/ProductAdvObjectBg",
+            "NovelKit/ProductAdvObject2D",
+            "NovelKit/ProductAdvObject2DSub"
+        ],
+        "sound": [],
+        "script": [],
+        "definition": [
+            "Scenarios/ConstantValues/llas_constants",
+            "Scenarios/ConstantValues/llas_character_constants",
+            "Scenarios/ConstantValues/llas_bg_constants",
+            "Scenarios/ConstantValues/llas_character_preset",
+            "Scenarios/ConstantValues/llas_sound_constants",
+            "Scenarios/Macro/llas_voice_effect",
+            "Scenarios/ConstantValues/llas_character_facial"
+        ]
+    },
+    "preload": {
+        "ui": [
+            "label|0|1|2|3|4"
+        ],
+        "icon": [
+            "muse|5|6|7|8|9|10|11|12|13|14|15|16",
+            "aqours|17|18|19|20|21|22|23|24|25|14|26|16",
+            "niji|27|28|29|30|31|32|33|34|35|36|14|37|16"
+        ],
+        "ch": [
+            "203 1|38|39",
+            "203 1 99|40",
+            "201 1 1|41|42",
+            "202 1 1|43|44",
+            "204 1 1|45|46",
+            "205 1 1|47|48",
+            "206 1 1|49|50",
+            "207 1 1|51|52",
+            "208 1 1|53|54",
+            "9999 1 1|55|56"
+        ],
+        "bg": [
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62"
+        ],
+        "cg": [],
+        "sp": [],
+        "phoneicon": []
+    },
+    "markers": {
+        "jump": {
+            "#select_1": 391,
+            "#select_2": 415,
+            "#main_1": 438
+        },
+        "other": {}
+    },
+    "commands": [
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "wait_for_load"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|57"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "load",
+            "load_args": "default|57"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "scale",
+            "scale_x": 1.4,
+            "scale_y": 1.4
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.5"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 0"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Slanting"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.5"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "203",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "I've finished my story, Prez. I want you to be the first to hear it... Would that be okay with you?",
+            "voice_idx": "1",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "It would be my honor, Shizuku.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "nod",
+            "character_args": [
+                "-10"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "Then I'll begin. This is the story of a young girl...",
+            "voice_idx": "2",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "unknown_soundstop",
+            "soundstop_args": "bgm 0"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.6"
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "load",
+            "load_args": "default|59"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "set_recollect",
+            "recollect_value": "enable"
+        },
+        {
+            "command": "wait",
+            "duration": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "visual",
+            "visual_character": "203",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "face",
+            "visual_expression": "99"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "color",
+            "character_args": [
+                "black"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "show"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.8"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.8"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 3"
+        },
+        {
+            "command": "wait",
+            "duration": 0.7
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "The young girl's heart was filled with hopes for tomorrow. Tomorrow, she would put on a performance she'd always dreamed of.",
+            "voice_idx": "4",
+            "is_plus": false
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "Though of course, she did have her worries. All sorts of concerns prickled at her mind. What would she do if she messed up? What would she do if it didn't go well?",
+            "voice_idx": "5",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.7"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "load",
+            "load_args": "default|60"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "1.0"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "\"I knew you hadn't lost your passion for being a school idol!\"",
+            "voice_idx": "6",
+            "is_plus": false
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "With those words and a brilliant smile, all the girl's worries vanished without a trace. It was then...that my life began anew.",
+            "voice_idx": "7",
+            "is_plus": false
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "This is a place where each of us can express ourselves the way we want to, and follow the path we want to.",
+            "voice_idx": "8",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.7"
+        },
+        {
+            "command": "character",
+            "character_id": "5",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "5",
+            "character_cmd": "visual",
+            "visual_character": "201",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "5",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "5",
+            "character_cmd": "color",
+            "character_args": [
+                "black"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "5",
+            "character_cmd": "pos",
+            "pos_x": "-260",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "5",
+            "character_cmd": "pos",
+            "pos_x": "/-80",
+            "pos_y": "/0"
+        },
+        {
+            "command": "character",
+            "character_id": "5",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "6",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "6",
+            "character_cmd": "visual",
+            "visual_character": "202",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "6",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "6",
+            "character_cmd": "color",
+            "character_args": [
+                "black"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "6",
+            "character_cmd": "pos",
+            "pos_x": "-130",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "6",
+            "character_cmd": "pos",
+            "pos_x": "/-95",
+            "pos_y": "/0"
+        },
+        {
+            "command": "character",
+            "character_id": "6",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "7",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "7",
+            "character_cmd": "visual",
+            "visual_character": "204",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "7",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "7",
+            "character_cmd": "color",
+            "character_args": [
+                "black"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "7",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "7",
+            "character_cmd": "pos",
+            "pos_x": "/-100",
+            "pos_y": "/0"
+        },
+        {
+            "command": "character",
+            "character_id": "7",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "8",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "8",
+            "character_cmd": "visual",
+            "visual_character": "205",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "8",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "8",
+            "character_cmd": "color",
+            "character_args": [
+                "black"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "8",
+            "character_cmd": "pos",
+            "pos_x": "130",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "8",
+            "character_cmd": "pos",
+            "pos_x": "/-105",
+            "pos_y": "/0"
+        },
+        {
+            "command": "character",
+            "character_id": "8",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "9",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "9",
+            "character_cmd": "visual",
+            "visual_character": "206",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "9",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "9",
+            "character_cmd": "color",
+            "character_args": [
+                "black"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "9",
+            "character_cmd": "pos",
+            "pos_x": "260",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "9",
+            "character_cmd": "pos",
+            "pos_x": "/-110",
+            "pos_y": "/0"
+        },
+        {
+            "command": "character",
+            "character_id": "9",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "10",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "10",
+            "character_cmd": "visual",
+            "visual_character": "207",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "10",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "10",
+            "character_cmd": "color",
+            "character_args": [
+                "black"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "10",
+            "character_cmd": "pos",
+            "pos_x": "390",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "10",
+            "character_cmd": "pos",
+            "pos_x": "/-115",
+            "pos_y": "/0"
+        },
+        {
+            "command": "character",
+            "character_id": "10",
+            "character_cmd": "",
+            "character_args": [
+                "hide"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "11",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "11",
+            "character_cmd": "visual",
+            "visual_character": "208",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "11",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "11",
+            "character_cmd": "color",
+            "character_args": [
+                "black"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "11",
+            "character_cmd": "pos",
+            "pos_x": "390",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "11",
+            "character_cmd": "pos",
+            "pos_x": "/-5",
+            "pos_y": "/0"
+        },
+        {
+            "command": "character",
+            "character_id": "11",
+            "character_cmd": "",
+            "character_args": [
+                "hide"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "12",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "12",
+            "character_cmd": "visual",
+            "visual_character": "9999",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "12",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "12",
+            "character_cmd": "color",
+            "character_args": [
+                "black"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "12",
+            "character_cmd": "pos",
+            "pos_x": "390",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "12",
+            "character_cmd": "pos",
+            "pos_x": "/115",
+            "pos_y": "/0"
+        },
+        {
+            "command": "character",
+            "character_id": "12",
+            "character_cmd": "",
+            "character_args": [
+                "hide"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "load",
+            "load_args": "default|58"
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "load",
+            "load_args": "default|58"
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "scale",
+            "scale_x": 1.5,
+            "scale_y": 1.5
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "pos",
+            "background_args": [
+                "/240",
+                "/0"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "1.0"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "There really is no better way to describe the new School Idol Club.",
+            "voice_idx": "9",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep bg4_move"
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "move",
+            "background_args": [
+                "-",
+                "-",
+                "11",
+                "/-480",
+                "/0"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 1.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "Though the people around me have very different goals, they're all focused intently on the future they want, just like I am.",
+            "voice_idx": "10",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.3
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch5_move"
+        },
+        {
+            "command": "character",
+            "character_id": "5",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "18.0",
+                "/-900",
+                "/0"
+            ]
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch5_show"
+        },
+        {
+            "command": "character",
+            "character_id": "5",
+            "character_cmd": "show"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 0.7
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch6_move"
+        },
+        {
+            "command": "character",
+            "character_id": "6",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "18.0",
+                "/-900",
+                "/0"
+            ]
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch6_show"
+        },
+        {
+            "command": "character",
+            "character_id": "6",
+            "character_cmd": "show"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 0.8
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch7_move"
+        },
+        {
+            "command": "character",
+            "character_id": "7",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "18.0",
+                "/-900",
+                "/0"
+            ]
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch7_show"
+        },
+        {
+            "command": "character",
+            "character_id": "7",
+            "character_cmd": "show"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 0.8
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch8_move"
+        },
+        {
+            "command": "character",
+            "character_id": "8",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "18.0",
+                "/-900",
+                "/0"
+            ]
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch8_show"
+        },
+        {
+            "command": "character",
+            "character_id": "8",
+            "character_cmd": "show"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch5_hide"
+        },
+        {
+            "command": "character",
+            "character_id": "5",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 0.8
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch9_move"
+        },
+        {
+            "command": "character",
+            "character_id": "9",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "18.0",
+                "/-900",
+                "/0"
+            ]
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch9_show"
+        },
+        {
+            "command": "character",
+            "character_id": "9",
+            "character_cmd": "show"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch6_hide"
+        },
+        {
+            "command": "character",
+            "character_id": "6",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 0.8
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch10_move"
+        },
+        {
+            "command": "character",
+            "character_id": "10",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "18.0",
+                "/-900",
+                "/0"
+            ]
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch10_show"
+        },
+        {
+            "command": "character",
+            "character_id": "10",
+            "character_cmd": "show"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch7_hide"
+        },
+        {
+            "command": "character",
+            "character_id": "7",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 0.8
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch11_move"
+        },
+        {
+            "command": "character",
+            "character_id": "11",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "18.0",
+                "/-900",
+                "/0"
+            ]
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch11_show"
+        },
+        {
+            "command": "character",
+            "character_id": "11",
+            "character_cmd": "show"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch8_hide"
+        },
+        {
+            "command": "character",
+            "character_id": "8",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 0.8
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch12_move"
+        },
+        {
+            "command": "character",
+            "character_id": "12",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "18.0",
+                "/-900",
+                "/0"
+            ]
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch12_show"
+        },
+        {
+            "command": "character",
+            "character_id": "12",
+            "character_cmd": "show"
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch9_hide"
+        },
+        {
+            "command": "character",
+            "character_id": "9",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 0.8
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch10_hide"
+        },
+        {
+            "command": "character",
+            "character_id": "10",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 0.8
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch11_hide"
+        },
+        {
+            "command": "character",
+            "character_id": "11",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 0.8
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch12_hide"
+        },
+        {
+            "command": "character",
+            "character_id": "12",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "There by our side was someone who always gave us strength and supported us.",
+            "voice_idx": "11",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "background",
+            "background_id": "4",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 1.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "In this world, I'm able to be a bit more selfish and play the roles I want to play.",
+            "voice_idx": "12",
+            "is_plus": false
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "There are so many school idols that shine bright in my imagination. The playful little prankster. The cool and confident type. The mysterious type.",
+            "voice_idx": "13",
+            "is_plus": false
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "There are countless school idols within me that are just dying to be seen.",
+            "voice_idx": "14",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.6
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "Can I ever play them all?",
+            "voice_idx": "15",
+            "is_plus": false
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "That's not a question. I WILL play them all. And I want to tell all of you about it!",
+            "voice_idx": "16",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.7"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "delete",
+            "character_args": []
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "load",
+            "load_args": "default|61"
+        },
+        {
+            "command": "background",
+            "background_id": "7",
+            "background_cmd": "load",
+            "load_args": "empty"
+        },
+        {
+            "command": "background",
+            "background_id": "7",
+            "background_cmd": "color",
+            "background_args": [
+                "#FFFFFF"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "7",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "1.0"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "What kind of school idol will I play tomorrow? What kind of life will I perform?",
+            "voice_idx": "17",
+            "is_plus": false
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "Our stories fill the pages of these empty notebooks. These stories will become our future. They will be the scripts of tomorrow.",
+            "voice_idx": "18",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.2
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep bg6_show"
+        },
+        {
+            "command": "background",
+            "background_id": "7",
+            "background_cmd": "show"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "load",
+            "load_args": "default|60"
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "scale",
+            "scale_x": 1.6,
+            "scale_y": 1.6
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "pos",
+            "background_args": [
+                "/0",
+                "/-180"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep bg7_hide"
+        },
+        {
+            "command": "background",
+            "background_id": "7",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "This world is my stage! It's up to me what sort of character I'll be and how I live. My life will be how I want it to be!",
+            "voice_idx": "19",
+            "is_plus": false
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "This is a formal challenge, from the scriptwriter I am today to the leading lady I'll be tomorrow!",
+            "voice_idx": "20",
+            "is_plus": false
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "Can you play that type of school idol?",
+            "voice_idx": "21",
+            "is_plus": false
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "Can you fill the stage with your smile?",
+            "voice_idx": "22",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "visual",
+            "visual_character": "203",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "color",
+            "character_args": [
+                "black"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.7
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "\"Of course I can!\" I'll respond with a confident boom.",
+            "voice_idx": "23",
+            "is_plus": false
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "But deep down, I know I'll still have some of those doubts pricking at my heart.",
+            "voice_idx": "24",
+            "is_plus": false
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "They'll always be trying to drown my heart in their darkness!",
+            "voice_idx": "25",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "1.0"
+        },
+        {
+            "command": "character",
+            "character_id": "3",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "load",
+            "load_args": "default|60"
+        },
+        {
+            "command": "background",
+            "background_id": "6",
+            "background_cmd": "load",
+            "load_args": "empty"
+        },
+        {
+            "command": "background",
+            "background_id": "6",
+            "background_cmd": "color",
+            "background_args": [
+                "#000000"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.2"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "Whenever I sense that, I just have to remember one simple thing.",
+            "voice_idx": "26",
+            "is_plus": false
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "I remember the person who reached out and pulled me back into the world of school idols and acting that I'd always loved.",
+            "voice_idx": "27",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.7"
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "load",
+            "load_args": "default|62"
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "scale",
+            "scale_x": 1.0,
+            "scale_y": 1.0
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "pos",
+            "background_args": [
+                "0",
+                "0"
+            ]
+        },
+        {
+            "command": "background",
+            "background_id": "6",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "1.0"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "When I took her hand, those doubts turned to excitement.",
+            "voice_idx": "28",
+            "is_plus": false
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "\"No matter what happens, I'll be there for all of you! I'll do everything in my power to support you!\"",
+            "voice_idx": "29",
+            "is_plus": false
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "I just remember the warmth in her hand.",
+            "voice_idx": "30",
+            "is_plus": false
+        },
+        {
+            "command": "audio_effect",
+            "effect_target": "voice",
+            "effect_value": "AisacC10_BUS_REV",
+            "effect_param": "0.14"
+        },
+        {
+            "command": "set_label",
+            "label_value": "niji @shizuku"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "That's why I act to this day. It's why I can tell you about the most magnificent school idol I have in my heart.",
+            "voice_idx": "31",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "unknown_soundstop",
+            "soundstop_args": "bgm 3"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.8"
+        },
+        {
+            "command": "set_recollect",
+            "recollect_value": "disable"
+        },
+        {
+            "command": "background",
+            "background_id": "3",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 1.0
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "1.2"
+        },
+        {
+            "command": "wait",
+            "duration": 0.5
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch1_move"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "0.5",
+                "/0",
+                "/-8"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.1
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "Phew... So, what did you think? Did my story touch your heart?",
+            "voice_idx": "32",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.7
+        },
+        {
+            "command": "set_movement",
+            "movement_settings": "keep ch1_move2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "move",
+            "move_args": [
+                "-",
+                "-",
+                "0.5",
+                "/0",
+                "/8"
+            ]
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "open"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "||It was amazing!|| select_1"
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "||I got chills!|| select_2"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 33"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "visual",
+            "visual_character": "203",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "scale",
+            "scale_x": 1.4,
+            "scale_y": 1.4
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-120"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "show"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.6
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "W-Wow! It was amazing, Shizuku!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "1.5",
+                "4"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "Hehe, I'm really glad!",
+            "voice_idx": "34",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 33"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "visual",
+            "visual_character": "203",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "scale",
+            "scale_x": 1.4,
+            "scale_y": 1.4
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-120"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "show"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.6
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "I got chills. It was so true to life.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "shake",
+            "character_args": [
+                "y",
+                "3",
+                "-4"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "*Giggle* Well, those are my true and honest feelings.",
+            "voice_idx": "35",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Are you the main character in your live reading?",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "1.5",
+                "5"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "Hmm... I guess you could say that, but it's not 100% accurate. It's kind of me, but it's kind of not.",
+            "voice_idx": "36",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 1.0
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "eye",
+            "visual_eyes": "open"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Got it.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "But it's definitely a story that allows me to live vicariously through the beginning of it all, any time I want.",
+            "voice_idx": "37",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "I know it's just a story, but it still makes me happy to hear. Okay, let's make a song that'll go perfectly with your reading! Then you can let everyone in the fan club hear!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Shizuku",
+            "line": "Okay!",
+            "voice_idx": "38",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.1
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "nod",
+            "character_args": [
+                "-15"
+            ]
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.5"
+        }
+    ]
+}

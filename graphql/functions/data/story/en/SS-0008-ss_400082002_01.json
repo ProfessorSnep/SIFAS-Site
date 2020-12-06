@@ -1,0 +1,883 @@
+{
+    "resource_source": {
+        "resource": [
+            "NovelKit/ProductAdvObjectBg",
+            "NovelKit/ProductAdvObject2D",
+            "NovelKit/ProductAdvObject2DSub"
+        ],
+        "sound": [],
+        "script": [],
+        "definition": [
+            "Scenarios/ConstantValues/llas_constants",
+            "Scenarios/ConstantValues/llas_character_constants",
+            "Scenarios/ConstantValues/llas_bg_constants",
+            "Scenarios/ConstantValues/llas_character_preset",
+            "Scenarios/ConstantValues/llas_sound_constants",
+            "Scenarios/ConstantValues/llas_unique_dress",
+            "Scenarios/ConstantValues/llas_character_facial"
+        ]
+    },
+    "preload": {
+        "ui": [
+            "label|0|1|2|3|4"
+        ],
+        "icon": [
+            "muse|5|6|7|8|9|10|11|12|13|14|15|16",
+            "aqours|17|18|19|20|21|22|23|24|25|14|26|16",
+            "niji|27|28|29|30|31|32|33|34|35|36|14|37|16"
+        ],
+        "ch": [
+            "8 42002|38|39",
+            "105 43002|40|41"
+        ],
+        "bg": [
+            "42"
+        ],
+        "cg": [],
+        "sp": [],
+        "phoneicon": []
+    },
+    "markers": {
+        "jump": {},
+        "other": {}
+    },
+    "commands": [
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "wait_for_load"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|42"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "load",
+            "load_args": "default|42"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.5"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 0"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Slanting"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.5"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "8",
+            "visual_outfit": "42002"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Hanayo",
+            "line": "Why are kids so darn cute?",
+            "voice_idx": "1",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "260",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "visual",
+            "visual_character": "105",
+            "visual_outfit": "43002"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "-260",
+            "pos_y": "-40"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "You",
+            "line": "Yeah, you just wanna give 'em a nice big hug. And you never get tired of watching them!",
+            "voice_idx": "2",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.1
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "nod",
+            "character_args": [
+                "-10"
+            ]
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Hanayo",
+            "line": "They run around forever. They're so small, so where does all that energy even come from?",
+            "voice_idx": "3",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Hanayo",
+            "line": "I'm exhausted after just playing with them for a short time. But of course you're fine, You.",
+            "voice_idx": "4",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 5.0
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "nod",
+            "character_args": [
+                "-10"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "You",
+            "line": "Well, I am a sports club member. But Hanayo, you've got the stamina to keep up with school idol practices, don't you?",
+            "voice_idx": "5",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Hanayo",
+            "line": "I should, but... *Giggle* I've been defeated by the power of children.",
+            "voice_idx": "6",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 3.0
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "You",
+            "line": "Which means that playing with kids could be a really good way to build up stamina.",
+            "voice_idx": "7",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "shake",
+            "character_args": [
+                "y",
+                "3",
+                "-4"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Hanayo",
+            "line": "Ahaha! That's true. Maybe we're all undergoing some hard training.",
+            "voice_idx": "8",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "You",
+            "line": "Okay then. How about running through a few drills so we're always able to keep up with kids?",
+            "voice_idx": "9",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.1
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "nod",
+            "character_args": [
+                "-10"
+            ]
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Hanayo",
+            "line": "Hmm? How?",
+            "voice_idx": "10",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "You",
+            "line": "We've got a ball right here, so how about the two of us play some dodgeball?",
+            "voice_idx": "11",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Hanayo",
+            "line": "Dodgeball! It's been so long since I've played that.",
+            "voice_idx": "12",
+            "is_plus": false
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "clear"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "show"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "wait",
+            "duration": 1.2
+        },
+        {
+            "command": "unknown_soundstop",
+            "soundstop_args": "bgm 0 force"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "390",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "show"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "-390",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "You",
+            "line": "All right, here I go! Take that!",
+            "voice_idx": "13",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 2.5
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "2",
+                "-15"
+            ]
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.0"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 14"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Hanayo",
+            "line": "Whoa! You, that was too sudden!",
+            "voice_idx": "15",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "shake",
+            "character_args": [
+                "y",
+                "3",
+                "-4"
+            ]
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "You",
+            "line": "Ahaha! Come on, Hanayo, serve it back!",
+            "voice_idx": "16",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "3"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Hanayo",
+            "line": "Ugh! I won't go easy on you! Take that!",
+            "voice_idx": "17",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 3.0
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "2",
+                "15"
+            ]
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "You",
+            "line": "Ooh, nice serve! Time for me to get serious about this!",
+            "voice_idx": "18",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "5"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Hanayo",
+            "line": "What?! You weren't being serious before?",
+            "voice_idx": "19",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "You",
+            "line": "That was just a warm-up. *Giggle* Okay, get ready!",
+            "voice_idx": "20",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Hanayo",
+            "line": "Whoa, whoa! Wait just a second!",
+            "voice_idx": "21",
+            "is_plus": false
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        }
+    ]
+}

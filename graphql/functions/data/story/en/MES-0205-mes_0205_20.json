@@ -1,0 +1,787 @@
+{
+    "resource_source": {
+        "resource": [
+            "NovelKit/ProductAdvObjectBg",
+            "NovelKit/ProductAdvObject2D",
+            "NovelKit/ProductAdvObject2DSub"
+        ],
+        "sound": [],
+        "script": [],
+        "definition": [
+            "Scenarios/ConstantValues/llas_constants",
+            "Scenarios/ConstantValues/llas_character_constants",
+            "Scenarios/ConstantValues/llas_bg_constants",
+            "Scenarios/ConstantValues/llas_character_preset",
+            "Scenarios/ConstantValues/llas_sound_constants",
+            "Scenarios/Macro/llas_voice_effect",
+            "Scenarios/ConstantValues/llas_character_facial"
+        ]
+    },
+    "preload": {
+        "ui": [
+            "label|0|1|2|3|4"
+        ],
+        "icon": [
+            "muse|5|6|7|8|9|10|11|12|13|14|15|16",
+            "aqours|17|18|19|20|21|22|23|24|25|14|26|16",
+            "niji|27|28|29|30|31|32|33|34|35|36|14|37|16"
+        ],
+        "ch": [
+            "205 1|38|39",
+            "205 1 99|40"
+        ],
+        "bg": [
+            "41"
+        ],
+        "cg": [],
+        "sp": [],
+        "phoneicon": []
+    },
+    "markers": {
+        "jump": {
+            "#select_1": 62,
+            "#select_2": 71,
+            "#main_1": 80
+        },
+        "other": {}
+    },
+    "commands": [
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0"
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "enable"
+        },
+        {
+            "command": "wait_for_load"
+        },
+        {
+            "command": "background",
+            "background_id": "1",
+            "background_cmd": "load",
+            "load_args": "default|41"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "load",
+            "load_args": "default|41"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "in 0"
+        },
+        {
+            "command": "music",
+            "fade": true,
+            "args": "out 1.5"
+        },
+        {
+            "command": "sound",
+            "args": "bgm 0"
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Slanting"
+        },
+        {
+            "command": "fade",
+            "direction": "in",
+            "side": "front",
+            "duration": "0.5"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "visual",
+            "visual_character": "205",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "set_viewing",
+            "viewing_value": "disable"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "What do you want to do for your next live show?",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "Well, there's something I want to try out.",
+            "voice_idx": "1",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "create"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "visual",
+            "visual_character": "205",
+            "visual_outfit": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "scale",
+            "scale_x": 1.2,
+            "scale_y": 1.2
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "pos",
+            "pos_x": "/0",
+            "pos_y": "/-45"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "show"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.6
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "What is it?",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "eye",
+            "visual_eyes": "open"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "I'd like to hold it at the hospital. Could we do that?",
+            "voice_idx": "2",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "What? A live show at a hospital?",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "Well, you told me the other day that I was really good at creating fun, y'know?",
+            "voice_idx": "3",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "I've always loved making the people around me laugh and smile. So I wanna explore that more as a school idol too!",
+            "voice_idx": "4",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "I wanna make things fun and bring a smile to everyone's faces.",
+            "voice_idx": "5",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "That way, everyone can start feeling a bit more positively. That's the kind of school idol I want to be.",
+            "voice_idx": "6",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "So I want to put on a live show that will cheer people up, and sing a song that'll go with that. What do you think?",
+            "voice_idx": "7",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Yeah, I think that sounds good. That sounds great!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "Aha, yay! I thought you'd say that.",
+            "voice_idx": "8",
+            "is_plus": false
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "||This idea is so you.|| select_1"
+        },
+        {
+            "command": "unknown_select",
+            "select_args": "||You read my mind!|| select_2"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "What a great idea. It's exactly the sort of thing I'd expect you to come up with.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "Nah, I'm not THAT great... Or am I? Just kidding. Ahahaha!",
+            "voice_idx": "9",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 2.0
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "You read my mind!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "6"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "I mean, we ARE super close.",
+            "voice_idx": "10",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "unknown_goto",
+            "goto_args": "main_1"
+        },
+        {
+            "command": "character",
+            "character_id": "2",
+            "character_cmd": "hide"
+        },
+        {
+            "command": "background",
+            "background_id": "2",
+            "background_cmd": "hide"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "pos",
+            "pos_x": "0",
+            "pos_y": "-40"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "show"
+        },
+        {
+            "command": "wait",
+            "duration": 0.6
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Cheering people up is an Ai specialty.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "4"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "People feel nervous and scared when they're in the hospital, right?",
+            "voice_idx": "11",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "eye",
+            "visual_eyes": "close"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "Er, I guess that's pretty obvious. You don't go to a hospital when you're feeling great. Anyway, I just wanna do somethin' to make their lives a little easier!",
+            "voice_idx": "12",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 5.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "6"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "I mean, laughter is the best medicine, right?",
+            "voice_idx": "13",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "If you can laugh a lot and feel happy for a while, you might be able to forget your pain just for a moment.",
+            "voice_idx": "14",
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "And that moment might be the turning point you needed to start feeling better and getting well. So that's why I'd like to try this out.",
+            "voice_idx": "15",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Wow. You've really thought this all through.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "shake",
+            "character_args": [
+                "x",
+                "3",
+                "4"
+            ]
+        },
+        {
+            "command": "wait",
+            "duration": 0.2
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "Nah, it's just 'cause you gave me a push in the right direction. So what do you think? Can we pull this off?",
+            "voice_idx": "16",
+            "is_plus": true
+        },
+        {
+            "command": "delay",
+            "duration": 0.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "stopshake",
+            "character_args": []
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "delay",
+            "duration": 3.5
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "end_delay"
+        },
+        {
+            "command": "wait_for_click"
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "A live show at a hospital... We'll have to start by contacting some hospitals. Let's tell them what you're thinking.",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "2"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "I'll write them a letter. I want to explain to them myself why I want to do this!",
+            "voice_idx": "17",
+            "is_plus": false
+        },
+        {
+            "command": "speak",
+            "speaker": "[player]",
+            "line": "Yeah, that sounds good. Let's go with that!",
+            "voice_idx": null,
+            "is_plus": false
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "face",
+            "visual_expression": "1"
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "jump"
+        },
+        {
+            "command": "wait",
+            "duration": 0.3
+        },
+        {
+            "command": "character",
+            "character_id": "1",
+            "character_cmd": "talk"
+        },
+        {
+            "command": "speak",
+            "speaker": "Ai",
+            "line": "Okay! I'm gonna do my best!",
+            "voice_idx": "18",
+            "is_plus": false
+        },
+        {
+            "command": "set_fade_setting",
+            "fade_settings": "type Default"
+        },
+        {
+            "command": "fade",
+            "direction": "out",
+            "side": "front",
+            "duration": "0.5"
+        }
+    ]
+}
