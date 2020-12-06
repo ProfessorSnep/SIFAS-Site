@@ -16,6 +16,7 @@ exports.typeDefs = gql`
         "All outfits linked to the card"
         outfits: [CardOutfit]!
         skills: CardSkills!
+        stats: CardStats!
         "True if the card is on the WW version"
         is_on_global: Boolean!
         "Max number of inspiration slots this card can have"
@@ -121,6 +122,30 @@ exports.typeDefs = gql`
         "Effect thumbnail image"
         thumbnail: String!
     }
+
+    type CardStats {
+        max_level: Int!
+        total: [LimitBrokenStat]!
+        training: [LimitBrokenStat]!
+        levels: [LeveledStat]!
+        idolized_increase: CardStat!
+    }
+
+    type LeveledStat {
+        level: Int!
+        stats: CardStat!
+    }
+
+    type LimitBrokenStat {
+        limit_break: Int!
+        stats: CardStat!
+    }
+
+    type CardStat {
+        appeal: Int!
+        stamina: Int!
+        technique: Int!
+    }
 `;
 
 const skillsToLeveledAbilities = (skills) => {
@@ -145,6 +170,7 @@ exports.resolvers = {
         appearance: (parent) => parent.appearance,
         outfits: (parent) => parent.outfits,
         skills: (parent) => parent.skills,
+        stats: (parent) => parent.stats,
         is_on_global: (parent) => parent.is_on_global,
         inspiration_slots: (parent) => parent.inspiration_slots,
         is_fes: (parent) => parent.is_fes,
@@ -236,5 +262,37 @@ exports.resolvers = {
             en: parent.description_en,
         }),
         thumbnail: (parent) => content(parent.thumbnail_image_asset),
+    },
+    CardStats: {
+        max_level: (parent) => parent.max_level,
+        total: (parent) =>
+            Object.entries(parent.stat_summary).map(([k, v]) => ({
+                ...v,
+                limit_break: parseInt(k),
+            })),
+        training: (parent) =>
+            Object.entries(parent.training_stat_increase).map(([k, v]) => ({
+                ...v,
+                limit_break: parseInt(k),
+            })),
+        levels: (parent) =>
+            Object.entries(parent.level_stat_increase).map(([k, v]) => ({
+                ...v,
+                level: parseInt(k),
+            })),
+        idolized_increase: (parent) => parent.idolize_stat_increase,
+    },
+    LeveledStat: {
+        level: (parent) => parent.level,
+        stats: (parent) => parent,
+    },
+    LimitBrokenStat: {
+        limit_break: (parent) => parent.limit_break,
+        stats: (parent) => parent,
+    },
+    CardStat: {
+        appeal: (parent) => parent.appeal,
+        stamina: (parent) => parent.stamina,
+        technique: (parent) => parent.technique,
     },
 };
