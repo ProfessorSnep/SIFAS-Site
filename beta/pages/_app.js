@@ -2,8 +2,8 @@ import { CssBaseline, ThemeProvider } from "@material-ui/core";
 import Head from "next/head";
 import React from "react";
 import { theme } from "../src/theme";
-import { ApolloProvider } from "@apollo/client";
-import { apolloClient } from "../src/data";
+// import { ApolloProvider } from "@apollo/client";
+// import { apolloClient } from "../src/data";
 
 export default function App({ Component, pageProps }) {
     React.useEffect(() => {
@@ -21,12 +21,12 @@ export default function App({ Component, pageProps }) {
                     content="minimum-scale=1, initial-scale=1, width=device-width"
                 />
             </Head>
-            <ApolloProvider client={apolloClient}>
-                <ThemeProvider theme={theme}>
-                    <CssBaseline />
-                    <Component {...pageProps} />
-                </ThemeProvider>
-            </ApolloProvider>
+            {/* <ApolloProvider client={apolloClient}> */}
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <Component {...pageProps} />
+            </ThemeProvider>
+            {/* </ApolloProvider> */}
         </React.Fragment>
     );
 }
