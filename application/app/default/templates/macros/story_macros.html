@@ -1,0 +1,32 @@
+{% macro story_transcript(script_path, lang) %}
+{% set transcript_lines = transcript(script_path, region=lang) %}
+{% for line in transcript_lines %}
+<div class="my-2 py-1 transcript-line">
+    <div class="row justify-content-center">
+        {% set speaker = line['speaker'] %}
+        {% set speaker_member = find_member_from_name(speaker) %}
+        {% if speaker_member %}
+        <div class="col-auto transcript-header" style="border-color: #{{speaker_member['color']}};">
+            <div class="px-2"><img height="20" style="position: relative; bottom: 3px;"
+                    src="{{tex(speaker_member['icon_color_image_asset'])}}"
+                    alt="">&nbsp;<strong>{{speaker}}</strong></div>
+        </div>
+        {% elif speaker == '[player]' %}
+        {% set speaker = {'en': "Player", 'jp': "プレーヤー"}[lang] %}
+        <div class="col-auto transcript-header" style="border-color: #131;">
+            <div class="px-2"><strong>{{speaker}}</strong></div>
+        </div>
+        {% else %}
+        <div class="col-auto transcript-header">
+            <div class="px-2"><strong>{{speaker}}</strong></div>
+        </div>
+        {% endif %}
+    </div>
+    <div class="row py-2">
+        <div class="col">
+            {{line['line']|safe}}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endmacro %}

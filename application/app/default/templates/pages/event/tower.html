@@ -49,6 +49,15 @@
     </div>
     <div class="row text-center flex-nowrap" style="white-space: nowrap; overflow-x: scroll;">
         {% for level in tower['levels'] %}
+        {% if level['floor_type'] == 'story' %}
+        <div class="col d-inline-block py-2 m-2 tower-level-box fake-link level-type-normal" style="width: 1000px;"
+            level-no="{{level['floor_no']}}">
+            <div style="font-size: 1.3rem;">Level {{level['floor_no']}}</div>
+            <div><img width="200px" src="{{tex(level['thumbnail_image_asset'])}}" alt=""></div>
+            <div><strong>Story</strong></div>
+            <div><strong>{{level|loc_name}}</strong></div>
+        </div>
+        {% else %}
         {% set level_diff = difficulty_info(level['live_difficulty_id']) %}
         {% set level_live = live_info(level_diff['live_id']) %}
         <div class="col d-inline-block py-2 m-2 tower-level-box fake-link {{'level-type-super' if level['floor_type'] == 'super' else 'level-type-normal'}}"
@@ -59,13 +68,20 @@
                 <strong>{{level_live|loc_name}}</strong></div>
             <div>Target Voltage: {{'{0:,}'.format(level['target_voltage'])}}</div>
         </div>
+        {% endif %}
         {% endfor %}
     </div>
     <div class="row py-4">
         {% for level in tower['levels'] %}
+        {% if level['floor_type'] == 'story' %}
+        <div id="level-{{level['floor_no']}}" class="col tower-diff-block" hidden>
+            {{sm.story_transcript(level['script_path'], 'en' if level['script_on_global'] else 'jp')}}
+        </div>
+        {% else %}
         <div id="level-{{level['floor_no']}}" class="col tower-diff-block" hidden>
             {{lm.difficulty_view(level['live_difficulty_id'], show_live_heading=True)}}
         </div>
+        {% endif %}
         {% endfor %}
     </div>
 </div>
