@@ -3,7 +3,8 @@ const { gql } = require("apollo-server-cloud-functions");
 exports.typeDefs = gql`
     type Query {
         card(id: Int, no: Int): Card
-        cards: [Card]
+        cards(limit: Int, offset: Int): [Card]
+        cardcount: Int
     }
 `;
 
@@ -20,7 +21,17 @@ exports.resolvers = {
         },
         cards: async (parent, args, context) => {
             const cardData = await context.dataSources.data.getObject("cards");
-            return Object.values(cardData);
+            var cardList = Object.values(cardData).sort((a, b) => a.no - b.no);
+            var offset = args.offset || 0;
+            var limit = args.limit || -1;
+            return cardList.slice(
+                offset,
+                limit > 0 ? offset + limit : undefined
+            );
+        },
+        cardcount: async (parent, args, context) => {
+            const cardData = await context.dataSources.data.getObject("cards");
+            return Object.keys(cardData).length;
         },
     },
 };

@@ -9,7 +9,20 @@ export const image = (path) => {
 export async function newApolloClient() {
     const { ApolloClient, InMemoryCache } = await import("@apollo/client");
     return new ApolloClient({
-        cache: new InMemoryCache(),
+        cache: new InMemoryCache({
+            typePolicies: {
+                Query: {
+                    fields: {
+                        cards: {
+                            keyArgs: false,
+                            merge(existing = [], incoming) {
+                                return [...existing, ...incoming];
+                            },
+                        },
+                    },
+                },
+            },
+        }),
         uri: IS_PROD ? "https://api.sifas.guru/" : "http://localhost:8079/",
     });
 }

@@ -10,7 +10,7 @@ import {
     ListItemText,
     makeStyles,
     Toolbar,
-    Typography,
+    Typography
 } from "@material-ui/core";
 import {
     Event,
@@ -19,7 +19,7 @@ import {
     Menu,
     MenuBook,
     MusicVideo,
-    RecentActors,
+    RecentActors
 } from "@material-ui/icons";
 import Head from "next/head";
 import Link from "next/link";
