@@ -226,7 +226,7 @@ def filter_skill(skill, path='effects'):
         s_effect_vals = util_filter_to_unique(effect['effect']['values'])
 
         format_type = effect['effect']['value_type']
-        effect_vals = '/'.join(map(format_val, s_effect_vals))
+        effect_vals = '/\u200b'.join(map(format_val, s_effect_vals))
         if len(s_effect_vals) > 1:
             effect_vals = '[%s]' % effect_vals
 
