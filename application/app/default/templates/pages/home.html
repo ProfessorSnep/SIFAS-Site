@@ -14,34 +14,9 @@
         </div>
     </div>
     <div class="row align-items-center text-center">
-        <div class="col-12 py-3">
-            <h2>Latest Event</h2>
-        </div>
-        <div class="col-12">
-            {% set event = (events(include_minis=True)|reverse)|first %}
-            {% set event_link = None %}
-
-            {% if event['type'] == 'tower' %}
-            {% set event_link = 'tower/%s' % (event['tower_id']) %}
-            {% endif %}
-
-            {% if event_link %}
-            <a href="/event/{{event_link}}" class="link-object">
-                {% endif %}
-                {{em.event_small_display(event)}}
-                {% if event_link %}
-            </a>
-            {% endif %}
-        </div>
-    </div>
-    <div class="row align-items-center text-center">
-        <div class="col-12 py-3">
-            <h2>Latest Cards</h2>
-        </div>
-        <div class="col-12">
-            {% for card_id in latest_cards() %}
-            {{cm.expanded_card_view(card_id)}}
-            {% endfor %}
+        <div class="col py-3">
+            <img src="https://content.sifas.guru/thanks.jpg" />
+			<p>Thanks for the fun year and a half, All Stars, and goodbye.</p>
         </div>
     </div>
 </div>
